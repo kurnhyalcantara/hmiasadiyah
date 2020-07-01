@@ -4,7 +4,9 @@
   "image": "images/social-share.jpg",
   "keywords": "hmi, asadiyah, iai, komisariat, cabang, wajo, sengkang, mahasiswa, islam, himpunan, perjuangan, pergerakan, kader, umat, bangsa, indonesia",
   "loading": "HMI As'adiyah Web App",
-  "dates": "October 12-13, 2018",
+  "slogan": "- HMI Berjuang -",
+  "salam": "Salam Perjuangan",
+  "signUp": "Daftar jadi Anggota Baru",
   "partnershipProposition": "https://bit.ly/dfua17-partners",
   "share": "Share",
   "followOur": "Follow our",
@@ -331,6 +333,6 @@
     "clear": "Clear all"
   },
   "addToHomeScreen": {
-    "cta": "Add to Home Screen"
+    "cta": "Install HMI As'adiyah"
   }
 }

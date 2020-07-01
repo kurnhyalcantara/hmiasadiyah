@@ -26,22 +26,22 @@
     {
       "route": "speakers",
       "permalink": "/speakers/",
-      "label": "Speakers"
+      "label": "Profil"
     },
     {
       "route": "schedule",
       "permalink": "/schedule/",
-      "label": "Schedule"
+      "label": "Berita"
     },
     {
       "route": "team",
       "permalink": "/team/",
-      "label": "Team"
+      "label": "Opini"
     },
     {
       "route": "blog",
       "permalink": "/blog/",
-      "label": "Blog"
+      "label": "Agenda"
     }
   ],
   "heroSettings": {

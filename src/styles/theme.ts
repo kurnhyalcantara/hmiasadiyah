@@ -2,23 +2,23 @@ import { css } from 'lit-element';
 
 export const theme = css`
   :host {
-    --dark-primary-color: #512da8;
-    --default-primary-color: #673ab7;
-    --focused-color: #311b92;
-    --light-primary-color: #d1c4e9;
+    --dark-primary-color: #057C2F;
+    --default-primary-color: #069539;
+    --focused-color: #046C28;
+    --light-primary-color: #5CF893;
     --text-primary-color: #ffffff;
-    --accent-color: #ff5252;
+    --accent-color: #60F704;
     --primary-background-color: #ffffff;
-    --primary-text-color: #424242;
-    --secondary-text-color: #757575;
-    --disabled-text-color: #bdbdbd;
+    --primary-text-color: #2A2A2A;
+    --secondary-text-color: #525252;
+    --disabled-text-color: #858585;
     --divider-color: #ededed;
     --footer-background-color: #f5f5f5;
-    --footer-text-color: #616161;
+    --footer-text-color: #555555;
     --twitter-color: #4099ff;
     --facebook-color: #3b5998;
     --border-light-color: #e2e2e2;
-    --error-color: #e64a19;
+    --error-color: #E93116;
 
     /* Custom */
     --default-background-color: #ffffff;
@@ -28,20 +28,23 @@ export const theme = css`
     --animation: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --slideAnimation: 0.4s cubic-bezier(0, 0, 0.2, 1);
-    --border-radius: 4px;
+    --border-radius: 5px;
     --box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
       0px 1px 3px 0px rgba(0, 0, 0, 0.12);
     --box-shadow-primary-color: 0 3px 3px -2px rgba(103, 58, 183, 0.3),
       0 3px 4px 0 rgba(103, 58, 183, 0.3), 0 1px 8px 0 rgba(103, 58, 183, 0.3);
     --box-shadow-primary-color-hover: 0 1px 3px -2px rgba(103, 58, 183, 0.4),
       0 4px 5px 0 rgba(103, 58, 183, 0.4), 0 2px 9px 0 rgba(103, 58, 183, 0.4);
-    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    --font-family: -apple-system, BlinkMacSystemFont, 'Ruda', Roboto, Helvetica, Arial,
       sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
     --max-container-width: 1280px;
 
-    --primary-color-transparent: rgba(103, 58, 183, 0.1);
-    --primary-color-light: rgba(103, 58, 183, 0.8);
+    --primary-color-transparent: rgba(92, 248, 147, 0.1);
+    --primary-color-light: rgba(92, 248, 147, 0.8);
     --primary-color-white: #ede7f6;
+
+    /* Gradient */
+    --primary-gradient: linear-gradient(135deg, var(--default-primary-color) 0%, var(--light-primary-color) 100%);
 
     /* Labels */
     --gde: #3d5afe;
@@ -78,7 +81,7 @@ export const theme = css`
   h5,
   h6 {
     margin: 0;
-    font-weight: normal;
+    font-weight: bolder;
   }
 
   h1 {
@@ -95,10 +98,12 @@ export const theme = css`
   }
 
   paper-button {
-    padding: 0.7em;
-    border-radius: 2px;
+    font-family: 'Ruda';
+    padding: 0.7em 1.2em;
+    border-radius: 100px;
     font-size: 14px;
-    color: var(--default-primary-color);
+    font-style: bolder;
+    color: #fff;
     transition: background-color var(--animation);
   }
 
@@ -113,8 +118,7 @@ export const theme = css`
   }
 
   paper-button[primary] {
-    background-color: var(--default-primary-color);
-    color: var(--text-primary-color);
+    background: var(--primary-gradient);
   }
 
   paper-button[primary]:hover {
@@ -123,7 +127,7 @@ export const theme = css`
 
   paper-button[primary][invert] {
     color: var(--default-primary-color);
-    background-color: var(--text-primary-color);
+    background: var(--primary-background-color);
   }
 
   paper-button[primary][invert]:hover {
@@ -132,6 +136,21 @@ export const theme = css`
 
   paper-button[primary-text] {
     color: var(--default-primary-color);
+    background: transparent;
+  }
+
+  paper-button[primary-text]:hover {
+    background: var(--primary-color-transparent);
+  }
+
+  paper-button[stroke] {
+    color: var(--default-primary-color);
+    background-color: transparent;
+    border: 1px solid var(--default-primary-color);
+  }
+
+  paper-button[stroke]:hover {
+    background-color: var(--primary-color-transparent);
   }
 
   paper-button iron-icon {
@@ -159,6 +178,11 @@ export const theme = css`
     transform: translateX(-4px);
   }
 
+  paper-tab {
+    font-family: 'Ruda';
+    font-style: bolder;
+  }
+
   .container,
   .container-narrow {
     margin: 0 auto;
@@ -171,10 +195,18 @@ export const theme = css`
   }
 
   .container-title {
-    margin-bottom: 24px;
-    padding: 0;
+    padding: 10px;
     font-size: 32px;
-    line-height: 30px;
+    font-style: bolder;
+    color: var(--default-primary-color);
+  }
+
+  .container-title::after {
+    content: '';
+    display: block;
+    height: 5px;
+    width: 80px;
+    background-image: var(--primary-gradient);
   }
 
   .big-icon {
@@ -205,11 +237,15 @@ export const theme = css`
   }
 
   .card {
-    background-color: var(--default-background-color);
-    box-shadow: var(--box-shadow);
-    border-radius: var(--border-radius);
-    transition: box-shadow var(--animation);
-    cursor: pointer;
+    border-radius: 20px;
+    background: transparent;
+    box-shadow: 1px 1px 1px var(--light-primary-color), 
+        -1px -1px 2px var(--default-primary-color);
+  }
+
+  .card:hover {
+    box-shadow: 1px 1px 4px var(--light-primary-color), 
+        -1px -1px 5px var(--default-primary-color);
   }
 
   .tag {
@@ -227,9 +263,11 @@ export const theme = css`
     .container-narrow {
       padding: 32px;
     }
+  }
 
-    .card:hover {
-      box-shadow: var(--box-shadow);
+  @media (max-width: 760px) {
+    .container-title {
+      font-size: 24px;
     }
   }
 `;

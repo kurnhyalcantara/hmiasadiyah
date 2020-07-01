@@ -136,7 +136,7 @@
     <script src="./node_assets/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
     {% if loadDevelopmentScripts %}
     <!-- TODO: Consolidate development and production builds so they are more similar -->
-    <script src="./src/hoverboard-app.ts" type="module"></script>
+    <script src="./src/hmi-app.ts" type="module"></script>
     {% endif %}
     <link href=' http://fonts.googleapis.com/css?family=Ruda' rel='stylesheet' type='text/css'>
 
@@ -164,7 +164,7 @@
       }
 
       /* styling for render while resources are loading */
-      hoverboard-app[unresolved] .main {
+      hmi-app[unresolved] .main {
         position: absolute;
         background: #069539;
         padding: 16px;
@@ -178,7 +178,7 @@
         justify-content: center;
       }
 
-      hoverboard-app[unresolved] .text {
+      hmi-app[unresolved] .text {
         text-align: center;
         font-weight: 600;
         letter-spacing: 0.2em;
@@ -186,14 +186,14 @@
         overflow: visible;
       }
 
-      hoverboard-app[unresolved] .lds-ellipsis {
+      hmi-app[unresolved] .lds-ellipsis {
         display: inline-block;
         position: relative;
         width: 80px;
         height: 80px;
       }
 
-      hoverboard-app[unresolved] .lds-ellipsis div {
+      hmi-app[unresolved] .lds-ellipsis div {
         position: absolute;
         top: 10px;
         width: 15px;
@@ -203,22 +203,22 @@
         animation-timing-function: cubic-bezier(0, 1, 1, 0);
       }
 
-      hoverboard-app[unresolved] .lds-ellipsis div:nth-child(1) {
+      hmi-app[unresolved] .lds-ellipsis div:nth-child(1) {
         left: 8px;
         animation: lds-ellipsis1 0.6s infinite;
       }
       
-      hoverboard-app[unresolved] .lds-ellipsis div:nth-child(2) {
+      hmi-app[unresolved] .lds-ellipsis div:nth-child(2) {
         left: 8px;
         animation: lds-ellipsis2 0.6s infinite;
       }
 
 
-      hoverboard-app[unresolved] .lds-ellipsis div:nth-child(3) {
+      hmi-app[unresolved] .lds-ellipsis div:nth-child(3) {
         left: 32px;
         animation: lds-ellipsis2 0.6s infinite;
       }
-      hoverboard-app[unresolved] .lds-ellipsis div:nth-child(4) {
+      hmi-app[unresolved] .lds-ellipsis div:nth-child(4) {
         left: 56px;
         animation: lds-ellipsis3 0.6s infinite;
       }
@@ -251,12 +251,12 @@
   </head>
 
   <body>
-    <hoverboard-app unresolved>
+    <hmi-app unresolved>
       <div class="main">
         <div class="text">{$ loading $}</div>
         <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
       </div>
-    </hoverboard-app>
+    </hmi-app>
 
     <noscript>
       Please enable JavaScript to view this website.

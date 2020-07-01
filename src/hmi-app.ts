@@ -68,7 +68,7 @@ if (location.hostname === 'localhost') {
   setLegacyWarnings(true);
 }
 
-class HoverboardApp extends ReduxMixin(PolymerElement) {
+class HMIApp extends ReduxMixin(PolymerElement) {
   static get template() {
     return html`
       <style include="shared-styles flex flex-reverse flex-alignment positioning">
@@ -89,13 +89,13 @@ class HoverboardApp extends ReduxMixin(PolymerElement) {
           border-bottom: 1px solid var(--divider-color);
         }
 
-        app-drawer .dates {
+        app-drawer .slogan {
           margin-top: 42px;
           font-size: 22px;
           line-height: 0.95;
         }
 
-        app-drawer .location {
+        app-drawer .salam {
           margin-top: 4px;
           font-size: 15px;
           color: var(--secondary-text-color);
@@ -118,6 +118,7 @@ class HoverboardApp extends ReduxMixin(PolymerElement) {
 
         .drawer-list a.selected {
           font-weight: 500;
+          background-color: var(--secondary-background-color);
         }
 
         app-toolbar {
@@ -125,7 +126,7 @@ class HoverboardApp extends ReduxMixin(PolymerElement) {
         }
 
         .toolbar-logo {
-          --iron-image-height: 32px;
+          --iron-image-height: 34px;
         }
 
         app-header-layout {
@@ -189,8 +190,8 @@ class HoverboardApp extends ReduxMixin(PolymerElement) {
               srcset="/images/logo-monochrome.svg"
               alt="{$ title $}"
             ></plastic-image>
-            <h2 class="dates">{$ dates $}</h2>
-            <h3 class="location">{$ location.short $}</h3>
+            <div class="slogan">{$ slogan $}</div>
+            <div class="salam">{$ salam $}</div>
           </app-toolbar>
 
           <div class="drawer-content" layout vertical justified flex>
@@ -218,19 +219,12 @@ class HoverboardApp extends ReduxMixin(PolymerElement) {
               </a>
 
               <a
-                class="bottom-drawer-link"
-                href$="[[_getTicketUrl(tickets)]]"
-                target="_blank"
-                rel="noopener noreferrer"
-                on-click="closeDrawer"
-                ga-on="click"
-                ga-event-category="ticket button"
-                ga-event-action="buy_click"
-                layout
-                horizontal
-                center
+              class="bottom-drawer-link"
+              rel="noopener noreferrer"
+              on-tap="_daftarHmi"
+              layout horizontal center
               >
-                <span>{$ buyTicket $}</span>
+                <span>{$ signUp $}</span>
                 <iron-icon icon="hoverboard:open-in-new"></iron-icon>
               </a>
             </div>
@@ -317,7 +311,7 @@ class HoverboardApp extends ReduxMixin(PolymerElement) {
   }
 
   static get is() {
-    return 'hoverboard-app';
+    return 'hmi-app';
   }
 
   private ui = {};
@@ -403,7 +397,7 @@ class HoverboardApp extends ReduxMixin(PolymerElement) {
 
   constructor() {
     super();
-    window.performance && performance.mark && performance.mark('hoverboard-app.created');
+    window.performance && performance.mark && performance.mark('hmi-app.created');
     this._toggleHeaderShadow = this._toggleHeaderShadow.bind(this);
     this._toggleDrawer = this._toggleDrawer.bind(this);
 
@@ -435,7 +429,7 @@ class HoverboardApp extends ReduxMixin(PolymerElement) {
 
   ready() {
     super.ready();
-    log('Hoverboard is ready!');
+    log('HMIApp is ready!');
     this.removeAttribute('unresolved');
     userActions.updateUser();
     notificationsActions
@@ -496,8 +490,8 @@ class HoverboardApp extends ReduxMixin(PolymerElement) {
     return availableTicket ? availableTicket.url : tickets.list[0].url;
   }
 
-  _isaddToHomeScreenHidden(addToHomeScreen, isTabletPlus) {
-    return isTabletPlus || !addToHomeScreen;
+  _isaddToHomeScreenHidden(addToHomeScreen, isLaptopPlus) {
+    return isLaptopPlus && !addToHomeScreen;
   }
 
   _onaddToHomeScreen() {
@@ -515,4 +509,4 @@ class HoverboardApp extends ReduxMixin(PolymerElement) {
   }
 }
 
-window.customElements.define(HoverboardApp.is, HoverboardApp);
+window.customElements.define(HMIApp.is, HMIApp);
