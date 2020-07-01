@@ -1,8 +1,9 @@
 {
-  "title": "GDG DevFest Season 2018",
-  "description": "Join the commuity, learn new things!",
+  "title": "HMI Komisariat Asadiyah",
+  "description": "Situs resmi Himpunan Mahasiswa Islam Komisariat As'adiyah Sengkang Cabang Wajo yang menyajikan profil Organisasi, berita faktul, serta opini dan artikel karya kader komisariat As'adiyah",
   "image": "images/social-share.jpg",
-  "keywords": "event, gdg, gde, devfest, google, programming, android, chrome, polymer, developers, web, cloud, androiddev",
+  "keywords": "hmi, asadiyah, iai, komisariat, cabang, wajo, sengkang, mahasiswa, islam, himpunan, perjuangan, pergerakan, kader, umat, bangsa, indonesia",
+  "loading": "HMI As'adiyah Web App",
   "dates": "October 12-13, 2018",
   "partnershipProposition": "https://bit.ly/dfua17-partners",
   "share": "Share",
