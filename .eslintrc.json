@@ -1,0 +1,48 @@
+{
+  "root": true,
+  "extends": [
+    "eslint:recommended",
+    "plugin:jest/all",
+    "plugin:testing-library/recommended",
+    "plugin:jest-dom/recommended",
+    "google",
+    "plugin:polymer/polymer-3",
+    "plugin:import/errors",
+    "plugin:import/typescript",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2018
+  },
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "plugins": ["jest", "@typescript-eslint", "html", "polymer"],
+  "ignorePatterns": ["dist/", "out-tsc"],
+  "rules": {
+    "brace-style": "off",
+    "new-cap": "off",
+    "no-var": "error",
+    "require-jsdoc": "off",
+    "max-len": ["error", { "code": 120 }],
+    "object-curly-spacing": ["error", "always"],
+    "space-before-function-paren": [
+      "error",
+      { "anonymous": "always", "named": "never", "asyncArrow": "always" }
+    ],
+    "linebreak-style": 0,
+    "jest/no-hooks": "off",
+    "jest/prefer-expect-assertions": "off"
+  },
+  "globals": {
+    "clients": true,
+    "firebase": true,
+    "ga": true,
+    "HOVERBOARD": true,
+    "importScripts": true,
+    "ShadyCSS": true
+  }
+}
