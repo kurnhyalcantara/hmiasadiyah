@@ -54,12 +54,11 @@
     <meta content="{$ endDate $}" itemprop="endDate" />
 
     <!-- Facebook sharing meta data -->
+    <meta content="article" property="og:type" />
     <meta content="{$ title $}" property="og:title" />
     <meta content="{$ title $}" property="og:site_name" />
-    <meta content="website" property="og:type" />
     <meta content="{$ url $}" property="og:url" />
     <meta content="{$ description $}" property="og:description" />
-    <meta content="article" property="og:type" />
     <meta
       content="{$ image if image.startsWith('http') else (url + image) $}"
       property="og:image"
