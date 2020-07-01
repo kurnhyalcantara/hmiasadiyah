@@ -1,16 +1,17 @@
 {
   "basepath": "/",
-  "url": "https://hoverboard-dev.firebaseapp.com/",
-  "analytics": "UA-43643469-8",
+  "url": "https://hmi-asadiyah.web.app/",
+  "analytics": "UA-147127396-1",
   "prefix": "/",
   "firebase": {
-    "apiKey": "AIzaSyBu9LI-hY4NfUOPJJKuV3BfQm7edLr2-aE",
-    "appId": "1:1083195713896:web:9aed8296d8d642cb",
-    "authDomain": "hoverboard-dev.firebaseapp.com",
-    "databaseURL": "https://hoverboard-dev.firebaseio.com",
-    "messagingSenderId": "1083195713896",
-    "projectId": "hoverboard-dev",
-    "storageBucket": "hoverboard-dev.appspot.com"
+    "apiKey": "AIzaSyDC2AvL3KQMjzUwcbywQE3EkkwqWAK3ik8",
+    "appId": "1:725131777928:web:9457b3f994098f2c1bcc3d",
+    "authDomain": "hmi-asadiyah.firebaseapp.com",
+    "databaseURL": "https://hmi-asadiyah.firebaseio.com",
+    "messagingSenderId": "725131777928",
+    "projectId": "hmi-asadiyah",
+    "storageBucket": "hmi-asadiyah.appspot.com",
+    "measurementId": "G-911E5XMM4N"
   },
   "googleMapApiKey": "AIzaSyBu9LI-hY4NfUOPJJKuV3BfQm7edLr2-aE"
 }
