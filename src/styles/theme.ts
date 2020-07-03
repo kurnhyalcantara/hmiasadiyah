@@ -5,7 +5,7 @@ export const theme = css`
     --dark-primary-color: #057C2F;
     --default-primary-color: #069539;
     --focused-color: #046C28;
-    --light-primary-color: #5CF893;
+    --light-primary-color: #0AE757;
     --text-primary-color: #ffffff;
     --accent-color: #60F704;
     --primary-background-color: #ffffff;

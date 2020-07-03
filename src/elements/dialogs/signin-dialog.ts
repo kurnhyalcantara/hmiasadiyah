@@ -24,6 +24,7 @@ class SigninDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
         }
 
         .sign-in-button {
+          padding: 16px 0;
           margin: 16px 0;
           display: block;
           color: var(--primary-text-color);
@@ -32,6 +33,10 @@ class SigninDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
         .merge-content .subtitle,
         .merge-content .explanation {
           margin-bottom: 16px;
+        }
+
+        iron-icon {
+          margin: 0 8px;
         }
 
         .icon-twitter {

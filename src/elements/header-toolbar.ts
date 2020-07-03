@@ -41,8 +41,8 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
 
         .toolbar-logo {
           display: block;
-          width: 150px;
-          height: 32px;
+          width: 200px;
+          height: 35px;
           background-color: var(--default-primary-color);
           transition: background-color var(--animation);
           -webkit-mask: url('/images/logo-monochrome.svg') no-repeat;
@@ -59,7 +59,12 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
         .signin-tab {
           padding: 0 14px;
           color: inherit;
+          font-size: 16px;
           text-transform: uppercase;
+        }
+
+        .signup-button {
+          margin-top: 12px;
         }
 
         .profile-image {
@@ -159,19 +164,15 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
           </paper-tab>
           {% endfor %}
 
-          <paper-tab class="signin-tab" on-click="signIn" link hidden$="[[user.signedIn]]"
-            >{$ signIn $}</paper-tab
-          >
-
           <a
-            href$="[[_getTicketUrl(tickets)]]"
-            target="_blank"
             rel="noopener noreferrer"
             ga-on="click"
-            ga-event-category="ticket button"
-            ga-event-action="buy_click"
+            ga-event-category="daftar button"
+            ga-event-action="daftar_click"
           >
-            <paper-button class="buy-button" primary>{$ buyTicket $}</paper-button>
+            <paper-button class="signup-button" on-tap="_daftarHmi" primary
+              >{$ signUp $}</paper-button
+            >
           </a>
         </paper-tabs>
 
@@ -241,7 +242,7 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
             <div layout vertical center-justified>
               <span class="profile-name">[[user.displayName]]</span>
               <span class="profile-email">[[user.email]]</span>
-              <span class="profile-action" role="button" on-click="signOut">{$ signOut $}</span>
+              <span class="profile-action" role="button" on-click="signOut">{$ logOut $}</span>
             </div>
           </div>
         </paper-menu-button>
@@ -249,7 +250,7 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
         <paper-icon-button
           icon="hoverboard:account"
           on-click="signIn"
-          hidden$="[[_isAccountIconHidden(user.signedIn, viewport.isLaptopPlus)]]"
+          hidden$="[[_isAccountIconHidden(user.signedIn)]]"
         ></paper-icon-button>
       </app-toolbar>
     `;
@@ -267,7 +268,6 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
   private dialogs = { signin: { isOpened: false } };
   private notifications: { token?: string; status?: string } = {};
   private user = {};
-  private tickets = { list: [] };
   private transparent = false;
 
   static get properties() {
@@ -285,7 +285,6 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
       dialogs: Object,
       notifications: Object,
       user: Object,
-      tickets: Object,
       transparent: {
         type: Boolean,
         reflectToAttribute: true,
@@ -370,21 +369,15 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
     (this.$.notificationsMenu as import('@polymer/paper-menu-button').PaperMenuButton).close();
   }
 
-  _isAccountIconHidden(userSignedIn, isTabletPlus) {
-    return userSignedIn || isTabletPlus;
-  }
-
-  _getTicketUrl(tickets) {
-    if (!tickets.list.length) return '';
-    const availableTicket = tickets.list.filter((ticket) => ticket.available)[0];
-    return availableTicket ? availableTicket.url : tickets.list[0].url;
+  _isAccountIconHidden(userSignedIn) {
+    return userSignedIn;
   }
 
   _setToolbarSettings(settings) {
     if (!settings) return;
     this.updateStyles({
       '--hero-font-color': settings.fontColor || '',
-      '--hero-logo-opacity': settings.hideLogo ? '0' : '1',
+      '--hero-logo-opacity': settings.hideLogo ? '1' : '0',
       '--hero-logo-color': settings.backgroundImage ? '#fff' : 'var(--default-primary-color)',
     });
   }
