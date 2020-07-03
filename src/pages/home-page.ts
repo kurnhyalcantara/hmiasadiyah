@@ -37,10 +37,12 @@ class HomePage extends ReduxMixin(PolymerElement) {
         .info-items {
           margin: 24px auto;
           font-size: 22px;
+          font-style: bolder;
         }
 
         .info-items > *:not(:first-of-type) {
           margin-top: 4px;
+          color: var(--default-primary-color);
         }
 
         .action-buttons {
@@ -58,7 +60,7 @@ class HomePage extends ReduxMixin(PolymerElement) {
 
         .action-buttons iron-icon {
           --iron-icon-fill-color: currentColor;
-          margin-right: 8px;
+          margin-left: 8px;
         }
 
         .scroll-down {
@@ -106,7 +108,7 @@ class HomePage extends ReduxMixin(PolymerElement) {
 
           .scroll-down {
             position: absolute;
-            bottom: 24px;
+            bottom: 2px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 2;
@@ -143,37 +145,18 @@ class HomePage extends ReduxMixin(PolymerElement) {
         <div class="home-content" layout vertical center>
           <plastic-image
             class="hero-logo"
-            srcset="/images/logo.svg"
+            srcset="/images/logo.png"
             alt="{$ title $}"
           ></plastic-image>
           <div class="info-items">
-            <div class="info-item">{$ location.city $}. {$ dates $}</div>
-            <div class="info-item">{$ heroSettings.home.description $}</div>
+            <div class="info-item">{$ heroSettings.home.description1 $}</div>
+            <div class="info-item">{$ heroSettings.home.description2 $}</div>
           </div>
 
           <div class="action-buttons" layout horizontal center-justified wrap>
-            <paper-button
-              class="watch-video"
-              on-click="_playVideo"
-              ga-on="click"
-              ga-event-category="video"
-              ga-event-action="watch"
-              ga-event-label="hero block - view highlights"
-            >
-              <iron-icon icon="hoverboard:movie"></iron-icon>
-              {$ viewHighlights $}
-            </paper-button>
-            <paper-button
-              on-click="_scrollToTickets"
-              ga-on="click"
-              ga-event-category="tickets"
-              ga-event-action="scroll"
-              ga-event-label="hero block - scroll to tickets"
-              primary
-              invert
-            >
-              <iron-icon icon="hoverboard:ticket"></iron-icon>
-              {$ buyTicket $}
+            <paper-button on-tap="_showInfo" primary invert>
+              {$ infoPengkaderan $}
+              <iron-icon icon="hoverboard:open-in-new"></iron-icon>
             </paper-button>
           </div>
 

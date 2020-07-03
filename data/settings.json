@@ -46,9 +46,10 @@
   ],
   "heroSettings": {
     "home": {
-      "description": "Join the commuity, learn new things!",
+      "description1": "Selamat Datang Web App",
+      "description2": "HMI Komisariat As'adiyah",
       "background": {
-        "color": "#673ab7",
+        "color": "#069539",
         "image": "/images/backgrounds/home.jpg"
       },
       "fontColor": "#FFF"
@@ -192,10 +193,7 @@
         "url": "https://www.facebook.com"
       }
     ],
-    "allowedProvidersUrl": [
-      "https://accounts.google.com",
-      "https://www.facebook.com"
-    ]
+    "allowedProvidersUrl": ["https://accounts.google.com", "https://www.facebook.com"]
   },
   "contentLoaders": {
     "schedule": {

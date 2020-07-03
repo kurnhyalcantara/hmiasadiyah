@@ -138,7 +138,10 @@
     <!-- TODO: Consolidate development and production builds so they are more similar -->
     <script src="./src/hmi-app.ts" type="module"></script>
     {% endif %}
-    <link href=' http://fonts.googleapis.com/css?family=Ruda' rel='stylesheet' type='text/css'>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ruda:wght@700&display=swap "
+      rel="stylesheet"
+    />
 
     <style>
       html,
@@ -149,8 +152,8 @@
 
       body {
         margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, 'Ruda', Roboto, Helvetica, Arial,
-          sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+        font-family: -apple-system, BlinkMacSystemFont, 'Ruda', Roboto, Helvetica, Arial, sans-serif,
+          'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
         font-size: 16px;
         line-height: 1.5;
       }
@@ -207,12 +210,11 @@
         left: 8px;
         animation: lds-ellipsis1 0.6s infinite;
       }
-      
+
       hmi-app[unresolved] .lds-ellipsis div:nth-child(2) {
         left: 8px;
         animation: lds-ellipsis2 0.6s infinite;
       }
-
 
       hmi-app[unresolved] .lds-ellipsis div:nth-child(3) {
         left: 32px;
@@ -246,7 +248,6 @@
           transform: translate(24px, 0);
         }
       }
-
     </style>
   </head>
 
@@ -254,7 +255,12 @@
     <hmi-app unresolved>
       <div class="main">
         <div class="text">{$ loading $}</div>
-        <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+        <div class="lds-ellipsis">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
     </hmi-app>
 

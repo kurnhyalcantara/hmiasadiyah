@@ -2,14 +2,14 @@ import { css } from 'lit-element';
 
 export const theme = css`
   :host {
-    --dark-primary-color: #057C2F;
+    --dark-primary-color: #057c2f;
     --default-primary-color: #069539;
-    --focused-color: #046C28;
-    --light-primary-color: #0AE757;
+    --focused-color: #046c28;
+    --light-primary-color: #0ae757;
     --text-primary-color: #ffffff;
-    --accent-color: #60F704;
+    --accent-color: #60f704;
     --primary-background-color: #ffffff;
-    --primary-text-color: #2A2A2A;
+    --primary-text-color: #2a2a2a;
     --secondary-text-color: #525252;
     --disabled-text-color: #858585;
     --divider-color: #ededed;
@@ -18,7 +18,7 @@ export const theme = css`
     --twitter-color: #4099ff;
     --facebook-color: #3b5998;
     --border-light-color: #e2e2e2;
-    --error-color: #E93116;
+    --error-color: #e93116;
 
     /* Custom */
     --default-background-color: #ffffff;
@@ -35,8 +35,8 @@ export const theme = css`
       0 3px 4px 0 rgba(103, 58, 183, 0.3), 0 1px 8px 0 rgba(103, 58, 183, 0.3);
     --box-shadow-primary-color-hover: 0 1px 3px -2px rgba(103, 58, 183, 0.4),
       0 4px 5px 0 rgba(103, 58, 183, 0.4), 0 2px 9px 0 rgba(103, 58, 183, 0.4);
-    --font-family: -apple-system, BlinkMacSystemFont, 'Ruda', Roboto, Helvetica, Arial,
-      sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    --font-family: -apple-system, BlinkMacSystemFont, 'Ruda', Roboto, Helvetica, Arial, sans-serif,
+      'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
     --max-container-width: 1280px;
 
     --primary-color-transparent: rgba(92, 248, 147, 0.1);
@@ -44,7 +44,11 @@ export const theme = css`
     --primary-color-white: #ede7f6;
 
     /* Gradient */
-    --primary-gradient: linear-gradient(135deg, var(--default-primary-color) 0%, var(--light-primary-color) 100%);
+    --primary-gradient: linear-gradient(
+      135deg,
+      var(--default-primary-color) 0%,
+      var(--light-primary-color) 100%
+    );
 
     /* Labels */
     --gde: #3d5afe;
@@ -159,11 +163,11 @@ export const theme = css`
   }
 
   paper-button.icon-right iron-icon {
-    margin-left: 8px;
+    margin-left: 16px;
   }
 
   paper-button.icon-left iron-icon {
-    margin-right: 8px;
+    margin-right: 12px;
   }
 
   paper-button.animated iron-icon {
@@ -239,13 +243,11 @@ export const theme = css`
   .card {
     border-radius: 20px;
     background: transparent;
-    box-shadow: 1px 1px 1px var(--light-primary-color), 
-        -1px -1px 2px var(--default-primary-color);
+    box-shadow: 1px 1px 1px var(--light-primary-color), -1px -1px 2px var(--default-primary-color);
   }
 
   .card:hover {
-    box-shadow: 1px 1px 4px var(--light-primary-color), 
-        -1px -1px 5px var(--default-primary-color);
+    box-shadow: 1px 1px 4px var(--light-primary-color), -1px -1px 5px var(--default-primary-color);
   }
 
   .tag {
