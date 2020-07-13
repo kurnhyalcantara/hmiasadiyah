@@ -8,7 +8,6 @@ class ProfilHmiAsadiyah extends ReduxMixin(PolymerElement) {
     return html` <style include="shared-styles flex flex-alignment flex-reverse">
         :host {
           display: block;
-          border-bottom: 1px solid var(--divider-color);
         }
 
         .content {

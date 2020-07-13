@@ -34,6 +34,7 @@ class GabungBlock extends ReduxMixin(PolymerElement) {
 
         paper-button {
           color: #fff;
+          border: 1px solid #fff;
         }
 
         paper-button[disabled] {

@@ -149,7 +149,7 @@ export const theme = css`
 
   paper-button[stroke] {
     color: var(--default-primary-color);
-    background-color: transparent;
+    background: transparent;
     border: 1px solid var(--default-primary-color);
   }
 

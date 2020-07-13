@@ -15,7 +15,7 @@ class GalleryBlock extends ReduxMixin(PolymerElement) {
         }
 
         .photos-grid {
-          margin: 64px auto;
+          margin: 32px auto;
           display: grid;
           width: 100%;
           min-height: 400px;
@@ -64,7 +64,7 @@ class GalleryBlock extends ReduxMixin(PolymerElement) {
 
         .gallery-info {
           padding: 16px;
-          background-color: var(--default-primary-color);
+          background: var(--primary-gradient);
           color: var(--text-primary-color);
           z-index: 1;
           grid-area: 5 / 2 / 5 / 4;
@@ -72,7 +72,8 @@ class GalleryBlock extends ReduxMixin(PolymerElement) {
 
         paper-button {
           margin-top: 16px;
-          color: var(--text-primary-color);
+          color: #fff;
+          border: 1px solid #fff;
         }
 
         @media (min-width: 640px) {
@@ -141,7 +142,7 @@ class GalleryBlock extends ReduxMixin(PolymerElement) {
             <p>{$ galleryBlock.description $}</p>
           </div>
           <a href="{$ galleryBlock.callToAction.link $}" target="_blank" rel="noopener noreferrer">
-            <paper-button>{$ galleryBlock.callToAction.label $}</paper-button>
+            <paper-button primary-text>{$ galleryBlock.callToAction.label $}</paper-button>
           </a>
         </div>
       </div>

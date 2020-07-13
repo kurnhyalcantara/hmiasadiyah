@@ -6,13 +6,11 @@ import '../elements/tokoh-block';
 import '../elements/testi-block';
 import '../elements/gabung-block';
 import '../elements/profil-hmi-asadiyah';
-import '../elements/about-organizer-block';
-import '../elements/featured-videos';
 import '../elements/gallery-block';
+import '../elements/featured-videos';
 import '../elements/latest-posts-block';
 import '../elements/map-block';
 import '../elements/partners-block';
-import '../elements/tickets-block';
 import { ReduxMixin } from '../mixins/redux-mixin';
 import { uiActions } from '../redux/actions';
 import { scrollToY } from '../utils/scrolling';
@@ -233,8 +231,6 @@ class HomePage extends ReduxMixin(PolymerElement) {
       <gabung-block></gabung-block>
       <profil-hmi-asadiyah></profil-hmi-asadiyah>
       <gallery-block></gallery-block>
-      <tickets-block></tickets-block>
-      <about-organizer-block></about-organizer-block>
       <featured-videos></featured-videos>
       <latest-posts-block></latest-posts-block>
       <map-block></map-block>

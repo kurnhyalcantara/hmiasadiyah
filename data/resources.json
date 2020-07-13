@@ -119,6 +119,21 @@
       }
     ]
   },
+  "galleryBlock": {
+    "title": "Galeri HMI As'adiyah",
+    "description": "Eksplor galeri kegiatan dan agenda HMI Komisariat As'adiyah",
+    "callToAction": {
+      "label": "Lihat semua foto",
+      "link": "https://photos.app.goo.gl/2cAzLM9mWDpeCiKU8"
+    }
+  },
+  "featuredVideos": {
+    "title": "Video",
+    "callToAction": {
+      "label": "Lihat semua video",
+      "link": ""
+    }
+  },
   "footer": {
     "blog": "Blog"
   },
@@ -269,13 +284,6 @@
     },
     "toast": "We will contact you soon!"
   },
-  "featuredVideos": {
-    "title": "DFUA'16 featured videos",
-    "callToAction": {
-      "label": "See all videos",
-      "link": "https://www.youtube.com/playlist?list=PLt8lEzcLNl31AouwDkbLbLARlQFwNS2en"
-    }
-  },
   "blog": {
     "published": "Published",
     "suggested": "Up next"
@@ -306,14 +314,7 @@
       "link": "/previous-speakers/"
     }
   },
-  "galleryBlock": {
-    "title": "#dfua16 highlights",
-    "description": "This year's festival built lots of excitement. Check out photos from featured talks, hands-on learning sessions, and after-hours fun.",
-    "callToAction": {
-      "label": "See all photos",
-      "link": "https://goo.gl/photos/H8s3CtPexCzkLqSt9"
-    }
-  },
+
   "mapBlock": {
     "title": "Location"
   },

@@ -15,12 +15,11 @@ class FeaturedVideos extends ReduxMixin(PolymerElement) {
       <style include="shared-styles flex flex-alignment positioning">
         :host {
           display: block;
-          --video-item-height: 200px;
+          --video-item-height: 180px;
         }
 
         .videos-wrapper {
           position: relative;
-          overflow: hidden;
         }
 
         .video-list {
@@ -60,11 +59,7 @@ class FeaturedVideos extends ReduxMixin(PolymerElement) {
         }
 
         .thumbnail-image {
-          background-color: var(--secondary-background-color);
-        }
-
-        .image-overlay {
-          background-color: rgba(0, 0, 0, 0.4);
+          background-color: var(--default-primary-color);
         }
 
         .video-play-icon {
@@ -77,7 +72,7 @@ class FeaturedVideos extends ReduxMixin(PolymerElement) {
         }
 
         .video-title {
-          margin-top: 8px;
+          margin: 8px;
           font-family: var(--font-family);
           color: var(--secondary-text-color);
         }
@@ -122,8 +117,8 @@ class FeaturedVideos extends ReduxMixin(PolymerElement) {
         }
       </style>
       <div class="container">
-        <div class="header" layout horizontal justified center wrap>
-          <h1 class="container-title">{$ featuredVideos.title $}</h1>
+        <div class="header" layout horizontal justified>
+          <div class="container-title">{$ featuredVideos.title $}</div>
         </div>
 
         <div class="videos-wrapper" layout flex horizontal>
@@ -159,7 +154,6 @@ class FeaturedVideos extends ReduxMixin(PolymerElement) {
                       fade
                       fit
                     ></plastic-image>
-                    <div class="image-overlay" fit></div>
                     <paper-icon-button
                       class="video-play-icon"
                       icon="hoverboard:play"
@@ -180,11 +174,10 @@ class FeaturedVideos extends ReduxMixin(PolymerElement) {
             ga-event-label="right"
             hidden$="[[_rightArrowHidden]]"
           >
-            &gt;</paper-icon-button
-          >
+          </paper-icon-button>
         </div>
         <a href="{$ featuredVideos.callToAction.link $}" target="_blank" rel="noopener noreferrer">
-          <paper-button class="cta-button animated icon-right">
+          <paper-button class="cta-button animated icon-right" stroke>
             <span>{$ featuredVideos.callToAction.label $}</span>
             <iron-icon icon="hoverboard:arrow-right-circle"></iron-icon>
           </paper-button>
