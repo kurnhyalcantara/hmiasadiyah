@@ -8,22 +8,28 @@ import { store } from '../redux/store';
 import './hoverboard-icons';
 import './shared-styles';
 
-class SubscribeBlock extends ReduxMixin(PolymerElement) {
+class GabungBlock extends ReduxMixin(PolymerElement) {
   static get template() {
     return html`
       <style include="shared-styles flex flex-alignment">
         :host {
           display: flex;
           width: 100%;
-          background: var(--default-primary-color);
+          background: var(--primary-gradient);
           color: #fff;
           padding: 16px 0;
+        }
+
+        .images {
+          height: 100%;
+          margin: 8px 8px;
         }
 
         .description {
           font-size: 24px;
           line-height: 1.5;
           margin: 0 0 16px;
+          text-align: center;
         }
 
         paper-button {
@@ -40,19 +46,23 @@ class SubscribeBlock extends ReduxMixin(PolymerElement) {
             padding: 32px 0;
           }
 
+          .images {
+            height: 100%;
+          }
+
           .description {
             font-size: 32px;
             margin: 0 0 24px;
-            text-align: center;
           }
         }
       </style>
 
-      <div class="container" layout vertical center$="[[viewport.isTabletPlus]]">
+      <div class="container" layout vertical center>
+        <plastic-image class="images" srcset="/images/action-hmi.png"></plastic-image>
         <div class="description">
-          {$ subscribeBlock.callToAction.description $}
+          {$ gabungBlock.callToAction.description $}
         </div>
-        <div class="cta-button">
+        <div>
           <paper-button
             class="animated icon-right"
             disabled$="[[subscribed]]"
@@ -61,8 +71,9 @@ class SubscribeBlock extends ReduxMixin(PolymerElement) {
             ga-event-category="attendees"
             ga-event-action="subscribe"
             ga-event-label="subscribe block"
+            primary-text
           >
-            <span class="cta-label">[[ctaLabel]]</span>
+            <span class="cta-label">{$ gabungBlock.callToAction.label $}</span>
             <iron-icon icon$="hoverboard:[[ctaIcon]]"></iron-icon>
           </paper-button>
         </div>
@@ -71,7 +82,7 @@ class SubscribeBlock extends ReduxMixin(PolymerElement) {
   }
 
   static get is() {
-    return 'subscribe-block';
+    return 'gabung-block';
   }
 
   private user: { signedIn?: boolean; email?: string; displayName?: string } = {};
@@ -155,4 +166,4 @@ class SubscribeBlock extends ReduxMixin(PolymerElement) {
   }
 }
 
-window.customElements.define(SubscribeBlock.is, SubscribeBlock);
+window.customElements.define(GabungBlock.is, GabungBlock);

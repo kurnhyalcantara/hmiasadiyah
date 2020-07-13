@@ -12,7 +12,7 @@ export const theme = css`
     --primary-text-color: #2a2a2a;
     --secondary-text-color: #525252;
     --disabled-text-color: #858585;
-    --divider-color: #ededed;
+    --divider-color: #e0e0e0;
     --footer-background-color: #f5f5f5;
     --footer-text-color: #555555;
     --twitter-color: #4099ff;
@@ -139,7 +139,7 @@ export const theme = css`
   }
 
   paper-button[primary-text] {
-    color: var(--default-primary-color);
+    color: var(--primary-color-white);
     background: transparent;
   }
 
@@ -199,7 +199,7 @@ export const theme = css`
   }
 
   .container-title {
-    padding: 10px;
+    margin-bottom: 18px;
     font-size: 32px;
     font-style: bolder;
     color: var(--default-primary-color);
@@ -241,13 +241,14 @@ export const theme = css`
   }
 
   .card {
+    max-width: 400px;
     border-radius: 20px;
     background: transparent;
-    box-shadow: 1px 1px 1px var(--light-primary-color), -1px -1px 2px var(--default-primary-color);
+    box-shadow: 1px 1px 1px var(--default-primary-color), -1px -1px 2px var(--default-primary-color);
   }
 
   .card:hover {
-    box-shadow: 1px 1px 4px var(--light-primary-color), -1px -1px 5px var(--default-primary-color);
+    box-shadow: 1px 1px 4px var(--default-primary-color), -1px -1px 5px var(--default-primary-color);
   }
 
   .tag {
@@ -269,7 +270,7 @@ export const theme = css`
 
   @media (max-width: 760px) {
     .container-title {
-      font-size: 24px;
+      font-size: 28px;
     }
   }
 `;

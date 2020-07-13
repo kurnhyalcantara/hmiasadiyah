@@ -1,15 +1,17 @@
 import '@polymer/iron-icon';
 import { html, PolymerElement } from '@polymer/polymer';
 import '../elements/about-block';
+import '../elements/unggul-block';
+import '../elements/tokoh-block';
+import '../elements/testi-block';
+import '../elements/gabung-block';
+import '../elements/profil-hmi-asadiyah';
 import '../elements/about-organizer-block';
 import '../elements/featured-videos';
-import '../elements/fork-me-block';
 import '../elements/gallery-block';
 import '../elements/latest-posts-block';
 import '../elements/map-block';
 import '../elements/partners-block';
-import '../elements/speakers-block';
-import '../elements/subscribe-block';
 import '../elements/tickets-block';
 import { ReduxMixin } from '../mixins/redux-mixin';
 import { uiActions } from '../redux/actions';
@@ -224,14 +226,14 @@ class HomePage extends ReduxMixin(PolymerElement) {
           </div>
         </div>
       </hero-block>
-      {% if showForkMeBlockForProjectIds.includes(firebase.projectId) %}
-      <fork-me-block></fork-me-block>
-      {% endif %}
       <about-block></about-block>
-      <speakers-block></speakers-block>
-      <subscribe-block></subscribe-block>
-      <tickets-block></tickets-block>
+      <unggul-block></unggul-block>
+      <tokoh-block></tokoh-block>
+      <testi-block></testi-block>
+      <gabung-block></gabung-block>
+      <profil-hmi-asadiyah></profil-hmi-asadiyah>
       <gallery-block></gallery-block>
+      <tickets-block></tickets-block>
       <about-organizer-block></about-organizer-block>
       <featured-videos></featured-videos>
       <latest-posts-block></latest-posts-block>
@@ -279,7 +281,7 @@ class HomePage extends ReduxMixin(PolymerElement) {
   }
 
   _scrollNextBlock() {
-    const heroHeight = this.$.hero.getBoundingClientRect().height - 64;
+    const heroHeight = this.$.hero.getBoundingClientRect().height - 55;
     scrollToY(heroHeight, 600, 'easeInOutSine');
   }
 }
