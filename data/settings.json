@@ -113,21 +113,21 @@
     }
   },
   "location": {
-    "label": "Location",
-    "name": "Planeta kino",
+    "label": "Sekretariat HMI Komisariat As'adiyah",
+    "name": "Sekret HMI Komisariat As'adiyah",
     "city": "Lviv",
     "short": "Lviv, Ukraine",
-    "address": "36 Shchyretska St, Lviv, Ukraine",
+    "address": "Temukan",
     "pointer": {
-      "latitude": 49.809841,
-      "longitude": 23.972805,
+      "latitude": -4.138602,
+      "longitude": 120.030443,
       "zoom": 5
     },
     "mapCenter": {
-      "latitude": 48,
-      "longitude": 8
+      "latitude": -4,
+      "longitude": 120
     },
-    "description": "Newly built Pivdennyi Expo is a long-awaited exhibition center in Lviv, which can fulfill the needs of the large-scale event"
+    "description": "Sekretariat HMI Komisariat As'adiyah berada di BTN Grandhill, Blog G No. 87 Kelurahan Atakkae Sengkang"
   },
   "mediaQueries": {
     "xs": {

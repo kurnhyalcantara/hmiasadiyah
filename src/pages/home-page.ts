@@ -11,7 +11,6 @@ import '../elements/featured-videos';
 import '../elements/latest-posts-block';
 import '../elements/opinion-block';
 import '../elements/map-block';
-import '../elements/partners-block';
 import { ReduxMixin } from '../mixins/redux-mixin';
 import { uiActions } from '../redux/actions';
 import { scrollToY } from '../utils/scrolling';
@@ -235,7 +234,6 @@ class HomePage extends ReduxMixin(PolymerElement) {
       <latest-posts-block></latest-posts-block>
       <opinion-block></opinion-block>
       <map-block></map-block>
-      <partners-block></partners-block>
       <footer-block></footer-block>
     `;
   }

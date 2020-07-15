@@ -18,7 +18,7 @@ class MapBlock extends ReduxMixin(PolymerElement) {
         .description-card {
           margin: 0 -16px;
           padding: 16px;
-          background-color: var(--default-primary-color);
+          background: var(--primary-gradient);
           color: var(--text-primary-color);
         }
 
@@ -87,7 +87,7 @@ class MapBlock extends ReduxMixin(PolymerElement) {
           <div class="bottom-info" layout horizontal justified center>
             <span class="address">{$ location.address $}</span>
             <a
-              href="https://www.google.com/maps/dir/?api=1&amp;destination={$ location.address $}"
+              href="https://www.google.com/maps/dir/?api=1&amp;destination={$ location.label $}"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -132,7 +132,7 @@ class MapBlock extends ReduxMixin(PolymerElement) {
             },
             {
               featureType: 'road',
-              stylers: [{ visibility: 'off' }],
+              stylers: [{ visibility: 'on' }],
             },
           ],
         },
