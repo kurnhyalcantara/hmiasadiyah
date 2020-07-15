@@ -37,7 +37,7 @@ class FooterSocial extends PolymerElement {
         display: inline-block;
       }
 
-     .social-group.share-block {
+      .social-group.share-block {
         margin-bottom: 17px;
       }
 
@@ -173,9 +173,9 @@ class FooterSocial extends PolymerElement {
       <div class="title">
         {$ followOur $}
         <a
-          href="{$ organizer.blog $}"
-          {% if organizer.blog.startsWith('http') %} target="_blank" rel="noopener noreferrer" {% endif %}>
-          {$ footer.blog $}
+          href="{$ organizer.partner $}"
+          {% if organizer.partner.startsWith('http') %} target="_blank" rel="noopener noreferrer" {% endif %}>
+          {$ footer.partner $}
         </a>
       </div>
     </div>

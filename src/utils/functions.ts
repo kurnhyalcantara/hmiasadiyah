@@ -12,6 +12,10 @@ export const getDate = (date) => {
   });
 };
 
+export const getYear = (date) => {
+  return new Date(date).getFullYear();
+};
+
 export const isEmpty = (array) => {
   return !array || !array.length;
 };

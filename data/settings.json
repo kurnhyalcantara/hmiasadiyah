@@ -2,7 +2,7 @@
   "organizer": {
     "name": "HMI Komisariat Asadiyah",
     "twitter": "gdglviv",
-    "blog": "https://medium.com/gdg-lviv",
+    "partner": "https://yakusa.id/",
     "url": "http://lviv.gdg.org.ua/"
   },
   "startDate": "2017-10-013T09:00:00+03:00",
@@ -148,24 +148,20 @@
   "socialNetwork": {
     "follow": [
       {
-        "name": "meetup",
-        "url": "https://www.meetup.com/GDG-Lviv/events/244342635/"
-      },
-      {
         "name": "facebook",
-        "url": "https://www.facebook.com/devfest.ukraine/"
+        "url": "https://www.facebook.com/hmiasadiyah/"
       },
       {
         "name": "twitter",
-        "url": "https://twitter.com/devfest_ukraine/"
+        "url": "https://twitter.com/hmi-asadiyah/"
       },
       {
         "name": "instagram",
-        "url": "https://www.instagram.com/devfestukraine"
+        "url": "https://www.instagram.com/hmiasadiyah"
       },
       {
         "name": "youtube",
-        "url": "https://www.youtube.com/playlist?list=PLt8lEzcLNl31AouwDkbLbLARlQFwNS2en"
+        "url": "https://www.youtube.com/channel/UCBVVngt3so2RQbZ1hawtUNA?view_as=subscriber"
       }
     ],
     "share": [
@@ -179,7 +175,7 @@
       }
     ]
   },
-  "mailto": "devfest@gdg.org.ua",
+  "mailto": "hmiasadiyah@gmail.com",
   "signInProviders": {
     "providersData": [
       {

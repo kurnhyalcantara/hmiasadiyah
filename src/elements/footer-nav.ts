@@ -26,8 +26,8 @@ class FooterNav extends PolymerElement {
 
         .footer-logo {
           margin: 10px 30px 0 0;
-          height: 24px;
-          width: 120px;
+          height: 36px;
+          width: 140px;
           float: left;
         }
 
@@ -65,7 +65,7 @@ class FooterNav extends PolymerElement {
         <a href="{$ organizer.url $}" target="_blank" rel="noopener noreferrer">
           <plastic-image
             class="footer-logo"
-            srcset="../../images/organizer-logo.svg"
+            srcset="../../images/logo-monochrome.svg"
             sizing="contain"
             alt="{$ organizer.name $}"
             lazy-load
@@ -73,11 +73,8 @@ class FooterNav extends PolymerElement {
         </a>
 
         <div class="copyright">
-          Based on
-          <a href="https://github.com/gdg-x/hoverboard" target="_blank" rel="noopener noreferrer"
-            >Project Hoverboard</a
-          >
-          · <a class="coc" href="/coc">{$ codeOfConduct $}</a>
+          [[_getYear()]] &copy; Departemen Komunikasi dan Informasi
+          <a href="/" target="_blank" rel="noopener noreferrer">HMI Komisariat As'adiyah</a>
         </div>
       </div>
     `;
@@ -85,6 +82,10 @@ class FooterNav extends PolymerElement {
 
   static get is() {
     return 'footer-nav';
+  }
+
+  _getYear() {
+    return new Date().getFullYear();
   }
 }
 

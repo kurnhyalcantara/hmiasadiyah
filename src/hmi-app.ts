@@ -40,13 +40,13 @@ import './elements/shared-styles';
 import './elements/toast-element';
 import './elements/video-dialog';
 import { ReduxMixin } from './mixins/redux-mixin';
+import './pages/home-page';
+import './pages/profile-page';
 import './pages/blog-page';
 import './pages/coc-page';
 import './pages/faq-page';
-import './pages/home-page';
 import './pages/previous-speakers-page';
 import './pages/schedule-page';
-import './pages/speakers-page';
 import './pages/team-page';
 import {
   notificationsActions,
@@ -219,10 +219,12 @@ class HMIApp extends ReduxMixin(PolymerElement) {
               </a>
 
               <a
-              class="bottom-drawer-link"
-              rel="noopener noreferrer"
-              on-tap="_daftarHmi"
-              layout horizontal center
+                class="bottom-drawer-link"
+                rel="noopener noreferrer"
+                on-tap="_daftarHmi"
+                layout
+                horizontal
+                center
               >
                 <span>{$ signUp $}</span>
                 <iron-icon icon="hoverboard:open-in-new"></iron-icon>
@@ -243,9 +245,9 @@ class HMIApp extends ReduxMixin(PolymerElement) {
             hide-immediately
           >
             <home-page name="home"></home-page>
+            <profile-page name="speakers" route="[[subRoute]]"></profile-page>
             <blog-page name="blog" route="[[subRoute]]"></blog-page>
             <schedule-page name="schedule" route="[[subRoute]]"></schedule-page>
-            <speakers-page name="speakers" route="[[subRoute]]"></speakers-page>
             <previous-speakers-page
               name="previous-speakers"
               route="[[subRoute]]"

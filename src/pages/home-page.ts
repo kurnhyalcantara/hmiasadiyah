@@ -257,24 +257,6 @@ class HomePage extends ReduxMixin(PolymerElement) {
     });
   }
 
-  _playVideo() {
-    uiActions.toggleVideoDialog({
-      title: '{$  aboutBlock.callToAction.howItWas.title $}',
-      youtubeId: '{$  aboutBlock.callToAction.howItWas.youtubeId $}',
-      disableControls: true,
-      opened: true,
-    });
-  }
-
-  _scrollToTickets() {
-    // TODO: Remove anys
-    const toolbarHeight =
-      (window as any).HOVERBOARD.Elements.HeaderToolbar.getBoundingClientRect().height - 1;
-    const ticketsBlockPositionY =
-      (window as any).HOVERBOARD.Elements.Tickets.getBoundingClientRect().top - toolbarHeight;
-    scrollToY(ticketsBlockPositionY, 600, 'easeInOutSine');
-  }
-
   _scrollNextBlock() {
     const heroHeight = this.$.hero.getBoundingClientRect().height - 55;
     scrollToY(heroHeight, 600, 'easeInOutSine');
