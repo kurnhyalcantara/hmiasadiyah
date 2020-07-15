@@ -134,6 +134,20 @@
       "link": ""
     }
   },
+  "latestPostsBlock": {
+    "title": "Berita Terbaru",
+    "callToAction": {
+      "label": "Lihat semua berita",
+      "link": "/news/"
+    }
+  },
+  "opiniBlock": {
+    "title": "Artikel Terbaru",
+    "callToAction": {
+      "label": "Lihat semua artikel",
+      "link": "//"
+    }
+  },
   "footer": {
     "blog": "Blog"
   },
@@ -288,13 +302,7 @@
     "published": "Published",
     "suggested": "Up next"
   },
-  "latestPostsBlock": {
-    "title": "The latest news",
-    "callToAction": {
-      "label": "View all stories",
-      "link": "/blog/"
-    }
-  },
+
   "speakers": {
     "skills": "Skills",
     "previousYears": "Years",

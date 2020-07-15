@@ -9,6 +9,7 @@ import '../elements/profil-hmi-asadiyah';
 import '../elements/gallery-block';
 import '../elements/featured-videos';
 import '../elements/latest-posts-block';
+import '../elements/opinion-block';
 import '../elements/map-block';
 import '../elements/partners-block';
 import { ReduxMixin } from '../mixins/redux-mixin';
@@ -41,7 +42,6 @@ class HomePage extends ReduxMixin(PolymerElement) {
         }
 
         .info-items > *:not(:first-of-type) {
-          margin-top: 4px;
           color: var(--default-primary-color);
         }
 
@@ -233,6 +233,7 @@ class HomePage extends ReduxMixin(PolymerElement) {
       <gallery-block></gallery-block>
       <featured-videos></featured-videos>
       <latest-posts-block></latest-posts-block>
+      <opinion-block></opinion-block>
       <map-block></map-block>
       <partners-block></partners-block>
       <footer-block></footer-block>

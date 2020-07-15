@@ -63,6 +63,11 @@ export const FETCH_BLOG_LIST = 'app/Blog/FETCH_BLOG_LIST';
 export const FETCH_BLOG_LIST_FAILURE = 'app/Blog/FETCH_BLOG_LIST_FAILURE';
 export const FETCH_BLOG_LIST_SUCCESS = 'app/Blog/FETCH_BLOG_LIST_SUCCESS';
 
+// news
+export const FETCH_OPINI_LIST = 'app/Opini/FETCH_OPINI_LIST';
+export const FETCH_OPINI_LIST_FAILURE = 'app/Opini/FETCH_OPINI_LIST_FAILURE';
+export const FETCH_OPINI_LIST_SUCCESS = 'app/Opini/FETCH_OPINI_LIST_SUCCESS';
+
 // speakers
 export const FETCH_SPEAKERS = 'app/Speakers/FETCH_SPEAKERS';
 export const FETCH_SPEAKERS_FAILURE = 'app/Speakers/FETCH_SPEAKERS_FAILURE';

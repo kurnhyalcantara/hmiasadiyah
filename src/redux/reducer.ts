@@ -9,6 +9,9 @@ import {
   FETCH_BLOG_LIST_FAILURE,
   FETCH_BLOG_LIST_SUCCESS,
   FETCH_BLOG_LIST,
+  FETCH_OPINI_LIST_FAILURE,
+  FETCH_OPINI_LIST_SUCCESS,
+  FETCH_OPINI_LIST,
   FETCH_GALLERY_FAILURE,
   FETCH_GALLERY_SUCCESS,
   FETCH_GALLERY,
@@ -324,6 +327,34 @@ export const blogReducer = (state = initialState.blog, action) => {
   }
 };
 
+export const opiniReducer = (state = initialState.opini, action) => {
+  switch (action.type) {
+    case FETCH_OPINI_LIST:
+      return Object.assign({}, state, {
+        fetching: true,
+        fetchingError: null,
+        list: [],
+        obj: {},
+      });
+
+    case FETCH_OPINI_LIST_FAILURE:
+      return Object.assign({}, state, {
+        fetching: false,
+        fetchingError: action.payload.error,
+      });
+
+    case FETCH_OPINI_LIST_SUCCESS:
+      return Object.assign({}, state, {
+        fetching: false,
+        list: action.payload.list,
+        obj: action.payload.obj,
+      });
+
+    default:
+      return state;
+  }
+};
+
 export const speakersReducer = (state = initialState.speakers, action) => {
   switch (action.type) {
     case FETCH_SPEAKERS:
@@ -560,6 +591,7 @@ export const appReducer = (state = initialState, action) => {
     feedback: feedbackReducer(state.feedback, action),
     videos: videosReducer(state.videos, action),
     blog: blogReducer(state.blog, action),
+    opini: opiniReducer(state.opini, action),
     speakers: speakersReducer(state.speakers, action),
     previousSpeakers: previousSpeakersReducer(state.previousSpeakers, action),
     sessions: sessionsReducer(state.sessions, action),

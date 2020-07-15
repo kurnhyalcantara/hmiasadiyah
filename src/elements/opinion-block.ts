@@ -4,13 +4,13 @@ import '@polymer/paper-button';
 import { html, PolymerElement } from '@polymer/polymer';
 import 'plastic-image';
 import { ReduxMixin } from '../mixins/redux-mixin';
-import { newsActions } from '../redux/actions';
+import { opiniActions } from '../redux/actions';
 import { store } from '../redux/store';
 import { getDate } from '../utils/functions';
 import './shared-styles';
 import './text-truncate';
 
-class LatestPostsBlock extends ReduxMixin(PolymerElement) {
+class OpinionBlock extends ReduxMixin(PolymerElement) {
   static get template() {
     return html`
       <style include="shared-styles flex flex-alignment">
@@ -78,11 +78,11 @@ class LatestPostsBlock extends ReduxMixin(PolymerElement) {
       </style>
 
       <div class="container">
-        <div class="container-title">{$ latestPostsBlock.title $}</div>
+        <div class="container-title">{$ opiniBlock.title $}</div>
         <div class="posts-wrapper">
           <template is="dom-repeat" items="[[posts]]" as="post">
             <a
-              href$="/news/posts/[[post.id]]/"
+              href$="/opini/posts/[[post.id]]/"
               class="post card"
               ga-on="click"
               ga-event-category="blog"
@@ -118,9 +118,9 @@ class LatestPostsBlock extends ReduxMixin(PolymerElement) {
           </template>
         </div>
 
-        <a href="{$ latestPostsBlock.callToAction.link $}">
+        <a href="{$ opiniBlock.callToAction.link $}">
           <paper-button class="cta-button animated icon-right" stroke>
-            <span>{$ latestPostsBlock.callToAction.label $}</span>
+            <span>{$ opiniBlock.callToAction.label $}</span>
             <iron-icon icon="hoverboard:arrow-right-circle"></iron-icon>
           </paper-button>
         </a>
@@ -129,7 +129,7 @@ class LatestPostsBlock extends ReduxMixin(PolymerElement) {
   }
 
   static get is() {
-    return 'latest-posts-block';
+    return 'opinion-block';
   }
 
   private viewport = {};
@@ -154,16 +154,16 @@ class LatestPostsBlock extends ReduxMixin(PolymerElement) {
   stateChanged(state: import('../redux/store').State) {
     return this.setProperties({
       viewport: state.ui.viewport,
-      postsList: state.blog.list,
-      postsFetching: state.blog.fetching,
-      postsFetchingError: state.blog.fetchingError,
+      postsList: state.opini.list,
+      postsFetching: state.opini.fetching,
+      postsFetchingError: state.opini.fetchingError,
     });
   }
 
   connectedCallback() {
     super.connectedCallback();
     if (!this.postsFetching && (!this.postsList || !this.postsList.length)) {
-      store.dispatch(newsActions.fetchList());
+      store.dispatch(opiniActions.fetchList());
     }
   }
 
@@ -176,4 +176,4 @@ class LatestPostsBlock extends ReduxMixin(PolymerElement) {
   }
 }
 
-window.customElements.define(LatestPostsBlock.is, LatestPostsBlock);
+window.customElements.define(OpinionBlock.is, OpinionBlock);

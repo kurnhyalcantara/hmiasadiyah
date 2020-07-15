@@ -9,6 +9,9 @@ import {
   FETCH_BLOG_LIST_FAILURE,
   FETCH_BLOG_LIST_SUCCESS,
   FETCH_BLOG_LIST,
+  FETCH_OPINI_LIST_FAILURE,
+  FETCH_OPINI_LIST_SUCCESS,
+  FETCH_OPINI_LIST,
   FETCH_GALLERY_FAILURE,
   FETCH_GALLERY_SUCCESS,
   FETCH_GALLERY,
@@ -389,7 +392,7 @@ export const videosActions = {
   },
 };
 
-export const blogActions = {
+export const newsActions = {
   fetchList: () => (dispatch) => {
     dispatch({
       type: FETCH_BLOG_LIST,
@@ -397,7 +400,7 @@ export const blogActions = {
 
     window.firebase
       .firestore()
-      .collection('blog')
+      .collection('news')
       .orderBy('published', 'desc')
       .get()
       .then((snaps) => {
@@ -416,6 +419,39 @@ export const blogActions = {
       .catch((error) => {
         dispatch({
           type: FETCH_BLOG_LIST_FAILURE,
+          payload: { error },
+        });
+      });
+  },
+};
+
+export const opiniActions = {
+  fetchList: () => (dispatch) => {
+    dispatch({
+      type: FETCH_OPINI_LIST,
+    });
+
+    window.firebase
+      .firestore()
+      .collection('opini')
+      .orderBy('published', 'desc')
+      .get()
+      .then((snaps) => {
+        const list = snaps.docs.map((snap) => Object.assign({}, snap.data(), { id: snap.id }));
+
+        const obj = list.reduce((acc, curr) => Object.assign({}, acc, { [curr.id]: curr }), {});
+
+        dispatch({
+          type: FETCH_OPINI_LIST_SUCCESS,
+          payload: {
+            obj,
+            list,
+          },
+        });
+      })
+      .catch((error) => {
+        dispatch({
+          type: FETCH_OPINI_LIST_FAILURE,
           payload: { error },
         });
       });

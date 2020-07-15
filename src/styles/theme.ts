@@ -28,7 +28,7 @@ export const theme = css`
     --animation: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --slideAnimation: 0.4s cubic-bezier(0, 0, 0.2, 1);
-    --border-radius: 5px;
+    --border-radius: 20px;
     --box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
       0px 1px 3px 0px rgba(0, 0, 0, 0.12);
     --box-shadow-primary-color: 0 3px 3px -2px rgba(103, 58, 183, 0.3),

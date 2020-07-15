@@ -68,6 +68,12 @@ export const initialState = {
     list: [],
     obj: {},
   },
+  opini: {
+    fetching: false,
+    fetchingError: null,
+    list: [],
+    obj: {},
+  },
   partners: {
     fetching: false,
     fetchingError: null,
