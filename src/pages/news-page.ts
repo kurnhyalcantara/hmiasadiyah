@@ -3,10 +3,11 @@ import '@polymer/iron-pages';
 import { html, PolymerElement } from '@polymer/polymer';
 import { routingActions } from '../redux/actions';
 import { scrollToY } from '../utils/scrolling';
-import './blog-list-page';
+import { ReduxMixin } from '../mixins/redux-mixin';
+import './news-list-page';
 import './post-page';
 
-class BlogPage extends PolymerElement {
+class NewsPage extends ReduxMixin(PolymerElement) {
   static get template() {
     return html`
       <style>
@@ -31,15 +32,15 @@ class BlogPage extends PolymerElement {
         selected="[[routeData.page]]"
         selected-attribute="active"
       >
-        <blog-list-page data-route></blog-list-page>
-        <post-page data-route="posts" route="[[subRoute]]"></post-page>
+        <news-list-page data-route="" data-path="./news-list-page.html"></news-list-page>
+        <post-page data-route="posts" data-path="./post-page.html" route="[[subRoute]]"></post-page>
       </iron-pages>
       <footer-block></footer-block>
     `;
   }
 
   static get is() {
-    return 'blog-page';
+    return 'news-page';
   }
 
   active = false;
@@ -53,9 +54,6 @@ class BlogPage extends PolymerElement {
     return {
       route: Object,
       active: Boolean,
-      routeData: Object,
-      subRoute: Object,
-      _route: Object,
     };
   }
 
@@ -73,4 +71,4 @@ class BlogPage extends PolymerElement {
   }
 }
 
-window.customElements.define(BlogPage.is, BlogPage);
+window.customElements.define(NewsPage.is, NewsPage);

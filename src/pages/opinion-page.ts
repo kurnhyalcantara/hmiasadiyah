@@ -7,11 +7,11 @@ import 'plastic-image';
 import '../elements/posts-list';
 import '../elements/shared-styles';
 import { ReduxMixin } from '../mixins/redux-mixin';
-import { newsActions } from '../redux/actions';
+import { opiniActions } from '../redux/actions';
 import { store } from '../redux/store';
 import { getDate } from '../utils/functions';
 
-class PostPage extends ReduxMixin(PolymerElement) {
+class OpinionPage extends ReduxMixin(PolymerElement) {
   active = false;
   route: object;
 
@@ -120,7 +120,7 @@ class PostPage extends ReduxMixin(PolymerElement) {
   }
 
   static get is() {
-    return 'post-page';
+    return 'opinion-page';
   }
 
   static get properties() {
@@ -153,10 +153,10 @@ class PostPage extends ReduxMixin(PolymerElement) {
   stateChanged(state: import('../redux/store').State) {
     this.setProperties({
       viewport: state.ui.viewport,
-      postsList: state.blog.list,
-      postsMap: state.blog.obj,
-      postsFetching: state.blog.fetching,
-      postsFetchingError: state.blog.fetchingError,
+      postsList: state.opini.list,
+      postsMap: state.opini.obj,
+      postsFetching: state.opini.fetching,
+      postsFetchingError: state.opini.fetchingError,
     });
   }
 
@@ -167,7 +167,7 @@ class PostPage extends ReduxMixin(PolymerElement) {
   connectedCallback() {
     super.connectedCallback();
     if (!this.postsFetching && (!this.postsList || !this.postsList.length)) {
-      store.dispatch(newsActions.fetchList());
+      store.dispatch(opiniActions.fetchList());
     }
   }
 
@@ -196,4 +196,4 @@ class PostPage extends ReduxMixin(PolymerElement) {
   }
 }
 
-window.customElements.define(PostPage.is, PostPage);
+window.customElements.define(OpinionPage.is, OpinionPage);

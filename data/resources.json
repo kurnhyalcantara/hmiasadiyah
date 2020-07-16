@@ -205,6 +205,162 @@
       ]
     }
   ],
+
+  "profileHero": {
+    "link": [
+      {
+        "title": "Sejarah Berdirinya HMI"
+      },
+      {
+        "title": "Profil HMI Komisariat As'adiyah"
+      },
+      {
+        "title": "Struktur Pengurus"
+      }
+    ]
+  },
+
+  "sejarahHMIProfileBlock": {
+    "title": "Sejarah Berdirinya HMI",
+    "content": [
+      {
+        "title": "Prakarsa",
+        "description": "Lafran Pane dan 14 mahasiswa Sekolah Tinggi Islam (sekarang Universitas Islam Indonesia)",
+        "icon": "people"
+      },
+      {
+        "title": "Tanggal Pembentukan",
+        "description": "14 Rabiul Awal 1366 H / 5 Februari 1947",
+        "icon": "calendar"
+      },
+      {
+        "title": "Asas",
+        "description": "Islam",
+        "icon": "ticket"
+      },
+      {
+        "title": "Tujuan Organisasi",
+        "description": "Terbinanya insan akademis pencipta pengabdi yang bernafaskan Islam dan bertanggung jawab atas terwujudnya masyarakat adil makmur yang diridhoi Allah SWT",
+        "icon": "achievement"
+      },
+      {
+        "title": "Sifat",
+        "description": "Independen",
+        "icon": "bookmark-check"
+      },
+      {
+        "title": "Jenis",
+        "description": "Organisasi Kemahasiswaan, Keislaman, Pengkaderan, dan Perjuangan",
+        "icon": "presentation"
+      }
+    ],
+    "profileDescription": [
+      {
+        "alinea": "HMI didirikan di Yogyakarta, Jawa Tengah, Indonesia, pada 5 Februari 1947 ketika itu keadaan politik di Indonesia masih di tandai oleh daya upaya bersemangat rakyat, melalui revolusi, untuk mempertahankan kemerdekaan nasional mereka dari upaya Belanda yang ingin kembali bercokol di bumi pertiwi."
+      },
+      {
+        "alinea": "Berdirinya HMI banyak di ilhami oleh gagasan-gagasan yang dirumuskan oleh Jong Islamieten Bond dengan Islam Studies Club-nya. Itulah sebabnya HMI banyak memusatkan perhatiannya pada tujuan-tujuan jangka panjang Jong Islamieten Bond. Tujuan semu ingin meyakinkan para cendekiawan Muslim muda agar sambil mengejar pendidikan akademisnya juga menjunjung agama Islam. Dengan menempuh ikhtiar demikian itulah mereka dapat ditempa menjadi intelektual ulama sekaligus Ulama-Intelektual. "
+      },
+      {
+        "alinea": "Prakarsa untuk mendirikan HMI terebut dilakukan oleh beberapa orang mahsiswa Di Universitas Islam di Yogyakarta, Jawa Tengah, atau di Sekolah Tinggi Islam. Mereka kemudian menjadi pimpinan-pimpinannya yang pertama. Lafran Pane, Kartono, Dahlan Husein dan Maisaroh Hilal, semuanya mahasiswa Sekolah tinggi Islam, menyelenggarakan sebuah pertemuan untuk membicarakan bagaiman seharusnya menghadapi tantangan zaman dan menyusun pedoman sebagai penyalur cita-cita para cendekiwan Muslim muda pada ketika itu. Pertemuan yang dipimpin oleh Lafran Pane itu di selenggrakan di sebuah gedung yang sekarang dimiliki oleh Pastoran Katolik Roma di Jalan Senopati 30, Yogyakarta. Pertemuan diadakan pada 5 Pebruari 1947, dalam hari kuliah seperti biasa. Kuliah hari itu mengenai Tafsir Qur'an yang di berikan oleh Profesor Hussin yahya, dahulu dekan Jurusan Sastra arab pada IAIN Sunan Kalijaga Yogyakarta. Setelah mendapat persetujuan professor, Lafran Pane memberikan pernyataan resmi bahwa sebuah organisasi untuk semua mahasiswa Muslim telah didirikan dan diberi nama Himpunan Mahasiswa Islam (disingkat HMI). Ketika diwawancarai, Lafran Pane menegaskan bahwa keputusan yang tergesa-gesa untuk mendiriakn organisasi tersebut disebabkan oleh kebutuhan mendesak bagi para Cendekiawan Muslim muda untuk ikut serta didalam perjuangan kemerdekaan nasional dan terutama untuk melestarikan dan mengamankan ajaran-ajaran Islam. Hasil pertemuan tersebut mensahkan keputusan, Lafran pane sebagi ketua pertama, HMI. Kemudian beberapa orang lain dari kelompok pemula ini menjadi pimpinan-pimpinan terkemuka tersebut. Diantaranya ialah Sanusi, seoarang insinyur dan belakangan menjadi menteri dalam kabinet RI dari partai masyumi, Anton Timoer Jaelani, mantan Inspektur Jenderal Dep. Agama dan berijazah M.A. dari McGill University di kanada, dan Akhmad Tirtosudiro, seorang Jenderal Angkatan Darat. "
+      }
+    ]
+  },
+
+  "strukturPengurusBlock": {
+    "title": "Struktur Pengurus Himpunan Mahasiswa Islam Komisariat As'adiyah Sengkang Cabang Wajo Periode 2020-2021",
+    "jabatan": {
+      "ketua": [
+        {
+          "title": "Ketua Umum",
+          "name": ": Risal"
+        },
+        {
+          "title": "Kabid PPPA",
+          "name": ": Nur Syamsu Alam"
+        },
+        {
+          "title": "Kabid PTKP",
+          "name": ": Wiranto"
+        },
+        {
+          "title": "Kabid KPP",
+          "name": ": Akbar Ishak"
+        },
+        {
+          "title": "Kabid PP",
+          "name": ": Dewi Ariani"
+        }
+      ],
+      "sekum": [
+        {
+          "title": "Sekretaris Umum",
+          "name": ": Kurniawan"
+        },
+        {
+          "title": "Wasekumbid PPPA",
+          "name": ": Farhan Farmulia"
+        },
+        {
+          "title": "Wasekumbid PTKP",
+          "name": ": Rahmat Hidayat"
+        },
+        {
+          "title": "Wasekumbid KPP",
+          "name": ": Sofyan Ibrahim"
+        },
+        {
+          "title": "Wasekumbid PP",
+          "name": ": Mega Sriwahyuni"
+        }
+      ],
+      "bendum": [
+        {
+          "title": "Bendahara Umum",
+          "name": ": Risnawati S"
+        },
+        {
+          "title": "Wakil Bendahara Umum",
+          "name": ": Magfirah Rahmadani S."
+        }
+      ],
+      "departemen": [
+        {
+          "title": "Dep. Diklat Anggota",
+          "name": ": Abu Dzar Al-Ghifari"
+        },
+        {
+          "title": "Dep. Litbang Anggota",
+          "name": ": Ashar As’ad"
+        },
+        {
+          "title": "Dep. Data Anggota",
+          "name": ": Ridwan"
+        },
+        {
+          "title": "Dep. Kepemudaan",
+          "name": ": Zaenal Abidin"
+        },
+        {
+          "title": "Dep. PSDP",
+          "name": ": Sukmawati"
+        },
+        {
+          "title": "Dep. Pustaka Organisasi",
+          "name": ": Faisal"
+        },
+        {
+          "title": "Dep. Humas dan Komunikasi",
+          "name": ": Nur Amar"
+        },
+        {
+          "title": "Dep. Kesekretariatan",
+          "name": ": Muh. Sabri"
+        }
+      ]
+    }
+  },
+
   "mySchedule": {
     "title": "My Schedule",
     "browseSession": "Browse sessions"

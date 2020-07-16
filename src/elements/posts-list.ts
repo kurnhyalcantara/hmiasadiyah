@@ -58,7 +58,7 @@ class PostsList extends PolymerElement {
       </style>
 
       <template is="dom-repeat" items="[[posts]]" as="post">
-        <a href$="/blog/posts/[[post.id]]/" class="post" layout horizontal>
+        <a href$="/news/posts/[[post.id]]/" class="post" layout horizontal>
           <plastic-image
             class="image"
             srcset="[[post.image]]"

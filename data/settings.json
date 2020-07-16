@@ -24,23 +24,23 @@
       "label": "Home"
     },
     {
-      "route": "speakers",
-      "permalink": "/speakers/",
+      "route": "profile",
+      "permalink": "/profile/",
       "label": "Profil"
+    },
+    {
+      "route": "news",
+      "permalink": "/news/",
+      "label": "Berita"
+    },
+    {
+      "route": "opini",
+      "permalink": "/opini/",
+      "label": "Opini"
     },
     {
       "route": "schedule",
       "permalink": "/schedule/",
-      "label": "Berita"
-    },
-    {
-      "route": "team",
-      "permalink": "/team/",
-      "label": "Opini"
-    },
-    {
-      "route": "blog",
-      "permalink": "/blog/",
       "label": "Agenda"
     }
   ],
@@ -50,66 +50,49 @@
       "description2": "HMI Komisariat As'adiyah",
       "background": {
         "color": "#069539",
-        "image": "/images/backgrounds/home.jpg"
+        "image": "/images/backgrounds/hero-block.jpg"
       },
       "fontColor": "#FFF"
     },
-    "blog": {
-      "title": "Blog",
-      "metaDescription": "Read stories from our team",
+    "profile": {
+      "title": "Profile",
+      "subTitle": "Profil Organisasi",
+      "metaDescription": "Himpunan Mahasiswa Islam atau biasa disingkat dengan HMI adalah Organisasi mahasiswa Islam tertua dan terbesar di Indonesia.",
       "background": {
-        "color": "#FFF"
+        "image": "/images/backgrounds/hero-block.jpg",
+        "color": "#131a20"
       },
-      "fontColor": "#424242"
+      "fontColor": "#FFF"
     },
-    "speakers": {
-      "title": "Speakers",
-      "metaDescription": "Hear from the Googlers, Partners, and Guest Speakers who are building the future of cloud. Check back often as we add more speakers, including our customers and partners.",
-      "description": "Hear from the Googlers, Partners, and Guest Speakers who are building the future of cloud. Check back often as we add more speakers, including our customers and partners.",
+    "news": {
+      "title": "News",
+      "metaDescription": "Berita terbaru HMI Komisariat Asadiyah",
+      "description": "Berita terbaru tentang HMI dan kegiatan agenda komisariat As'adiyah",
       "background": {
-        "color": "#FFF"
+        "image": "/images/backgrounds/hero-block.jpg",
+        "color": "#131a20"
       },
-      "fontColor": "#424242"
+      "fontColor": "#FFF"
     },
-    "previousSpeakers": {
-      "title": "Previous Speakers",
-      "metaDescription": "Check who was with us last years",
+    "opini": {
+      "title": "Opini & Artikel",
+      "metaDescription": "Baca artikel dan opini kader HMI Komisariat Asadiyah",
+      "description": "Baca artikel karya kader komisariat As'adiyah",
       "background": {
-        "color": "#FFF"
+        "image": "/images/backgrounds/hero-block.jpg",
+        "color": "#097347"
       },
-      "fontColor": "#424242"
+      "fontColor": "#FFF"
     },
     "schedule": {
-      "title": "Schedule",
-      "metaDescription": "Choose your sessions to visit",
+      "title": "Agenda",
+      "metaDescription": "Daftar agenda kepengurusan HMI Komisariat Asadiyah",
       "background": {
-        "color": "#fff"
+        "image": "/images/backgrounds/hero-block.jpg",
+        "color": "#097347"
       },
-      "fontColor": "#424242"
-    },
-    "team": {
-      "title": "Team",
-      "metaDescription": "Get more info about organizers",
-      "background": {
-        "color": "#fff"
-      },
-      "fontColor": "#424242"
-    },
-    "faq": {
-      "title": "FAQs",
-      "metaDescription": "Find you answer right here!",
-      "background": {
-        "color": "#fff"
-      },
-      "fontColor": "#424242"
-    },
-    "coc": {
-      "title": "Code of Conduct",
-      "metaDescription": "Lear more about our expectations for all those who participate in our community",
-      "background": {
-        "color": "#fff"
-      },
-      "fontColor": "#424242"
+      "fontColor": "#FFF",
+      "description": "Daftar Agenda Kegiatan Komisariat As'adiyah"
     }
   },
   "location": {
@@ -195,7 +178,7 @@
     "schedule": {
       "itemsCount": 2
     },
-    "blog": {
+    "news": {
       "itemsCount": 3
     },
     "speakers": {

@@ -42,11 +42,11 @@ import './elements/video-dialog';
 import { ReduxMixin } from './mixins/redux-mixin';
 import './pages/home-page';
 import './pages/profile-page';
-import './pages/blog-page';
+import './pages/news-page';
+import './pages/opini-page';
+import './pages/schedule-page';
 import './pages/coc-page';
 import './pages/faq-page';
-import './pages/previous-speakers-page';
-import './pages/schedule-page';
 import './pages/team-page';
 import {
   notificationsActions,
@@ -245,13 +245,10 @@ class HMIApp extends ReduxMixin(PolymerElement) {
             hide-immediately
           >
             <home-page name="home"></home-page>
-            <profile-page name="speakers" route="[[subRoute]]"></profile-page>
-            <blog-page name="blog" route="[[subRoute]]"></blog-page>
+            <profile-page name="profile" route="[[subRoute]]"></profile-page>
+            <news-page name="news" route="[[subRoute]]"></news-page>
+            <opini-page name="opini" route="[[subRoute]]"></opini-page>
             <schedule-page name="schedule" route="[[subRoute]]"></schedule-page>
-            <previous-speakers-page
-              name="previous-speakers"
-              route="[[subRoute]]"
-            ></previous-speakers-page>
             <team-page name="team"></team-page>
             <faq-page name="faq"></faq-page>
             <coc-page name="coc"></coc-page>
