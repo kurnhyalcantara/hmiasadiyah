@@ -1,0 +1,26 @@
+language: node_js
+node_js:
+- '10'
+cache:
+  yarn: true
+  directories:
+  - node_modules
+  - "${NVM_PATH}_modules"
+install:
+- yarn
+- yarn global add firebase-tools
+- cd functions && yarn && cd ..
+script:
+- yarn lint
+- echo "Building..."
+- yarn build:prod
+before_deploy:
+- echo "Deploying!"
+deploy:
+- provider: firebase
+  skip_cleanup: true
+  on:
+    branch: master
+  project: hmi-asadiyah
+  token: 
+   secure: "AFbwLKhPvf9nIc32fvjK8gLqM4iTy2zCdIIEHhG3M9U5SdNkuIv7f3FzrUOLd+j2Plhew79vtThT25sb5P5zAmnoPURLr1ZhD5T0g5MCUywqnL0xwlMhZTUDtPdm/ieqvFj3Y7vF9M/cadTXkj1/YK/gHh4qEWa+6wC9BxRZzOQk3PzstJjIaT9jjK8MHwc/6xgFz+KCR5WltwzMcTuvnpbukYN/MzjSUJ0XqNJSZ0c26U89N1Ea/8NuAHh/OgxMzM5CguvWi4cUKswMFL7ZVlxlSfdkCnoevOa8XnrbKe0TYveLiY87lGXGnkltVfaKXQ19S/mKlef2FAf8UR49qee8UMVy4pqKIBVBeDWhPdoXdwTfDfvu+Wr7XQR+rUxJnS4/6TpRkk7f329v+8W+tAwc8a6L59iyb7lpi9qaYAOAYSg4MzRhxlqIOxMen56VNB0Gexe+925ytNYWMUWHjaZeR+4MtF+j3jig0K8Op+oMgqWgJHG+vKDfZMBxTTOjIRytEEarHxWpA0aVAvwj/YWVcAkGB1/KQCRKXi8PjNZKZQUbR8uAz3XpEopP5eICd3LrOjjg0JgThY8Fi98vsRE83eKyWWgLMGx1jwCAPTEZFAo4l+LARbCMG+OA0c2fyG2jgQ4v4xqtiXFBgXImYZJtZ9x5B14HcGl6mvJ0/Xs="
