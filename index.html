@@ -54,11 +54,12 @@
     <meta content="{$ endDate $}" itemprop="endDate" />
 
     <!-- Facebook sharing meta data -->
-    <meta content="article" property="og:type" />
     <meta content="{$ title $}" property="og:title" />
     <meta content="{$ title $}" property="og:site_name" />
+    <meta content="website" property="og:type" />
     <meta content="{$ url $}" property="og:url" />
     <meta content="{$ description $}" property="og:description" />
+    <meta content="article" property="og:type" />
     <meta
       content="{$ image if image.startsWith('http') else (url + image) $}"
       property="og:image"
@@ -169,7 +170,7 @@
       /* styling for render while resources are loading */
       hmi-app[unresolved] .main {
         position: absolute;
-        background: #069539;
+        background-color: #069539;
         padding: 16px;
         top: 0;
         left: 0;
