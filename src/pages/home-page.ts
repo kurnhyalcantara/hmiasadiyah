@@ -12,7 +12,6 @@ import '../elements/latest-posts-block';
 import '../elements/opinion-block';
 import '../elements/map-block';
 import { ReduxMixin } from '../mixins/redux-mixin';
-import { uiActions } from '../redux/actions';
 import { scrollToY } from '../utils/scrolling';
 
 class HomePage extends ReduxMixin(PolymerElement) {

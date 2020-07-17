@@ -237,7 +237,7 @@ class TicketsBlock extends ReduxMixin(PolymerElement) {
   connectedCallback() {
     super.connectedCallback();
     // TODO: Remove any
-    (window as any).HOVERBOARD.Elements.Tickets = this;
+    (window as any).HMIAPP.Elements.Tickets = this;
   }
 
   _ticketsChanged(tickets) {

@@ -177,8 +177,8 @@ class ScheduleDay extends PolymerElement {
           const targetElement = this.shadowRoot.querySelector(`[id="${selectedTime}"]`);
           const offset = offsetTop(targetElement);
           const toolbarHeight =
-            (window as any).HOVERBOARD.Elements.HeaderToolbar.getBoundingClientRect().height - 1;
-          const stickyToolbarHeight = (window as any).HOVERBOARD.Elements.StickyHeaderToolbar.getBoundingClientRect()
+            (window as any).HMIAPP.Elements.HeaderToolbar.getBoundingClientRect().height - 1;
+          const stickyToolbarHeight = (window as any).HMIAPP.Elements.StickyHeaderToolbar.getBoundingClientRect()
             .height;
           const additionalMargin = this.viewport.isTabletPlus ? 8 : 0;
           const scrollTargetY = offset - toolbarHeight - stickyToolbarHeight - additionalMargin;

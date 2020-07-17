@@ -1,8 +1,7 @@
 <p align="center">
-<img width="800px" src="https://user-images.githubusercontent.com/2954281/42683571-55ba6be6-8696-11e8-8ff7-e9acd0db63e8.png">
 </p>
 <p align="center">
-<a href="https://hoverboard-master.firebaseapp.com" align="center">:zap: Live demo</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="https://hmi-asadiyah.web.app/" align="center">:zap: Live demo</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 <a href="#getting-started">:rocket: Get Started</a>
 </p>
 
@@ -10,11 +9,19 @@
 
 ## Overview
 
-Project Hoverboard is the conference website template that helps you to set up a mobile-first conference website with blog, speaker and schedule management in a few minutes.
+Proyek HMI As'adiyah Web App ini merupakan proyek pengembangan website HMI Komisariat As'adiyah dan Alhamdulillah telah merilis versi ke 2 nya dengan menggunakan kode sumber ini.
 
-The template is created based on 7 years of [GDG Lviv](https://www.meetup.com/GDG-Lviv/) team experience of running conferences and feedback from more than 500 event organizers from all around the world who were using previous Hoverboard versions.
+Untuk anda yang ingin memakai kode sumber ini, anda harus memiliki pengetahuan tentang pengembengan web terkini.
 
-Our goal is to allow event organizers to set up a professional conference website with minimum resources. To get started you need only basic knowledge of web technologies and a free Firebase account.
+Catatan:
+
+- Untuk melakukan init dependency harap gunakan perintah
+
+```
+npm install --force
+```
+
+- Untuk init firestore harap melakukannya di direktori v1
 
 ## Features
 
@@ -39,7 +46,7 @@ Our goal is to allow event organizers to set up a professional conference websit
 Here is a git workflow for updating your fork (or downloaded copy) to the latest version:
 
 ```console
-git remote add upstream https://github.com/gdg-x/hoverboard.git
+git remote add upstream https://github.com/kurnhyalcantara/hmiasadiyahv2
 git fetch upstream
 git merge upstream/master
 # resolve the merge conflicts in your editor
