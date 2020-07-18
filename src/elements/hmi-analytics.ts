@@ -1,4 +1,4 @@
-class HoverboardAnalytics extends HTMLElement {
+class HMIAnalytics extends HTMLElement {
   connectedCallback() {
     // GOOGLE ANALYTICS TRACKING
 
@@ -76,4 +76,4 @@ class HoverboardAnalytics extends HTMLElement {
   }
 }
 
-window.customElements.define('hoverboard-analytics', HoverboardAnalytics);
+window.customElements.define('hmi-analytics', HMIAnalytics);

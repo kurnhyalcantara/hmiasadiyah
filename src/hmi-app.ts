@@ -31,7 +31,7 @@ import './elements/dialogs/subscribe-dialog';
 import './elements/footer-block';
 import './elements/header-toolbar';
 import './elements/hero-block';
-import './elements/hoverboard-analytics';
+import './elements/hmi-analytics';
 import './elements/hoverboard-icons';
 import './elements/polymer-helmet';
 import './elements/shared-styles';
@@ -302,7 +302,7 @@ class HMIApp extends ReduxMixin(PolymerElement) {
 
       <signin-dialog opened="[[dialogs.signin.isOpened]]" with-backdrop></signin-dialog>
 
-      <hoverboard-analytics></hoverboard-analytics>
+      <hmi-analytics></hmi-analytics>
       <toast-element></toast-element>
     `;
   }
