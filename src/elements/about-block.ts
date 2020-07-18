@@ -30,8 +30,11 @@ class AboutBlock extends ReduxMixin(PolymerElement) {
           margin-top: 12px;
         }
 
-        paper-button {
+        paper-button[stroke] {
           margin: 12px 0;
+          color: var(--default-primary-color);
+          background: var(--primary-background-color);
+          border: 1px solid var(--default-primary-color);
         }
 
         @media (min-width: 760px) {

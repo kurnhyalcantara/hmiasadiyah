@@ -52,6 +52,11 @@ class LatestPostsBlock extends ReduxMixin(PolymerElement) {
           color: var(--secondary-text-color);
         }
 
+        paper-button[stroke] {
+          color: var(--default-primary-color);
+          border: 1px solid var(--default-primary-color);
+        }
+
         .cta-button {
           margin-top: 24px;
         }

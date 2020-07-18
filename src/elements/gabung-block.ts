@@ -32,11 +32,6 @@ class GabungBlock extends ReduxMixin(PolymerElement) {
           text-align: center;
         }
 
-        paper-button {
-          color: #fff;
-          border: 1px solid #fff;
-        }
-
         paper-button[disabled] {
           background: var(--default-primary-color);
           color: #fff;
@@ -72,7 +67,7 @@ class GabungBlock extends ReduxMixin(PolymerElement) {
             ga-event-category="attendees"
             ga-event-action="subscribe"
             ga-event-label="subscribe block"
-            primary-text
+            stroke
           >
             <span class="cta-label">{$ gabungBlock.callToAction.label $}</span>
             <iron-icon icon$="hoverboard:[[ctaIcon]]"></iron-icon>

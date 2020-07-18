@@ -26,7 +26,7 @@ export const registerServiceWorker = () => {
                 }
                 break;
               case 'redundant':
-                throw Error('The installing service worker became redundant.');
+                throw Error('The installing service worker became redundant. :(');
             }
           };
         };

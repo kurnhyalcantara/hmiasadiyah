@@ -142,7 +142,7 @@ class GalleryBlock extends ReduxMixin(PolymerElement) {
             <p>{$ galleryBlock.description $}</p>
           </div>
           <a href="{$ galleryBlock.callToAction.link $}" target="_blank" rel="noopener noreferrer">
-            <paper-button primary-text>{$ galleryBlock.callToAction.label $}</paper-button>
+            <paper-button stroke>{$ galleryBlock.callToAction.label $}</paper-button>
           </a>
         </div>
       </div>

@@ -49,19 +49,6 @@ export const theme = css`
       var(--default-primary-color) 0%,
       var(--light-primary-color) 100%
     );
-
-    /* Labels */
-    --gde: #3d5afe;
-    --wtm: #1de9b6;
-    --gdg: #00b0ff;
-
-    /* Tags */
-    --general: #9e9e9e;
-    --android: #78c257;
-    --web: #2196f3;
-    --cloud: #3f51b5;
-    --community: #e91e63;
-    --design: #e91e63;
   }
 
   *,
@@ -106,7 +93,8 @@ export const theme = css`
     padding: 0.7em 1.2em;
     border-radius: 100px;
     font-size: 14px;
-    font-style: bolder;
+    font-weight: bolder;
+    cursor: pointer;
     color: #fff;
     transition: background-color var(--animation);
   }
@@ -139,7 +127,7 @@ export const theme = css`
   }
 
   paper-button[primary-text] {
-    color: var(--primary-color-white);
+    color: var(--default-primary-color);
     background: transparent;
   }
 
@@ -148,9 +136,9 @@ export const theme = css`
   }
 
   paper-button[stroke] {
-    color: var(--default-primary-color);
+    color: var(--text-primary-color);
     background: transparent;
-    border: 1px solid var(--default-primary-color);
+    border: 1px solid var(--text-primary-color);
   }
 
   paper-button[stroke]:hover {
@@ -184,7 +172,7 @@ export const theme = css`
 
   paper-tab {
     font-family: 'Ruda';
-    font-style: bolder;
+    font-weight: bolder;
   }
 
   .container,
@@ -216,28 +204,6 @@ export const theme = css`
   .big-icon {
     --iron-icon-height: 48px;
     --iron-icon-width: 48px;
-  }
-
-  .gde-b {
-    background-color: var(--gde);
-  }
-
-  .wtm-b {
-    background-color: var(--wtm);
-  }
-
-  .gdg-b {
-    background-color: var(--gdg);
-  }
-
-  .google-b {
-    background-color: var(--secondary-background-color);
-  }
-
-  .google-b .badge-icon {
-    --iron-icon-width: 18px;
-    --iron-icon-height: 18px;
-    color: #fff;
   }
 
   .card {
