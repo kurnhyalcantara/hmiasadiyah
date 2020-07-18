@@ -25,10 +25,8 @@ import {
 import 'plastic-image';
 import { log } from './console';
 import './elements/dialogs/feedback-dialog';
-import './elements/dialogs/previous-speaker-details';
 import './elements/dialogs/session-details';
 import './elements/dialogs/signin-dialog';
-import './elements/dialogs/speaker-details';
 import './elements/dialogs/subscribe-dialog';
 import './elements/footer-block';
 import './elements/header-toolbar';

@@ -1,7 +1,7 @@
 {
   "basepath": "/",
   "url": "https://hmi-asadiyah.web.app/",
-  "analytics": "UA-147127396-2",
+  "analytics": "UA-147127396-1",
   "prefix": "/",
   "firebase": {
     "apiKey": "AIzaSyDC2AvL3KQMjzUwcbywQE3EkkwqWAK3ik8",
