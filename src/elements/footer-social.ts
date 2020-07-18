@@ -145,7 +145,7 @@ class FooterSocial extends PolymerElement {
         <div class="share">
           <paper-icon-button
             class="share-facebook"
-            icon="hoverboard:facebook"
+            icon="hmi:facebook"
             share="facebook"
             on-click="share"
             ga-on="click"
@@ -157,7 +157,7 @@ class FooterSocial extends PolymerElement {
         <div class="share">
           <paper-icon-button
             class="share-twitter"
-            icon="hoverboard:twitter"
+            icon="hmi:twitter"
             share="twitter"
             on-click="share"
             ga-on="click"
@@ -193,7 +193,7 @@ class FooterSocial extends PolymerElement {
               ga-event-category="social"
               ga-event-action="follow"
               ga-event-label="{$ socFollow.name $}">
-              <paper-icon-button icon="hoverboard:{$ socFollow.name $}"></paper-icon-button>
+              <paper-icon-button icon="hmi:{$ socFollow.name $}"></paper-icon-button>
             </a>
           </li>
         {% endfor %}

@@ -5,7 +5,7 @@ import { ReduxMixin } from '../mixins/redux-mixin';
 import { dialogsActions, subscribeActions } from '../redux/actions';
 import { DIALOGS } from '../redux/constants';
 import { store } from '../redux/store';
-import './hoverboard-icons';
+import './hmi-icons';
 import './shared-styles';
 
 class GabungBlock extends ReduxMixin(PolymerElement) {
@@ -70,7 +70,7 @@ class GabungBlock extends ReduxMixin(PolymerElement) {
             stroke
           >
             <span class="cta-label">{$ gabungBlock.callToAction.label $}</span>
-            <iron-icon icon$="hoverboard:[[ctaIcon]]"></iron-icon>
+            <iron-icon icon$="hmi:[[ctaIcon]]"></iron-icon>
           </paper-button>
         </div>
       </div>

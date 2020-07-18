@@ -3,7 +3,7 @@ import { html, PolymerElement } from '@polymer/polymer';
 import { ReduxMixin } from '../mixins/redux-mixin';
 import { subscribeActions } from '../redux/actions';
 import { store } from '../redux/store';
-import './hoverboard-icons';
+import './hmi-icons';
 import './shared-styles';
 
 class SubscribeFormFooter extends ReduxMixin(PolymerElement) {
@@ -61,7 +61,7 @@ class SubscribeFormFooter extends ReduxMixin(PolymerElement) {
           autocomplete="off"
           disabled="[[subscribed]]"
         >
-          <iron-icon icon="hoverboard:checked" slot="suffix" hidden$="[[!subscribed]]"></iron-icon>
+          <iron-icon icon="hmi:checked" slot="suffix" hidden$="[[!subscribed]]"></iron-icon>
         </paper-input>
         <paper-button
           on-click="_subscribe"

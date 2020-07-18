@@ -6,7 +6,7 @@ import { mixinBehaviors } from '@polymer/polymer/lib/legacy/class';
 import { ReduxMixin } from '../../mixins/redux-mixin';
 import { dialogsActions } from '../../redux/actions';
 import { DIALOGS } from '../../redux/constants';
-import '../hoverboard-icons';
+import '../hmi-icons';
 import '../shared-styles';
 
 class SubscribeDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], PolymerElement)) {

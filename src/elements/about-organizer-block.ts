@@ -4,7 +4,7 @@ import '@polymer/paper-button';
 import { html, PolymerElement } from '@polymer/polymer';
 import 'plastic-image';
 import { ReduxMixin } from '../mixins/redux-mixin';
-import './hoverboard-icons';
+import './hmi-icons';
 import './shared-styles';
 
 class AboutOrganizerBlock extends ReduxMixin(PolymerElement) {
@@ -88,7 +88,7 @@ class AboutOrganizerBlock extends ReduxMixin(PolymerElement) {
             >
               <paper-button class="cta-button animated icon-right">
                 <span>{$ block.callToAction.label $}</span>
-                <iron-icon icon="hoverboard:arrow-right-circle"></iron-icon>
+                <iron-icon icon="hmi:arrow-right-circle"></iron-icon>
               </paper-button>
             </a>
           </div>

@@ -1,6 +1,6 @@
 import { html, PolymerElement } from '@polymer/polymer';
 import { ReduxMixin } from '../mixins/redux-mixin';
-import './hoverboard-icons';
+import './hmi-icons';
 import './shared-animations';
 
 class UnggulBlock extends ReduxMixin(PolymerElement) {
@@ -58,7 +58,7 @@ class UnggulBlock extends ReduxMixin(PolymerElement) {
           {% for ung in unggulBlock.content %}
           <div class="card">
             <div class="row" layout vertical center>
-              <iron-icon class="big-icon" icon="hoverboard:{$ ung.icon $}" role="img"></iron-icon>
+              <iron-icon class="big-icon" icon="hmi:{$ ung.icon $}" role="img"></iron-icon>
               <div class="content-title">{$ ung.title $}</div>
               <p>{$ ung.desc $}</p>
             </div>

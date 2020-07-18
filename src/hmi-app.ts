@@ -32,7 +32,7 @@ import './elements/footer-block';
 import './elements/header-toolbar';
 import './elements/hero-block';
 import './elements/hmi-analytics';
-import './elements/hoverboard-icons';
+import './elements/hmi-icons';
 import './elements/polymer-helmet';
 import './elements/shared-styles';
 import './elements/toast-element';
@@ -225,7 +225,7 @@ class HMIApp extends ReduxMixin(PolymerElement) {
                 center
               >
                 <span>{$ signUp $}</span>
-                <iron-icon icon="hoverboard:open-in-new"></iron-icon>
+                <iron-icon icon="hmi:open-in-new"></iron-icon>
               </a>
             </div>
           </div>

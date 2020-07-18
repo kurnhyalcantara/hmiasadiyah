@@ -154,7 +154,7 @@ class HomePage extends ReduxMixin(PolymerElement) {
           <div class="action-buttons" layout horizontal center-justified wrap>
             <paper-button on-tap="_showInfo" primary invert>
               {$ infoPengkaderan $}
-              <iron-icon icon="hoverboard:open-in-new"></iron-icon>
+              <iron-icon icon="hmi:open-in-new"></iron-icon>
             </paper-button>
           </div>
 

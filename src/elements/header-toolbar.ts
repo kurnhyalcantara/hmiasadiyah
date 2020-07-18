@@ -133,7 +133,7 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
       <app-toolbar class="header">
         <div>
           <paper-icon-button
-            icon="hoverboard:menu"
+            icon="hmi:menu"
             hidden$="[[viewport.isLaptopPlus]]"
             aria-label="menu"
             on-click="openDrawer"
@@ -184,7 +184,7 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
           no-animations
         >
           <paper-icon-button
-            icon="hoverboard:[[_getNotificationsIcon(notifications.status)]]"
+            icon="hmi:[[_getNotificationsIcon(notifications.status)]]"
             slot="dropdown-trigger"
           ></paper-icon-button>
           <div class="dropdown-panel" slot="dropdown-content">
@@ -248,7 +248,7 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
         </paper-menu-button>
 
         <paper-icon-button
-          icon="hoverboard:account"
+          icon="hmi:account"
           on-click="signIn"
           hidden$="[[_isAccountIconHidden(user.signedIn)]]"
         ></paper-icon-button>

@@ -69,7 +69,7 @@ class SejarahHMIProfile extends ReduxMixin(PolymerElement) {
           {% for prof in sejarahHMIProfileBlock.content %}
           <div class="content" layout vertical>
             <div class="content-content" layout horizontal>
-              <iron-icon class="icon-attr" icon="hoverboard:{$ prof.icon $}" role="img"></iron-icon>
+              <iron-icon class="icon-attr" icon="hmi:{$ prof.icon $}" role="img"></iron-icon>
               <div class="content" layout vertical>
                 <h3>{$ prof.title $}</h3>
                 <p>{$ prof.description $}</p>

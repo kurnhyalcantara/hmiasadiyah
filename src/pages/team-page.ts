@@ -165,7 +165,7 @@ class TeamPage extends ReduxMixin(PolymerElement) {
                       <a href$="[[social.link]]" target="_blank" rel="noopener noreferrer">
                         <paper-icon-button
                           class="social-icon"
-                          icon="hoverboard:{{social.icon}}"
+                          icon="hmi:{{social.icon}}"
                         ></paper-icon-button>
                       </a>
                     </template>

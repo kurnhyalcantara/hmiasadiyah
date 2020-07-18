@@ -4,7 +4,7 @@ import { mixinBehaviors } from '@polymer/polymer/lib/legacy/class';
 import { ReduxMixin } from '../../mixins/redux-mixin';
 import { dialogsActions, helperActions, userActions } from '../../redux/actions';
 import { DIALOGS } from '../../redux/constants';
-import '../hoverboard-icons';
+import '../hmi-icons';
 import '../shared-styles';
 
 class SigninDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], PolymerElement)) {
@@ -61,10 +61,7 @@ class SigninDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
             ga-event-label="signIn dialog - {$ provider.name $}"
             flex
           >
-            <iron-icon
-              class="icon-{$ provider.name $}"
-              icon="hoverboard:{$ provider.name $}"
-            ></iron-icon>
+            <iron-icon class="icon-{$ provider.name $}" icon="hmi:{$ provider.name $}"></iron-icon>
             <span provider-url="{$ provider.url $}">{$ provider.label $}</span>
           </paper-button>
           {% endfor %}

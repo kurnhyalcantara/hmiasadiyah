@@ -5,7 +5,7 @@ import '@polymer/iron-iconset-svg/iron-iconset-svg';
 
 const documentContainer = document.createElement('template');
 
-documentContainer.innerHTML = `<iron-iconset-svg name="hoverboard" size="24">
+documentContainer.innerHTML = `<iron-iconset-svg name="hmi" size="24">
   <svg>
     <defs>
       <g id="menu">

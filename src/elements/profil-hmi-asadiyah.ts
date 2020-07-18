@@ -1,6 +1,6 @@
 import { html, PolymerElement } from '@polymer/polymer';
 import { ReduxMixin } from '../mixins/redux-mixin';
-import './hoverboard-icons';
+import './hmi-icons';
 import './shared-animations';
 
 class ProfilHmiAsadiyah extends ReduxMixin(PolymerElement) {

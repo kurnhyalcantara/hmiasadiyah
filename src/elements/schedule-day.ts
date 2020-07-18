@@ -104,7 +104,7 @@ class ScheduleDay extends PolymerElement {
             horizontal
             center-center
           >
-            <iron-icon class="add-session-icon" icon="hoverboard:add-circle-outline"></iron-icon>
+            <iron-icon class="add-session-icon" icon="hmi:add-circle-outline"></iron-icon>
             <span>{$ mySchedule.browseSession $}</span>
           </a>
 

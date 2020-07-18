@@ -147,7 +147,7 @@ class SessionElement extends ReduxMixin(PolymerElement) {
         vertical
         relative
       >
-        <iron-icon class="session-icon" icon="hoverboard:[[session.icon]]"></iron-icon>
+        <iron-icon class="session-icon" icon="hmi:[[session.icon]]"></iron-icon>
 
         <div class="session-header" layout horizontal justified>
           <div flex>
@@ -167,13 +167,13 @@ class SessionElement extends ReduxMixin(PolymerElement) {
             <iron-icon
               class="feedback-action"
               hidden="[[!_acceptingFeedback()]]"
-              icon="hoverboard:insert-comment"
+              icon="hmi:insert-comment"
               on-click="_toggleFeedback"
             ></iron-icon>
             <iron-icon
               class="bookmark-session"
               hidden="[[_acceptingFeedback()]]"
-              icon="hoverboard:[[_getFeaturedSessionIcon(featuredSessions, session.id)]]"
+              icon="hmi:[[_getFeaturedSessionIcon(featuredSessions, session.id)]]"
               on-click="_toggleFeaturedSession"
             ></iron-icon>
           </div>

@@ -1,6 +1,6 @@
 import { html, PolymerElement } from '@polymer/polymer';
 import { ReduxMixin } from '../mixins/redux-mixin';
-import './hoverboard-icons';
+import './hmi-icons';
 import './shared-animations';
 
 class AboutBlock extends ReduxMixin(PolymerElement) {
@@ -55,7 +55,7 @@ class AboutBlock extends ReduxMixin(PolymerElement) {
             <a href="{$ aboutHmi.selengkapnya.link $}">
               <paper-button class="animated icon-right" stroke>
                 <span>{$ aboutHmi.selengkapnya.label $}</span>
-                <iron-icon icon="hoverboard:arrow-right-circle"></iron-icon>
+                <iron-icon icon="hmi:arrow-right-circle"></iron-icon>
               </paper-button>
             </a>
           </div>

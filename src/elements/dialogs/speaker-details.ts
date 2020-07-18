@@ -74,7 +74,7 @@ class SpeakerDetails extends SessionsHoC(
         <app-header slot="header" class="header" fixed="[[viewport.isTabletPlus]]">
           <iron-icon
             class="close-icon"
-            icon="hoverboard:[[_getCloseBtnIcon(viewport.isLaptopPlus)]]"
+            icon="hmi:[[_getCloseBtnIcon(viewport.isLaptopPlus)]]"
             on-click="_close"
           ></iron-icon>
 
@@ -119,7 +119,7 @@ class SpeakerDetails extends SessionsHoC(
           <div class="actions" layout horizontal>
             <template is="dom-repeat" items="[[speaker.socials]]" as="social">
               <a class="action" href$="[[social.link]]" target="_blank" rel="noopener noreferrer">
-                <iron-icon icon="hoverboard:[[social.icon]]"></iron-icon>
+                <iron-icon icon="hmi:[[social.icon]]"></iron-icon>
               </a>
             </template>
           </div>

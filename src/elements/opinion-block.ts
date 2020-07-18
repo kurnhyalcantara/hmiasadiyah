@@ -126,7 +126,7 @@ class OpinionBlock extends ReduxMixin(PolymerElement) {
         <a href="{$ opiniBlock.callToAction.link $}">
           <paper-button class="cta-button animated icon-right" stroke>
             <span>{$ opiniBlock.callToAction.label $}</span>
-            <iron-icon icon="hoverboard:arrow-right-circle"></iron-icon>
+            <iron-icon icon="hmi:arrow-right-circle"></iron-icon>
           </paper-button>
         </a>
       </div>

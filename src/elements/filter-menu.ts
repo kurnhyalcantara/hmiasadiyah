@@ -98,7 +98,7 @@ class FilterMenu extends PolymerElement {
             </span>
             <paper-button class="icon-right" on-click="_toggleBoard">
               {$ filters.title $}
-              <iron-icon icon="hoverboard:[[_getFilterIcon(_openedBoard)]]"></iron-icon>
+              <iron-icon icon="hmi:[[_getFilterIcon(_openedBoard)]]"></iron-icon>
             </paper-button>
           </div>
         </div>
@@ -118,7 +118,7 @@ class FilterMenu extends PolymerElement {
               center
             >
               <span>[[selectedFilter.value]]</span>
-              <iron-icon icon="hoverboard:close"></iron-icon>
+              <iron-icon icon="hmi:close"></iron-icon>
             </div>
           </template>
         </div>

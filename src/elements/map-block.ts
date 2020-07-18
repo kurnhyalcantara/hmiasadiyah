@@ -2,7 +2,7 @@ import '@polymer/google-map';
 import '@polymer/paper-icon-button';
 import { html, PolymerElement } from '@polymer/polymer';
 import { ReduxMixin } from '../mixins/redux-mixin';
-import './hoverboard-icons';
+import './hmi-icons';
 import './shared-styles';
 
 class MapBlock extends ReduxMixin(PolymerElement) {
@@ -91,10 +91,7 @@ class MapBlock extends ReduxMixin(PolymerElement) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <paper-icon-button
-                class="directions"
-                icon="hoverboard:directions"
-              ></paper-icon-button>
+              <paper-icon-button class="directions" icon="hmi:directions"></paper-icon-button>
             </a>
           </div>
         </div>

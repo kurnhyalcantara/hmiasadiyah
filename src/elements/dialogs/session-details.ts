@@ -50,7 +50,7 @@ class SessionDetails extends SpeakersHoC(
         <app-header slot="header" class="header" fixed="[[viewport.isTabletPlus]]">
           <iron-icon
             class="close-icon"
-            icon="hoverboard:[[_getCloseBtnIcon(viewport.isLaptopPlus)]]"
+            icon="hmi:[[_getCloseBtnIcon(viewport.isLaptopPlus)]]"
             on-click="_close"
           ></iron-icon>
           <app-toolbar>
@@ -64,7 +64,7 @@ class SessionDetails extends SpeakersHoC(
 
               <div class="float-button">
                 <paper-fab
-                  icon="hoverboard:[[_getFeaturedSessionIcon(featuredSessions, session.id)]]"
+                  icon="hmi:[[_getFeaturedSessionIcon(featuredSessions, session.id)]]"
                   hidden$="[[!viewport.isLaptopPlus]]"
                   on-click="_toggleFeaturedSession"
                 ></paper-fab>
@@ -76,7 +76,7 @@ class SessionDetails extends SpeakersHoC(
         <div class="dialog-container content">
           <div class="float-button">
             <paper-fab
-              icon="hoverboard:[[_getFeaturedSessionIcon(featuredSessions, session.id)]]"
+              icon="hmi:[[_getFeaturedSessionIcon(featuredSessions, session.id)]]"
               hidden$="[[viewport.isLaptopPlus]]"
               on-click="_toggleFeaturedSession"
             ></paper-fab>
@@ -106,7 +106,7 @@ class SessionDetails extends SpeakersHoC(
               horizontal
               center
             >
-              <iron-icon icon="hoverboard:presentation"></iron-icon>
+              <iron-icon icon="hmi:presentation"></iron-icon>
               <span>{$ sessionDetails.viewPresentation $}</span>
             </a>
             <div
@@ -117,7 +117,7 @@ class SessionDetails extends SpeakersHoC(
               horizontal
               center
             >
-              <iron-icon icon="hoverboard:video"></iron-icon>
+              <iron-icon icon="hmi:video"></iron-icon>
               {$ sessionDetails.viewVideo $}
             </div>
           </div>

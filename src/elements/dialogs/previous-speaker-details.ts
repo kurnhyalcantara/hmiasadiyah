@@ -50,7 +50,7 @@ class PreviousSpeakerDetails extends ReduxMixin(
         <app-header slot="header" class="header" fixed="[[viewport.isTabletPlus]]">
           <iron-icon
             class="close-icon"
-            icon="hoverboard:[[_getCloseBtnIcon(viewport.isLaptopPlus)]]"
+            icon="hmi:[[_getCloseBtnIcon(viewport.isLaptopPlus)]]"
             on-click="_close"
           ></iron-icon>
 
@@ -80,7 +80,7 @@ class PreviousSpeakerDetails extends ReduxMixin(
           <div class="actions" layout horizontal>
             <template is="dom-repeat" items="[[speaker.socials]]" as="social">
               <a class="action" href$="[[social.link]]" target="_blank" rel="noopener noreferrer">
-                <iron-icon icon="hoverboard:[[social.icon]]"></iron-icon>
+                <iron-icon icon="hmi:[[social.icon]]"></iron-icon>
               </a>
             </template>
           </div>
@@ -109,7 +109,7 @@ class PreviousSpeakerDetails extends ReduxMixin(
                       horizontal
                       center
                     >
-                      <iron-icon icon="hoverboard:video"></iron-icon>
+                      <iron-icon icon="hmi:video"></iron-icon>
                       <span>{$ sessionDetails.viewVideo $}</span>
                     </div>
                     <a
@@ -126,7 +126,7 @@ class PreviousSpeakerDetails extends ReduxMixin(
                       horizontal
                       center
                     >
-                      <iron-icon icon="hoverboard:presentation"></iron-icon>
+                      <iron-icon icon="hmi:presentation"></iron-icon>
                       <span>{$ sessionDetails.viewPresentation $}</span>
                     </a>
                   </div>

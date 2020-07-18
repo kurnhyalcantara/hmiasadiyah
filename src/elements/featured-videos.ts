@@ -124,7 +124,7 @@ class FeaturedVideos extends ReduxMixin(PolymerElement) {
         <div class="videos-wrapper" layout flex horizontal>
           <paper-icon-button
             class="last-video slide-icon"
-            icon="hoverboard:chevron-left"
+            icon="hmi:chevron-left"
             on-click="shiftContentLeft"
             ga-on="click"
             ga-event-category="video-list-arrow"
@@ -156,7 +156,7 @@ class FeaturedVideos extends ReduxMixin(PolymerElement) {
                     ></plastic-image>
                     <paper-icon-button
                       class="video-play-icon"
-                      icon="hoverboard:play"
+                      icon="hmi:
                     ></paper-icon-button>
                   </div>
                   <h4 class="video-title">[[block.title]]</h4>
@@ -166,7 +166,7 @@ class FeaturedVideos extends ReduxMixin(PolymerElement) {
           </div>
           <paper-icon-button
             class="next-video slide-icon"
-            icon="hoverboard:chevron-right"
+            icon="hmi:chevron-right"
             on-click="shiftContentRight"
             ga-on="click"
             ga-event-category="video-list-arrow"
@@ -179,7 +179,7 @@ class FeaturedVideos extends ReduxMixin(PolymerElement) {
         <a href="{$ featuredVideos.callToAction.link $}" target="_blank" rel="noopener noreferrer">
           <paper-button class="cta-button animated icon-right" stroke>
             <span>{$ featuredVideos.callToAction.label $}</span>
-            <iron-icon icon="hoverboard:arrow-right-circle"></iron-icon>
+            <iron-icon icon="hmi:arrow-right-circle"></iron-icon>
           </paper-button>
         </a>
       </div>
