@@ -467,14 +467,8 @@ class HMIApp extends ReduxMixin(PolymerElement) {
     this.drawerOpened = e.detail.value;
   }
 
-  _getTicketUrl(tickets) {
-    if (!tickets.list.length) return '';
-    const availableTicket = tickets.list.filter((ticket) => ticket.available)[0];
-    return availableTicket ? availableTicket.url : tickets.list[0].url;
-  }
-
   _isaddToHomeScreenHidden(addToHomeScreen, isLaptopPlus) {
-    return isLaptopPlus && !addToHomeScreen;
+    return addToHomeScreen || isLaptopPlus;
   }
 
   _onaddToHomeScreen() {
