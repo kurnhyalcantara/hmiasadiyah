@@ -43,13 +43,9 @@ import './pages/profile-page';
 import './pages/news-page';
 import './pages/opini-page';
 import './pages/schedule-page';
-import './pages/coc-page';
-import './pages/faq-page';
-import './pages/team-page';
 import {
   notificationsActions,
   routingActions,
-  ticketsActions,
   toastActions,
   uiActions,
   userActions,
@@ -247,9 +243,6 @@ class HMIApp extends ReduxMixin(PolymerElement) {
             <news-page name="news" route="[[subRoute]]"></news-page>
             <opini-page name="opini" route="[[subRoute]]"></opini-page>
             <schedule-page name="schedule" route="[[subRoute]]"></schedule-page>
-            <team-page name="team"></team-page>
-            <faq-page name="faq"></faq-page>
-            <coc-page name="coc"></coc-page>
           </iron-pages>
         </app-header-layout>
       </app-drawer-layout>
@@ -322,7 +315,6 @@ class HMIApp extends ReduxMixin(PolymerElement) {
   private _openedDialog: string;
   private user = {};
   private providerUrls = '{$ signInProviders.allowedProvidersUrl $}'.split(',');
-  private tickets = { list: [] };
   private isPhoneSize = false;
   private isLaptopSize = false;
   private appRoute = {};
@@ -359,9 +351,6 @@ class HMIApp extends ReduxMixin(PolymerElement) {
       providerUrls: {
         type: Object,
       },
-      tickets: {
-        type: Object,
-      },
       isPhoneSize: Boolean,
       isLaptopSize: Boolean,
       appRoute: Object,
@@ -385,7 +374,6 @@ class HMIApp extends ReduxMixin(PolymerElement) {
       notifications: state.notifications,
       route: state.routing,
       schedule: state.schedule,
-      tickets: state.tickets,
       ui: state.ui,
       user: state.user,
       viewport: state.ui.viewport,
@@ -399,7 +387,6 @@ class HMIApp extends ReduxMixin(PolymerElement) {
     this._toggleDrawer = this._toggleDrawer.bind(this);
 
     window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault();
       this.addToHomeScreen = e;
     });
 
@@ -415,7 +402,6 @@ class HMIApp extends ReduxMixin(PolymerElement) {
         message: '{$ offlineMessage $}',
       });
     });
-    store.dispatch(ticketsActions.fetchTickets());
   }
 
   disconnectedCallback() {

@@ -19,7 +19,7 @@ class ToastElement extends ReduxMixin(PolymerElement) {
         paper-toast[fit-bottom] {
           width: 100%;
           min-width: 0;
-          border-radius: 0;
+          border-radius: var(--border-radius);
           margin: 0;
         }
 
