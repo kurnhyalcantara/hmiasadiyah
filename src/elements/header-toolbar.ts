@@ -87,6 +87,10 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
           margin-top: 0;
         }
 
+        .log-in-button {
+          padding: 6px 10px;
+        }
+
         .dropdown-panel .panel-actions {
           margin: 0 -16px -16px 0;
         }
@@ -115,7 +119,8 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
 
         paper-button iron-icon {
           margin-right: 8px;
-          --iron-icon-fill-color: var(--hero-font-color);
+          --iron-icon-width: 24px;
+          --iron-icon-height: 24px;
         }
 
         .buy-button {
@@ -247,11 +252,16 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
           </div>
         </paper-menu-button>
 
-        <paper-icon-button
-          icon="hmi:account"
+        <paper-button
+          id="loginButton"
+          class="log-in-button"
           on-click="signIn"
-          hidden$="[[_isAccountIconHidden(user.signedIn)]]"
-        ></paper-icon-button>
+          vertical-align="top"
+          horizontal-align="right"
+          primary
+        >
+          <iron-icon icon="hmi:account"></iron-icon>
+          <span>{$ loginLabel $}</span>
       </app-toolbar>
     `;
   }

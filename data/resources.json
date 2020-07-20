@@ -31,6 +31,7 @@
   "faq": "/data/faq.md",
   "coc": "/data/coc.md",
   "timezoneOffset": "-180",
+  "loginLabel": "Login",
   "aboutHmi": {
     "title": "Apa itu HMI?",
     "content": "Himpunan Mahasiswa Islam atau HMI adalah salah satu organisasi mahasiswa islam terbesar dan tertua di Indonesia yang lahir pada tanggal 5 Februari 1947 membawa gagasan kemahasiswaan yang bernafaskan Islam serta menghimpun segenap mahasiswa islam dari berbagai golongan dengan tujuan terwujudnya masyarakat adil makmur yang diridhoi Allah Swt.",
