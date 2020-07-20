@@ -207,7 +207,7 @@ class HMIApp extends ReduxMixin(PolymerElement) {
               <a
                 class="bottom-drawer-link"
                 on-click="_onaddToHomeScreen"
-                hidden$="[[_isaddToHomeScreenHidden(addToHomeScreen, viewport.isLaptopPlus)]]"
+                hidden$="[[_isaddToHomeScreenHidden(addToHomeScreen, viewport.isPhoneSize)]]"
               >
                 {$ addToHomeScreen.cta $}
               </a>
@@ -387,6 +387,7 @@ class HMIApp extends ReduxMixin(PolymerElement) {
     this._toggleDrawer = this._toggleDrawer.bind(this);
 
     window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
       this.addToHomeScreen = e;
     });
 
@@ -467,8 +468,8 @@ class HMIApp extends ReduxMixin(PolymerElement) {
     this.drawerOpened = e.detail.value;
   }
 
-  _isaddToHomeScreenHidden(addToHomeScreen, isLaptopPlus) {
-    return addToHomeScreen || isLaptopPlus;
+  _isaddToHomeScreenHidden(addToHomeScreen, isPhoneSize) {
+    return addToHomeScreen && isPhoneSize;
   }
 
   _onaddToHomeScreen() {
