@@ -468,8 +468,8 @@ class HMIApp extends ReduxMixin(PolymerElement) {
     this.drawerOpened = e.detail.value;
   }
 
-  _isaddToHomeScreenHidden(addToHomeScreen, isPhoneSize) {
-    return addToHomeScreen && isPhoneSize;
+  _isaddToHomeScreenHidden(addToHomeScreen, isLaptopPlus) {
+    return !addToHomeScreen || isLaptopPlus;
   }
 
   _onaddToHomeScreen() {
