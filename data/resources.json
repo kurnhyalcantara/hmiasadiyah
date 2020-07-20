@@ -22,7 +22,7 @@
   "logOut": "Logout",
   "viewHighlights": "View Highlights",
   "offlineMessage": "Koneksi terputus :(, tapi anda masih bisa menggunakan mengeksplor web app ini ",
-  "cachingComplete": "Kedepannya, web app ini bisa digunakan walaupun data-off :)",
+  "cachingComplete": "Caching selesai, anda bisa menginstall web app ini di bagian menu",
   "newVersionAvailable": "Versi terbaru Web App ini telah tersedia",
   "refresh": "Refresh",
   "position": "Position",
