@@ -35,7 +35,7 @@ export const initialState = {
       isOpened: false,
       data: {},
     },
-    [DIALOGS.SUBSCRIBE]: {
+    [DIALOGS.DAFTAR]: {
       isOpened: false,
       data: {},
     },
@@ -117,7 +117,7 @@ export const initialState = {
   user: {
     signedIn: false,
   },
-  subscribed: false,
+  terdaftar: false,
   toast: {},
   notifications: {
     status: NOTIFICATIONS_STATUS.DEFAULT,

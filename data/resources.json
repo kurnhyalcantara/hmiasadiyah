@@ -4,24 +4,20 @@
   "image": "images/social-share.jpg",
   "keywords": "hmi, asadiyah, iai, komisariat, cabang, wajo, sengkang, mahasiswa, islam, himpunan, perjuangan, pergerakan, kader, umat, bangsa, indonesia",
   "loading": "Sedang memuat HMI As'adiyah Web App",
-  "slogan": "- HMI Berjuang -",
+  "slogan": "- Yakin Usaha Sampai -",
   "salam": "Salam Perjuangan",
   "signUp": "Daftar jadi Anggota Baru",
   "infoPengkaderan": "Info Pengkaderan",
   "share": "Bagikan",
-  "partnershipProposition": "https://bit.ly/dfua17-partners",
   "followOur": "Follow our",
   "followUs": "Follow us",
   "emailUs": "Email us",
   "subscribe": "Subcribe",
   "subscribeNote": "Dapatkan update terbaru dari kami melalui email",
-  "partnershipResources": "Partnership Resources",
-  "eventResources": "Event Resources",
   "buyTicket": "Buy ticket",
   "logIn": "Login",
   "logOut": "Logout",
-  "viewHighlights": "View Highlights",
-  "offlineMessage": "Koneksi terputus :(, tapi anda masih bisa menggunakan mengeksplor web app ini ",
+  "offlineMessage": "Koneksi terputus :(, tapi anda masih bisa mengeksplor web app ini ",
   "cachingComplete": "Caching selesai, anda bisa menginstall web app ini di bagian menu",
   "newVersionAvailable": "Versi terbaru Web App ini telah tersedia",
   "refresh": "Refresh",
@@ -359,6 +355,50 @@
           "name": ": Muh. Sabri"
         }
       ]
+    }
+  },
+
+  "formPendaftaran": {
+    "section1": {
+      "title": "Informasi Diri",
+      "fullName": "Nama Lengkap",
+      "birth": "Tempat Tanggal Lahir",
+      "gender": {
+        "label": "Jenis Kelamin",
+        "male": "Laki-laki",
+        "female": "Perempuan"
+      },
+      "address": "Alamat Tinggal Sekarang",
+      "phone": "No. WA"
+    },
+    "section2": {
+      "title": "Latar Belakang Studi",
+      "university": {
+        "label": "Universitas/Institut/ST",
+        "value": "Institut Agama Islam As'adiyah Sengkang"
+      },
+      "faculty": {
+        "label": "Fakultas",
+        "ftk": "Tarbiyah dan Keguruan",
+        "fsh": "Syariah dan Hukum",
+        "afi": "Akidah Filsafat Islam"
+      },
+      "into": "Angkatan/Tahun Masuk"
+    },
+    "section3": {
+      "title": "Pengalaman Organisasi",
+      "sma": {
+        "title": "Ketika SMA/MA",
+        "label": "Nama Organisasi dan Jabatan"
+      },
+      "kampus": {
+        "title": "Saat ini (di kampus)",
+        "label": "Nama Organisasi dan Jabatan"
+      }
+    },
+    "section4": {
+      "title": "Ke-HMI-an",
+      "reason": "Alasan (Motivasi) saya masuk HMI"
     }
   },
 

@@ -14,7 +14,7 @@ export const DIALOGS = {
   PREVIOUS_SPEAKER: 'previousSpeaker',
   SESSION: 'session',
   FEEDBACK: 'feedback',
-  SUBSCRIBE: 'subscribe',
+  DAFTAR: 'daftar',
   SIGNIN: 'signin',
 };
 // toast
@@ -113,7 +113,7 @@ export const SIGN_IN = 'app/Auth/SIGN_IN';
 export const SIGN_OUT = 'app/Auth/SIGN_OUT';
 
 // subscribe
-export const SUBSCRIBE = 'app/Subscribe/SUBSCRIBE';
+export const DAFTAR = 'app/Daftar/DAFTAR';
 
 // notifications
 export const UPDATE_NOTIFICATIONS_STATUS = 'app/Notifications/UPDATE_NOTIFICATIONS_STATUS';

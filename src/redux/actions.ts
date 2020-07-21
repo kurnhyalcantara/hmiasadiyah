@@ -63,7 +63,7 @@ import {
   SET_VIEWPORT_SIZE,
   SHOW_TOAST,
   SIGN_IN,
-  SUBSCRIBE,
+  DAFTAR,
   TOGGLE_VIDEO_DIALOG,
   UPDATE_NOTIFICATIONS_STATUS,
   WIPE_PREVIOUS_FEEDBACK,
@@ -816,7 +816,7 @@ export const subscribeActions = {
       })
       .then(() => {
         dispatch({
-          type: SUBSCRIBE,
+          type: DAFTAR,
           subscribed: true,
         });
         toastActions.showToast({ message: '{$ subscribeBlock.toast $}' });
@@ -833,7 +833,7 @@ export const subscribeActions = {
         });
 
         dispatch({
-          type: SUBSCRIBE,
+          type: DAFTAR,
           subscribed: false,
         });
 
@@ -842,7 +842,7 @@ export const subscribeActions = {
   },
   resetSubscribed: () => {
     store.dispatch({
-      type: SUBSCRIBE,
+      type: DAFTAR,
       subscribed: false,
     });
   },

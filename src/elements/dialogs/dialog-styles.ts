@@ -16,7 +16,8 @@ documentContainer.innerHTML = `<dom-module id="dialog-styles">
       }
 
       app-header {
-        background-color: var(--additional-background-color);
+        max-height: 56px;
+        background-color: var(--primary-background-color);
       }
 
       app-toolbar {
@@ -31,7 +32,7 @@ documentContainer.innerHTML = `<dom-module id="dialog-styles">
       }
 
       .close-icon {
-        margin: 24px 24px 24px;
+        margin: 12px 24px 24px;
         cursor: pointer;
       }
 

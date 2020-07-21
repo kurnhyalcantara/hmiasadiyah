@@ -27,7 +27,7 @@ import { log } from './console';
 import './elements/dialogs/feedback-dialog';
 import './elements/dialogs/session-details';
 import './elements/dialogs/signin-dialog';
-import './elements/dialogs/subscribe-dialog';
+import './elements/dialogs/daftar-dialog';
 import './elements/footer-block';
 import './elements/header-toolbar';
 import './elements/hero-block';
@@ -43,13 +43,17 @@ import './pages/profile-page';
 import './pages/news-page';
 import './pages/opini-page';
 import './pages/schedule-page';
+import './pages/daftar-page';
 import {
   notificationsActions,
   routingActions,
   toastActions,
   uiActions,
   userActions,
+  dialogsActions,
+  subscribeActions,
 } from './redux/actions';
+import { DIALOGS } from './redux/constants';
 import { store } from './redux/store';
 import { registerServiceWorker } from './service-worker-registration';
 import { scrollToY } from './utils/scrolling';
@@ -85,13 +89,13 @@ class HMIApp extends ReduxMixin(PolymerElement) {
 
         app-drawer .slogan {
           margin-top: 42px;
-          font-size: 22px;
+          font-size: 16px;
           line-height: 0.95;
         }
 
         app-drawer .salam {
           margin-top: 4px;
-          font-size: 15px;
+          font-size: 14px;
           color: var(--secondary-text-color);
         }
 
@@ -120,7 +124,7 @@ class HMIApp extends ReduxMixin(PolymerElement) {
         }
 
         .toolbar-logo {
-          --iron-image-height: 34px;
+          --iron-image-height: 45px;
         }
 
         app-header-layout {
@@ -143,6 +147,7 @@ class HMIApp extends ReduxMixin(PolymerElement) {
         }
 
         .bottom-drawer-link {
+          display: block;
           padding: 16px 24px;
           cursor: pointer;
         }
@@ -215,7 +220,8 @@ class HMIApp extends ReduxMixin(PolymerElement) {
               <a
                 class="bottom-drawer-link"
                 rel="noopener noreferrer"
-                on-tap="_daftarHmi"
+                href="/daftar"
+                on-tap="closeDrawer"
                 layout
                 horizontal
                 center
@@ -243,6 +249,7 @@ class HMIApp extends ReduxMixin(PolymerElement) {
             <news-page name="news" route="[[subRoute]]"></news-page>
             <opini-page name="opini" route="[[subRoute]]"></opini-page>
             <schedule-page name="schedule" route="[[subRoute]]"></schedule-page>
+            <daftar-page name="daftar"></daftar-page>
           </iron-pages>
         </app-header-layout>
       </app-drawer-layout>
@@ -285,13 +292,13 @@ class HMIApp extends ReduxMixin(PolymerElement) {
         with-backdrop
       ></feedback-dialog>
 
-      <subscribe-dialog
-        opened="[[dialogs.subscribe.isOpened]]"
-        data="[[dialogs.subscribe.data]]"
+      <daftar-dialog
+        opened="[[dialogs.daftar.isOpened]]"
+        data="[[dialogs.daftar.data]]"
         with-backdrop
         no-cancel-on-outside-click="[[viewport.isPhone]]"
       >
-      </subscribe-dialog>
+      </daftar-dialog>
 
       <signin-dialog opened="[[dialogs.signin.isOpened]]" with-backdrop></signin-dialog>
 
@@ -313,7 +320,7 @@ class HMIApp extends ReduxMixin(PolymerElement) {
   private schedule = {};
   private notifications = false;
   private _openedDialog: string;
-  private user = {};
+  private user: { signedIn?: boolean; email?: string; displayName?: string } = {};
   private providerUrls = '{$ signInProviders.allowedProvidersUrl $}'.split(',');
   private isPhoneSize = false;
   private isLaptopSize = false;
@@ -484,6 +491,40 @@ class HMIApp extends ReduxMixin(PolymerElement) {
       this.addToHomeScreen = null;
       this.closeDrawer();
     });
+  }
+
+  _daftarHmi() {
+    this.closeDrawer();
+    let userData: {
+      firstFieldValue?: string;
+      secondFieldValue?: string;
+    } = {};
+
+    if (this.user.signedIn) {
+      const fullNameSplit = this.user.displayName.split(' ');
+      userData = {
+        firstFieldValue: fullNameSplit[0],
+        secondFieldValue: fullNameSplit[1],
+      };
+    }
+
+    if (this.user.email) {
+      this._subscribeAction(Object.assign({}, { email: this.user.email }, userData));
+    } else {
+      dialogsActions.openDialog(DIALOGS.DAFTAR, {
+        title: '{$ subscribeBlock.formTitle $}',
+        submitLabel: ' {$ subscribeBlock.subscribe $}',
+        firstFieldLabel: '{$ subscribeBlock.firstName $}',
+        secondFieldLabel: '{$ subscribeBlock.lastName $}',
+        firstFieldValue: userData.firstFieldValue,
+        secondFieldValue: userData.secondFieldValue,
+        submit: (data) => this._subscribeAction(data),
+      });
+    }
+  }
+
+  _subscribeAction(data) {
+    store.dispatch(subscribeActions.subscribe(data));
   }
 }
 

@@ -1,6 +1,8 @@
 import { IronOverlayBehavior } from '@polymer/iron-overlay-behavior';
 import '@polymer/paper-button';
 import '@polymer/paper-input/paper-input';
+import '@polymer/app-layout/app-header-layout/app-header-layout';
+import '@polymer/app-layout/app-toolbar/app-toolbar';
 import { html, PolymerElement } from '@polymer/polymer';
 import { mixinBehaviors } from '@polymer/polymer/lib/legacy/class';
 import { ReduxMixin } from '../../mixins/redux-mixin';
@@ -8,30 +10,29 @@ import { dialogsActions } from '../../redux/actions';
 import { DIALOGS } from '../../redux/constants';
 import '../hmi-icons';
 import '../shared-styles';
+import './dialog-styles';
 
-class SubscribeDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], PolymerElement)) {
+class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], PolymerElement)) {
   static get template() {
     return html`
-      <style include="shared-styles flex flex-alignment">
+      <style include="shared-styles dialog-styles flex flex-alignment">
         :host {
-          margin: 0;
-          display: block;
-          width: 85%;
-          max-width: 420px;
-          background: var(--primary-background-color);
-          box-shadow: var(--box-shadow);
-
           --paper-input-container-focus-color: var(--default-primary-color);
           --paper-input-container-color: var(--secondary-text-color);
         }
 
         .dialog-header {
+          width: 100%;
           margin-bottom: 24px;
           padding: 32px 32px 16px;
-          background: var(--default-primary-color);
+          background: var(--primary-gradient);
           color: #fff;
           font-size: 20px;
           line-height: 1.5;
+        }
+
+        .dialog-container {
+          background-color: var(--primary-background-color);
         }
 
         paper-input {
@@ -55,61 +56,69 @@ class SubscribeDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], P
           color: var(--error-color);
         }
       </style>
-
-      <div class="dialog-content" layout vertical>
-        <div class="dialog-header">[[title]]</div>
-        <div hidden$="[[!errorOccurred]]" class="general-error">
-          {$ subscribeBlock.generalError $}
-        </div>
-        <paper-input
-          id="firstFieldInput"
-          on-touchend="_focus"
-          label="[[firstFieldLabel]]"
-          value="{{firstFieldValue}}"
-          autocomplete="off"
-        >
-        </paper-input>
-        <paper-input
-          id="secondFieldInput"
-          on-touchend="_focus"
-          label="[[secondFieldLabel]]"
-          value="{{secondFieldValue}}"
-          autocomplete="off"
-        >
-        </paper-input>
-        <paper-input
-          id="emailInput"
-          on-touchend="_focus"
-          label="{$ subscribeBlock.emailAddress $} *"
-          value="{{email}}"
-          required
-          auto-validate$="[[validate]]"
-          error-message="{$ subscribeBlock.emailRequired $}"
-          autocomplete="off"
-        >
-        </paper-input>
-        <div class="action-buttons" layout horizontal justified>
-          <paper-button class="close-button" on-click="_closeDialog"
-            >{$ subscribeBlock.close $}
-          </paper-button>
-
-          <paper-button
-            on-click="_subscribe"
-            ga-on="click"
-            ga-event-category="attendees"
-            ga-event-action="subscribe"
-            ga-event-label="subscribe block"
-            primary
+      <app-header-layout>
+        <app-header slot="header" class="header" fixed="[[viewport.is]">
+          <iron-icon class="close-icon" icon="hmi:arrow-left" on-tap="_close"></iron-icon>
+        </app-header>
+        <app-toolbar>
+          <div class="dialog-header" layout vertical>
+            <div class="header-content">[[title]]</div>
+            <div hidden$="[[!errorOccurred]]" class="general-error">
+              {$ daftarDialog.generalError $}
+            </div>
+          </div>
+        </app-toolbar>
+        <div class="dialog-container">
+          <paper-input
+            id="firstFieldInput"
+            on-touchend="_focus"
+            label="[[firstFieldLabel]]"
+            value="{{firstFieldValue}}"
+            autocomplete="off"
           >
-            [[submitLabel]]
-          </paper-button>
+          </paper-input>
+          <paper-input
+            id="secondFieldInput"
+            on-touchend="_focus"
+            label="[[secondFieldLabel]]"
+            value="{{secondFieldValue}}"
+            autocomplete="off"
+          >
+          </paper-input>
+          <paper-input
+            id="emailInput"
+            on-touchend="_focus"
+            label="{$ subscribeBlock.emailAddress $} *"
+            value="{{email}}"
+            required
+            auto-validate$="[[validate]]"
+            error-message="{$ subscribeBlock.emailRequired $}"
+            autocomplete="off"
+          >
+          </paper-input>
+          <div class="action-buttons" layout horizontal justified>
+            <paper-button class="close-button" on-click="_closeDialog"
+              >{$ subscribeBlock.close $}
+            </paper-button>
+
+            <paper-button
+              on-click="_subscribe"
+              ga-on="click"
+              ga-event-category="attendees"
+              ga-event-action="subscribe"
+              ga-event-label="subscribe block"
+              primary
+            >
+              [[submitLabel]]
+            </paper-button>
+          </div>
         </div>
-      </div>
+      </app-header-layout>
     `;
   }
 
   static get is() {
-    return 'subscribe-dialog';
+    return 'daftar-dialog';
   }
 
   static get properties() {
@@ -117,7 +126,7 @@ class SubscribeDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], P
       ui: {
         type: Object,
       },
-      subscribed: {
+      terdaftar: {
         type: Boolean,
       },
       validate: {
@@ -145,7 +154,7 @@ class SubscribeDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], P
 
   stateChanged(state: import('../../redux/store').State) {
     this.setProperties({
-      subscribed: state.subscribed,
+      terdaftar: state.terdaftar,
       ui: state.ui,
     });
   }
@@ -167,7 +176,7 @@ class SubscribeDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], P
   }
 
   _close() {
-    dialogsActions.closeDialog(DIALOGS.SUBSCRIBE);
+    dialogsActions.closeDialog(DIALOGS.DAFTAR);
   }
 
   _handleSubscribed(subscribed) {
@@ -212,7 +221,7 @@ class SubscribeDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], P
   }
 
   _closeDialog() {
-    dialogsActions.closeDialog(DIALOGS.SUBSCRIBE);
+    dialogsActions.closeDialog(DIALOGS.DAFTAR);
   }
 
   _prefillFields(userData) {
@@ -255,4 +264,4 @@ class SubscribeDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], P
   }
 }
 
-window.customElements.define(SubscribeDialog.is, SubscribeDialog);
+window.customElements.define(DaftarDialog.is, DaftarDialog);
