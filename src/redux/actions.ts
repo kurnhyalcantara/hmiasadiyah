@@ -803,7 +803,7 @@ export const userActions = {
 
 export const subscribeActions = {
   subscribe: (data) => (dispatch) => {
-    const id = data.firstField;
+    const id = data.firstFieldValue;
 
     window.firebase
       .firestore()
