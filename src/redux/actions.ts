@@ -803,16 +803,22 @@ export const userActions = {
 
 export const subscribeActions = {
   subscribe: (data) => (dispatch) => {
-    const id = data.email.replace(/[^\w\s]/gi, '');
+    const id = data.firstField;
 
     window.firebase
       .firestore()
-      .collection('subscribers')
+      .collection('pendaftar')
       .doc(id)
       .set({
         email: data.email,
-        firstName: data.firstFieldValue || '',
-        lastName: data.secondFieldValue || '',
+        namaLengkap: data.firstFieldValue || '',
+        tanggalLahir: data.secondFieldValue || '',
+        alamatTinggal: data.thirdFieldValue || '',
+        noWa: data.fourthFieldValue || '',
+        fakultas: data.fifthFieldValue || '',
+        prodi: data.sixthFieldValue || '',
+        semester: data.seventhFieldValue || '',
+        alasan: data.eigthFieldValue || '',
       })
       .then(() => {
         dispatch({
@@ -825,7 +831,7 @@ export const subscribeActions = {
         dispatch({
           type: SET_DIALOG_DATA,
           dialog: {
-            ['subscribe']: {
+            ['daftar']: {
               isOpened: true,
               data: Object.assign(data, { errorOccurred: true }),
             },
@@ -837,7 +843,7 @@ export const subscribeActions = {
           subscribed: false,
         });
 
-        helperActions.trackError('subscribeActions', 'subscribe', error);
+        helperActions.trackError('subscribeActions', 'daftar', error);
       });
   },
   resetSubscribed: () => {

@@ -29,6 +29,9 @@ jobs:
       - name: Installing Dependencencies
         run: npm ci
 
+      - name: Initializing Firestore
+        run: npm run firestore:init
+
       - name: Building the project
         run: npm run build
 

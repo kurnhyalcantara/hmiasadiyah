@@ -23,7 +23,6 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
 
         .dialog-header {
           width: 100%;
-          margin-bottom: 24px;
           padding: 32px 32px 16px;
           background: var(--primary-gradient);
           color: #fff;
@@ -56,16 +55,13 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
           color: var(--error-color);
         }
       </style>
-      <app-header-layout>
-        <app-header slot="header" class="header" fixed="[[viewport.is]">
+      <app-header-layout has-scrolling-region>
+        <app-header slot="header" class="header" fixed="[[viewport.isTabletPlus]]">
           <iron-icon class="close-icon" icon="hmi:arrow-left" on-tap="_close"></iron-icon>
         </app-header>
         <app-toolbar>
           <div class="dialog-header" layout vertical>
-            <div class="header-content">[[title]]</div>
-            <div hidden$="[[!errorOccurred]]" class="general-error">
-              {$ daftarDialog.generalError $}
-            </div>
+            <div class="header-content">[[description]]</div>
           </div>
         </app-toolbar>
         <div class="dialog-container">
@@ -82,6 +78,54 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
             on-touchend="_focus"
             label="[[secondFieldLabel]]"
             value="{{secondFieldValue}}"
+            autocomplete="off"
+          >
+          </paper-input>
+          <paper-input
+            id="thirdFieldInput"
+            on-touchend="_focus"
+            label="[[thirdFieldLabel]]"
+            value="{{thirdFieldValue}}"
+            autocomplete="off"
+          >
+          </paper-input>
+          <paper-input
+            id="fourthFieldInput"
+            on-touchend="_focus"
+            label="[[fourthFieldLabel]]"
+            value="{{fourthFieldValue}}"
+            autocomplete="off"
+          >
+          </paper-input>
+          <paper-input
+            id="fifthFieldInput"
+            on-touchend="_focus"
+            label="[[fifthFieldLabel]]"
+            value="{{fifthFieldValue}}"
+            autocomplete="off"
+          >
+          </paper-input>
+          <paper-input
+            id="sixthFieldInput"
+            on-touchend="_focus"
+            label="[[sixthFieldLabel]]"
+            value="{{sixthFieldValue}}"
+            autocomplete="off"
+          >
+          </paper-input>
+          <paper-input
+            id="seventhFieldInput"
+            on-touchend="_focus"
+            label="[[seventhFieldLabel]]"
+            value="{{seventhFieldValue}}"
+            autocomplete="off"
+          >
+          </paper-input>
+          <paper-input
+            id="eigthFieldInput"
+            on-touchend="_focus"
+            label="[[eigthFieldLabel]]"
+            value="{{eigthFieldValue}}"
             autocomplete="off"
           >
           </paper-input>
@@ -112,6 +156,9 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
               [[submitLabel]]
             </paper-button>
           </div>
+          <div hidden$="[[!errorOccurred]]" class="general-error" layout vertical center>
+            {$ subscribeBlock.generalError $}
+          </div>
         </div>
       </app-header-layout>
     `;
@@ -124,6 +171,9 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
   static get properties() {
     return {
       ui: {
+        type: Object,
+      },
+      viewport: {
         type: Object,
       },
       terdaftar: {
@@ -141,13 +191,26 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
         type: Boolean,
         value: false,
       },
-      secondFieldValue: String,
-      firstFieldValue: String,
       initialHeight: Number,
       title: String,
-      submitLabel: String,
+      description: String,
       firstFieldLabel: String,
       secondFieldLabel: String,
+      thirdFieldLabel: String,
+      fourthFieldLabel: String,
+      fifthFieldLabel: String,
+      sixthFieldLabel: String,
+      seventhFieldLabel: String,
+      eigthFieldLabel: String,
+      submitLabel: String,
+      firstFieldValue: String,
+      secondFieldValue: String,
+      thirdFieldValue: String,
+      fourthFieldValue: String,
+      fifthFieldValue: String,
+      sixthFieldValue: String,
+      seventhFieldValue: String,
+      eigthFieldValue: String,
       email: String,
     };
   }
@@ -156,6 +219,7 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
     this.setProperties({
       terdaftar: state.terdaftar,
       ui: state.ui,
+      viewport: state.ui.viewport,
     });
   }
 
@@ -192,10 +256,17 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
       data = {};
     }
 
-    this.title = data.title || '{$ subscribeBlock.formTitle $}';
-    this.submitLabel = data.submitLabel || ' {$ subscribeBlock.subscribe $}';
-    this.firstFieldLabel = data.firstFieldLabel || '{$ subscribeBlock.firstName $}';
-    this.secondFieldLabel = data.secondFieldLabel || '{$ subscribeBlock.lastName $}';
+    this.title = data.title || '{$ formPendaftaran.formTitle $}';
+    this.description = data.description || '{$ formPendaftaran.formDescription $}';
+    this.firstFieldLabel = data.firstField || '{$ formPendaftaran.namaLengkap $}';
+    this.secondFieldLabel = data.secondField || '{$ formPendaftaran.tanggalLahir $}';
+    this.thirdFieldLabel = data.thirdField || '{$ formPendaftaran.alamatTinggal $}';
+    this.fourthFieldLabel = data.fourthField || '{$ formPendaftaran.noWa $}';
+    this.fifthFieldLabel = data.fifthField || '{$ formPendaftaran.fakultas $}';
+    this.sixthFieldLabel = data.sixthField || '{$ formPendaftaran.prodi $}';
+    this.seventhFieldLabel = data.seventhField || '{$ formPendaftaran.semester $}';
+    this.eigthFieldLabel = data.eigthField || '{$ formPendaftaran.alasan $}';
+    this.submitLabel = data.submitLabel || ' {$ formPendaftaran.daftar $}';
     this._prefillFields(data);
   }
 
@@ -211,6 +282,12 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
       email: this.email,
       firstFieldValue: this.firstFieldValue,
       secondFieldValue: this.secondFieldValue,
+      thirdFieldValue: this.thirdFieldValue,
+      fourthFieldValue: this.fourthFieldValue,
+      fifthFieldValue: this.fifthFieldValue,
+      sixthFieldValue: this.sixthFieldValue,
+      seventhFieldValue: this.seventhFieldValue,
+      eigthFieldValue: this.eigthFieldValue,
     });
   }
 
@@ -228,13 +305,37 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
     this.validate = false;
     const firstField = this.shadowRoot.querySelector('#firstFieldInput');
     const secondField = this.shadowRoot.querySelector('#secondFieldInput');
+    const thirdField = this.shadowRoot.querySelector('#thirdFieldInput');
+    const fourthField = this.shadowRoot.querySelector('#fourthFieldInput');
+    const fifthField = this.shadowRoot.querySelector('#fifthFieldInput');
+    const sixthField = this.shadowRoot.querySelector('#sixthFieldInput');
+    const seventhField = this.shadowRoot.querySelector('#seventhFieldInput');
+    const eigthField = this.shadowRoot.querySelector('#eigthFieldInput');
     const emailInput = this.shadowRoot.querySelector('#emailInput');
-    firstField.value = userData ? userData.firstFieldValue : '';
-    secondField.value = userData ? userData.secondFieldValue : '';
+    firstField.value = '';
+    secondField.value = '';
+    thirdField.value = '';
+    fourthField.value = '';
+    fifthField.value = '';
+    sixthField.value = '';
+    seventhField.value = '';
+    eigthField.value = '';
     firstField.focus();
     firstField.blur();
     secondField.focus();
     secondField.blur();
+    thirdField.focus();
+    thirdField.blur();
+    fourthField.focus();
+    fourthField.blur();
+    fifthField.focus();
+    fifthField.blur();
+    sixthField.focus();
+    sixthField.blur();
+    seventhField.focus();
+    seventhField.blur();
+    eigthField.focus();
+    eigthField.blur();
     emailInput.blur();
     emailInput.value = '';
     emailInput.invalid = false;

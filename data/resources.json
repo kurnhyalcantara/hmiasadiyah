@@ -359,47 +359,18 @@
   },
 
   "formPendaftaran": {
-    "section1": {
-      "title": "Informasi Diri",
-      "fullName": "Nama Lengkap",
-      "birth": "Tempat Tanggal Lahir",
-      "gender": {
-        "label": "Jenis Kelamin",
-        "male": "Laki-laki",
-        "female": "Perempuan"
-      },
-      "address": "Alamat Tinggal Sekarang",
-      "phone": "No. WA"
-    },
-    "section2": {
-      "title": "Latar Belakang Studi",
-      "university": {
-        "label": "Universitas/Institut/ST",
-        "value": "Institut Agama Islam As'adiyah Sengkang"
-      },
-      "faculty": {
-        "label": "Fakultas",
-        "ftk": "Tarbiyah dan Keguruan",
-        "fsh": "Syariah dan Hukum",
-        "afi": "Akidah Filsafat Islam"
-      },
-      "into": "Angkatan/Tahun Masuk"
-    },
-    "section3": {
-      "title": "Pengalaman Organisasi",
-      "sma": {
-        "title": "Ketika SMA/MA",
-        "label": "Nama Organisasi dan Jabatan"
-      },
-      "kampus": {
-        "title": "Saat ini (di kampus)",
-        "label": "Nama Organisasi dan Jabatan"
-      }
-    },
-    "section4": {
-      "title": "Ke-HMI-an",
-      "reason": "Alasan (Motivasi) saya masuk HMI"
-    }
+    "formTitle": "Formulir Pendaftaran",
+    "formDescription": "Dengan mengucapkan BISMILLAHIRRAHMANIRRAHIM, bahwa apa yang saya isi dalam formulir adalah BENAR adanya, dan siap mematuhi Anggaran Dasar dan Anggaran Rumah Tangga serta ketentuan-ketentuan yang berlaku di HMI",
+    "namaLengkap": "Nama Lengkap",
+    "tanggalLahir": "Tempat Tanggal Lahir",
+    "alamatTinggal": "Alamat Tinggal Sekarang",
+    "noWa": "Nomor WA Aktif",
+    "fakultas": "Fakultas",
+    "prodi": "Program Studi",
+    "semester": "Semester",
+    "alasan": "Alasan saya masuk HMI",
+    "daftar": "Daftar",
+    "close": "Batal"
   },
 
   "mySchedule": {

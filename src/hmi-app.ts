@@ -43,7 +43,6 @@ import './pages/profile-page';
 import './pages/news-page';
 import './pages/opini-page';
 import './pages/schedule-page';
-import './pages/daftar-page';
 import {
   notificationsActions,
   routingActions,
@@ -220,8 +219,7 @@ class HMIApp extends ReduxMixin(PolymerElement) {
               <a
                 class="bottom-drawer-link"
                 rel="noopener noreferrer"
-                href="/daftar"
-                on-tap="closeDrawer"
+                on-click="_daftarDialog"
                 layout
                 horizontal
                 center
@@ -249,7 +247,6 @@ class HMIApp extends ReduxMixin(PolymerElement) {
             <news-page name="news" route="[[subRoute]]"></news-page>
             <opini-page name="opini" route="[[subRoute]]"></opini-page>
             <schedule-page name="schedule" route="[[subRoute]]"></schedule-page>
-            <daftar-page name="daftar"></daftar-page>
           </iron-pages>
         </app-header-layout>
       </app-drawer-layout>
@@ -493,7 +490,7 @@ class HMIApp extends ReduxMixin(PolymerElement) {
     });
   }
 
-  _daftarHmi() {
+  _daftarDialog() {
     this.closeDrawer();
     let userData: {
       firstFieldValue?: string;
@@ -512,12 +509,17 @@ class HMIApp extends ReduxMixin(PolymerElement) {
       this._subscribeAction(Object.assign({}, { email: this.user.email }, userData));
     } else {
       dialogsActions.openDialog(DIALOGS.DAFTAR, {
-        title: '{$ subscribeBlock.formTitle $}',
-        submitLabel: ' {$ subscribeBlock.subscribe $}',
-        firstFieldLabel: '{$ subscribeBlock.firstName $}',
-        secondFieldLabel: '{$ subscribeBlock.lastName $}',
-        firstFieldValue: userData.firstFieldValue,
-        secondFieldValue: userData.secondFieldValue,
+        title: '{$ formPendaftaran.formTitle $}',
+        description: '{$ formPendaftaran.formDescription $}',
+        firstField: '{$ formPendaftaran.namaLengkap $}',
+        secondField: '{$ formPendaftaran.tanggalLahir $}',
+        thirdField: '{$ formPendaftaran.alamatTInggal $}',
+        fourthField: '{$ formPendaftaran.noWa $}',
+        fifthField: '{$ formPendaftaran.fakultas $}',
+        sixthField: '{$ formPendaftaran.prodi $}',
+        seventhField: '{$ formPendaftaran.semester $}',
+        eigthField: '{$ formPendaftaran.alasan $}',
+        submitLabel: ' {$ formPendaftaran.daftar $}',
         submit: (data) => this._subscribeAction(data),
       });
     }

@@ -32,7 +32,7 @@ documentContainer.innerHTML = `<dom-module id="dialog-styles">
       }
 
       .close-icon {
-        margin: 12px 24px 24px;
+        margin: 16px 18px;
         cursor: pointer;
       }
 
@@ -47,6 +47,7 @@ documentContainer.innerHTML = `<dom-module id="dialog-styles">
 
       .header-content {
         position: relative;
+        font-size: 18px;
       }
 
       .name {

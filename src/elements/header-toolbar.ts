@@ -175,7 +175,7 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
             ga-event-category="daftar button"
             ga-event-action="daftar_click"
           >
-            <paper-button class="signup-button" on-tap="_daftarHmi" primary
+            <paper-button class="signup-button" on-tap="_daftarDialog" primary
               >{$ signUp $}</paper-button
             >
           </a>
