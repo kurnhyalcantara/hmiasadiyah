@@ -1,7 +1,7 @@
 import '@polymer/paper-input/paper-input';
 import { html, PolymerElement } from '@polymer/polymer';
 import { ReduxMixin } from '../mixins/redux-mixin';
-import { subscribeActions } from '../redux/actions';
+import { daftarActions } from '../redux/actions';
 import { store } from '../redux/store';
 import './hmi-icons';
 import './shared-styles';
@@ -118,7 +118,7 @@ class SubscribeFormFooter extends ReduxMixin(PolymerElement) {
     >('#emailInput');
 
     if (!this.subscribed && emailInput.validate()) {
-      store.dispatch(subscribeActions.subscribe({ email: this.email }));
+      store.dispatch(daftarActions.subscribe({ email: this.email }));
     }
   }
 

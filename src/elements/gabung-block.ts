@@ -2,7 +2,7 @@ import '@polymer/iron-icon';
 import '@polymer/paper-button';
 import { html, PolymerElement } from '@polymer/polymer';
 import { ReduxMixin } from '../mixins/redux-mixin';
-import { dialogsActions, subscribeActions } from '../redux/actions';
+import { dialogsActions, daftarActions } from '../redux/actions';
 import { DIALOGS } from '../redux/constants';
 import { store } from '../redux/store';
 import './hmi-icons';
@@ -61,7 +61,7 @@ class GabungBlock extends ReduxMixin(PolymerElement) {
         <div>
           <paper-button
             class="animated icon-right"
-            disabled$="[[subscribed]]"
+            disabled$="[[terdaftar]]"
             on-click="_subscribe"
             ga-on="click"
             ga-event-category="attendees"
@@ -83,7 +83,7 @@ class GabungBlock extends ReduxMixin(PolymerElement) {
 
   private user: { signedIn?: boolean; email?: string; displayName?: string } = {};
   private viewport = {};
-  private subscribed = false;
+  private terdaftar = false;
   private ctaIcon = 'arrow-right-circle';
   private ctaLabel = '{$  subscribeBlock.callToAction.label $}';
 
@@ -95,7 +95,7 @@ class GabungBlock extends ReduxMixin(PolymerElement) {
       viewport: {
         type: Object,
       },
-      subscribed: {
+      terdaftar: {
         type: Boolean,
         observer: '_handleSubscribed',
       },
@@ -112,16 +112,16 @@ class GabungBlock extends ReduxMixin(PolymerElement) {
 
   stateChanged(state: import('../redux/store').State) {
     this.setProperties({
-      subscribed: state.subscribed,
+      terdaftar: state.terdaftar,
       user: state.user,
       viewport: state.ui.viewport,
     });
   }
 
-  _handleSubscribed(subscribed) {
-    if (subscribed) {
+  _handleSubscribed(terdaftar) {
+    if (terdaftar) {
       this.ctaIcon = 'checked';
-      this.ctaLabel = '{$  subscribeBlock.subscribed $}';
+      this.ctaLabel = '{$  subscribeBlock.terdaftar $}';
     } else {
       this.ctaIcon = 'arrow-right-circle';
       this.ctaLabel = '{$  subscribeBlock.callToAction.label $}';
@@ -145,7 +145,7 @@ class GabungBlock extends ReduxMixin(PolymerElement) {
     if (this.user.email) {
       this._subscribeAction(Object.assign({}, { email: this.user.email }, userData));
     } else {
-      dialogsActions.openDialog(DIALOGS.SUBSCRIBE, {
+      dialogsActions.openDialog(DIALOGS.DAFTAR, {
         title: '{$ subscribeBlock.formTitle $}',
         submitLabel: ' {$ subscribeBlock.subscribe $}',
         firstFieldLabel: '{$ subscribeBlock.firstName $}',
@@ -158,7 +158,7 @@ class GabungBlock extends ReduxMixin(PolymerElement) {
   }
 
   _subscribeAction(data) {
-    store.dispatch(subscribeActions.subscribe(data));
+    store.dispatch(daftarActions.subscribe(data));
   }
 }
 

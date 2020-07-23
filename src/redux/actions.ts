@@ -796,12 +796,12 @@ export const userActions = {
       .signOut()
       .then(() => {
         helperActions.storeUser();
-        subscribeActions.resetSubscribed();
+        daftarActions.resetSubscribed();
       });
   },
 };
 
-export const subscribeActions = {
+export const daftarActions = {
   subscribe: (data) => (dispatch) => {
     const id = data.firstFieldValue;
 
@@ -825,7 +825,7 @@ export const subscribeActions = {
           type: DAFTAR,
           subscribed: true,
         });
-        toastActions.showToast({ message: '{$ subscribeBlock.toast $}' });
+        toastActions.showToast({ message: '{$ formPendaftaran.toast $}' });
       })
       .catch((error) => {
         dispatch({
@@ -843,7 +843,7 @@ export const subscribeActions = {
           subscribed: false,
         });
 
-        helperActions.trackError('subscribeActions', 'daftar', error);
+        helperActions.trackError('daftarActions', 'daftar', error);
       });
   },
   resetSubscribed: () => {

@@ -57,7 +57,7 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
       </style>
       <app-header-layout has-scrolling-region>
         <app-header slot="header" class="header" fixed="[[viewport.isTabletPlus]]">
-          <iron-icon class="close-icon" icon="hmi:arrow-left" on-tap="_close"></iron-icon>
+          <iron-icon class="close-icon" icon="hmi:close" on-tap="_close"></iron-icon>
         </app-header>
         <app-toolbar>
           <div class="dialog-header" layout vertical>
@@ -132,32 +132,32 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
           <paper-input
             id="emailInput"
             on-touchend="_focus"
-            label="{$ subscribeBlock.emailAddress $} *"
+            label="{$ formPendaftaran.emailAddress $} *"
             value="{{email}}"
             required
             auto-validate$="[[validate]]"
-            error-message="{$ subscribeBlock.emailRequired $}"
-            autocomplete="off"
+            error-message="{$ formPendaftaran.emailRequired $}"
+            autocomplete="on"
           >
           </paper-input>
           <div class="action-buttons" layout horizontal justified>
             <paper-button class="close-button" on-click="_closeDialog"
-              >{$ subscribeBlock.close $}
+              >{$ formPendaftaran.close $}
             </paper-button>
 
             <paper-button
-              on-click="_subscribe"
+              on-click="_daftar"
               ga-on="click"
-              ga-event-category="attendees"
-              ga-event-action="subscribe"
-              ga-event-label="subscribe block"
+              ga-event-category="pendaftaran"
+              ga-event-action="klik daftar"
+              ga-event-label="daftar block"
               primary
             >
               [[submitLabel]]
             </paper-button>
           </div>
-          <div hidden$="[[!errorOccurred]]" class="general-error" layout vertical center>
-            {$ subscribeBlock.generalError $}
+          <div class="general-error" hidden="[[!errorOccurred]]">
+            {$ formPendaftaran.generalError $}
           </div>
         </div>
       </app-header-layout>
@@ -224,7 +224,7 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
   }
 
   static get observers() {
-    return ['_handleDialogToggled(opened, data)', '_handleSubscribed(subscribed)'];
+    return ['_handleDialogToggled(opened, data)', '_handleTerdaftar(terdaftar)'];
   }
 
   ready() {
@@ -235,16 +235,16 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
   constructor() {
     super();
     this.addEventListener('iron-overlay-canceled', this._close);
-    // this.addEventListener('iron-resize', this._resize);
-    // window.addEventListener('resize', this._windowResize.bind(this));
+    this.addEventListener('iron-resize', this._resize);
+    window.addEventListener('resize', this._windowResize.bind(this));
   }
 
   _close() {
     dialogsActions.closeDialog(DIALOGS.DAFTAR);
   }
 
-  _handleSubscribed(subscribed) {
-    if (subscribed) {
+  _handleTerdaftar(terdaftar) {
+    if (terdaftar) {
       this._closeDialog();
     }
   }
@@ -270,7 +270,7 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
     this._prefillFields(data);
   }
 
-  _subscribe() {
+  _daftar() {
     const emailInput = this.shadowRoot.querySelector('#emailInput');
 
     if (!emailInput.validate() || !this._validateEmail(emailInput.value)) {
@@ -312,7 +312,7 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
     const seventhField = this.shadowRoot.querySelector('#seventhFieldInput');
     const eigthField = this.shadowRoot.querySelector('#eigthFieldInput');
     const emailInput = this.shadowRoot.querySelector('#emailInput');
-    firstField.value = '';
+    firstField.value = userData ? userData.firstFieldValue : '';
     secondField.value = '';
     thirdField.value = '';
     fourthField.value = '';
@@ -346,23 +346,23 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
     e.target.focus();
   }
 
-  // _windowResize() {
-  //   this.keyboardOpened = this.ui.viewport.isPhone && window.innerHeight < this.initialHeight - 100;
-  // }
+  _windowResize() {
+    this.keyboardOpened = this.ui.viewport.isPhone && window.innerHeight < this.initialHeight - 100;
+  }
 
-  // _resize(e) {
-  //   if (this.keyboardOpened) {
-  //     const header = this.shadowRoot.querySelector('.dialog-header');
-  //     const headerHeight = header.offsetHeight;
+  _resize(e) {
+    if (this.keyboardOpened) {
+      const header = this.shadowRoot.querySelector('.dialog-header');
+      const headerHeight = header.offsetHeight;
 
-  //     setTimeout(() => {
-  //       requestAnimationFrame(() => {
-  //         this.style.maxHeight = `${this.initialHeight}px`;
-  //         this.style.top = `-${headerHeight}px`;
-  //       });
-  //     }, 10);
-  //   }
-  // }
+      setTimeout(() => {
+        requestAnimationFrame(() => {
+          this.style.maxHeight = `${this.initialHeight}px`;
+          this.style.top = `-${headerHeight}px`;
+        });
+      }, 10);
+    }
+  }
 }
 
 window.customElements.define(DaftarDialog.is, DaftarDialog);

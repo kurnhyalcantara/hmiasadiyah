@@ -370,7 +370,11 @@
     "semester": "Semester",
     "alasan": "Alasan saya masuk HMI",
     "daftar": "Daftar",
-    "close": "Batal"
+    "close": "Batal",
+    "toast": "Pendaftaran Sukses :)",
+    "generalError": "Terjadi Error, silahkan coba lain kali :(",
+    "emailAddress": "Email",
+    "emailRequired": "Email wajib dimasukkan"
   },
 
   "mySchedule": {

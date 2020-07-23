@@ -50,7 +50,7 @@ import {
   uiActions,
   userActions,
   dialogsActions,
-  subscribeActions,
+  daftarActions,
 } from './redux/actions';
 import { DIALOGS } from './redux/constants';
 import { store } from './redux/store';
@@ -492,41 +492,24 @@ class HMIApp extends ReduxMixin(PolymerElement) {
 
   _daftarDialog() {
     this.closeDrawer();
-    let userData: {
-      firstFieldValue?: string;
-      secondFieldValue?: string;
-    } = {};
-
-    if (this.user.signedIn) {
-      const fullNameSplit = this.user.displayName.split(' ');
-      userData = {
-        firstFieldValue: fullNameSplit[0],
-        secondFieldValue: fullNameSplit[1],
-      };
-    }
-
-    if (this.user.email) {
-      this._subscribeAction(Object.assign({}, { email: this.user.email }, userData));
-    } else {
-      dialogsActions.openDialog(DIALOGS.DAFTAR, {
-        title: '{$ formPendaftaran.formTitle $}',
-        description: '{$ formPendaftaran.formDescription $}',
-        firstField: '{$ formPendaftaran.namaLengkap $}',
-        secondField: '{$ formPendaftaran.tanggalLahir $}',
-        thirdField: '{$ formPendaftaran.alamatTInggal $}',
-        fourthField: '{$ formPendaftaran.noWa $}',
-        fifthField: '{$ formPendaftaran.fakultas $}',
-        sixthField: '{$ formPendaftaran.prodi $}',
-        seventhField: '{$ formPendaftaran.semester $}',
-        eigthField: '{$ formPendaftaran.alasan $}',
-        submitLabel: ' {$ formPendaftaran.daftar $}',
-        submit: (data) => this._subscribeAction(data),
-      });
-    }
+    dialogsActions.openDialog(DIALOGS.DAFTAR, {
+      title: '{$ formPendaftaran.formTitle $}',
+      description: '{$ formPendaftaran.formDescription $}',
+      firstField: '{$ formPendaftaran.namaLengkap $}',
+      secondField: '{$ formPendaftaran.tanggalLahir $}',
+      thirdField: '{$ formPendaftaran.alamatTInggal $}',
+      fourthField: '{$ formPendaftaran.noWa $}',
+      fifthField: '{$ formPendaftaran.fakultas $}',
+      sixthField: '{$ formPendaftaran.prodi $}',
+      seventhField: '{$ formPendaftaran.semester $}',
+      eigthField: '{$ formPendaftaran.alasan $}',
+      submitLabel: ' {$ formPendaftaran.daftar $}',
+      submit: (data) => this._daftarAction(data),
+    });
   }
 
-  _subscribeAction(data) {
-    store.dispatch(subscribeActions.subscribe(data));
+  _daftarAction(data) {
+    store.dispatch(daftarActions.subscribe(data));
   }
 }
 
