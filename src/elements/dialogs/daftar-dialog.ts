@@ -235,8 +235,8 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
   constructor() {
     super();
     this.addEventListener('iron-overlay-canceled', this._close);
-    this.addEventListener('iron-resize', this._resize);
-    window.addEventListener('resize', this._windowResize.bind(this));
+    // this.addEventListener('iron-resize', this._resize);
+    // window.addEventListener('resize', this._windowResize.bind(this));
   }
 
   _close() {
@@ -346,23 +346,23 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
     e.target.focus();
   }
 
-  _windowResize() {
-    this.keyboardOpened = this.ui.viewport.isPhone && window.innerHeight < this.initialHeight - 100;
-  }
+  // _windowResize() {
+  //   this.keyboardOpened = this.ui.viewport.isPhone && window.innerHeight < this.initialHeight - 100;
+  // }
 
-  _resize(e) {
-    if (this.keyboardOpened) {
-      const header = this.shadowRoot.querySelector('.dialog-header');
-      const headerHeight = header.offsetHeight;
+  // _resize(e) {
+  //   if (this.keyboardOpened) {
+  //     const header = this.shadowRoot.querySelector('.dialog-header');
+  //     const headerHeight = header.offsetHeight;
 
-      setTimeout(() => {
-        requestAnimationFrame(() => {
-          this.style.maxHeight = `${this.initialHeight}px`;
-          this.style.top = `-${headerHeight}px`;
-        });
-      }, 10);
-    }
-  }
+  //     setTimeout(() => {
+  //       requestAnimationFrame(() => {
+  //         this.style.maxHeight = `${this.initialHeight}px`;
+  //         this.style.top = `-${headerHeight}px`;
+  //       });
+  //     }, 10);
+  //   }
+  // }
 }
 
 window.customElements.define(DaftarDialog.is, DaftarDialog);
