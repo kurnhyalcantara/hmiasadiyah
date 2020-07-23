@@ -74,11 +74,16 @@ class FeaturedVideos extends ReduxMixin(PolymerElement) {
         .video-title {
           margin: 8px;
           font-family: var(--font-family);
-          color: var(--secondary-text-color);
+          color: var(--primary-text-color);
         }
 
         .cta-button {
           margin-top: 24px;
+        }
+
+        paper-button[stroke] {
+          color: var(--default-primary-color);
+          border: 1px solid var(--default-primary-color);
         }
 
         @media (min-width: 640px) {
@@ -154,10 +159,7 @@ class FeaturedVideos extends ReduxMixin(PolymerElement) {
                       fade
                       fit
                     ></plastic-image>
-                    <paper-icon-button
-                      class="video-play-icon"
-                      icon="hmi:
-                    ></paper-icon-button>
+                    <paper-icon-button class="video-play-icon" icon="hmi:play"></paper-icon-button>
                   </div>
                   <h4 class="video-title">[[block.title]]</h4>
                 </div>

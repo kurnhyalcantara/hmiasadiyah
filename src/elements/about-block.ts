@@ -48,7 +48,13 @@ class AboutBlock extends ReduxMixin(PolymerElement) {
         <div class="container-title" layout vertical center>{$ aboutHmi.title $}</div>
         <div class="content">
           <div class="content-align">
-            <plastic-image srcset="/images/logos/about-logo.png" alt="{$ title $}"></plastic-image>
+            <plastic-image
+              srcset="{$ aboutHmi.logo $}"
+              alt="{$ title $}"
+              lazy-load
+              preload
+              fade
+            ></plastic-image>
           </div>
           <div class="content-align">
             <div class="content-text">{$ aboutHmi.content $}</div>
@@ -60,7 +66,12 @@ class AboutBlock extends ReduxMixin(PolymerElement) {
             </a>
           </div>
           <div class="content-align">
-            <plastic-image srcset="{$ aboutHmi.pendiri.image $}"></plastic-image>
+            <plastic-image
+              srcset="{$ aboutHmi.pendiri.image $}"
+              lazy-load
+              preload
+              fade
+            ></plastic-image>
             <h3><strong>{$ aboutHmi.pendiri.name $}</strong></h3>
             <div>{$ aboutHmi.pendiri.desc $}</div>
           </div>

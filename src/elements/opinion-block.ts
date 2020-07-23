@@ -18,7 +18,7 @@ class OpinionBlock extends ReduxMixin(PolymerElement) {
           display: block;
         }
 
-        .posts-wrapper {
+        .opini-wrapper {
           display: grid;
           grid-template-columns: 1fr;
           grid-gap: 16px;
@@ -62,21 +62,21 @@ class OpinionBlock extends ReduxMixin(PolymerElement) {
         }
 
         @media (min-width: 640px) {
-          .posts-wrapper {
+          .opini-wrapper {
             grid-template-columns: repeat(3, 1fr);
           }
 
-          .post:last-of-type {
+          .opini:last-of-type {
             display: none;
           }
         }
 
         @media (min-width: 812px) {
-          .posts-wrapper {
+          .opini-wrapper {
             grid-template-columns: repeat(4, 1fr);
           }
 
-          .post:last-of-type {
+          .opini:last-of-type {
             display: flex;
           }
         }
@@ -84,23 +84,23 @@ class OpinionBlock extends ReduxMixin(PolymerElement) {
 
       <div class="container">
         <div class="container-title">{$ opiniBlock.title $}</div>
-        <div class="posts-wrapper">
-          <template is="dom-repeat" items="[[posts]]" as="post">
+        <div class="opini-wrapper">
+          <template is="dom-repeat" items="[[opini]]" as="opini">
             <a
-              href$="/opini/posts/[[post.id]]/"
-              class="post card"
+              href$="/opini/posts/[[opini.id]]/"
+              class="opini card"
               ga-on="click"
               ga-event-category="blog"
-              ga-event-action="open post"
-              ga-event-label$="[[post.title]]"
+              ga-event-action="open opini"
+              ga-event-label$="[[opini.title]]"
               flex
               layout
               vertical
             >
               <plastic-image
                 class="image"
-                srcset="[[post.image]]"
-                style$="background-color: [[post.backgroundColor]];"
+                srcset="[[opini.image]]"
+                style$="background-color: [[opini.backgroundColor]];"
                 sizing="cover"
                 lazy-load
                 preload
@@ -109,15 +109,15 @@ class OpinionBlock extends ReduxMixin(PolymerElement) {
               <div class="details" layout vertical justified flex-auto>
                 <div>
                   <text-truncate lines="2">
-                    <h3 class="title">[[post.title]]</h3>
+                    <h3 class="title">[[opini.title]]</h3>
                   </text-truncate>
                   <text-truncate lines="3">
-                    <marked-element class="description" markdown="[[post.brief]]">
+                    <marked-element class="description" markdown="[[opini.brief]]">
                       <div slot="markdown-html"></div>
                     </marked-element>
                   </text-truncate>
                 </div>
-                <div class="date">[[getDate(post.published)]]</div>
+                <div class="date">[[getDate(opini.published)]]</div>
               </div>
             </a>
           </template>
@@ -138,42 +138,42 @@ class OpinionBlock extends ReduxMixin(PolymerElement) {
   }
 
   private viewport = {};
-  private posts = [];
-  private postsList = [];
-  private postsFetching = false;
-  private postsFetchingError = {};
+  private opini = [];
+  private opiniList = [];
+  private opiniFetching = false;
+  private opiniFetchingError = {};
 
   static get properties() {
     return {
       viewport: Object,
-      posts: Array,
-      postsList: {
+      opini: Array,
+      opiniList: {
         type: Array,
         observer: '_transformPosts',
       },
-      postsFetching: Boolean,
-      postsFetchingError: Object,
+      opiniFetching: Boolean,
+      opiniFetchingError: Object,
     };
   }
 
   stateChanged(state: import('../redux/store').State) {
     return this.setProperties({
       viewport: state.ui.viewport,
-      postsList: state.opini.list,
-      postsFetching: state.opini.fetching,
-      postsFetchingError: state.opini.fetchingError,
+      opiniList: state.opini.list,
+      opiniFetching: state.opini.fetching,
+      opiniFetchingError: state.opini.fetchingError,
     });
   }
 
   connectedCallback() {
     super.connectedCallback();
-    if (!this.postsFetching && (!this.postsList || !this.postsList.length)) {
+    if (!this.opiniFetching && (!this.opiniList || !this.opiniList.length)) {
       store.dispatch(opiniActions.fetchList());
     }
   }
 
-  _transformPosts(postsList) {
-    this.set('posts', postsList.slice(0, 4));
+  _transformPosts(opiniList) {
+    this.set('opini', opiniList.slice(0, 2));
   }
 
   getDate(date) {

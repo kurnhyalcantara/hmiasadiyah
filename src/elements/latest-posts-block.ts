@@ -173,7 +173,7 @@ class LatestPostsBlock extends ReduxMixin(PolymerElement) {
   }
 
   _transformPosts(postsList) {
-    this.set('posts', postsList.slice(0, 4));
+    this.set('posts', postsList.slice(0, 2));
   }
 
   getDate(date) {

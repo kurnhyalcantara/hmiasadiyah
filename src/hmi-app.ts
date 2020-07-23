@@ -43,6 +43,7 @@ import './pages/profile-page';
 import './pages/news-page';
 import './pages/opini-page';
 import './pages/schedule-page';
+import './pages/pengkaderan-page';
 import {
   notificationsActions,
   routingActions,
@@ -247,6 +248,7 @@ class HMIApp extends ReduxMixin(PolymerElement) {
             <news-page name="news" route="[[subRoute]]"></news-page>
             <opini-page name="opini" route="[[subRoute]]"></opini-page>
             <schedule-page name="schedule" route="[[subRoute]]"></schedule-page>
+            <pengkaderan-page name="pengkaderan"></pengkaderan-page>
           </iron-pages>
         </app-header-layout>
       </app-drawer-layout>

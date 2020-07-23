@@ -32,11 +32,6 @@ class GabungBlock extends ReduxMixin(PolymerElement) {
           text-align: center;
         }
 
-        paper-button[disabled] {
-          background: var(--default-primary-color);
-          color: #fff;
-        }
-
         @media (min-width: 640px) {
           :host {
             padding: 32px 0;
@@ -54,7 +49,7 @@ class GabungBlock extends ReduxMixin(PolymerElement) {
       </style>
 
       <div class="container" layout vertical center>
-        <plastic-image class="images" srcset="/images/action-hmi.png"></plastic-image>
+        <plastic-image class="images" srcset="{$ gabungBlock.image $}"></plastic-image>
         <div class="description">
           {$ gabungBlock.callToAction.description $}
         </div>
@@ -62,11 +57,11 @@ class GabungBlock extends ReduxMixin(PolymerElement) {
           <paper-button
             class="animated icon-right"
             disabled$="[[terdaftar]]"
-            on-click="_subscribe"
+            on-click="_daftar"
             ga-on="click"
-            ga-event-category="attendees"
-            ga-event-action="subscribe"
-            ga-event-label="subscribe block"
+            ga-event-category="pendaftar"
+            ga-event-action="daftar"
+            ga-event-label="daftar block"
             stroke
           >
             <span class="cta-label">{$ gabungBlock.callToAction.label $}</span>
@@ -128,36 +123,17 @@ class GabungBlock extends ReduxMixin(PolymerElement) {
     }
   }
 
-  _subscribe() {
-    let userData: {
-      firstFieldValue?: string;
-      secondFieldValue?: string;
-    } = {};
-
-    if (this.user.signedIn) {
-      const fullNameSplit = this.user.displayName.split(' ');
-      userData = {
-        firstFieldValue: fullNameSplit[0],
-        secondFieldValue: fullNameSplit[1],
-      };
-    }
-
-    if (this.user.email) {
-      this._subscribeAction(Object.assign({}, { email: this.user.email }, userData));
-    } else {
-      dialogsActions.openDialog(DIALOGS.DAFTAR, {
-        title: '{$ subscribeBlock.formTitle $}',
-        submitLabel: ' {$ subscribeBlock.subscribe $}',
-        firstFieldLabel: '{$ subscribeBlock.firstName $}',
-        secondFieldLabel: '{$ subscribeBlock.lastName $}',
-        firstFieldValue: userData.firstFieldValue,
-        secondFieldValue: userData.secondFieldValue,
-        submit: (data) => this._subscribeAction(data),
-      });
-    }
+  _daftar() {
+    dialogsActions.openDialog(DIALOGS.DAFTAR, {
+      title: '{$ subscribeBlock.formTitle $}',
+      submitLabel: ' {$ subscribeBlock.subscribe $}',
+      firstFieldLabel: '{$ subscribeBlock.firstName $}',
+      secondFieldLabel: '{$ subscribeBlock.lastName $}',
+      submit: (data) => this._daftarAction(data),
+    });
   }
 
-  _subscribeAction(data) {
+  _daftarAction(data) {
     store.dispatch(daftarActions.subscribe(data));
   }
 }

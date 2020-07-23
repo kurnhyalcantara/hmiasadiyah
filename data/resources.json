@@ -25,18 +25,20 @@
   "country": "Country",
   "time": "Time",
   "faq": "/data/faq.md",
-  "coc": "/data/coc.md",
+  "brosurPengkaderan": "https://firebasestorage.googleapis.com/v0/b/hmi-asadiyah.appspot.com/o/mix%2Fbrosur.jpg?alt=media&token=3ab9be54-769f-4795-a993-bd97ac73b8fd",
+  "noPengkaderan": "Dalam waktu dekat ini, tidak ada agenda pengkaderan",
   "timezoneOffset": "-180",
   "loginLabel": "Login",
   "aboutHmi": {
     "title": "Apa itu HMI?",
     "content": "Himpunan Mahasiswa Islam atau HMI adalah salah satu organisasi mahasiswa islam terbesar dan tertua di Indonesia yang lahir pada tanggal 5 Februari 1947 membawa gagasan kemahasiswaan yang bernafaskan Islam serta menghimpun segenap mahasiswa islam dari berbagai golongan dengan tujuan terwujudnya masyarakat adil makmur yang diridhoi Allah Swt.",
+    "logo": "https://firebasestorage.googleapis.com/v0/b/hmi-asadiyah.appspot.com/o/mix%2Fabout-logo.png?alt=media&token=fda04f76-bbcb-4350-aac5-cb347901f181",
     "selengkapnya": {
       "label": "Selengkapnya",
       "link": "/profile/"
     },
     "pendiri": {
-      "image": "/images/lafran-pane.png",
+      "image": "https://firebasestorage.googleapis.com/v0/b/hmi-asadiyah.appspot.com/o/mix%2Flafran-pane.png?alt=media&token=1289a6ed-0921-44cc-8769-792624dd0887",
       "name": "Prof. Lafran Pane",
       "desc": "Pendiri HMI"
     }
@@ -77,16 +79,19 @@
       {
         "name": "Syamsuddin Sapa",
         "job": "Pengajar / Ketua Umum HMI Cabang Wajo 2009-2011",
-        "testi": "Bagi saya masuk HMI saat mahasiswa membuat saya lebih percaya diri, senang berorganisasi, luas pergaulan, belajar memimpin, kreatif dan mampu meraih prestasi. HMI adalah wadah mencipitakan individu-individu yang berprestasi di bidangnya masing-masing"
+        "testi": "Bagi saya masuk HMI saat mahasiswa membuat saya lebih percaya diri, senang berorganisasi, luas pergaulan, belajar memimpin, kreatif dan mampu meraih prestasi. HMI adalah wadah mencipitakan individu-individu yang berprestasi di bidangnya masing-masing",
+        "image": "https://firebasestorage.googleapis.com/v0/b/hmi-asadiyah.appspot.com/o/testi%2Fsyam-sapa.png?alt=media&token=8e3edaa9-0ffa-4db4-98d3-d2f5d0828657"
       },
       {
         "name": "Syamsuddin",
         "job": "Dosen IAI As'adiyah",
-        "testi": "HMI punya andil besar membentuk karakter saya. Termasuk membentuk karakter berakhlak mulia serta membangun wawasan luas tentang keilmuan dan keislaman"
+        "testi": "HMI punya andil besar membentuk karakter saya. Termasuk membentuk karakter berakhlak mulia serta membangun wawasan luas tentang keilmuan dan keislaman",
+        "image": "https://firebasestorage.googleapis.com/v0/b/hmi-asadiyah.appspot.com/o/testi%2Fsyam-bugisy.png?alt=media&token=19c4f775-251e-4170-8379-1904b875d0b6"
       }
     ]
   },
   "gabungBlock": {
+    "image": "https://firebasestorage.googleapis.com/v0/b/hmi-asadiyah.appspot.com/o/mix%2Faction-hmi.png?alt=media&token=4869bc49-ee54-40d4-acaf-7fa8fd4f8c39",
     "callToAction": {
       "description": "Mari bergabung di HMI menjadi pejuang agama dan bangsa",
       "label": "Form Pendaftaran"

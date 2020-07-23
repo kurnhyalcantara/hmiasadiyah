@@ -36,7 +36,7 @@ class HomePage extends ReduxMixin(PolymerElement) {
         .info-items {
           margin: 24px auto;
           font-size: 22px;
-          font-style: bolder;
+          font-weight: bolder;
         }
 
         .info-items > *:not(:first-of-type) {
@@ -125,7 +125,6 @@ class HomePage extends ReduxMixin(PolymerElement) {
           .info-items {
             margin: 48px auto;
             font-size: 28px;
-            line-height: 1.1;
           }
         }
       </style>
@@ -151,12 +150,12 @@ class HomePage extends ReduxMixin(PolymerElement) {
             <div class="info-item">{$ heroSettings.home.description2 $}</div>
           </div>
 
-          <div class="action-buttons" layout horizontal center-justified wrap>
-            <paper-button on-tap="_showInfo" primary invert>
+          <a href="/pengkaderan" layout horizontal center-justified wrap>
+            <paper-button class="action-buttons" primary invert>
               {$ infoPengkaderan $}
               <iron-icon icon="hmi:open-in-new"></iron-icon>
             </paper-button>
-          </div>
+          </a>
 
           <div class="scroll-down" on-click="_scrollNextBlock">
             <svg

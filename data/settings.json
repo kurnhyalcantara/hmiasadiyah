@@ -94,15 +94,15 @@
       "fontColor": "#FFF",
       "description": "Daftar Agenda Kegiatan Komisariat As'adiyah"
     },
-    "daftar": {
-      "title": "Form Pendaftaran",
-      "metaDescription": "Formulir pendaftaran calon peserta Latihan Kader 1 HMI Komisariat As'adiyah",
+    "pengkaderan": {
+      "title": "Info Pengkaderan",
+      "metaDescription": "Penjelasan tentang jenjang pengkaderan yang ada di Himpunan Mahasiswa Islam",
       "background": {
         "image": "/images/backgrounds/hero-block.jpg",
         "color": "#097347"
       },
       "fontColor": "#FFF",
-      "description": "Dengan mengucapkan BISMILLAHIRRAHMANIRRAHIM, bahwa apa yang saya isi dalam formulir di bawah ini adalah BENAR adanya dan menyatakan kesediaan untuk mematuhi Anggaran Dasar/Anggaran Rumah Tangga serta ketentuan/peraturan yang berada di HMI."
+      "description": "Penjelasan tentang struktur pengkaderan di Himpunan Mahasiswa Islam"
     }
   },
   "location": {
