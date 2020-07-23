@@ -304,8 +304,7 @@ class FeaturedVideos extends ReduxMixin(PolymerElement) {
   }
 
   playVideo(e) {
-    const presenters = e.model.__data.block.speakers ? ` by ${e.model.__data.block.speakers}` : '';
-    const title = e.model.__data.block.title + presenters;
+    const title = e.model.__data.block.title;
     const youtubeId = e.model.__data.block.youtubeId;
 
     uiActions.toggleVideoDialog({

@@ -87,8 +87,8 @@ documentContainer.innerHTML = `<dom-module id="dialog-styles">
 
       .action iron-icon {
         margin-right: 4px;
-        --iron-icon-width: 18px;
-        --iron-icon-height: 18px;
+        --iron-icon-width: 48px;
+        --iron-icon-height: 48px;
       }
 
       .additional-sections {

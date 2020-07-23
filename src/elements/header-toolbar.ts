@@ -3,6 +3,7 @@ import { ReduxMixin } from '../mixins/redux-mixin';
 import { dialogsActions, notificationsActions, userActions } from '../redux/actions';
 import { DIALOGS, NOTIFICATIONS_STATUS } from '../redux/constants';
 import { store } from '../redux/store';
+import { daftarActions, toastActions } from '../redux/actions';
 import './shared-styles';
 
 class HeaderToolbar extends ReduxMixin(PolymerElement) {
@@ -64,7 +65,7 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
         }
 
         .signup-button {
-          margin-top: 12px;
+          margin-top: 2px;
         }
 
         .profile-image {
@@ -168,17 +169,6 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
             <a href="{$ nav.permalink $}" layout vertical center-center>{$ nav.label $}</a>
           </paper-tab>
           {% endfor %}
-
-          <a
-            rel="noopener noreferrer"
-            ga-on="click"
-            ga-event-category="daftar button"
-            ga-event-action="daftar_click"
-          >
-            <paper-button class="signup-button" on-tap="_daftarDialog" primary
-              >{$ signUp $}</paper-button
-            >
-          </a>
         </paper-tabs>
 
         <paper-menu-button
@@ -222,6 +212,18 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
           </div>
         </paper-menu-button>
 
+        <a
+          rel="noopener noreferrer"
+          ga-on="click"
+          ga-event-category="daftar button"
+          ga-event-action="daftar_click"
+          hidden$="[[!viewport.isLaptopPlus]]"
+        >
+          <paper-button class="signup-button" on-tap="_daftarDialog" primary
+            >{$ signUp $}</paper-button
+          >
+        </a>
+
         <paper-menu-button
           class="auth-menu"
           hidden$="[[!user.signedIn]]"
@@ -256,6 +258,7 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
           id="loginButton"
           class="log-in-button"
           on-click="signIn"
+          hidden$="[[user.signedIn]]"
           vertical-align="top"
           horizontal-align="right"
           primary
@@ -349,6 +352,9 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
 
   _authStatusChanged(signedIn) {
     if (this.dialogs.signin.isOpened) {
+      toastActions.showToast({
+        message: '{$ signInProviders.successSignedIn $}',
+      });
       dialogsActions.closeDialog(DIALOGS.SIGNIN);
     }
   }
@@ -390,6 +396,27 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
       '--hero-logo-opacity': settings.hideLogo ? '1' : '0',
       '--hero-logo-color': settings.backgroundImage ? '#fff' : 'var(--default-primary-color)',
     });
+  }
+
+  _daftarDialog() {
+    dialogsActions.openDialog(DIALOGS.DAFTAR, {
+      title: '{$ formPendaftaran.formTitle $}',
+      description: '{$ formPendaftaran.formDescription $}',
+      firstField: '{$ formPendaftaran.namaLengkap $}',
+      secondField: '{$ formPendaftaran.tanggalLahir $}',
+      thirdField: '{$ formPendaftaran.alamatTInggal $}',
+      fourthField: '{$ formPendaftaran.noWa $}',
+      fifthField: '{$ formPendaftaran.fakultas $}',
+      sixthField: '{$ formPendaftaran.prodi $}',
+      seventhField: '{$ formPendaftaran.semester $}',
+      eigthField: '{$ formPendaftaran.alasan $}',
+      submitLabel: ' {$ formPendaftaran.daftar $}',
+      submit: (data) => this._daftarAction(data),
+    });
+  }
+
+  _daftarAction(data) {
+    store.dispatch(daftarActions.subscribe(data));
   }
 }
 

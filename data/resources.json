@@ -6,7 +6,7 @@
   "loading": "Sedang memuat HMI As'adiyah Web App",
   "slogan": "- Yakin Usaha Sampai -",
   "salam": "Salam Perjuangan",
-  "signUp": "Daftar jadi Anggota Baru",
+  "signUp": "Formulir Pendaftaran",
   "infoPengkaderan": "Info Pengkaderan",
   "share": "Bagikan",
   "followOur": "Follow our",
@@ -517,17 +517,17 @@
     "sessions": "Sessions"
   },
   "notifications": {
-    "default": "Enable notifications",
-    "enabled": "We will miss you but you can unsubscribe anytime",
-    "blocked": "We can't send you notifications right now. Please enable notifications in your browser",
+    "default": "Dapatkan berita dan update terbaru dari kami",
+    "enabled": "Terima kasih telah subscribe Web App kami",
+    "blocked": "Kami tidak bisa mengirimkan pemberitahuan, Aktifkan pemberitahuan di browser anda",
     "subscribe": "Subscribe",
     "unsubscribe": "Unsubscribe",
     "enable": {
-      "label": "Enable",
+      "label": "Aktifkan",
       "link": "https://support.google.com/chrome/answer/3220216"
     },
     "toast": {
-      "title": "Open"
+      "title": "Buka"
     }
   },
   "aboutOrganizerBlock": {

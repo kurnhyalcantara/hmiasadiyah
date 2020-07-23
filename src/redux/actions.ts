@@ -881,6 +881,9 @@ export const notificationsActions = {
       .requestPermission()
       .then(() => {
         dispatch(notificationsActions.getToken(true));
+        toastActions.showToast({
+          message: '{$ notifications.enabled $}',
+        });
       })
       .catch((error) => {
         dispatch({

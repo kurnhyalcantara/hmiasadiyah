@@ -6,26 +6,36 @@ import { dialogsActions, helperActions, userActions } from '../../redux/actions'
 import { DIALOGS } from '../../redux/constants';
 import '../hmi-icons';
 import '../shared-styles';
+import './dialog-styles';
 
 class SigninDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], PolymerElement)) {
   static get template() {
     return html`
       <style include="shared-styles flex flex-alignment">
         :host {
-          margin: 0 auto;
+          margin: 0 16px;
           display: block;
-          padding: 24px 32px;
           background: var(--primary-background-color);
           box-shadow: var(--box-shadow);
+          max-width: 315px;
+        }
+
+        .dialog-description {
+          width: 100%;
+          padding: 32px 32px 16px;
+          background: var(--primary-gradient);
+          color: #fff;
+          font-size: 20px;
         }
 
         .dialog-content {
           margin: 0 auto;
+          padding: 16px 16px;
         }
 
         .sign-in-button {
           padding: 16px 0;
-          margin: 16px 0;
+          text-align: center;
           display: block;
           color: var(--primary-text-color);
         }
@@ -37,34 +47,32 @@ class SigninDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
 
         iron-icon {
           margin: 0 8px;
-        }
-
-        .icon-twitter {
-          color: var(--twitter-color);
-        }
-
-        .icon-facebook {
-          color: var(--facebook-color);
+          --iron-icon-width: 48px;
+          --iron-icon-height: 48px;
         }
       </style>
 
+      <div class="dialog-description">{$ signInProviders.description $}</div>
       <div class="dialog-content">
         <div class="initial-signin" hidden$="[[isMergeState]]">
-          {% for provider in signInProviders.providersData %}
           <paper-button
             class="sign-in-button"
             on-click="_signIn"
-            provider-url="{$ provider.url $}"
+            provider-url="{$ signInProviders.providersData.url $}"
             ga-on="click"
             ga-event-category="attendees"
             ga-event-action="sign-in"
-            ga-event-label="signIn dialog - {$ provider.name $}"
+            ga-event-label="signIn dialog - {$ signInProviders.providersData.name $}"
             flex
           >
-            <iron-icon class="icon-{$ provider.name $}" icon="hmi:{$ provider.name $}"></iron-icon>
-            <span provider-url="{$ provider.url $}">{$ provider.label $}</span>
+            <iron-icon
+              class="icon-{$ signInProviders.providersData.name $}"
+              icon="hmi:{$ signInProviders.providersData.name $}"
+            ></iron-icon>
+            <span provider-url="{$ signInProviders.providersData.url $}"
+              >{$ signInProviders.providersData.label $}</span
+            >
           </paper-button>
-          {% endfor %}
         </div>
         <div class="merge-content" hidden$="[[!isMergeState]]">
           <h3 class="subtitle">{$ signInDialog.alreadyHaveAccount $}</h3>
