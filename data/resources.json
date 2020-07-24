@@ -186,7 +186,7 @@
       "links": [
         {
           "name": "Info Pengkaderan",
-          "url": "#",
+          "url": "/pengkaderan",
           "newTab": true
         },
         {
@@ -224,6 +224,7 @@
 
   "sejarahHMIProfileBlock": {
     "title": "Sejarah Berdirinya HMI",
+    "image": "https://firebasestorage.googleapis.com/v0/b/hmi-asadiyah.appspot.com/o/mix%2Fabout-logo.png?alt=media&token=fda04f76-bbcb-4350-aac5-cb347901f181",
     "content": [
       {
         "title": "Prakarsa",

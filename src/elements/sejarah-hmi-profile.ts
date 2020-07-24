@@ -64,7 +64,10 @@ class SejarahHMIProfile extends ReduxMixin(PolymerElement) {
       <div class="container-title" layout vertical center>{$ sejarahHMIProfileBlock.title $}</div>
       <div class="container">
         <div class="content" layout vertical center>
-          <plastic-image class="image-logo" srcset="/images/logos/about-logo.png"></plastic-image>
+          <plastic-image
+            class="image-logo"
+            srcset="{$ sejarahHMIProfileBlock.image $}"
+          ></plastic-image>
           <div class="divider-element"></div>
           {% for prof in sejarahHMIProfileBlock.content %}
           <div class="content" layout vertical>
