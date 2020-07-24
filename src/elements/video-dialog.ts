@@ -63,6 +63,7 @@ class VideoDialog extends ReduxMixin(mixinBehaviors([PaperDialogBehavior], Polym
           autohide="1"
           chromeless="[[disableControls]]"
           fit
+          muted="true"
         >
         </google-youtube>
       </div>
