@@ -7,6 +7,8 @@ import 'plastic-image';
 import '@polymer/paper-icon-button';
 import '../elements/posts-list';
 import '../elements/shared-styles';
+import '../elements/gabung-block';
+import '../elements/footer-block';
 import { ReduxMixin } from '../mixins/redux-mixin';
 import { newsActions } from '../redux/actions';
 import { store } from '../redux/store';
@@ -314,6 +316,8 @@ class PostPage extends ReduxMixin(PolymerElement) {
           <posts-list posts="[[suggestedPosts]]"></posts-list>
         </div>
       </div>
+      <gabung-block></gabung-block>
+      <footer-block></footer-block>
     `;
   }
 

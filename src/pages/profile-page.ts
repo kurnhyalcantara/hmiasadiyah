@@ -11,6 +11,7 @@ import '../elements/sejarah-hmi-profile';
 import '../elements/profil-hmi-asadiyah';
 import '../elements/struktur-pengurus';
 import '../elements/gabung-block';
+import '../elements/footer-block';
 import '../elements/shared-styles';
 import '../elements/text-truncate';
 import { ReduxMixin } from '../mixins/redux-mixin';

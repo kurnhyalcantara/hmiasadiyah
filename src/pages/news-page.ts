@@ -4,6 +4,8 @@ import { html, PolymerElement } from '@polymer/polymer';
 import { routingActions } from '../redux/actions';
 import { scrollToY } from '../utils/scrolling';
 import { ReduxMixin } from '../mixins/redux-mixin';
+import '../elements/gabung-block';
+import '../elements/footer-block';
 import './news-list-page';
 import './post-page';
 
@@ -35,6 +37,7 @@ class NewsPage extends ReduxMixin(PolymerElement) {
         <news-list-page data-route></news-list-page>
         <post-page data-route="posts" route="[[subRoute]]"></post-page>
       </iron-pages>
+      <gabung-block></gabung-block>
       <footer-block></footer-block>
     `;
   }

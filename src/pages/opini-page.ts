@@ -4,6 +4,8 @@ import { html, PolymerElement } from '@polymer/polymer';
 import { routingActions } from '../redux/actions';
 import { scrollToY } from '../utils/scrolling';
 import { ReduxMixin } from '../mixins/redux-mixin';
+import '../elements/gabung-block';
+import '../elements/footer-block';
 import './opini-list-page';
 import './opinion-page';
 
@@ -35,6 +37,7 @@ class OpiniPage extends ReduxMixin(PolymerElement) {
         <opini-list-page data-route></opini-list-page>
         <opinion-page data-route="articles" route="[[subRoute]]"></opinion-page>
       </iron-pages>
+      <gabung-block></gabung-block>
       <footer-block></footer-block>
     `;
   }

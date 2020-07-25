@@ -1,6 +1,7 @@
 import { html, PolymerElement } from '@polymer/polymer';
 import '@polymer/paper-button';
 import '../elements/footer-block';
+import '../elements/gabung-block';
 import '../elements/hero-block';
 import '../elements/md-content';
 import '../elements/polymer-helmet';
@@ -61,6 +62,7 @@ class PengkaderanPage extends PolymerElement {
           alt="{$ title $}"
         ></plastic-image>
       </div>
+      <gabung-block></gabung-block>
       <footer-block></footer-block>
     `;
   }

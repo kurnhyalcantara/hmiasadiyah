@@ -7,10 +7,13 @@ import 'plastic-image';
 import '@polymer/paper-icon-button';
 import '../elements/posts-list';
 import '../elements/shared-styles';
+import '../elements/gabung-block';
+import '../elements/footer-block';
 import { ReduxMixin } from '../mixins/redux-mixin';
 import { opiniActions } from '../redux/actions';
 import { store } from '../redux/store';
 import { getDate } from '../utils/functions';
+import { share } from '../utils/share';
 
 class OpinionPage extends ReduxMixin(PolymerElement) {
   active = false;
@@ -133,6 +136,12 @@ class OpinionPage extends ReduxMixin(PolymerElement) {
         .share {
         }
 
+        .date-header-item {
+          float: none;
+          overflow: hidden;
+          width: 100%;
+        }
+
         .nav-inline li {
           display: inline-block;
         }
@@ -205,6 +214,10 @@ class OpinionPage extends ReduxMixin(PolymerElement) {
           .author-item {
             float: left;
             width: 100%;
+          }
+
+          .date-header-item {
+            float: left;
           }
 
           .author-item .fn {
@@ -391,6 +404,10 @@ class OpinionPage extends ReduxMixin(PolymerElement) {
 
   getDate(date) {
     return getDate(date);
+  }
+
+  share(e) {
+    return share(e);
   }
 }
 
