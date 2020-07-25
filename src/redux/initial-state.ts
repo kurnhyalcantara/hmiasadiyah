@@ -118,6 +118,7 @@ export const initialState = {
     signedIn: false,
   },
   terdaftar: false,
+  subscribed: false,
   toast: {},
   notifications: {
     status: NOTIFICATIONS_STATUS.DEFAULT,

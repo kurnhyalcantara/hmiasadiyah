@@ -87,7 +87,7 @@ class OpinionBlock extends ReduxMixin(PolymerElement) {
         <div class="opini-wrapper">
           <template is="dom-repeat" items="[[opini]]" as="opini">
             <a
-              href$="/opini/posts/[[opini.id]]/"
+              href$="/opini/articles/[[opini.id]]/"
               class="opini card"
               ga-on="click"
               ga-event-category="blog"

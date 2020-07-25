@@ -11,6 +11,10 @@ export const share = (e) => {
       openTwitter({ title, shareUrl });
       break;
     }
+    case 'whatsapp': {
+      openWhatsapp({ title, shareUrl });
+      break;
+    }
     default:
       throw new Error('Unknown share target');
   }
@@ -39,5 +43,12 @@ const openFacebook = ({ title, shareUrl }: { title: string; shareUrl: string }) 
   const url = `https://www.facebook.com/sharer.php?u=${encodeURIComponent(
     shareUrl
   )}&t=${encodeURIComponent(title)}`;
+  window.open(url, 'share', features({ height: 775 }));
+};
+
+const openWhatsapp = ({ title, shareUrl }: { title: string; shareUrl: string }) => {
+  const url = `whatsapp://send?&amp;text=${encodeURIComponent(title)} → ${encodeURIComponent(
+    shareUrl
+  )}`;
   window.open(url, 'share', features({ height: 775 }));
 };

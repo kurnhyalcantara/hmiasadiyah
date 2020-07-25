@@ -41,7 +41,7 @@ class NewsListPage extends ReduxMixin(PolymerElement) {
         }
 
         .featured-post:not(:last-of-type) {
-          border-bottom: 3px solid var(--default-primary-color);
+          border-bottom: 1px solid var(--default-primary-color);
           border-bottom-style: dashed;
         }
 
@@ -72,6 +72,7 @@ class NewsListPage extends ReduxMixin(PolymerElement) {
 
         .date {
           font-size: 12px;
+          margin-top: 8px;
           text-transform: uppercase;
           color: var(--secondary-text-color);
         }

@@ -32,12 +32,8 @@ class OpiniPage extends ReduxMixin(PolymerElement) {
         selected="[[routeData.page]]"
         selected-attribute="active"
       >
-        <opini-list-page data-route="" data-path="./opini-list-page.html"></opini-list-page>
-        <opinion-page
-          data-route="posts"
-          data-path="./opinion-page.html"
-          route="[[subRoute]]"
-        ></opinion-page>
+        <opini-list-page data-route></opini-list-page>
+        <opinion-page data-route="articles" route="[[subRoute]]"></opinion-page>
       </iron-pages>
       <footer-block></footer-block>
     `;

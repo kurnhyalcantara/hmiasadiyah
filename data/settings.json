@@ -72,7 +72,8 @@
         "image": "/images/backgrounds/hero-block.jpg",
         "color": "#131a20"
       },
-      "fontColor": "#FFF"
+      "fontColor": "#FFF",
+      "path": "Home / Berita"
     },
     "opini": {
       "title": "Opini & Artikel",

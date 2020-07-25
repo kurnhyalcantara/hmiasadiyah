@@ -134,8 +134,8 @@
   "featuredVideos": {
     "title": "Video",
     "callToAction": {
-      "label": "Lihat semua video",
-      "link": ""
+      "label": "Jelajahi Channel Kami",
+      "link": "https://www.youtube.com/channel/UCBVVngt3so2RQbZ1hawtUNA?view_as=subscriber"
     }
   },
   "latestPostsBlock": {
@@ -449,8 +449,8 @@
     "toast": "We will contact you soon!"
   },
   "blog": {
-    "published": "Published",
-    "suggested": "Up next"
+    "published": "Dipublikasikan pada: ",
+    "suggested": "Berita Lainnya"
   },
 
   "speakers": {

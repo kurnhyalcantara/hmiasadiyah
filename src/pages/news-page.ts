@@ -32,8 +32,8 @@ class NewsPage extends ReduxMixin(PolymerElement) {
         selected="[[routeData.page]]"
         selected-attribute="active"
       >
-        <news-list-page data-route="" data-path="./news-list-page.html"></news-list-page>
-        <post-page data-route="posts" data-path="./post-page.html" route="[[subRoute]]"></post-page>
+        <news-list-page data-route></news-list-page>
+        <post-page data-route="posts" route="[[subRoute]]"></post-page>
       </iron-pages>
       <footer-block></footer-block>
     `;

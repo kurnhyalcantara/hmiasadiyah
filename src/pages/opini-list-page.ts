@@ -32,7 +32,7 @@ class OpiniListPage extends ReduxMixin(PolymerElement) {
         }
 
         .featured-opini:not(:last-of-type) {
-          border-bottom: 3px var(--divider-color);
+          border-bottom: 1px var(--divider-color);
           border-bottom-style: dashed;
         }
 
@@ -68,13 +68,13 @@ class OpiniListPage extends ReduxMixin(PolymerElement) {
 
         .description {
           margin-top: 8px;
-          color: var(--secondary-text-color);
+          color: var(--divider-color);
         }
 
         .date {
           font-size: 12px;
           text-transform: uppercase;
-          color: var(--secondary-text-color);
+          color: var(--divider-color);
         }
 
         paper-progress {
@@ -134,7 +134,7 @@ class OpiniListPage extends ReduxMixin(PolymerElement) {
 
         <div class="featured-opini-wrapper">
           <template is="dom-repeat" items="[[featuredOpini]]" as="post">
-            <a href$="/opini/posts/[[post.id]]/" class="featured-opini" relative>
+            <a href$="/opini/articles/[[post.id]]/" class="featured-opini" relative>
               <plastic-image
                 class="image"
                 srcset="[[post.image]]"

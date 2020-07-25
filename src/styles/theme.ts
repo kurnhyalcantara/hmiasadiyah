@@ -189,7 +189,7 @@ export const theme = css`
   .container-title {
     margin-bottom: 18px;
     font-size: 32px;
-    font-style: bolder;
+    font-weight: 900;
     color: var(--default-primary-color);
   }
 

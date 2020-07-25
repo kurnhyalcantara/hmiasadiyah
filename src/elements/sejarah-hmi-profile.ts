@@ -7,7 +7,7 @@ class SejarahHMIProfile extends ReduxMixin(PolymerElement) {
       <style include="shared-styles flex flex-alignment positioning">
         :host {
           display: block;
-          border-bottom: 1px solid var(--default-primary-color);
+          border-bottom: 1px solid var(--border-light-color);
         }
 
         .container {
