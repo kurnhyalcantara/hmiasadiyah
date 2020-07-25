@@ -83,7 +83,8 @@
         "image": "/images/backgrounds/hero-block.jpg",
         "color": "#097347"
       },
-      "fontColor": "#FFF"
+      "fontColor": "#FFF",
+      "path": "Home / Artikel"
     },
     "schedule": {
       "title": "Agenda",

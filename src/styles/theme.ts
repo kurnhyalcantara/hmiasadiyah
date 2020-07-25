@@ -17,6 +17,7 @@ export const theme = css`
     --footer-text-color: #555555;
     --twitter-color: #4099ff;
     --facebook-color: #3b5998;
+    --whatsapp-color: #25d366;
     --border-light-color: #e2e2e2;
     --error-color: #e93116;
 

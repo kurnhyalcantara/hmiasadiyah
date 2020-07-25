@@ -72,14 +72,14 @@ class PostPage extends ReduxMixin(PolymerElement) {
           color: var(--default-primary-color);
         }
 
-        .fa-certificate:before {
-          content: '0a3';
+        .fa-certificate::before {
+          content: '0a3';
         }
 
         .author-img,
         .author-item-img {
-          width: 36px;
-          height: 36px;
+          width: 39px;
+          height: 39px;
         }
 
         .author-img {
@@ -90,24 +90,24 @@ class PostPage extends ReduxMixin(PolymerElement) {
 
         .author-item-img {
           content: '';
-          background: radial-gradient(circle farthest-corner at 35% 90%, #069539, transparent 50%)
+          background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%)
               repeat scroll 0 0%,
-            radial-gradient(circle farthest-corner at 0 140%, #069539, transparent 50%) repeat
+            radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%) repeat
               scroll 0 0%,
-            radial-gradient(ellipse farthest-corner at 0 -25%, #069539, transparent 50%) repeat
+            radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%) repeat
               scroll 0 0%,
-            radial-gradient(ellipse farthest-corner at 20% -50%, #069539, transparent 50%) repeat
+            radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%) repeat
               scroll 0 0%,
-            radial-gradient(ellipse farthest-corner at 100% 0, #0ae757, transparent 50%) repeat
+            radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%) repeat
               scroll 0 0%,
-            radial-gradient(ellipse farthest-corner at 60% -20%, #0ae757, transparent 50%) repeat
+            radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%) repeat
               scroll 0 0%,
-            radial-gradient(ellipse farthest-corner at 100% 100%, #60f704, transparent) repeat
+            radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent) repeat
               scroll 0 0%,
             rgba(0, 0, 0, 0)
-              linear-gradient(#0ae757, #0ae757 30%, #60f704 50%, #069539 70%, #069539 100%) repeat
+              linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%) repeat
               scroll 0 0;
-          border-radius: 50%;
+          border-radius: 20px;
         }
 
         .social-group.share-block {
@@ -170,8 +170,6 @@ class PostPage extends ReduxMixin(PolymerElement) {
         }
 
         .suggested-posts {
-          margin: 24px 0 -20px;
-          padding-top: 24px;
           background-color: var(--primary-background-color);
         }
 
@@ -205,11 +203,6 @@ class PostPage extends ReduxMixin(PolymerElement) {
             min-height: 400px;
           }
 
-          .suggested-posts {
-            margin-top: 48px;
-            padding-bottom: 36px;
-          }
-
           .author-item {
             float: left;
             width: 100%;
@@ -222,12 +215,6 @@ class PostPage extends ReduxMixin(PolymerElement) {
           .fa.fa-certificate {
             margin: 0 0 0 3px;
             font-size: 18px;
-          }
-
-          .author-img,
-          .author-item-img {
-            width: 48px;
-            height: 48px;
           }
 
           .hero-title {
@@ -257,15 +244,15 @@ class PostPage extends ReduxMixin(PolymerElement) {
         <div class="hero-title highlight-font">[[post.title]]</div>
         <div class="author-share">
           <div class="author-item">
-            <div class="author-img">
+            <div class="author-img" layout vertical center>
               <div class="author-item-img">
                 <plastic-image
-                  srcset="[[post.author.image]"
+                  srcset="[[post.author.image]]"
                   alt="[[post.author.name]]"
                 ></plastic-image>
               </div>
             </div>
-            <span class="fn">[[post.author.name]]</span>
+            <span class="fn">[[post.author.name]]<i class="fa fa-certificate"></i></span>
             <span class="date-header-item">[[getDate(post.published)]]</span>
           </div>
           <div class="social-group share-block">
