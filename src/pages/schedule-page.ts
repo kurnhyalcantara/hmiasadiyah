@@ -31,6 +31,11 @@ class SchedulePage extends SessionsHoC(SpeakersHoC(ReduxMixin(PolymerElement))) 
           min-height: 80%;
         }
 
+        .hero-description {
+          padding: 10px;
+          border-left: 5px solid var(--default-primary-color);
+        }
+
         paper-progress {
           width: 100%;
           --paper-progress-active-color: var(--default-primary-color);

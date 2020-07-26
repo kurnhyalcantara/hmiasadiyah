@@ -58,6 +58,7 @@ class OpinionPage extends ReduxMixin(PolymerElement) {
           float: none;
           overflow: hidden;
           width: 100%;
+          color: var(--divider-color);
         }
 
         .author-item .fn {
@@ -87,7 +88,6 @@ class OpinionPage extends ReduxMixin(PolymerElement) {
         .author-img {
           margin: 0 10px 0 0;
           display: block;
-          float: left;
         }
 
         .author-item-img {
@@ -122,6 +122,7 @@ class OpinionPage extends ReduxMixin(PolymerElement) {
           display: inline-block;
           text-transform: uppercase;
           margin: 0;
+          font-size: 14px;
         }
 
         .nav-inline {
@@ -252,7 +253,7 @@ class OpinionPage extends ReduxMixin(PolymerElement) {
         font-color="#fff"
         active="[[active]]"
       >
-        <div class="path-page">{$ heroSettings.news.path $}</div>
+        <div class="path-page">{$ heroSettings.opini.path $}</div>
         <div class="hero-title highlight-font">[[post.title]]</div>
         <div class="author-share">
           <div class="author-item">

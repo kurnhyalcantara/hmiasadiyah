@@ -58,6 +58,7 @@ class PostPage extends ReduxMixin(PolymerElement) {
           float: none;
           overflow: hidden;
           width: 100%;
+          color: var(--divider-color);
         }
 
         .author-item .fn {
