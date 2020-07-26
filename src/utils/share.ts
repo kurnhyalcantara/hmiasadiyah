@@ -47,7 +47,7 @@ const openFacebook = ({ title, shareUrl }: { title: string; shareUrl: string }) 
 };
 
 const openWhatsapp = ({ title, shareUrl }: { title: string; shareUrl: string }) => {
-  const url = `whatsapp://send?&amp;text=${encodeURIComponent(title)}%0A%0A${encodeURIComponent(
+  const url = `whatsapp://send?text=${encodeURIComponent(title)}%0A%0A${encodeURIComponent(
     shareUrl
   )}`;
   window.open(url, 'share', features({ height: 775 }));
