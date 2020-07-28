@@ -20,6 +20,7 @@ export const theme = css`
     --whatsapp-color: #25d366;
     --border-light-color: #e2e2e2;
     --error-color: #e93116;
+    --golden-color: #f5c663;
 
     /* Custom */
     --default-background-color: #ffffff;
@@ -50,6 +51,11 @@ export const theme = css`
       var(--default-primary-color) 0%,
       var(--light-primary-color) 100%
     );
+
+    /* Tags Filter */
+    --kajian: #c112fc;
+    --rapat: #f09c1e;
+    --perkaderan: var(--light-primary-color);
   }
 
   *,

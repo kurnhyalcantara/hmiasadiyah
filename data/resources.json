@@ -384,8 +384,8 @@
   },
 
   "mySchedule": {
-    "title": "My Schedule",
-    "browseSession": "Browse sessions"
+    "title": "Jadwalku",
+    "browseSession": "Dapatkan Sesi"
   },
 
   "codeOfConduct": "Code of Conduct",
@@ -497,20 +497,21 @@
     "description": "Google is known all around the world. Everyone is 'googling', checking on 'maps' and communicating in 'gmail'. For simple users, they are services that just works, but not for us. Developers see much more: APIs, scalability issues, complex technology stacks. And that is what GDG is about.<br><br> [Google Developers Group (GDG) Lviv](http://lviv.gdg.org.ua/) - is open and volunteer geek community who create exciting projects and share experience about Google technologies with a passion.<br><br> Our goal is to organize space to connect the best industry experts with Ukrainian audience to boost development of IT."
   },
   "schedule": {
-    "saveSessionsSignedOut": "Sign in to save sessions"
+    "commentSessionSignedOut": "Anda harus login terlebih dahulu sebelum menulis kesan-kesan",
+    "saveSessionsSignedOut": "Anda harus login terlebih dahulu jika ingin mendapatkan pemberitahuan up-to-date tentang agenda ini"
   },
   "feedback": {
-    "save": "Save",
-    "headline": "Review session",
+    "save": "Simpan",
+    "headline": "Apakah agenda ini berkesan buatmu? :)",
     "leaveFeedback": "to leave feedback",
     "sendFeedbackSignedOut": "Sign in to leave feedback",
-    "feedbackRecorded": "Your saved",
-    "feedbackDeleted": "Feedback deleted",
-    "helperText": "Comments will be anonymously provided to speakers",
-    "somethingWentWrong": "Something went wrong",
+    "feedbackRecorded": "Komentar disimpan",
+    "feedbackDeleted": "Komentar dihapus",
+    "helperText": "Komentar anda akan dijadikan evaluasi terhadap kegiatan kami kedepannya",
+    "somethingWentWrong": "Ada sedikit masalah :(",
     "contentCaption": "Content quality",
     "styleCaption": "Presentation style",
-    "deleteFeedback": "Delete",
+    "deleteFeedback": "Hapus",
     "sessionClosed": "Session reviews are not open"
   },
   "sessionDetails": {
@@ -576,11 +577,11 @@
     }
   },
   "filters": {
-    "title": "Filters",
-    "results": "Results",
-    "tags": "Tags",
-    "complexity": "Complexity",
-    "clear": "Clear all"
+    "title": "Filter",
+    "results": "Hasil",
+    "tags": "Jenis",
+    "complexity": "Peserta",
+    "clear": "Reset filter"
   },
   "addToHomeScreen": {
     "cta": "Install HMI As'adiyah"

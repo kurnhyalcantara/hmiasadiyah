@@ -28,9 +28,9 @@ class FeedbackDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Po
         .dialog-header {
           margin-bottom: 24px;
           padding: 32px 32px 16px;
-          background: var(--default-primary-color);
+          background: var(--primary-gradient);
           color: #fff;
-          font-size: 20px;
+          font-size: 18px;
           line-height: 1.5;
         }
 

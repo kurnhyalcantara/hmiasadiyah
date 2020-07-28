@@ -13,7 +13,7 @@ class ScheduleDay extends PolymerElement {
           --tracks-number: 3;
         }
 
-        .start-time {
+        .tanggal-bulan {
           margin-top: 16px;
           padding: 8px 16px;
           color: var(--secondary-text-color);
@@ -21,13 +21,15 @@ class ScheduleDay extends PolymerElement {
           border-bottom: 1px solid var(--border-light-color);
         }
 
-        .hours {
+        .tanggal {
           font-size: 24px;
           font-weight: 300;
         }
 
-        .minutes {
+        .bulan {
           font-size: 16px;
+          color: var(--error-color);
+          text-transform: uppercase;
         }
 
         .add-session {
@@ -62,7 +64,7 @@ class ScheduleDay extends PolymerElement {
             grid-template-columns: repeat(var(--tracks-number), 1fr);
           }
 
-          .start-time {
+          .tanggal-bulan {
             margin: 0;
             padding: 0;
             text-align: right;
@@ -70,7 +72,7 @@ class ScheduleDay extends PolymerElement {
             border-bottom: 0;
           }
 
-          .hours {
+          .tanggal {
             font-size: 32px;
           }
 
@@ -88,11 +90,11 @@ class ScheduleDay extends PolymerElement {
         <template is="dom-repeat" items="[[day.timeslots]]" as="timeslot" index-as="timeslotIndex">
           <div
             id$="[[timeslot.startTime]]"
-            class="start-time"
+            class="tanggal-bulan"
             style$="grid-area: [[_getTimePosition(timeslotIndex)]]"
           >
-            <span class="hours">[[_splitText(timeslot.startTime, ':', 0)]]</span>
-            <span class="minutes">[[_splitText(timeslot.startTime, ':', 1)]]</span>
+            <span class="tanggal">[[_splitText(timeslot.dateMonth, ' ', 0)]]</span>
+            <span class="bulan">[[_splitText(timeslot.dateMonth, ' ', 1)]]</span>
           </div>
 
           <a

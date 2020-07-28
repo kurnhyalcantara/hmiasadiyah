@@ -26,6 +26,12 @@ class FilterMenu extends PolymerElement {
           display: none;
         }
 
+        paper-button {
+          background: transparent;
+          border-color: none;
+          color: var(--default-primary-color);
+        }
+
         .filters-toolbar {
           padding: 16px;
         }
@@ -49,6 +55,7 @@ class FilterMenu extends PolymerElement {
         }
 
         .tag iron-icon {
+          margin-left: 4px;
           --iron-icon-width: 12px;
           --iron-icon-height: 12px;
         }
@@ -157,7 +164,7 @@ class FilterMenu extends PolymerElement {
   }
 
   private filters = [];
-  private resultsCount = 0;
+  private resultsCount = 1;
   private selected = {};
   private queryParams: string;
   private _selectedArray = [];

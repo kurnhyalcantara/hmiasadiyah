@@ -56,7 +56,6 @@ function sessionsSpeakersScheduleMap(sessionsRaw, speakersRaw, scheduleRaw) {
             startTime,
             endTime,
             duration: getDuration(dayKey, startTime, endTime),
-            dateReadable: day.dateReadable,
             speakers: subsession.speakers
               ? subsession.speakers.map((speakerId) =>
                   Object.assign(

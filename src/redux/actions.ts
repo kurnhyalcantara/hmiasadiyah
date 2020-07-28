@@ -290,8 +290,6 @@ export const feedbackActions = {
       .collection(`${data.collection}/${data.dbItem}/feedback`)
       .doc(data.userId)
       .set({
-        contentRating: data.contentRating,
-        styleRating: data.styleRating,
         comment: data.comment,
       })
       .then(() => {

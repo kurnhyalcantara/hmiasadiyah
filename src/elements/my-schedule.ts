@@ -29,7 +29,7 @@ class MySchedule extends ReduxMixin(PolymerElement) {
       </style>
 
       <template is="dom-repeat" items="[[featuredSchedule]]" as="day">
-        <div class="date">[[day.dateReadable]]</div>
+        <div class="date">[[day.timeslots.dateReadable]]</div>
 
         <schedule-day
           name$="[[day.date]]"

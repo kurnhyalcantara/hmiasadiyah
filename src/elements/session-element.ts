@@ -60,7 +60,6 @@ class SessionElement extends ReduxMixin(PolymerElement) {
 
         .session-content {
           padding-top: 0;
-          padding-bottom: 40px;
         }
 
         .bookmark-session,
@@ -82,8 +81,19 @@ class SessionElement extends ReduxMixin(PolymerElement) {
           line-height: 1.2;
         }
 
+        .session-details,
         .session-description {
+          display: inline-block;
+          color: var(--disabled-text-color);
           margin-top: 8px;
+        }
+
+        .session-description {
+          font-size: 14px;
+        }
+
+        .session-details {
+          font-size: 12px;
         }
 
         .session-meta {
@@ -91,6 +101,11 @@ class SessionElement extends ReduxMixin(PolymerElement) {
           padding: 0;
           font-size: 12px;
           color: var(--secondary-text-color);
+        }
+
+        .icon-peserta {
+          --iron-icon-width: 12px;
+          --iron-icon-height: 12px;
         }
 
         .session-footer {
@@ -154,6 +169,13 @@ class SessionElement extends ReduxMixin(PolymerElement) {
             <h3 class="session-title">[[session.title]]</h3>
             <text-truncate lines="3">
               <div class="session-description">[[summary]]</div>
+              <div class="session-details">
+                <span class="session-city">[[session.city]]</span>
+                <span class="session-track"> - [[session.track.title]]</span>
+                <div class="session-date">
+                  [[session.dateReadable]], [[session.startTime]] - [[session.endTime]]
+                </div>
+              </div>
             </text-truncate>
           </div>
           <span class="language">[[slice(session.language, 2)]]</span>
@@ -161,18 +183,17 @@ class SessionElement extends ReduxMixin(PolymerElement) {
 
         <div class="session-content" flex layout horizontal justified>
           <div class="session-meta">
-            <div hidden$="[[!session.complexity]]">[[session.complexity]]</div>
+            <iron-icon class="icon-peserta" icon="hmi:people"></iron-icon>
+            <span hidden$="[[!session.complexity]]">[[session.complexity]]</span>
           </div>
           <div class="session-actions">
             <iron-icon
               class="feedback-action"
-              hidden="[[!_acceptingFeedback()]]"
               icon="hmi:insert-comment"
               on-click="_toggleFeedback"
             ></iron-icon>
             <iron-icon
               class="bookmark-session"
-              hidden="[[_acceptingFeedback()]]"
               icon="hmi:[[_getFeaturedSessionIcon(featuredSessions, session.id)]]"
               on-click="_toggleFeaturedSession"
             ></iron-icon>
@@ -183,10 +204,10 @@ class SessionElement extends ReduxMixin(PolymerElement) {
           <div layout horizontal justified center-aligned>
             <div class="session-meta" flex>
               <span hidden$="[[!session.duration.hh]]">
-                [[session.duration.hh]] hour[[_getEnding(session.duration.hh)]]
+                [[session.duration.hh]] jam
               </span>
               <span hidden$="[[!session.duration.mm]]">
-                [[session.duration.mm]] min[[_getEnding(session.duration.mm)]]
+                [[session.duration.mm]] menit
               </span>
             </div>
             <div hidden$="[[!session.tags.length]]">
@@ -305,7 +326,20 @@ class SessionElement extends ReduxMixin(PolymerElement) {
   _toggleFeedback(event) {
     event.preventDefault();
     event.stopPropagation();
-    dialogsActions.openDialog(DIALOGS.FEEDBACK, this.session);
+    if (!this.user.signedIn) {
+      toastActions.showToast({
+        message: '{$ schedule.commentSessionSignedOut $}',
+        action: {
+          title: 'Sign in',
+          callback: () => {
+            dialogsActions.openDialog(DIALOGS.SIGNIN);
+          },
+        },
+      });
+      return;
+    } else {
+      dialogsActions.openDialog(DIALOGS.FEEDBACK, this.session);
+    }
   }
 
   _acceptingFeedback() {

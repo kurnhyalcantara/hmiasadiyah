@@ -73,18 +73,18 @@ class HeaderBottomToolbar extends ReduxMixin(PolymerElement) {
           hide-scroll-buttons
           noink
         >
-          <template is="dom-repeat" items="[[schedule]]" as="day">
-            <paper-tab class="nav-item" day="[[day.date]]" link>
-              <a href$="[[_addQueryParams(day.date, queryParams)]]" layout vertical center-center
-                >[[day.dateReadable]]</a
-              >
-            </paper-tab>
-          </template>
-          <paper-tab class="nav-item" day="my-schedule" hidden$="[[!user.signedIn]]" link>
+          <paper-tab class="nav-item" day="my-schedule" link>
             <a href$="[[_addQueryParams('my-schedule', queryParams)]]" layout vertical center-center
               >{$ mySchedule.title $}</a
             >
           </paper-tab>
+          <template is="dom-repeat" items="[[schedule]]" as="day">
+            <paper-tab class="nav-item" day="[[day.date]]" link>
+              <a href$="[[_addQueryParams(day.date, queryParams)]]" layout vertical center-center
+                >[[day.month]]</a
+              >
+            </paper-tab>
+          </template>
         </paper-tabs>
       </app-toolbar>
     `;

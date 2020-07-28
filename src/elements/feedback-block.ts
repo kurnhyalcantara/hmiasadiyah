@@ -18,7 +18,7 @@ class Feedback extends ReduxMixin(PolymerElement) {
         .caption {
           display: inline-block;
           vertical-align: bottom;
-          --star-color: var(--default-primary-color);
+          --star-color: var(--golden-color);
         }
 
         paper-button {
@@ -33,7 +33,9 @@ class Feedback extends ReduxMixin(PolymerElement) {
         }
 
         paper-button.delete-button {
-          color: var(--text-accent-color);
+          color: var(--error-color);
+          background: transparent;
+          border-color: none;
           padding: -2px;
         }
 
@@ -58,25 +60,18 @@ class Feedback extends ReduxMixin(PolymerElement) {
 
       <div class="container">
         <div>
-          <div class="caption">{$ feedback.contentCaption $}:</div>
           <star-rating rating="{{contentRating}}"></star-rating>
-        </div>
-        <div>
-          <div class="caption">{$ feedback.styleCaption $}:</div>
-          <star-rating rating="{{styleRating}}"></star-rating>
         </div>
 
         <paper-textarea
           id="commentInput"
-          hidden$="[[!rating]]"
-          label="Comment"
+          label="Pesan dan Kesan"
           value="{{comment}}"
           maxlength="256"
         ></paper-textarea>
-        <p hidden$="[[!rating]]" class="helper">{$ feedback.helperText $}</p>
+        <p class="helper">{$ feedback.helperText $}</p>
         <paper-button
           primary
-          hidden$="[[!rating]]"
           on-click="_sendFeedback"
           ga-on="click"
           ga-event-category="feedback"
@@ -102,12 +97,11 @@ class Feedback extends ReduxMixin(PolymerElement) {
 
   private rating = false;
   private contentRating = 0;
-  private styleRating = 0;
   private comment = '';
   private collection: string;
   private dbItem: string;
   private user: { uid?: string; signedIn?: boolean } = {};
-  private previousFeedback: { comment?: string; styleRating?: number; contentRating?: number } = {};
+  private previousFeedback: { comment?: string; contentRating?: number } = {};
   private feedbackFetching = false;
   private feedbackAdding = false;
   private feedbackAddingError = {};
@@ -124,10 +118,6 @@ class Feedback extends ReduxMixin(PolymerElement) {
         computed: '_hasRating(contentRating, styleRating)',
       },
       contentRating: {
-        type: Number,
-        value: 0,
-      },
-      styleRating: {
         type: Number,
         value: 0,
       },
@@ -212,8 +202,6 @@ class Feedback extends ReduxMixin(PolymerElement) {
   }
 
   _clear() {
-    this.contentRating = 0;
-    this.styleRating = 0;
     this.comment = '';
     this.showDeleteButton = false;
   }
@@ -236,13 +224,11 @@ class Feedback extends ReduxMixin(PolymerElement) {
     if (this.previousFeedback) {
       this.showDeleteButton = true;
       this.contentRating = this.previousFeedback.contentRating;
-      this.styleRating = this.previousFeedback.styleRating;
       this.comment = this.previousFeedback.comment;
     }
   }
 
   _sendFeedback() {
-    if (!this.rating) return;
     this._dispatchSendFeedback();
   }
 
@@ -252,8 +238,6 @@ class Feedback extends ReduxMixin(PolymerElement) {
         userId: this.user.uid,
         collection: this.collection,
         dbItem: this.dbItem,
-        contentRating: this.contentRating,
-        styleRating: this.styleRating,
         comment: this.comment,
       })
     );
@@ -303,7 +287,7 @@ class Feedback extends ReduxMixin(PolymerElement) {
         toastActions.showToast({
           message: '{$ feedback.somethingWentWrong $}',
           action: {
-            title: 'Retry',
+            title: 'Coba Lagi',
             callback: () => {
               this._dispatchDeleteFeedback();
             },

@@ -66,9 +66,11 @@
 
   "schedule": {
     "2016-02-20": {
-      "dateReadable": "20 Februari",
+      "month": "Februari",
       "timeslots": [
         {
+          "dateReadable": "20 Februari",
+          "dateMonth": "20 Feb",
           "endTime": "23:00",
           "sessions": [
             {
@@ -76,24 +78,10 @@
             }
           ],
           "startTime": "20:00"
-        }
-      ],
-      "tracks": [
-        {
-          "title": "Asrama HPMB"
         },
         {
-          "title": "Sekretariat HMI Cabang Wajo"
-        },
-        {
-          "title": "Lapangan Merdeka"
-        }
-      ]
-    },
-    "2016-02-27": {
-      "dateReadable": "27 Februari",
-      "timeslots": [
-        {
+          "dateReadable": "27 Februari",
+          "dateMonth": "27 Feb",
           "endTime": "17:45",
           "sessions": [
             {
