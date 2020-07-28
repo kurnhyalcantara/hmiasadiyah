@@ -155,14 +155,10 @@ class SessionDetails extends SpeakersHoC(
           <div id="feedback" class="additional-sections">
             <h3>{$ feedback.headline $}</h3>
 
-            <auth-required hidden="[[!acceptingFeedback]]">
+            <auth-required>
               <slot slot="prompt">{$ feedback.leaveFeedback $}</slot>
               <feedback-block collection="sessions" db-item="[[session.id]]"></feedback-block>
             </auth-required>
-
-            <p hidden="[[acceptingFeedback]]">
-              {$ feedback.sessionClosed $}
-            </p>
           </div>
         </div>
       </app-header-layout>
