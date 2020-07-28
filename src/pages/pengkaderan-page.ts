@@ -6,7 +6,8 @@ import '../elements/hero-block';
 import '../elements/md-content';
 import '../elements/polymer-helmet';
 import '../elements/shared-styles';
-import { dialogsActions } from '../redux/actions';
+import { dialogsActions, daftarActions } from '../redux/actions';
+import { store } from '../redux/store';
 import { DIALOGS } from '../redux/constants';
 
 class PengkaderanPage extends PolymerElement {
@@ -24,6 +25,10 @@ class PengkaderanPage extends PolymerElement {
         .action-button {
           width: 100%;
           text-align: center;
+        }
+
+        .info-up {
+          padding: 8px;
         }
 
         .brosur-pengkaderan {
@@ -82,7 +87,24 @@ class PengkaderanPage extends PolymerElement {
   }
 
   _showDialog() {
-    dialogsActions.openDialog(DIALOGS.DAFTAR);
+    dialogsActions.openDialog(DIALOGS.DAFTAR, {
+      title: '{$ formPendaftaran.formTitle $}',
+      description: '{$ formPendaftaran.formDescription $}',
+      firstField: '{$ formPendaftaran.namaLengkap $}',
+      secondField: '{$ formPendaftaran.tanggalLahir $}',
+      thirdField: '{$ formPendaftaran.alamatTInggal $}',
+      fourthField: '{$ formPendaftaran.noWa $}',
+      fifthField: '{$ formPendaftaran.fakultas $}',
+      sixthField: '{$ formPendaftaran.prodi $}',
+      seventhField: '{$ formPendaftaran.semester $}',
+      eigthField: '{$ formPendaftaran.alasan $}',
+      submitLabel: ' {$ formPendaftaran.daftar $}',
+      submit: (data) => this._daftarAction(data),
+    });
+  }
+
+  _daftarAction(data) {
+    store.dispatch(daftarActions.subscribe(data));
   }
 }
 

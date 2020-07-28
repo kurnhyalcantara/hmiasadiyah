@@ -385,7 +385,7 @@
 
   "mySchedule": {
     "title": "Jadwalku",
-    "browseSession": "Dapatkan Sesi"
+    "browseSession": "Tambahkan sesi"
   },
 
   "codeOfConduct": "Code of Conduct",
@@ -515,7 +515,8 @@
     "sessionClosed": "Session reviews are not open"
   },
   "sessionDetails": {
-    "contentLevel": "Content level",
+    "contentLevel": "Partisipan",
+    "place": "Tempat",
     "viewPresentation": "View presentation",
     "viewVideo": "View video",
     "speakers": "Speakers"

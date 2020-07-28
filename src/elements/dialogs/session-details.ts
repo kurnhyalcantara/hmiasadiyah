@@ -33,6 +33,10 @@ class SessionDetails extends SpeakersHoC(
           display: inline-block;
           vertical-align: middle;
         }
+
+        .tags {
+          margin: 8px;
+        }
       </style>
 
       <polymer-helmet
@@ -53,25 +57,25 @@ class SessionDetails extends SpeakersHoC(
             icon="hmi:[[_getCloseBtnIcon(viewport.isLaptopPlus)]]"
             on-click="_close"
           ></iron-icon>
-          <app-toolbar>
-            <div class="dialog-container header-content" layout vertical end-justified>
-              <h2 class="name">[[session.title]]</h2>
-              <div class="tags" hidden$="[[!session.tags.length]]">
-                <template is="dom-repeat" items="[[session.tags]]" as="tag">
-                  <span class="tag" style$="color: [[getVariableColor(tag)]]">[[tag]]</span>
-                </template>
-              </div>
-
-              <div class="float-button">
-                <paper-fab
-                  icon="hmi:[[_getFeaturedSessionIcon(featuredSessions, session.id)]]"
-                  hidden$="[[!viewport.isLaptopPlus]]"
-                  on-click="_toggleFeaturedSession"
-                ></paper-fab>
-              </div>
-            </div>
-          </app-toolbar>
         </app-header>
+        <app-toolbar>
+          <div class="dialog-container header-content" layout vertical end-justified>
+            <h2 class="name">[[session.title]]</h2>
+            <div class="tags" hidden$="[[!session.tags.length]]">
+              <template is="dom-repeat" items="[[session.tags]]" as="tag">
+                <span class="tag" style$="color: [[getVariableColor(tag)]]">[[tag]]</span>
+              </template>
+            </div>
+
+            <div class="float-button">
+              <paper-fab
+                icon="hmi:[[_getFeaturedSessionIcon(featuredSessions, session.id)]]"
+                hidden$="[[!viewport.isLaptopPlus]]"
+                on-click="_toggleFeaturedSession"
+              ></paper-fab>
+            </div>
+          </div>
+        </app-toolbar>
 
         <div class="dialog-container content">
           <div class="float-button">
@@ -85,7 +89,7 @@ class SessionDetails extends SpeakersHoC(
             [[session.dateReadable]], [[session.startTime]] - [[session.endTime]]
           </h3>
           <h3 class="meta-info" hidden$="[[disabledSchedule]]">
-            [[session.track.title]]
+            {$ sessionDetails.place $}: [[session.track.title]]
           </h3>
           <h3 class="meta-info" hidden$="[[!session.complexity]]">
             {$ sessionDetails.contentLevel $}: [[session.complexity]]

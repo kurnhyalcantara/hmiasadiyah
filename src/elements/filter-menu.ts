@@ -199,7 +199,17 @@ class FilterMenu extends PolymerElement {
     return selectedFilters[key] && selectedFilters[key].includes(generateClassName(value.trim()));
   }
 
+  _toggleBoard() {
+    if (this._openedBoard) {
+      this._clickOutsideUnlisten();
+    } else {
+      this._clickOutsideListen();
+    }
+    this.set('_openedBoard', !this._openedBoard);
+  }
+
   _toggleFilter(e) {
+    this.set('_openedBoard', (this._openedBoard = false));
     const filterKey = e.currentTarget.getAttribute('filter-key');
     const filter = generateClassName(e.currentTarget.getAttribute('filter-value').trim());
     this.set('queryParams', toggleQueryParam(this.queryParams, filterKey, filter));
@@ -211,15 +221,6 @@ class FilterMenu extends PolymerElement {
     return Object.keys(selected)
       .filter((key) => targetFilters.includes(key))
       .reduce((aggr, key) => aggr.concat(selected[key].map((value) => ({ key, value }))), []);
-  }
-
-  _toggleBoard() {
-    if (this._openedBoard) {
-      this._clickOutsideUnlisten();
-    } else {
-      this._clickOutsideListen();
-    }
-    this.set('_openedBoard', !this._openedBoard);
   }
 
   _resetFilters(e) {

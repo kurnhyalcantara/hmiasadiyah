@@ -55,7 +55,7 @@ class StrukturPengurus extends ReduxMixin(PolymerElement) {
           }
 
           .divider-element {
-            width: 80%;
+            width: 50%;
           }
         }
       </style>

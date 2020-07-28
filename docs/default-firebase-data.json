@@ -69,7 +69,6 @@
       "month": "Februari",
       "timeslots": [
         {
-          "dateReadable": "20 Februari",
           "dateMonth": "20 Feb",
           "endTime": "23:00",
           "sessions": [
@@ -80,7 +79,6 @@
           "startTime": "20:00"
         },
         {
-          "dateReadable": "27 Februari",
           "dateMonth": "27 Feb",
           "endTime": "17:45",
           "sessions": [
@@ -107,22 +105,26 @@
 
   "sessions": {
     "101": {
+      "dateReadable": "20 Februari",
       "complexity": "Pengurus",
       "description": "Pelaksanaan Rapat Anggota Komisariat ke VII dalam rangka agenda pembacaan LPJ kepengurusan dan pemilihan ketua umum baru",
       "language": "Kamis",
       "presentation": "",
-      "speakers": ["jusuf_kalla", "abraham_samad"],
+      "speakers": [],
       "tags": ["Rapat"],
-      "title": "Pelaksanaan RAK ke-VII"
+      "title": "Pelaksanaan RAK ke-VII",
+      "city": "Sengkang"
     },
     "102": {
+      "dateReadable": "27 Februari",
       "complexity": "Seluruh kader",
       "description": "Pelaksanaan kegiatan bedah buku yang dibawakan oleh kakanda Kurniawan dengan judul buk Pergolakan Pemikiran Islam",
       "language": "Kamis",
       "presentation": "",
-      "speakers": ["jusuf_kalla", "abraham_samad"],
+      "speakers": [],
       "tags": ["Rapat", "Kajian", "Perkaderan"],
-      "title": "Agenda Bedah Buku"
+      "title": "Agenda Bedah Buku",
+      "city": "Sengkang"
     }
   },
 
