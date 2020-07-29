@@ -9,12 +9,9 @@
   "signUp": "Formulir Pendaftaran",
   "infoPengkaderan": "Info Pengkaderan",
   "share": "Bagikan",
-  "followOur": {
-    "ikuti": "Ikuti",
-    "kami": "kami"
-  },
-  "followUs": "Akun Sosmed",
-  "emailUs": "Kontak Kami",
+  "followOur": "Follow Our",
+  "followUs": "Follow Us",
+  "emailUs": "Contact Us",
   "subscribe": "Subcribe",
   "subscribed": "Subscribed",
   "subscribeNote": "Dapatkan update terbaru dari kami melalui email",

@@ -21,6 +21,10 @@ class SejarahHMIProfile extends ReduxMixin(PolymerElement) {
           width: 100%;
         }
 
+        .container-title.sejarah-title {
+          margin-top: 22px;
+        }
+
         .content-desc {
           width: 100%;
           padding: 20px;
@@ -61,7 +65,9 @@ class SejarahHMIProfile extends ReduxMixin(PolymerElement) {
           }
         }
       </style>
-      <div class="container-title" layout vertical center>{$ sejarahHMIProfileBlock.title $}</div>
+      <div class="container-title sejarah-title" layout vertical center>
+        {$ sejarahHMIProfileBlock.title $}
+      </div>
       <div class="container">
         <div class="content" layout vertical center>
           <plastic-image
