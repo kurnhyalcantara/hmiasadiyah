@@ -9,12 +9,15 @@
   "signUp": "Formulir Pendaftaran",
   "infoPengkaderan": "Info Pengkaderan",
   "share": "Bagikan",
-  "followOur": "Follow our",
-  "followUs": "Follow us",
-  "emailUs": "Email us",
+  "followOur": {
+    "ikuti": "Ikuti",
+    "kami": "kami"
+  },
+  "followUs": "Akun Sosmed",
+  "emailUs": "Kontak Kami",
   "subscribe": "Subcribe",
+  "subscribed": "Subscribed",
   "subscribeNote": "Dapatkan update terbaru dari kami melalui email",
-  "buyTicket": "Buy ticket",
   "logIn": "Login",
   "logOut": "Logout",
   "offlineMessage": "Koneksi terputus :(, tapi anda masih bisa mengeksplor web app ini ",
@@ -23,8 +26,7 @@
   "refresh": "Refresh",
   "position": "Position",
   "country": "Country",
-  "time": "Time",
-  "faq": "/data/faq.md",
+  "time": "Waktu",
   "brosurPengkaderan": "https://firebasestorage.googleapis.com/v0/b/hmi-asadiyah.appspot.com/o/mix%2Fbrosur.jpg?alt=media&token=3ab9be54-769f-4795-a993-bd97ac73b8fd",
   "noPengkaderan": "Dalam waktu dekat ini, tidak ada agenda pengkaderan",
   "timezoneOffset": "-180",
@@ -149,7 +151,7 @@
     "title": "Artikel Terbaru",
     "callToAction": {
       "label": "Lihat semua artikel",
-      "link": "//"
+      "link": "/opini/"
     }
   },
   "footer": {
@@ -166,17 +168,17 @@
         },
         {
           "name": "Pengurus Besar HMI",
-          "url": "#",
+          "url": "pbhmi.org",
           "newTab": true
         },
         {
           "name": "Badko HMI Sulselbar",
-          "url": "#",
+          "url": "hmisulselbar.org",
           "newTab": true
         },
         {
           "name": "HMI Cabang Wajo",
-          "url": "https://hmiwajo.web.app",
+          "url": "https://hmiwajo.web.app/",
           "newTab": true
         }
       ]
@@ -233,7 +235,7 @@
       },
       {
         "title": "Tanggal Pembentukan",
-        "description": "14 Rabiul Awal 1366 H / 5 Februari 1947",
+        "description": "14 Rabiul Awal 1366 H / 5 Februari 1947 M",
         "icon": "calendar"
       },
       {
@@ -385,116 +387,19 @@
 
   "mySchedule": {
     "title": "Jadwalku",
-    "browseSession": "Tambahkan sesi"
+    "browseSession": "Tambahkan"
   },
 
-  "codeOfConduct": "Code of Conduct",
-  "codeOfConductBlock": {
-    "organization": "DevFest",
-    "form": "https://bit.ly/2RstTJ8",
-    "contacts": [
-      "Organizer Oleh Zasadnyy, [+38 093 486 6460](tel:+380934866460), o.zasadnyy@gdg.org.ua",
-      "Organizer Sofiya Huts, [+38 093 486 1425](tel:+380934861425), s.huts@gdg.org.ua"
-    ]
-  },
-  "aboutBlock": {
-    "title": "About",
-    "callToAction": {
-      "featuredSessions": {
-        "description": "GDG DevFest Ukraine brings together the world class experts in Android, Web and Cloud technologies to Lviv for 2 days of sessions, workshops and showcases.",
-        "label": "Explore featured session",
-        "link": "https://www.youtube.com/playlist?list=PLt8lEzcLNl31AouwDkbLbLARlQFwNS2en"
-      },
-      "howItWas": {
-        "description": "Described by many as 'Google I/O of Ukraine', our team creates DevFest to be the best place for experience sharing in a phenomenal atmosphere.",
-        "label": "See how it was in 2016",
-        "youtubeId": "TdpbgRgz6eE"
-      }
-    },
-    "statisticsBlock": {
-      "attendees": {
-        "label": "Attendees",
-        "number": "900"
-      },
-      "days": {
-        "label": "Days",
-        "number": "2"
-      },
-      "sessions": {
-        "label": "Sessions",
-        "number": "50"
-      },
-      "tracks": {
-        "label": "Tracks",
-        "number": "4"
-      }
-    }
-  },
-  "ticketsBlock": {
-    "title": "Tickets",
-    "ticketsDetails": "Tickets grant access to all conference sections, coffee breaks, lunch and party. Accommodation is NOT included in the ticket price.",
-    "soldOut": "You missed it!",
-    "notAvailableYet": "Not available yet",
-    "save": "Save ${discount}% today"
-  },
-  "partnersBlock": {
-    "title": "Partners",
-    "button": "Become a partner",
-    "form": {
-      "title": "Become a partner!",
-      "submitLabel": "Submit",
-      "fullName": "Full Name",
-      "companyName": "Company Name"
-    },
-    "toast": "We will contact you soon!"
-  },
   "blog": {
     "published": "Dipublikasikan pada: ",
     "suggested": "Berita Lainnya"
   },
-
-  "speakers": {
-    "skills": "Skills",
-    "previousYears": "Years",
-    "previousYear": "Year"
-  },
-  "speakersBlock": {
-    "title": "Speakers",
-    "callToAction": {
-      "label": "View all speakers",
-      "link": "/speakers/"
-    }
-  },
-  "previousSpeakersBlock": {
-    "title": "Previous speakers",
-    "callToAction": {
-      "label": "View all",
-      "link": "/previous-speakers/"
-    }
+  "opini": {
+    "suggested": "Artikel Lainnya"
   },
 
   "mapBlock": {
     "title": "Alamat Sekretariat"
-  },
-  "subscribeBlock": {
-    "callToAction": {
-      "description": "Get notified about the important conference updates",
-      "label": "Subscribe"
-    },
-    "yourEmail": "Your email",
-    "emailAddress": "Email Address",
-    "firstName": "First Name",
-    "lastName": "Last Name",
-    "formTitle": "Get the latest updates, insights and news about GDG DevFest Ukraine sent to your inbox.",
-    "emailRequired": "Please enter a valid email address.",
-    "subscribe": "Subscribe",
-    "subscribed": "Subscribed",
-    "close": "Close",
-    "generalError": "An error has occurred. Please, try again later.",
-    "toast": "Successfully subscribed!"
-  },
-  "team": {
-    "description": "Google is known all around the world. Everyone is 'googling', checking on 'maps' and communicating in 'gmail'. For simple users, they are services that just works, but not for us. Developers see much more: APIs, scalability issues, complex technology stacks. And that is what GDG is about.<br><br> [Google Developers Group (GDG) Lviv](http://lviv.gdg.org.ua/) - is open and volunteer geek community who create exciting projects and share experience about Google technologies with a passion.<br><br> Our goal is to organize space to connect the best industry experts with Ukrainian audience to boost development of IT."
   },
   "schedule": {
     "commentSessionSignedOut": "Anda harus login terlebih dahulu sebelum menulis kesan-kesan",
@@ -504,15 +409,11 @@
     "save": "Simpan",
     "headline": "Apakah agenda ini berkesan buatmu? :)",
     "leaveFeedback": "untuk Mengirim Komentar",
-    "sendFeedbackSignedOut": "Sign in to leave feedback",
     "feedbackRecorded": "Komentar disimpan",
     "feedbackDeleted": "Komentar dihapus",
     "helperText": "Komentar anda akan dijadikan evaluasi terhadap kegiatan kami kedepannya",
     "somethingWentWrong": "Ada sedikit masalah :(",
-    "contentCaption": "Content quality",
-    "styleCaption": "Presentation style",
-    "deleteFeedback": "Hapus",
-    "sessionClosed": "Session reviews are not open"
+    "deleteFeedback": "Hapus"
   },
   "sessionDetails": {
     "contentLevel": "Partisipan",
@@ -520,9 +421,6 @@
     "viewPresentation": "View presentation",
     "viewVideo": "View video",
     "speakers": "Speakers"
-  },
-  "speakerDetails": {
-    "sessions": "Sessions"
   },
   "notifications": {
     "default": "Dapatkan berita dan update terbaru dari kami",
@@ -536,45 +434,6 @@
     },
     "toast": {
       "title": "Buka"
-    }
-  },
-  "aboutOrganizerBlock": {
-    "image": "/images/team.jpg",
-    "blocks": [
-      {
-        "title": "Organizer",
-        "description": "<a href='http://lviv.gdg.org.ua' target='_blank'>GDG Lviv</a> with support of 10 GDGs from all around Ukraine is proud organizer of DevFest Ukraine",
-        "callToAction": {
-          "label": "Open team page",
-          "link": "/team"
-        }
-      },
-      {
-        "title": "What is a GDG?",
-        "description": "A Google Developer Group is a community of volunteers who create exciting projects and share experiences about Google technologies.",
-        "callToAction": {
-          "label": "Read more",
-          "link": "https://developers.google.com/groups/",
-          "newTab": true
-        }
-      },
-      {
-        "title": "What is DevFest?",
-        "description": "DevFests are community-led developer events hosted by Google Developer Groups around the globe.",
-        "callToAction": {
-          "label": "Read more",
-          "link": "https://devfest.withgoogle.com/",
-          "newTab": true
-        }
-      }
-    ]
-  },
-  "signInDialog": {
-    "alreadyHaveAccount": "You already have an account",
-    "alreadyUsed": "You've already used",
-    "signInToContinue": {
-      "part1": "Sign in with",
-      "part2": "to continue."
     }
   },
   "filters": {

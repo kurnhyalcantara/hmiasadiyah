@@ -264,20 +264,6 @@ class HMIApp extends ReduxMixin(PolymerElement) {
         fixed-top
       ></video-dialog>
 
-      <speaker-details
-        opened="[[dialogs.speaker.isOpened]]"
-        speaker="[[dialogs.speaker.data]]"
-        with-backdrop="[[viewport.isTabletPlus]]"
-        no-cancel-on-outside-click="[[viewport.isPhone]]"
-      ></speaker-details>
-
-      <previous-speaker-details
-        opened="[[dialogs.previousSpeaker.isOpened]]"
-        speaker="[[dialogs.previousSpeaker.data]]"
-        with-backdrop="[[viewport.isTabletPlus]]"
-        no-cancel-on-outside-click="[[viewport.isPhone]]"
-      ></previous-speaker-details>
-
       <session-details
         opened="[[dialogs.session.isOpened]]"
         session="[[dialogs.session.data]]"

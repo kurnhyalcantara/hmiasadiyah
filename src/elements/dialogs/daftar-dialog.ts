@@ -176,7 +176,7 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
       viewport: {
         type: Object,
       },
-      terdaftar: {
+      subscribed: {
         type: Boolean,
       },
       validate: {
@@ -217,14 +217,14 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
 
   stateChanged(state: import('../../redux/store').State) {
     this.setProperties({
-      terdaftar: state.terdaftar,
+      subscribed: state.subscribed,
       ui: state.ui,
       viewport: state.ui.viewport,
     });
   }
 
   static get observers() {
-    return ['_handleDialogToggled(opened, data)', '_handleTerdaftar(terdaftar)'];
+    return ['_handleDialogToggled(opened, data)', '_handleTerdaftar(subscribed)'];
   }
 
   ready() {
@@ -243,8 +243,8 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
     dialogsActions.closeDialog(DIALOGS.DAFTAR);
   }
 
-  _handleTerdaftar(terdaftar) {
-    if (terdaftar) {
+  _handleTerdaftar(subscribed) {
+    if (subscribed) {
       this._closeDialog();
     }
   }

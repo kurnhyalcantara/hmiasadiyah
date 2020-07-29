@@ -11,7 +11,6 @@ export const SET_DIALOG_DATA = 'app/Dialogs/SET_DIALOG_DATA';
 export const SET_DIALOG_ERROR = 'app/Dialogs/SET_DIALOG_ERROR';
 export const DIALOGS = {
   SPEAKER: 'speaker',
-  PREVIOUS_SPEAKER: 'previousSpeaker',
   SESSION: 'session',
   FEEDBACK: 'feedback',
   DAFTAR: 'daftar',
@@ -20,11 +19,6 @@ export const DIALOGS = {
 // toast
 export const SHOW_TOAST = 'app/Toast/SHOW_TOAST';
 export const HIDE_TOAST = 'app/Toast/HIDE_TOAST';
-
-// tickets
-export const FETCH_TICKETS = 'app/Tickets/FETCH_TICKETS';
-export const FETCH_TICKETS_FAILURE = 'app/Tickets/FETCH_TICKETS_FAILURE';
-export const FETCH_TICKETS_SUCCESS = 'app/Tickets/FETCH_TICKETS_SUCCESS';
 
 // feedback
 export const FETCH_PREVIOUS_FEEDBACK = 'app/Feedback/FETCH_PREVIOUS_FEEDBACK';
@@ -41,15 +35,6 @@ export const DELETE_FEEDBACK_SUCCESS = 'app/Feedback/DELETE_FEEDBACK_SUCCESS';
 
 export const WIPE_PREVIOUS_FEEDBACK = 'app/Feedback/WIPE_PREVIOUS_FEEDBACK';
 
-// partners
-export const FETCH_PARTNERS = 'app/Partners/FETCH_PARTNERS';
-export const FETCH_PARTNERS_FAILURE = 'app/Partners/FETCH_PARTNERS_FAILURE';
-export const FETCH_PARTNERS_SUCCESS = 'app/Partners/FETCH_PARTNERS_SUCCESS';
-
-export const ADD_POTENTIAL_PARTNER = 'app/Partners/ADD_POTENTIAL_PARTNER';
-export const ADD_POTENTIAL_PARTNER_FAILURE = 'app/Partners/ADD_POTENTIAL_PARTNER_FAILURE';
-export const ADD_POTENTIAL_PARTNER_SUCCESS = 'app/Partners/ADD_POTENTIAL_PARTNER_SUCCESS';
-
 // featured videos
 export const FETCH_VIDEOS = 'app/Videos/FETCH_VIDEOS';
 export const FETCH_VIDEOS_FAILURE = 'app/Videos/FETCH_VIDEOS_FAILURE';
@@ -58,12 +43,12 @@ export const FETCH_VIDEOS_SUCCESS = 'app/Videos/FETCH_VIDEOS_SUCCESS';
 // video dialog
 export const TOGGLE_VIDEO_DIALOG = 'app/Dialogs/TOGGLE_VIDEO_DIALOG';
 
-// blog
+// news
 export const FETCH_BLOG_LIST = 'app/Blog/FETCH_BLOG_LIST';
 export const FETCH_BLOG_LIST_FAILURE = 'app/Blog/FETCH_BLOG_LIST_FAILURE';
 export const FETCH_BLOG_LIST_SUCCESS = 'app/Blog/FETCH_BLOG_LIST_SUCCESS';
 
-// news
+// opini
 export const FETCH_OPINI_LIST = 'app/Opini/FETCH_OPINI_LIST';
 export const FETCH_OPINI_LIST_FAILURE = 'app/Opini/FETCH_OPINI_LIST_FAILURE';
 export const FETCH_OPINI_LIST_SUCCESS = 'app/Opini/FETCH_OPINI_LIST_SUCCESS';
@@ -72,11 +57,6 @@ export const FETCH_OPINI_LIST_SUCCESS = 'app/Opini/FETCH_OPINI_LIST_SUCCESS';
 export const FETCH_SPEAKERS = 'app/Speakers/FETCH_SPEAKERS';
 export const FETCH_SPEAKERS_FAILURE = 'app/Speakers/FETCH_SPEAKERS_FAILURE';
 export const FETCH_SPEAKERS_SUCCESS = 'app/Speakers/FETCH_SPEAKERS_SUCCESS';
-
-// previous speakers
-export const FETCH_PREVIOUS_SPEAKERS = 'app/PreviousSpeakers/FETCH_SPEAKERS';
-export const FETCH_PREVIOUS_SPEAKERS_FAILURE = 'app/PreviousSpeakers/FETCH_SPEAKERS_FAILURE';
-export const FETCH_PREVIOUS_SPEAKERS_SUCCESS = 'app/PreviousSpeakers/FETCH_SPEAKERS_SUCCESS';
 
 // sessions
 export const FETCH_SESSIONS = 'app/Sessions/FETCH_SESSIONS';
@@ -102,11 +82,6 @@ export const FETCH_SCHEDULE_SUCCESS = 'app/Schedule/FETCH_SCHEDULE_SUCCESS';
 export const FETCH_GALLERY = 'app/Gallery/FETCH_GALLERY';
 export const FETCH_GALLERY_FAILURE = 'app/Gallery/FETCH_GALLERY_FAILURE';
 export const FETCH_GALLERY_SUCCESS = 'app/Gallery/FETCH_GALLERY_SUCCESS';
-
-// team
-export const FETCH_TEAM = 'app/Team/FETCH_TEAM';
-export const FETCH_TEAM_FAILURE = 'app/Team/FETCH_TEAM_FAILURE';
-export const FETCH_TEAM_SUCCESS = 'app/Team/FETCH_TEAM_SUCCESS';
 
 // user
 export const SIGN_IN = 'app/Auth/SIGN_IN';

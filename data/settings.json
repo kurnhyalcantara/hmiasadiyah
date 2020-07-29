@@ -1,12 +1,10 @@
 {
   "organizer": {
     "name": "HMI Komisariat Asadiyah",
-    "twitter": "gdglviv",
+    "twitter": "hmiasadiyah",
     "partner": "https://yakusa.id/",
-    "url": "http://lviv.gdg.org.ua/"
+    "url": "https://hmi-asadiyah.web.app/"
   },
-  "startDate": "2017-10-013T09:00:00+03:00",
-  "endDate": "2017-10-14T19:00:00+03:00",
   "webapp": {
     "shortName": "HMI Asadiyah",
     "themeColor": "#069539",
@@ -15,7 +13,7 @@
   "dateFormat": {
     "locale": "id-ID"
   },
-  "hashtag": "DevFest",
+  "hashtag": "HMIAsadiyah",
   "disabledSchedule": false,
   "navigation": [
     {
@@ -60,17 +58,17 @@
       "metaDescription": "Himpunan Mahasiswa Islam atau biasa disingkat dengan HMI adalah Organisasi mahasiswa Islam tertua dan terbesar di Indonesia.",
       "background": {
         "image": "/images/backgrounds/hero-block.jpg",
-        "color": "#131a20"
+        "color": "#069539"
       },
       "fontColor": "#FFF"
     },
     "news": {
-      "title": "News",
+      "title": "Berita",
       "metaDescription": "Berita terbaru HMI Komisariat Asadiyah",
       "description": "Berita terbaru tentang HMI dan kegiatan agenda komisariat As'adiyah",
       "background": {
         "image": "/images/backgrounds/hero-block.jpg",
-        "color": "#131a20"
+        "color": "#069539"
       },
       "fontColor": "#FFF",
       "path": "Home / Berita"
@@ -110,8 +108,6 @@
   "location": {
     "label": "Sekretariat HMI Komisariat As'adiyah",
     "name": "Sekret HMI Komisariat As'adiyah",
-    "city": "Lviv",
-    "short": "Lviv, Ukraine",
     "address": "Temukan",
     "pointer": {
       "latitude": -4.138602,
@@ -148,7 +144,7 @@
       },
       {
         "name": "twitter",
-        "url": "https://twitter.com/hmi-asadiyah/"
+        "url": "https://twitter.com/hmiasadiyah/"
       },
       {
         "name": "instagram",
@@ -197,6 +193,5 @@
     "tickets": {
       "itemsCount": 5
     }
-  },
-  "showForkMeBlockForProjectIds": ["hoverboard-master", "hoverboard-dev"]
+  }
 }

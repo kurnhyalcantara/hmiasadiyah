@@ -56,7 +56,7 @@ class GabungBlock extends ReduxMixin(PolymerElement) {
         <div>
           <paper-button
             class="animated icon-right"
-            disabled$="[[terdaftar]]"
+            disabled$="[[subscribed]]"
             on-click="_daftar"
             ga-on="click"
             ga-event-category="pendaftar"
@@ -78,7 +78,7 @@ class GabungBlock extends ReduxMixin(PolymerElement) {
 
   private user: { signedIn?: boolean; email?: string; displayName?: string } = {};
   private viewport = {};
-  private terdaftar = false;
+  private subscribed = false;
   private ctaIcon = 'arrow-right-circle';
   private ctaLabel = '{$  subscribeBlock.callToAction.label $}';
 
@@ -90,7 +90,7 @@ class GabungBlock extends ReduxMixin(PolymerElement) {
       viewport: {
         type: Object,
       },
-      terdaftar: {
+      subscribed: {
         type: Boolean,
         observer: '_handleSubscribed',
       },
@@ -107,14 +107,14 @@ class GabungBlock extends ReduxMixin(PolymerElement) {
 
   stateChanged(state: import('../redux/store').State) {
     this.setProperties({
-      terdaftar: state.terdaftar,
+      subscribed: state.subscribed,
       user: state.user,
       viewport: state.ui.viewport,
     });
   }
 
-  _handleSubscribed(terdaftar) {
-    if (terdaftar) {
+  _handleSubscribed(subscribed) {
+    if (subscribed) {
       this.ctaIcon = 'checked';
       this.ctaLabel = '{$  subscribeBlock.terdaftar $}';
     } else {

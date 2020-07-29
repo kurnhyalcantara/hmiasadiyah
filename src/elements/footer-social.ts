@@ -72,7 +72,7 @@ class FooterSocial extends PolymerElement {
 
       .email {
         margin-bottom: 20px;
-        width: 85px;
+        width: 100%;
       }
 
       .email .title {
@@ -171,12 +171,13 @@ class FooterSocial extends PolymerElement {
 
     <div class="social-group blog">
       <div class="title">
-        {$ followOur $}
+        {$ followOur.ikuti $}
         <a
           href="{$ organizer.partner $}"
           {% if organizer.partner.startsWith('http') %} target="_blank" rel="noopener noreferrer" {% endif %}>
           {$ footer.partner $}
         </a>
+        {$ followOur.kami $}
       </div>
     </div>
 

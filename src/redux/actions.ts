@@ -1,7 +1,4 @@
 import {
-  ADD_POTENTIAL_PARTNER_FAILURE,
-  ADD_POTENTIAL_PARTNER_SUCCESS,
-  ADD_POTENTIAL_PARTNER,
   CLOSE_DIALOG,
   DELETE_FEEDBACK_FAILURE,
   DELETE_FEEDBACK_SUCCESS,
@@ -15,15 +12,9 @@ import {
   FETCH_GALLERY_FAILURE,
   FETCH_GALLERY_SUCCESS,
   FETCH_GALLERY,
-  FETCH_PARTNERS_FAILURE,
-  FETCH_PARTNERS_SUCCESS,
-  FETCH_PARTNERS,
   FETCH_PREVIOUS_FEEDBACK_FAILURE,
   FETCH_PREVIOUS_FEEDBACK_SUCCESS,
   FETCH_PREVIOUS_FEEDBACK,
-  FETCH_PREVIOUS_SPEAKERS_FAILURE,
-  FETCH_PREVIOUS_SPEAKERS_SUCCESS,
-  FETCH_PREVIOUS_SPEAKERS,
   FETCH_SCHEDULE_FAILURE,
   FETCH_SCHEDULE_SUCCESS,
   FETCH_SCHEDULE,
@@ -33,12 +24,6 @@ import {
   FETCH_SPEAKERS_FAILURE,
   FETCH_SPEAKERS_SUCCESS,
   FETCH_SPEAKERS,
-  FETCH_TEAM_FAILURE,
-  FETCH_TEAM_SUCCESS,
-  FETCH_TEAM,
-  FETCH_TICKETS_FAILURE,
-  FETCH_TICKETS_SUCCESS,
-  FETCH_TICKETS,
   FETCH_USER_FEATURED_SESSIONS_FAILURE,
   FETCH_USER_FEATURED_SESSIONS_SUCCESS,
   FETCH_USER_FEATURED_SESSIONS,
@@ -166,115 +151,6 @@ export const toastActions = {
     store.dispatch({
       type: HIDE_TOAST,
     });
-  },
-};
-
-export const ticketsActions = {
-  fetchTickets: () => (dispatch) => {
-    dispatch({
-      type: FETCH_TICKETS,
-    });
-
-    return window.firebase
-      .firestore()
-      .collection('tickets')
-      .orderBy('order', 'asc')
-      .get()
-      .then((snaps) => {
-        const list = snaps.docs.map((snap) => Object.assign({}, snap.data(), { id: snap.id }));
-
-        dispatch({
-          type: FETCH_TICKETS_SUCCESS,
-          payload: { list },
-        });
-      })
-      .catch((error) => {
-        dispatch({
-          type: FETCH_TICKETS_FAILURE,
-          payload: { error },
-        });
-      });
-  },
-};
-
-const _getPartnerItems = (groupId) =>
-  window.firebase
-    .firestore()
-    .collection('partners')
-    .doc(groupId)
-    .collection('items')
-    .get()
-    .then((snaps) => {
-      return snaps.docs
-        .map((snap) => Object.assign({}, snap.data(), { id: snap.id }))
-        .sort((a, b) => a.order - b.order);
-    });
-
-export const partnersActions = {
-  addPartner: (data) => (dispatch) => {
-    dispatch({
-      type: ADD_POTENTIAL_PARTNER,
-      payload: data,
-    });
-
-    const id = data.email.replace(/[^\w\s]/gi, '');
-    const partner = {
-      email: data.email,
-      fullName: data.firstFieldValue || '',
-      companyName: data.secondFieldValue || '',
-    };
-
-    window.firebase
-      .firestore()
-      .collection('potentialPartners')
-      .doc(id)
-      .set(partner)
-      .then(() => {
-        dispatch({
-          type: ADD_POTENTIAL_PARTNER_SUCCESS,
-          payload: { partner },
-        });
-      })
-      .catch((error) => {
-        dispatch({
-          type: ADD_POTENTIAL_PARTNER_FAILURE,
-          payload: { error },
-        });
-      });
-  },
-  fetchPartners: () => (dispatch) => {
-    dispatch({
-      type: FETCH_PARTNERS,
-    });
-
-    window.firebase
-      .firestore()
-      .collection('partners')
-      .get()
-      .then((snaps) =>
-        Promise.all(
-          snaps.docs.map((snap) => Promise.all([snap.data(), snap.id, _getPartnerItems(snap.id)]))
-        )
-      )
-      .then((groups) =>
-        groups.map(([group, id, items]) => {
-          return Object.assign({}, group, { id, items });
-        })
-      )
-      .then((list) => {
-        dispatch({
-          type: FETCH_PARTNERS_SUCCESS,
-          payload: {
-            list,
-          },
-        });
-      })
-      .catch((error) => {
-        dispatch({
-          type: FETCH_PARTNERS_FAILURE,
-          payload: { error },
-        });
-      });
   },
 };
 
@@ -494,39 +370,6 @@ export const speakersActions = {
   },
 };
 
-export const previousSpeakersActions = {
-  fetchList: () => (dispatch) => {
-    dispatch({
-      type: FETCH_PREVIOUS_SPEAKERS,
-    });
-
-    window.firebase
-      .firestore()
-      .collection('previousSpeakers')
-      .orderBy('order', 'asc')
-      .get()
-      .then((snaps) => {
-        const list = snaps.docs.map((snap) => Object.assign({}, snap.data(), { id: snap.id }));
-
-        const obj = list.reduce((acc, curr) => Object.assign({}, acc, { [curr.id]: curr }), {});
-
-        dispatch({
-          type: FETCH_PREVIOUS_SPEAKERS_SUCCESS,
-          payload: {
-            obj,
-            list,
-          },
-        });
-      })
-      .catch((error) => {
-        dispatch({
-          type: FETCH_PREVIOUS_SPEAKERS_FAILURE,
-          payload: { error },
-        });
-      });
-  },
-};
-
 export const sessionsActions = {
   fetchList: () => (dispatch) => {
     dispatch({
@@ -684,52 +527,6 @@ export const galleryActions = {
       .catch((error) => {
         dispatch({
           type: FETCH_GALLERY_FAILURE,
-          payload: { error },
-        });
-      });
-  },
-};
-
-const _getTeamMembers = (teamId) =>
-  window.firebase
-    .firestore()
-    .collection('team')
-    .doc(teamId)
-    .collection('members')
-    .get()
-    .then((snaps) => snaps.docs.map((snap) => Object.assign({}, snap.data(), { id: snap.id })));
-
-export const teamActions = {
-  fetchTeam: () => (dispatch) => {
-    dispatch({
-      type: FETCH_TEAM,
-    });
-
-    window.firebase
-      .firestore()
-      .collection('team')
-      .get()
-      .then((snaps) =>
-        Promise.all(
-          snaps.docs.map((snap) => Promise.all([snap.data(), snap.id, _getTeamMembers(snap.id)]))
-        )
-      )
-      .then((teams) =>
-        teams.map(([team, id, members]) => {
-          return Object.assign({}, team, { id, members });
-        })
-      )
-      .then((list) => {
-        dispatch({
-          type: FETCH_TEAM_SUCCESS,
-          payload: {
-            list,
-          },
-        });
-      })
-      .catch((error) => {
-        dispatch({
-          type: FETCH_TEAM_FAILURE,
           payload: { error },
         });
       });

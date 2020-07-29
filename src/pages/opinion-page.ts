@@ -324,7 +324,7 @@ class OpinionPage extends ReduxMixin(PolymerElement) {
 
       <div class="suggested-posts">
         <div class="container-narrow">
-          <h3 class="container-title">{$ blog.suggested $}</h3>
+          <h3 class="container-title">{$ opini.suggested $}</h3>
           <posts-list posts="[[suggestedPosts]]"></posts-list>
         </div>
       </div>

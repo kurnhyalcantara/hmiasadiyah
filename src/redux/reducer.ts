@@ -1,7 +1,4 @@
 import {
-  ADD_POTENTIAL_PARTNER_FAILURE,
-  ADD_POTENTIAL_PARTNER_SUCCESS,
-  ADD_POTENTIAL_PARTNER,
   CLOSE_DIALOG,
   DELETE_FEEDBACK_FAILURE,
   DELETE_FEEDBACK_SUCCESS,
@@ -15,15 +12,9 @@ import {
   FETCH_GALLERY_FAILURE,
   FETCH_GALLERY_SUCCESS,
   FETCH_GALLERY,
-  FETCH_PARTNERS_FAILURE,
-  FETCH_PARTNERS_SUCCESS,
-  FETCH_PARTNERS,
   FETCH_PREVIOUS_FEEDBACK_FAILURE,
   FETCH_PREVIOUS_FEEDBACK_SUCCESS,
   FETCH_PREVIOUS_FEEDBACK,
-  FETCH_PREVIOUS_SPEAKERS_FAILURE,
-  FETCH_PREVIOUS_SPEAKERS_SUCCESS,
-  FETCH_PREVIOUS_SPEAKERS,
   FETCH_SCHEDULE_SUCCESS,
   FETCH_SESSIONS_FAILURE,
   FETCH_SESSIONS_SUCCESS,
@@ -31,12 +22,6 @@ import {
   FETCH_SPEAKERS_FAILURE,
   FETCH_SPEAKERS_SUCCESS,
   FETCH_SPEAKERS,
-  FETCH_TEAM_FAILURE,
-  FETCH_TEAM_SUCCESS,
-  FETCH_TEAM,
-  FETCH_TICKETS_FAILURE,
-  FETCH_TICKETS_SUCCESS,
-  FETCH_TICKETS,
   FETCH_USER_FEATURED_SESSIONS_FAILURE,
   FETCH_USER_FEATURED_SESSIONS_SUCCESS,
   FETCH_USER_FEATURED_SESSIONS,
@@ -125,75 +110,6 @@ export const dialogsReducer = (state = initialState.dialogs, action) => {
       return Object.assign({}, state, {
         [action.dialogName]: initialState.dialogs[action.dialogName],
       });
-    default:
-      return state;
-  }
-};
-
-export const ticketsReducer = (state = initialState.tickets, action) => {
-  switch (action.type) {
-    case FETCH_TICKETS:
-      return Object.assign({}, state, {
-        fetching: true,
-        fetchingError: null,
-        list: [],
-      });
-
-    case FETCH_TICKETS_FAILURE:
-      return Object.assign({}, state, {
-        fetching: false,
-        fetchingError: action.payload.error,
-      });
-
-    case FETCH_TICKETS_SUCCESS:
-      return Object.assign({}, state, {
-        fetching: false,
-        list: action.payload.list,
-      });
-
-    default:
-      return state;
-  }
-};
-
-export const partnersReducer = (state = initialState.partners, action) => {
-  switch (action.type) {
-    case FETCH_PARTNERS:
-      return Object.assign({}, state, {
-        fetching: true,
-        fetchingError: null,
-        list: [],
-      });
-
-    case FETCH_PARTNERS_FAILURE:
-      return Object.assign({}, state, {
-        fetching: false,
-        fetchingError: action.payload.error,
-      });
-
-    case FETCH_PARTNERS_SUCCESS:
-      return Object.assign({}, state, {
-        fetching: false,
-        list: action.payload.list,
-      });
-
-    case ADD_POTENTIAL_PARTNER:
-      return Object.assign({}, state, {
-        adding: true,
-        addingError: null,
-      });
-
-    case ADD_POTENTIAL_PARTNER_FAILURE:
-      return Object.assign({}, state, {
-        adding: false,
-        addingError: action.payload.error,
-      });
-
-    case ADD_POTENTIAL_PARTNER_SUCCESS:
-      return Object.assign({}, state, {
-        adding: false,
-      });
-
     default:
       return state;
   }
@@ -383,34 +299,6 @@ export const speakersReducer = (state = initialState.speakers, action) => {
   }
 };
 
-export const previousSpeakersReducer = (state = initialState.previousSpeakers, action) => {
-  switch (action.type) {
-    case FETCH_PREVIOUS_SPEAKERS:
-      return Object.assign({}, state, {
-        fetching: true,
-        fetchingError: null,
-        list: [],
-        obj: {},
-      });
-
-    case FETCH_PREVIOUS_SPEAKERS_FAILURE:
-      return Object.assign({}, state, {
-        fetching: false,
-        fetchingError: action.payload.error,
-      });
-
-    case FETCH_PREVIOUS_SPEAKERS_SUCCESS:
-      return Object.assign({}, state, {
-        fetching: false,
-        list: action.payload.list,
-        obj: action.payload.obj,
-      });
-
-    default:
-      return state;
-  }
-};
-
 export const sessionsReducer = (state = initialState.sessions, action) => {
   switch (action.type) {
     case FETCH_SESSIONS:
@@ -504,32 +392,6 @@ export const galleryReducer = (state = initialState.gallery, action) => {
   }
 };
 
-export const teamReducer = (state = initialState.team, action) => {
-  switch (action.type) {
-    case FETCH_TEAM:
-      return Object.assign({}, state, {
-        fetching: true,
-        fetchingError: null,
-        list: [],
-      });
-
-    case FETCH_TEAM_FAILURE:
-      return Object.assign({}, state, {
-        fetching: false,
-        fetchingError: action.payload.error,
-      });
-
-    case FETCH_TEAM_SUCCESS:
-      return Object.assign({}, state, {
-        fetching: false,
-        list: action.payload.list,
-      });
-
-    default:
-      return state;
-  }
-};
-
 export const userReducer = (state = initialState.user, action) => {
   switch (action.type) {
     case SIGN_IN:
@@ -540,10 +402,10 @@ export const userReducer = (state = initialState.user, action) => {
   }
 };
 
-export const daftarReducer = (state = initialState.terdaftar, action) => {
+export const daftarReducer = (state = initialState.subscribed, action) => {
   switch (action.type) {
     case DAFTAR:
-      return action.terdaftar;
+      return action.subscribed;
     default:
       return state;
   }
@@ -586,20 +448,16 @@ export const appReducer = (state = initialState, action) => {
     ui: uiReducer(state.ui, action),
     routing: routingReducer(state.routing, action),
     dialogs: dialogsReducer(state.dialogs, action),
-    tickets: ticketsReducer(state.tickets, action),
-    partners: partnersReducer(state.partners, action),
     feedback: feedbackReducer(state.feedback, action),
     videos: videosReducer(state.videos, action),
     blog: blogReducer(state.blog, action),
     opini: opiniReducer(state.opini, action),
     speakers: speakersReducer(state.speakers, action),
-    previousSpeakers: previousSpeakersReducer(state.previousSpeakers, action),
     sessions: sessionsReducer(state.sessions, action),
     schedule: scheduleReducer(state.schedule, action),
     gallery: galleryReducer(state.gallery, action),
-    team: teamReducer(state.team, action),
     user: userReducer(state.user, action),
-    terdaftar: daftarReducer(state.terdaftar, action),
+    subscribed: daftarReducer(state.subscribed, action),
     toast: toastReducer(state.toast, action),
     notifications: notificationsReducer(state.notifications, action),
     filters: filtersReducer(state.filters, action),

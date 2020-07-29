@@ -53,11 +53,11 @@ class SubscribeFormFooter extends ReduxMixin(PolymerElement) {
         <paper-input
           id="emailInput"
           on-touchend="_focus"
-          label="{$ subscribeBlock.yourEmail $}"
+          label="{$ formPendaftaran.emailAddress $}"
           value="{{email}}"
           required
           auto-validate$="[[validate]]"
-          error-message="{$ subscribeBlock.emailRequired $}"
+          error-message="{$ formPendaftaran.emailRequired $}"
           autocomplete="off"
           disabled="[[subscribed]]"
         >
@@ -123,7 +123,7 @@ class SubscribeFormFooter extends ReduxMixin(PolymerElement) {
   }
 
   _computeButtonLabel(subscribed) {
-    return subscribed ? '{$  subscribeBlock.subscribed $}' : '{$  subscribeBlock.subscribe $}';
+    return subscribed ? '{$ subscribed $}' : '{$ subscribe $}';
   }
 }
 

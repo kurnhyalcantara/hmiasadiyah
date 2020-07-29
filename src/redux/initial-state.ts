@@ -23,10 +23,6 @@ export const initialState = {
       isOpened: false,
       data: {},
     },
-    [DIALOGS.PREVIOUS_SPEAKER]: {
-      isOpened: false,
-      data: {},
-    },
     [DIALOGS.SESSION]: {
       isOpened: false,
       data: {},
@@ -43,11 +39,6 @@ export const initialState = {
       isOpened: false,
       data: {},
     },
-  },
-  tickets: {
-    fetching: false,
-    fetchingError: null,
-    list: [],
   },
   videos: {
     fetching: false,
@@ -69,19 +60,6 @@ export const initialState = {
     obj: {},
   },
   opini: {
-    fetching: false,
-    fetchingError: null,
-    list: [],
-    obj: {},
-  },
-  partners: {
-    fetching: false,
-    fetchingError: null,
-    list: [],
-    adding: false,
-    addingError: false,
-  },
-  previousSpeakers: {
     fetching: false,
     fetchingError: null,
     list: [],
@@ -109,15 +87,9 @@ export const initialState = {
     fetchingError: null,
     list: [],
   },
-  team: {
-    fetching: false,
-    fetchingError: null,
-    list: [],
-  },
   user: {
     signedIn: false,
   },
-  terdaftar: false,
   subscribed: false,
   toast: {},
   notifications: {
