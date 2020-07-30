@@ -312,7 +312,7 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
     const seventhField = this.shadowRoot.querySelector('#seventhFieldInput');
     const eigthField = this.shadowRoot.querySelector('#eigthFieldInput');
     const emailInput = this.shadowRoot.querySelector('#emailInput');
-    firstField.value = userData ? userData.firstFieldValue : '';
+    firstField.value = userData ? userData.displayName : '';
     secondField.value = '';
     thirdField.value = '';
     fourthField.value = '';
@@ -337,7 +337,7 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
     eigthField.focus();
     eigthField.blur();
     emailInput.blur();
-    emailInput.value = '';
+    emailInput.value = userData ? userData.email : '';
     emailInput.invalid = false;
     this.validate = true;
   }

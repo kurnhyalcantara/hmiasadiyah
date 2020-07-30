@@ -38,9 +38,20 @@
         "name": "@kurnhyalcantara (Sekretaris Umum HMI Komisariat As'adiyah)",
         "image": "/images/author/kurnhy.png"
       }
+    },
+    "Idul_Adha_Sebagai_Momen_Refleksi_Bersama": {
+      "backgroundColor": "#825106",
+      "brief": "Perlu kita kembali merenungkan apa yang terjadi di tahun 2020 hingga detik ini. Tak ada orang yang menduga pada saat kita sedang bereuforia terhadap pergantian tahun 2020 akhir Desember 2019 lalu, di sebuah wilayah salah satu negara adidaya seorang...",
+      "content": "Perlu kita kembali merenungkan apa yang terjadi di tahun 2020 hingga detik ini. Tak ada orang yang menduga pada saat kita sedang bereuforia terhadap pergantian tahun 2020 akhir Desember 2019 lalu, di sebuah wilayah salah satu negara adidaya seorang dokter mendeteksi virus jenis _SARS_ dengan pola yang berbeda dengan virus jenis _SARS_ pada umumnya. Kita terkadang sering memiliki sifat meremehkan diawal yang imbasnya berjuang mati-matian yang kita sendiri sampai kapan akan berakhir.  Covid-19 mampu menghancurkan hegemoni kehidupan manusia di belahan dunia yang setiap tahun bergerak statis. Pegawai yang tiap pagi menuju kantornya, anak-anak sekolah bersama gurunya melaksanakan KBM di kelas, hingga pak Presiden yang tiap bulannya sibuk merumuskan paket kebijakan ekonomi. Hal-hal tersebut diputar 180 derajat oleh Covid-19 sehingga Menteri Keuangan Sri Mulyani mengalihkan prioritas APBN ke penanganan Covid-19.  Berbagai macam inovasi-inovasi pun bermunculan, seperti sistem pembelajaran dengan sistem teleconference. Tak heran apabila aplikasi teleconference seperti Zoom, berhasil menduduki peringkat pertama di _Play Store._ Orang yang paling cekatan saat ini adalah orang yang mampu memanfaatkan peluang di tengah pandemi. Maka saya pada akhirnya tidak begitu kaget ketika membaca artikel di situs forum online yaitu Kaskus, dengan judul “Pendiri Zoom mampu mencetak laba fantastis di kuartal I dan II di  tahun 2020”. Setidaknya ini membuktikan pepatah yang mengatakan dibalik bencana yang ditimpa seseorang, maka akan ada segilintir orang mendapat keuntungan. Haha, aneh aneh :).  Pada akhirnya kita telah memasuki separuh tahun 2020. Di penghujung bulan Juli ini, umat Islam di seluruh dunia menyambut Hari Raya Idul Adha 1441 H. Seperti halnya Hari Raya Idul Fitri beberapa bulan yang lalu, kemungkinan Perayaan Idul Kurban akan tetap sama. Maka pada momen Hari Raya Idul Adha ini setidaknya ada hikmah yang bisa kita jadikan refleksi bersama. Sepanjang tahun 2020 kita bersama-sama berjuang melawan penyebaran Virus Covid-19, segala pengorbanan kita telah curahkan bersama, baik itu pengorbanan waktu dan biaya. Maka dari itu, dengan panjatan doa serta dzikir bermunajat kepada Allah SWT disertai usaha dan ikhtiar. Insya Allah kita bisa lepas dari segala mara bahaya yang menimpa ummat manusia. Amin Yaa Rabbal Alamin. Yakin Usaha Sampai. Segenap keluarga besar Himpunan Mahasiswa Islam Komisariat As'adiyah Sengkang Cabang Wajo mengucapkan Selamat Hari Raya Idul Adha 1441 H.  <plastic-image srcset=\"https://firebasestorage.googleapis.com/v0/b/hmi-asadiyah.appspot.com/o/posts%2Fopini-2.jpg?alt=media&token=dc480381-5732-4a8e-b241-ad5376eff233\" lazy-load preload fade></plastic-image>  ",
+      "image": "https://firebasestorage.googleapis.com/v0/b/hmi-asadiyah.appspot.com/o/posts%2Fopini-2.jpg?alt=media&token=dc480381-5732-4a8e-b241-ad5376eff233",
+      "published": "2020-07-30",
+      "title": "Idul Adha Sebagai Momen Refleksi Pertengahan 2020",
+      "author": {
+        "name": "@kurnhyalcantara (Sekretaris Umum HMI Komisariat As'adiyah)",
+        "image": "/images/author/kurnhy.png"
+      }
     }
   },
-
   "gallery": [
     "https://storage.googleapis.com/hmi-asadiyah.appspot.com/gallery/photo1.jpg",
     "https://storage.googleapis.com/hmi-asadiyah.appspot.com/gallery/photo2.jpg",
@@ -55,7 +66,7 @@
   ],
   "notifications": {
     "config": {
-      "icon": "",
+      "icon": "/images/favicon.ico",
       "timezone": "+08:00"
     },
     "messages": {},

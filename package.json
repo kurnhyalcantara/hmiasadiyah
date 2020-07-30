@@ -7,7 +7,7 @@
     "clean": "rimraf dist",
     "deploy": "npm run build && cross-env NODE_ENV=production firebase deploy --except functions",
     "firestore:copy": "babel-node ./internals/firestore-copy-data",
-    "firestore:init": "firebase firestore:delete -r --all-collections -y && firebase functions:config:set schedule.enabled=true && babel-node ./internals/import-default-data && firebase deploy --except hosting",
+    "firestore:init": "firebase firestore:delete -r --all-collections -y && firebase functions:config:set schedule.enabled=true && firebase deploy --except hosting && babel-node ./internals/import-default-data",
     "fix:eslint": "eslint . --ext .ts --ext .js --fix",
     "fix:prettier": "prettier . --write",
     "fix:stylelint": "stylelint \"**/*.ts\" --fix",
