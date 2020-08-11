@@ -106,7 +106,6 @@
     <script src="./node_assets/firebase/firebase-firestore.js"></script>
     <script src="./node_assets/firebase/firebase-messaging.js"></script>
     <script src="./node_assets/firebase/firebase-performance.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
 
     <script>
       window.Polymer = { rootPath: '{$ basepath $}' };
@@ -119,7 +118,6 @@
         databaseURL: '{$ firebase.databaseURL $}',
         messagingSenderId: '{$ firebase.messagingSenderId $}',
         projectId: '{$ firebase.projectId $}',
-        measurementId: '{$ firebase.measurementId $}',
         storageBucket: '{$ firebase.storageBucket $}',
       });
 
@@ -134,7 +132,6 @@
 
       // eslint-disable-next-line no-console
       console.log('Firebase is ready!');
-      firebase.analytics();
     </script>
 
     <script src="./node_assets/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
