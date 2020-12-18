@@ -1,17 +1,12 @@
-<p align="center">
-</p>
-<p align="center">
-<a href="https://hmi-asadiyah.web.app/" align="center">:zap: Live demo</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-<a href="#getting-started">:rocket: Get Started</a>
-</p>
+# HMI As'adiyah Web App v2
 
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fgdg-x%2Fhoverboard.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fgdg-x%2Fhoverboard?ref=badge_shield)[![Codacy Badge](https://api.codacy.com/project/badge/Grade/7973ac656dc94e42858ce640bb02de58)](https://www.codacy.com/app/pamuditha/hoverboard?utm_source=github.com&utm_medium=referral&utm_content=pamuditha/hoverboard&utm_campaign=Badge_Grade)
+<img src="https://github.com/kurnhyalcantara/hmiasadiyahv2/blob/master/docs/Untitled1.png?raw=true">
 
 ## Overview
 
-Proyek HMI As'adiyah Web App ini merupakan proyek pengembangan website HMI Komisariat As'adiyah dan Alhamdulillah telah merilis versi ke 2 nya dengan menggunakan kode sumber ini.
+Proyek HMI As'adiyah Web App ini merupakan proyek pembuatan website humas organisasi HMI Komisariat As'adiyah berbasis PWA (Progressive Web App).
+Salah satu fitur menariknya adalah anda bisa menginstall website ini selayaknya aplikasi di smartphone anda.
 
-Untuk anda yang ingin memakai kode sumber ini, anda harus memiliki pengetahuan tentang pengembengan web terkini.
 
 Catatan:
 
