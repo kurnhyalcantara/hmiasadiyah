@@ -2,11 +2,12 @@
 
 <img src="https://github.com/kurnhyalcantara/hmiasadiyahv2/blob/master/docs/Untitled1.png?raw=true">
 
-## Selayang Pandang
+## Overview
 
 Proyek HMI As'adiyah Web App ini merupakan proyek pembuatan website humas organisasi HMI Komisariat As'adiyah berbasis PWA (Progressive Web App).
 Salah satu fitur menariknya adalah anda bisa menginstall website ini selayaknya aplikasi di smartphone anda.
-[Demo](https://myaurapp.web.app/) <br>
+
+[Preview](https://hmi-asadiyah.web.app/) <br>
 Versi: 2.0.0
 
 ## Features
@@ -29,7 +30,6 @@ Versi: 2.0.0
 
 ## Documentation
 
-The [Getting Started guide](#getting-started) is probably a good first point of call! <br>
 :book: [Full documentation](/docs/).
 
 ## Compatibility
