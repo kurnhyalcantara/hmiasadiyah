@@ -155,38 +155,11 @@
       -moz-osx-font-smoothing: grayscale;
       -webkit-font-smoothing: antialiased;
     }
-
-    /* styling for render while resources are loading */
-    hmi-app[unresolved] .main {
-      position: absolute;
-      background-color: #069539;
-      padding: 16px;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    hmi-app[unresolved] .text {
-      text-align: center;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      color: white;
-      overflow: visible;
-    }
   </style>
 </head>
 
 <body>
-  <hmi-app unresolved>
-    <div class="main">
-      <div class="text">{$ loading $}</div>
-    </div>
-  </hmi-app>
+  <hmi-app></hmi-app>
 
   <noscript>
     Please enable JavaScript to view this website.
