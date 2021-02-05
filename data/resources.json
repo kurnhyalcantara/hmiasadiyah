@@ -4,8 +4,9 @@
   "image": "images/social-share.jpg",
   "keywords": "hmi, asadiyah, iai, komisariat, cabang, wajo, sengkang, mahasiswa, islam, himpunan, perjuangan, pergerakan, kader, umat, bangsa, indonesia",
   "loading": "Sedang memuat HMI As'adiyah Web App",
-  "slogan": "- Yakin Usaha Sampai -",
-  "salam": "Salam Perjuangan",
+  "version": "Versi 2021.1",
+  "powered": "Design by ",
+  "designer": "Kurnhy",
   "signUp": "Formulir Pendaftaran",
   "infoPengkaderan": "Info Pengkaderan",
   "share": "Bagikan",
@@ -206,7 +207,6 @@
       ]
     }
   ],
-
   "profileHero": {
     "link": [
       {
@@ -220,7 +220,6 @@
       }
     ]
   },
-
   "sejarahHMIProfileBlock": {
     "title": "Sejarah Berdirinya HMI",
     "image": "https://firebasestorage.googleapis.com/v0/b/hmi-asadiyah.appspot.com/o/mix%2Fabout-logo.png?alt=media&token=fda04f76-bbcb-4350-aac5-cb347901f181",
@@ -268,7 +267,6 @@
       }
     ]
   },
-
   "strukturPengurusBlock": {
     "title": "Struktur Pengurus Himpunan Mahasiswa Islam Komisariat As'adiyah Sengkang Cabang Wajo Periode 2020-2021",
     "jabatan": {
@@ -362,7 +360,6 @@
       ]
     }
   },
-
   "formPendaftaran": {
     "formTitle": "Formulir Pendaftaran",
     "formDescription": "Dengan mengucapkan BISMILLAHIRRAHMANIRRAHIM, bahwa apa yang saya isi dalam formulir adalah BENAR adanya, dan siap mematuhi Anggaran Dasar dan Anggaran Rumah Tangga serta ketentuan-ketentuan yang berlaku di HMI",
@@ -381,12 +378,10 @@
     "emailAddress": "Email",
     "emailRequired": "Email wajib dimasukkan"
   },
-
   "mySchedule": {
     "title": "Jadwalku",
     "browseSession": "Tambahkan"
   },
-
   "blog": {
     "published": "Dipublikasikan pada: ",
     "suggested": "Berita Lainnya"
@@ -394,7 +389,6 @@
   "opini": {
     "suggested": "Artikel Lainnya"
   },
-
   "mapBlock": {
     "title": "Alamat Sekretariat"
   },

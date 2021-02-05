@@ -19,27 +19,32 @@
     {
       "route": "home",
       "permalink": "/",
-      "label": "Home"
+      "label": "Home",
+      "icon": "home"
     },
     {
       "route": "profile",
       "permalink": "/profile/",
-      "label": "Profil"
+      "label": "Profil",
+      "icon": "work"
     },
     {
       "route": "news",
       "permalink": "/news/",
-      "label": "Berita"
+      "label": "Berita",
+      "icon": "chrome-reader-mode"
     },
     {
       "route": "opini",
       "permalink": "/opini/",
-      "label": "Opini"
+      "label": "Opini",
+      "icon": "feedback"
     },
     {
       "route": "schedule",
       "permalink": "/schedule/",
-      "label": "Agenda"
+      "label": "Agenda",
+      "icon": "date-range"
     }
   ],
   "heroSettings": {

@@ -87,16 +87,21 @@ class HMIApp extends ReduxMixin(PolymerElement) {
           border-bottom: 1px solid var(--divider-color);
         }
 
-        app-drawer .slogan {
+        app-drawer .version {
           margin-top: 42px;
           font-size: 16px;
-          line-height: 0.95;
+          line-height: 1.0;
         }
 
-        app-drawer .salam {
+        app-drawer .powered {
           margin-top: 4px;
-          font-size: 14px;
+          font-size: 11px;
           color: var(--secondary-text-color);
+        }
+
+        app-drawer .designer {
+          font-size: 11px;
+          color: var(--default-primary-color);
         }
 
         .drawer-list {
@@ -111,12 +116,16 @@ class HMIApp extends ReduxMixin(PolymerElement) {
         }
 
         app-drawer a {
-          padding: 8px 24px;
+          padding: 12px 16px;
         }
 
-        .drawer-list a.selected {
-          font-weight: 500;
-          background-color: var(--secondary-background-color);
+        .drawer-content a.selected {
+          border-bottom-right-radius: 32px;
+          border-top-right-radius: 32px;
+          margin-right: 10px;
+          color: var(--default-primary-color);
+          background-color: var(--light-primary-color);
+          --iron-icon-fill-color: var(--default-primary-color);
         }
 
         app-toolbar {
@@ -124,7 +133,7 @@ class HMIApp extends ReduxMixin(PolymerElement) {
         }
 
         .toolbar-logo {
-          --iron-image-height: 45px;
+          --iron-image-height: 47px;
         }
 
         app-header-layout {
@@ -141,15 +150,22 @@ class HMIApp extends ReduxMixin(PolymerElement) {
           height: 100%;
         }
 
-        .drawer-content iron-icon {
+        .drawer-content .open-new {
           --iron-icon-width: 14px;
           margin-left: 6px;
         }
 
+        .drawer-icon {
+          --iron-icon-width: 32px;
+          margin-right: 22px;
+          --iron-icon-fill-color: var(--secondary-text-color);
+        }
+
         .bottom-drawer-link {
           display: block;
-          padding: 16px 24px;
+          padding: 12px 16px;
           cursor: pointer;
+          color: var(--secondary-text-color);
         }
 
         @media (min-width: 640px) {
@@ -189,8 +205,8 @@ class HMIApp extends ReduxMixin(PolymerElement) {
               srcset="/images/logo-monochrome.svg"
               alt="{$ title $}"
             ></plastic-image>
-            <div class="slogan">{$ slogan $}</div>
-            <div class="salam">{$ salam $}</div>
+            <div class="version">{$ version $}</div>
+            <div class="powered">{$ powered $}<span class="designer">{$ designer $}</span></div>
           </app-toolbar>
 
           <div class="drawer-content" layout vertical justified flex>
@@ -202,9 +218,15 @@ class HMIApp extends ReduxMixin(PolymerElement) {
               role="navigation"
             >
               {% for nav in navigation %}
-              <a href="{$ nav.permalink $}" path="{$ nav.route $}" on-click="closeDrawer"
-                >{$ nav.label $}</a
+              
+              <a
+                href="{$ nav.permalink $}" 
+                path="{$ nav.route $}" 
+                on-click="closeDrawer"
               >
+                <iron-icon class="drawer-icon" icon="icons:{$ nav.icon $}"></iron-icon>
+                <span>{$ nav.label $}</span>
+              </a>
               {% endfor %}
             </iron-selector>
 
@@ -212,12 +234,12 @@ class HMIApp extends ReduxMixin(PolymerElement) {
               <a
                 class="bottom-drawer-link"
                 on-click="_onaddToHomeScreen"
-                hidden$="[[_isaddToHomeScreenHidden(addToHomeScreen, viewport.isPhoneSize)]]"
               >
-                {$ addToHomeScreen.cta $}
+                <iron-icon class="drawer-icon" icon="icons:add-circle"></iron-icon>
+                <span>{$ addToHomeScreen.cta $}</span>
               </a>
 
-              <a
+              <!-- <a
                 class="bottom-drawer-link"
                 rel="noopener noreferrer"
                 on-click="_daftarDialog"
@@ -226,8 +248,8 @@ class HMIApp extends ReduxMixin(PolymerElement) {
                 center
               >
                 <span>{$ signUp $}</span>
-                <iron-icon icon="hmi:open-in-new"></iron-icon>
-              </a>
+                <iron-icon class="open-new" icon="hmi:open-in-new"></iron-icon>
+              </a> -->  
             </div>
           </div>
         </app-drawer>
