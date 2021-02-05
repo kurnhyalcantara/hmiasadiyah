@@ -131,7 +131,7 @@
   <!-- TODO: Consolidate development and production builds so they are more similar -->
   <script src="./src/hmi-app.ts" type="module"></script>
   {% endif %}
-  <link href="https://fonts.googleapis.com/css2?family=Ruda:wght@400&display=swap " rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Ruda:wght@700&display=swap " rel="stylesheet" />
 
   <style>
     html,
@@ -156,8 +156,9 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    /* styling for render while resources are loading */
     hmi-app[unresolved] .main {
-      height: 100%;
+      position: absolute;
       background-color: #069539;
       padding: 16px;
       top: 0;
