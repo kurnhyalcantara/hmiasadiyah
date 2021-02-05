@@ -8,7 +8,7 @@
   "webapp": {
     "shortName": "HMI Asadiyah",
     "themeColor": "#069539",
-    "backgroundColor": "#069539"
+    "backgroundColor": "#ffffff"
   },
   "dateFormat": {
     "locale": "id-ID"
