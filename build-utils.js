@@ -42,7 +42,6 @@ const nunjucks = n.configure({
     variableStart: '{$',
     variableEnd: '$}',
   },
-  watch: true
 });
 
 const isTemplate = ({ url, contentType }) => {
