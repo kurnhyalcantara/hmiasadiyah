@@ -4,7 +4,7 @@ export const theme = css`
   :host {
     --dark-primary-color: #057c2f;
     --default-primary-color: #069539;
-    --focused-color: #046c28;
+    --focused-color: #e0feeb;
     --light-primary-color: #0ae757;
     --text-primary-color: #ffffff;
     --accent-color: #60f704;

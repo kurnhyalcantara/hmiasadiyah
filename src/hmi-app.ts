@@ -87,16 +87,36 @@ class HMIApp extends ReduxMixin(PolymerElement) {
           border-bottom: 1px solid var(--divider-color);
         }
 
-        app-drawer .slogan {
+        app-toolbar {
+          height: auto;
+        }
+
+        .toolbar-logo {
+          --iron-image-height: 45px;
+        }
+
+        app-drawer .version {
           margin-top: 42px;
-          font-size: 16px;
           line-height: 0.95;
         }
 
-        app-drawer .salam {
+        app-drawer .design {
           margin-top: 4px;
           font-size: 14px;
           color: var(--secondary-text-color);
+        }
+
+        .design .by {
+          color: var(--default-primary-color)
+        }
+
+        app-drawer a {
+          padding: 8px 24px;
+        }
+
+        .drawer-content iron-icon {
+          --iron-icon-width: 24px;
+          margin-right: 24px;
         }
 
         .drawer-list {
@@ -110,21 +130,19 @@ class HMIApp extends ReduxMixin(PolymerElement) {
           outline: 0;
         }
 
-        app-drawer a {
-          padding: 8px 24px;
-        }
-
         .drawer-list a.selected {
-          font-weight: 500;
-          background-color: var(--secondary-background-color);
+          color: var(--default-primary-color);
+          background-color: var(--focused-color);
+          --iron-icon-fill-color: var(--default-primary-color);
+          border-top-right-radius: 50px;
+          border-bottom-right-radius: 50px;
+          margin-right: 8px;
         }
 
-        app-toolbar {
-          height: auto;
-        }
-
-        .toolbar-logo {
-          --iron-image-height: 45px;
+        .bottom-drawer-link {
+          display: block;
+          padding: 16px 24px;
+          cursor: pointer;
         }
 
         app-header-layout {
@@ -139,17 +157,6 @@ class HMIApp extends ReduxMixin(PolymerElement) {
           background-color: var(--primary-background-color);
           min-height: 100%;
           height: 100%;
-        }
-
-        .drawer-content iron-icon {
-          --iron-icon-width: 14px;
-          margin-left: 6px;
-        }
-
-        .bottom-drawer-link {
-          display: block;
-          padding: 16px 24px;
-          cursor: pointer;
         }
 
         @media (min-width: 640px) {
@@ -189,8 +196,8 @@ class HMIApp extends ReduxMixin(PolymerElement) {
               srcset="/images/logo-monochrome.svg"
               alt="{$ title $}"
             ></plastic-image>
-            <div class="slogan">{$ slogan $}</div>
-            <div class="salam">{$ salam $}</div>
+            <div class="version">{$ version $}</div>
+            <div class="design">{$ design $}<span class="by">{$ by $}</span></div>
           </app-toolbar>
 
           <div class="drawer-content" layout vertical justified flex>
@@ -202,22 +209,22 @@ class HMIApp extends ReduxMixin(PolymerElement) {
               role="navigation"
             >
               {% for nav in navigation %}
-              <a href="{$ nav.permalink $}" path="{$ nav.route $}" on-click="closeDrawer"
-                >{$ nav.label $}</a
-              >
+              <a href="{$ nav.permalink $}" path="{$ nav.route $}" on-click="closeDrawer">
+                <iron-icon icon="icons:{$ nav.icon $}"></iron-icon>  
+                <span>{$ nav.label $}</span>
+              </a>
               {% endfor %}
             </iron-selector>
 
             <div>
               <a
-                class="bottom-drawer-link"
                 on-click="_onaddToHomeScreen"
-                hidden$="[[_isaddToHomeScreenHidden(addToHomeScreen, viewport.isPhoneSize)]]"
               >
-                {$ addToHomeScreen.cta $}
+                <iron-icon icon="icons:add-box"></iron-icon>  
+                <span>{$ addToHomeScreen.cta $}</span>
               </a>
 
-              <a
+              <!-- <a
                 class="bottom-drawer-link"
                 rel="noopener noreferrer"
                 on-click="_daftarDialog"
@@ -227,7 +234,7 @@ class HMIApp extends ReduxMixin(PolymerElement) {
               >
                 <span>{$ signUp $}</span>
                 <iron-icon icon="hmi:open-in-new"></iron-icon>
-              </a>
+              </a> -->
             </div>
           </div>
         </app-drawer>
