@@ -95,16 +95,20 @@ class HMIApp extends ReduxMixin(PolymerElement) {
           --iron-image-height: 45px;
         }
         
-        app-drawer .slogan {
+        app-drawer .version {
           margin-top: 42px;
-          font-size: 16px;
           line-height: 0.95;
         }
 
-        app-drawer .salam {
+        app-drawer .design {
           margin-top: 4px;
-          font-size: 14px;
+          font-size: 11px;
           color: var(--secondary-text-color);
+        }
+
+        app-drawer .design-by {
+          font-size: 11px;
+          color: var(--default-primary-color);
         }
 
         .drawer-list {
@@ -190,8 +194,8 @@ class HMIApp extends ReduxMixin(PolymerElement) {
               srcset="/images/logo-monochrome.svg"
               alt="{$ title $}"
             ></plastic-image>
-            <div class="slogan">{$ slogan $}</div>
-            <div class="salam">{$ salam $}</div>
+            <div class="version">{$ version $}</div>
+            <div class="design">{$ design $}<span class="design-by">{$ designBy $}</span></div>
           </app-toolbar>
 
           <div class="drawer-content" layout vertical justified flex>
