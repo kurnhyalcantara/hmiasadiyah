@@ -81,62 +81,77 @@ class HMIApp extends ReduxMixin(PolymerElement) {
             flex-direction: column;
           }
         }
+
         app-drawer app-toolbar {
           padding: 36px 24px 24px;
           border-bottom: 1px solid var(--divider-color);
         }
+
         app-drawer .slogan {
           margin-top: 42px;
           font-size: 16px;
           line-height: 0.95;
         }
+
         app-drawer .salam {
           margin-top: 4px;
           font-size: 14px;
           color: var(--secondary-text-color);
         }
+
         .drawer-list {
           padding: 16px 0;
           display: block;
         }
+
         .drawer-list a {
           display: block;
           color: var(--primary-text-color);
           outline: 0;
         }
+
         app-drawer a {
           padding: 8px 24px;
         }
+
         .drawer-list a.selected {
           font-weight: 500;
           background-color: var(--secondary-background-color);
         }
+
         app-toolbar {
           height: auto;
         }
+
         .toolbar-logo {
           --iron-image-height: 45px;
         }
+
         app-header-layout {
           margin-top: -1px;
         }
+
         app-header.remove-shadow::before {
           opacity: 0;
         }
+
         iron-pages {
           background-color: var(--primary-background-color);
           min-height: 100%;
           height: 100%;
         }
+
         .drawer-content iron-icon {
           --iron-icon-width: 14px;
           margin-left: 6px;
         }
+
         .bottom-drawer-link {
           display: block;
           padding: 16px 24px;
           cursor: pointer;
         }
+
         @media (min-width: 640px) {
           app-toolbar {
             padding: 0 36px;
@@ -144,6 +159,7 @@ class HMIApp extends ReduxMixin(PolymerElement) {
           }
         }
       </style>
+
       <iron-media-query
         id="mq-phone"
         full
@@ -156,6 +172,7 @@ class HMIApp extends ReduxMixin(PolymerElement) {
         query="(min-width: {$ mediaQueries.md.min $})"
         query-matches="{{isLaptopSize}}"
       ></iron-media-query>
+
       <app-location route="{{appRoute}}"></app-location>
       <app-route
         route="{{appRoute}}"
@@ -163,6 +180,7 @@ class HMIApp extends ReduxMixin(PolymerElement) {
         data="{{routeData}}"
         tail="{{subRoute}}"
       ></app-route>
+
       <app-drawer-layout drawer-width="300px" force-narrow fullbleed>
         <app-drawer id="drawer" slot="drawer" opened="{{drawerOpened}}" swipe-open>
           <app-toolbar layout vertical start>
@@ -174,6 +192,7 @@ class HMIApp extends ReduxMixin(PolymerElement) {
             <div class="slogan">{$ slogan $}</div>
             <div class="salam">{$ salam $}</div>
           </app-toolbar>
+
           <div class="drawer-content" layout vertical justified flex>
             <iron-selector
               class="drawer-list"
@@ -188,6 +207,7 @@ class HMIApp extends ReduxMixin(PolymerElement) {
               >
               {% endfor %}
             </iron-selector>
+
             <div>
               <a
                 class="bottom-drawer-link"
@@ -196,6 +216,7 @@ class HMIApp extends ReduxMixin(PolymerElement) {
               >
                 {$ addToHomeScreen.cta $}
               </a>
+
               <a
                 class="bottom-drawer-link"
                 rel="noopener noreferrer"
@@ -210,10 +231,12 @@ class HMIApp extends ReduxMixin(PolymerElement) {
             </div>
           </div>
         </app-drawer>
+
         <app-header-layout id="headerLayout" fullbleed>
           <app-header id="header" slot="header" condenses fixed>
             <header-toolbar drawer-opened="{{drawerOpened}}"></header-toolbar>
           </app-header>
+
           <iron-pages
             attr-for-selected="name"
             selected="[[route.route]]"
@@ -229,6 +252,7 @@ class HMIApp extends ReduxMixin(PolymerElement) {
           </iron-pages>
         </app-header-layout>
       </app-drawer-layout>
+
       <video-dialog
         opened="[[ui.videoDialog.opened]]"
         video-title="[[ui.videoDialog.title]]"
@@ -239,17 +263,20 @@ class HMIApp extends ReduxMixin(PolymerElement) {
         fit
         fixed-top
       ></video-dialog>
+
       <session-details
         opened="[[dialogs.session.isOpened]]"
         session="[[dialogs.session.data]]"
         with-backdrop="[[viewport.isTabletPlus]]"
         no-cancel-on-outside-click="[[viewport.isPhone]]"
       ></session-details>
+
       <feedback-dialog
         opened="[[dialogs.feedback.isOpened]]"
         session="[[dialogs.feedback.data]]"
         with-backdrop
       ></feedback-dialog>
+
       <daftar-dialog
         opened="[[dialogs.daftar.isOpened]]"
         data="[[dialogs.daftar.data]]"
@@ -257,7 +284,9 @@ class HMIApp extends ReduxMixin(PolymerElement) {
         no-cancel-on-outside-click="[[viewport.isPhone]]"
       >
       </daftar-dialog>
+
       <signin-dialog opened="[[dialogs.signin.isOpened]]" with-backdrop></signin-dialog>
+
       <hmi-analytics></hmi-analytics>
       <toast-element></toast-element>
     `;

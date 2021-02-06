@@ -8,7 +8,7 @@
   "webapp": {
     "shortName": "HMI Asadiyah",
     "themeColor": "#069539",
-    "backgroundColor": "#ffffff"
+    "backgroundColor": "#069539"
   },
   "dateFormat": {
     "locale": "id-ID"
@@ -19,32 +19,27 @@
     {
       "route": "home",
       "permalink": "/",
-      "label": "Home",
-      "icon": "home"
+      "label": "Home"
     },
     {
       "route": "profile",
       "permalink": "/profile/",
-      "label": "Profil",
-      "icon": "work"
+      "label": "Profil"
     },
     {
       "route": "news",
       "permalink": "/news/",
-      "label": "Berita",
-      "icon": "chrome-reader-mode"
+      "label": "Berita"
     },
     {
       "route": "opini",
       "permalink": "/opini/",
-      "label": "Opini",
-      "icon": "feedback"
+      "label": "Opini"
     },
     {
       "route": "schedule",
       "permalink": "/schedule/",
-      "label": "Agenda",
-      "icon": "date-range"
+      "label": "Agenda"
     }
   ],
   "heroSettings": {
