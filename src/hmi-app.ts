@@ -223,18 +223,6 @@ class HMIApp extends ReduxMixin(PolymerElement) {
                 <iron-icon icon="icons:add-box"></iron-icon>  
                 <span>{$ addToHomeScreen.cta $}</span>
               </a>
-
-              <a
-                class="bottom-drawer-link"
-                rel="noopener noreferrer"
-                on-click="_daftarDialog"
-                layout
-                horizontal
-                center
-              >
-                <span>{$ signUp $}</span>
-                <iron-icon icon="hmi:open-in-new"></iron-icon>
-              </a>
             </div>
           </div>
         </app-drawer>
