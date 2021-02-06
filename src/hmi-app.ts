@@ -86,34 +86,17 @@ class HMIApp extends ReduxMixin(PolymerElement) {
           padding: 36px 24px 24px;
           border-bottom: 1px solid var(--divider-color);
         }
-        
-        app-toolbar {
-          height: auto;
-        }
 
-        .toolbar-logo {
-          --iron-image-height: 45px;
-        }
-        
-        app-drawer .version {
+        app-drawer .slogan {
           margin-top: 42px;
+          font-size: 16px;
           line-height: 0.95;
         }
 
-        app-drawer .design {
+        app-drawer .salam {
           margin-top: 4px;
-          font-size: 11px;
+          font-size: 14px;
           color: var(--secondary-text-color);
-        }
-
-        app-drawer .design-by {
-          font-size: 11px;
-          color: var(--default-primary-color);
-        }
-
-        .drawer-content iron-icon {
-          --iron-icon-width: 14px;
-          margin-left: 6px;
         }
 
         .drawer-list {
@@ -136,6 +119,13 @@ class HMIApp extends ReduxMixin(PolymerElement) {
           background-color: var(--secondary-background-color);
         }
 
+        app-toolbar {
+          height: auto;
+        }
+
+        .toolbar-logo {
+          --iron-image-height: 45px;
+        }
 
         app-header-layout {
           margin-top: -1px;
@@ -150,7 +140,12 @@ class HMIApp extends ReduxMixin(PolymerElement) {
           min-height: 100%;
           height: 100%;
         }
-        
+
+        .drawer-content iron-icon {
+          --iron-icon-width: 14px;
+          margin-left: 6px;
+        }
+
         .bottom-drawer-link {
           display: block;
           padding: 16px 24px;
@@ -194,8 +189,8 @@ class HMIApp extends ReduxMixin(PolymerElement) {
               srcset="/images/logo-monochrome.svg"
               alt="{$ title $}"
             ></plastic-image>
-            <div class="version">{$ version $}</div>
-            <div class="design">{$ design $}<span class="design-by">{$ designBy $}</span></div>
+            <div class="slogan">{$ slogan $}</div>
+            <div class="salam">{$ salam $}</div>
           </app-toolbar>
 
           <div class="drawer-content" layout vertical justified flex>

@@ -12,12 +12,12 @@ const getConfigPath = () => {
 
   if (!fs.existsSync(path)) {
     throw new Error(`
-      ERROR: Berkas konfigurasi '${path}' tidak ada.
-      Gunakan berkas konfigurasi production|development.json atau tambahkan berkas di '${path}'.
+      ERROR: Config path '${path}' does not exists.
+      Please, use production|development.json files or add a configuration file at '${path}'.
     `);
   }
 
-  console.log(`Berkas ${path} dipilih sebagai konfigurasi...`);
+  console.log(`File path ${path} selected as config...`);
   return path;
 };
 
