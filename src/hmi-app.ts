@@ -111,6 +111,11 @@ class HMIApp extends ReduxMixin(PolymerElement) {
           color: var(--default-primary-color);
         }
 
+        .drawer-content iron-icon {
+          --iron-icon-width: 14px;
+          margin-left: 6px;
+        }
+
         .drawer-list {
           padding: 16px 0;
           display: block;
@@ -145,12 +150,7 @@ class HMIApp extends ReduxMixin(PolymerElement) {
           min-height: 100%;
           height: 100%;
         }
-
-        .drawer-content iron-icon {
-          --iron-icon-width: 14px;
-          margin-left: 6px;
-        }
-
+        
         .bottom-drawer-link {
           display: block;
           padding: 16px 24px;
