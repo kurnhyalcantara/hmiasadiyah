@@ -87,14 +87,6 @@ class HMIApp extends ReduxMixin(PolymerElement) {
           border-bottom: 1px solid var(--divider-color);
         }
 
-        app-toolbar {
-          height: auto;
-        }
-
-        .toolbar-logo {
-          --iron-image-height: 45px;
-        }
-
         app-drawer .slogan {
           margin-top: 42px;
           font-size: 16px;
@@ -125,6 +117,14 @@ class HMIApp extends ReduxMixin(PolymerElement) {
         .drawer-list a.selected {
           font-weight: 500;
           background-color: var(--secondary-background-color);
+        }
+
+        app-toolbar {
+          height: auto;
+        }
+
+        .toolbar-logo {
+          --iron-image-height: 45px;
         }
 
         app-header-layout {
