@@ -24,7 +24,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v1
         with:
-          node-version: 10
+          node-version: 8
 
       - name: Installing Dependencencies
         run: npm ci
