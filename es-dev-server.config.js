@@ -3,16 +3,16 @@
 const { development, compileTemplate, isTemplate } = require('./build-utils.js');
 
 if (!development) {
-  throw new Error('npm start hanya bisa dilakukan dengan argument NODE_ENV=development');
+  throw new Error('start only supports NODE_ENV=development');
 }
 
 module.exports = {
   appIndex: 'index.html',
+  babel: true,
   fileExtensions: ['.ts'],
   nodeResolve: true,
   port: 5000,
   watch: true,
-  open: true,
   responseTransformers: [
     ({ url, status: _, contentType, body }) => {
       if (isTemplate({ url, contentType })) {
