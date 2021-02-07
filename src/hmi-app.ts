@@ -84,7 +84,6 @@ class HMIApp extends ReduxMixin(PolymerElement) {
 
         app-drawer app-toolbar {
           padding: 36px 24px 24px;
-          border-bottom: 1px solid var(--divider-color);
         }
 
         app-toolbar {
@@ -121,7 +120,9 @@ class HMIApp extends ReduxMixin(PolymerElement) {
 
         .drawer-list {
           padding: 16px 0;
+          margin: 0;
           display: block;
+          border-top: 1px solid var(--divider-color);
         }
 
         .drawer-list a {
@@ -137,6 +138,21 @@ class HMIApp extends ReduxMixin(PolymerElement) {
           border-top-right-radius: 50px;
           border-bottom-right-radius: 50px;
           margin-right: 8px;
+        }
+
+        .drawer-account {
+          margin-top: 12px
+          heigth: 24px;
+        }
+
+        .drawer-account a {
+          width: 50%;
+        }
+
+        .drawer-signup, .drawer-login {
+          text-align: center;
+          color: #fff;
+          background-color: var(--default-primary-color); 
         }
 
         .bottom-drawer {
@@ -198,7 +214,14 @@ class HMIApp extends ReduxMixin(PolymerElement) {
             <div class="version">{$ version $}</div>
             <div class="design">{$ design $}<span class="by">{$ by $}</span></div>
           </app-toolbar>
-
+          <div class="drawer-account" layout horizontal>
+            <a class="drawer-signup" href="/pengkaderan" on-click="closeDrawer">
+              {$ signUp $}
+            </a>
+            <a class="drawer-login" href="/pengkaderan" on-click="closeDrawer">
+              {$ logIn $}
+            </a>
+          </div>
           <div class="drawer-content" layout vertical justified flex>
             <iron-selector
               class="drawer-list"
@@ -214,7 +237,6 @@ class HMIApp extends ReduxMixin(PolymerElement) {
               </a>
               {% endfor %}
             </iron-selector>
-
             <div>
               <a
                 class="bottom-drawer"

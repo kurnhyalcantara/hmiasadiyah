@@ -218,9 +218,13 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
           ga-event-action="daftar_click"
           hidden$="[[!viewport.isLaptopPlus]]"
         >
-          <paper-button class="signup-button" on-tap="_daftarDialog" primary
-            >{$ signUp $}</paper-button
-          >
+          <paper-button 
+            class="signup-button" 
+            on-tap="_daftarDialog" 
+            primary> 
+              <iron-icon icon="hmi:account"></iron-icon>
+              <span>{$ signUp $}</span>
+          </paper-button>
         </a>
 
         <paper-menu-button

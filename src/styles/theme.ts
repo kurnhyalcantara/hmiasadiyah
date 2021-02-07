@@ -97,7 +97,6 @@ export const theme = css`
   }
 
   paper-button {
-    font-family: 'Ruda';
     padding: 0.7em 1.2em;
     border-radius: 100px;
     font-size: 14px;
@@ -105,10 +104,6 @@ export const theme = css`
     cursor: pointer;
     color: #fff;
     transition: background-color var(--animation);
-  }
-
-  paper-button:hover {
-    background-color: var(--primary-color-transparent);
   }
 
   paper-button[disabled] {
@@ -151,6 +146,15 @@ export const theme = css`
 
   paper-button[stroke]:hover {
     background-color: var(--primary-color-transparent);
+  }
+
+  paper-button[none] {
+    background-color: none;
+    border-radius: 0;
+  }
+
+  paper-button[none]:hover {
+    background-color: none;
   }
 
   paper-button iron-icon {
