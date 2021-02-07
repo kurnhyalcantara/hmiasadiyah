@@ -32,7 +32,7 @@
       "route": "news",
       "permalink": "/news/",
       "label": "Berita",
-      "icon": "chrome-read-book"
+      "icon": "chrome-reader-mode"
     },
     {
       "route": "opini",

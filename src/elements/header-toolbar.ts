@@ -14,17 +14,17 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
           --iron-icon-fill-color: currentColor;
           display: block;
           z-index: 1;
-          border-bottom: 1px solid var(--divider-color);
           background-color: var(--primary-background-color);
           transition: background-color var(--animation), border-bottom-color var(--animation),
             color var(--animation);
           color: var(--primary-text-color);
+          box-shadow: var(--box-shadow-header);
         }
 
         :host([transparent]) {
           --iron-icon-fill-color: var(--hero-font-color, '#fff');
           background-color: transparent;
-          border-bottom-color: transparent;
+          box-shadow: none;
           color: var(--hero-font-color, '#fff');
         }
 
@@ -56,8 +56,7 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
           }
         }
 
-        .nav-item a,
-        .signin-tab {
+        .nav-item a {
           padding: 0 14px;
           color: inherit;
           font-size: 16px;
@@ -372,8 +371,8 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
     return status === NOTIFICATIONS_STATUS.DEFAULT
       ? 'bell-outline'
       : status === NOTIFICATIONS_STATUS.GRANTED
-      ? 'bell'
-      : 'bell-off';
+        ? 'bell'
+        : 'bell-off';
   }
 
   _hideNotificationBlock(status, blockStatus) {

@@ -139,10 +139,9 @@ class HMIApp extends ReduxMixin(PolymerElement) {
           margin-right: 8px;
         }
 
-        .bottom-drawer-link {
+        .bottom-drawer {
           display: block;
           padding: 16px 24px;
-          cursor: pointer;
         }
 
         app-header-layout {
@@ -218,6 +217,7 @@ class HMIApp extends ReduxMixin(PolymerElement) {
 
             <div>
               <a
+                class="bottom-drawer"
                 on-click="_onaddToHomeScreen"
               >
                 <iron-icon icon="icons:add-box"></iron-icon>  
