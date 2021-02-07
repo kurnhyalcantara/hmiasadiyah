@@ -17,7 +17,8 @@
     ],
     "rewrites": [
       {
-        "source": "**"
+        "source": "**",
+        "function": "prerender"
       }
     ],
     "headers": [
