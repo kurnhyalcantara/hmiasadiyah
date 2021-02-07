@@ -63,18 +63,6 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
           text-transform: uppercase;
         }
 
-        .signup-button {
-          margin-top: 2px;
-        }
-
-        .profile-image {
-          width: 32px;
-          height: 32px;
-          border-radius: 50%;
-          background-position: center;
-          background-size: cover;
-        }
-
         .dropdown-panel {
           padding: 24px;
           max-width: 300px;
@@ -87,8 +75,20 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
           margin-top: 0;
         }
 
-        .log-in-button {
-          padding: 6px 10px;
+        .dropdown-panel .panel-actions {
+          margin: 0 -16px -16px 0;
+        }
+
+        paper-button {
+          padding: 8px 24px;
+        }
+
+        .profile-image {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          background-position: center;
+          background-size: cover;
         }
 
         .dropdown-panel .panel-actions {
@@ -221,9 +221,27 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
           <paper-button 
             class="signup-button" 
             on-tap="_daftarDialog" 
-            primary> 
-              <iron-icon icon="hmi:account"></iron-icon>
-              <span>{$ signUp $}</span>
+            primary
+          > 
+              {$ signUp $}
+          </paper-button>
+        </a>
+
+        <a
+          rel="noopener noreferrer"
+          ga-on="click"
+          ga-event-category="daftar button"
+          ga-event-action="daftar_click"
+          hidden$="[[!viewport.isLaptopPlus]]"
+        >
+          <paper-button
+            id="loginButton"
+            class="login-button"
+            on-click="signIn"
+            hidden$="[[user.signedIn]]"
+            primary
+          >
+            {$ loginLabel $}
           </paper-button>
         </a>
 
@@ -256,18 +274,6 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
             </div>
           </div>
         </paper-menu-button>
-
-        <paper-button
-          id="loginButton"
-          class="log-in-button"
-          on-click="signIn"
-          hidden$="[[user.signedIn]]"
-          vertical-align="top"
-          horizontal-align="right"
-          primary
-        >
-          <iron-icon icon="hmi:account"></iron-icon>
-          <span>{$ loginLabel $}</span>
       </app-toolbar>
     `;
   }
