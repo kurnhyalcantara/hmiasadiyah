@@ -31,7 +31,7 @@
   "loginLabel": "Login",
   "aboutHmi": {
     "title": "Apa itu HMI?",
-    "content": "Himpunan Mahasiswa Islam atau HMI adalah salah satu organisasi mahasiswa islam terbesar dan tertua di Indonesia yang lahir pada tanggal 5 Februari 1947 membawa gagasan kemahasiswaan yang bernafaskan Islam serta menghimpun segenap mahasiswa islam dari berbagai golongan dengan tujuan terwujudnya masyarakat adil makmur yang diridhoi Allah Swt.",
+    "content": "Himpunan Mahasiswa Islam atau HMI adalah organisasi mahasiswa islam tertua dan terbesar di Indonesia yang lahir pada tanggal 5 Februari 1947 membawa gagasan kemahasiswaan yang bernafaskan Islam serta menghimpun segenap mahasiswa islam dari berbagai golongan dengan tujuan terwujudnya masyarakat adil makmur yang diridhoi Allah Swt.",
     "logo": "https://firebasestorage.googleapis.com/v0/b/hmi-asadiyah.appspot.com/o/mix%2Fabout-logo.png?alt=media&token=fda04f76-bbcb-4350-aac5-cb347901f181",
     "selengkapnya": {
       "label": "Selengkapnya",
@@ -39,7 +39,7 @@
     },
     "pendiri": {
       "image": "https://firebasestorage.googleapis.com/v0/b/hmi-asadiyah.appspot.com/o/mix%2Flafran-pane.png?alt=media&token=e571b0d9-3530-4a5a-97f1-000a4f7a611d",
-      "name": "Prof. Lafran Pane",
+      "name": "Prof. Drs. H. Lafran Pane",
       "desc": "Pendiri HMI"
     }
   },

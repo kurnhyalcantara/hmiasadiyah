@@ -214,7 +214,7 @@ class HMIApp extends ReduxMixin(PolymerElement) {
             <div class="version">{$ version $}</div>
             <div class="design">{$ design $}<span class="by">{$ by $}</span></div>
           </app-toolbar>
-          <div class="drawer-account" layout horizontal>
+          <div class="drawer-account" layout horizontal >
             <a class="drawer-signup" href="/pengkaderan" on-click="closeDrawer">
               {$ signUp $}
             </a>

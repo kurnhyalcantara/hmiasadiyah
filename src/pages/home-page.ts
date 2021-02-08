@@ -45,15 +45,10 @@ class HomePage extends ReduxMixin(PolymerElement) {
 
         .action-buttons {
           margin: 0 -8px;
-          font-size: 14px;
         }
 
         .action-buttons paper-button {
           margin: 8px;
-        }
-
-        .action-buttons .watch-video {
-          color: #fff;
         }
 
         .action-buttons iron-icon {

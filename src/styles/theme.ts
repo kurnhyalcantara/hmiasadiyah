@@ -199,7 +199,7 @@ export const theme = css`
   }
 
   .container-title {
-    margin-bottom: 18px;
+    margin-bottom: 28px;
     font-size: 32px;
     font-weight: 900;
     color: var(--default-primary-color);
