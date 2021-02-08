@@ -25,7 +25,6 @@
       }
     }
   },
-
   "opini": {
     "merajut_kembali_kejayaan_hmi_komisariat_asadiyah": {
       "backgroundColor": "#FF8040",
@@ -74,7 +73,6 @@
     "test": {},
     "users": {}
   },
-
   "schedule": {
     "2016-02-20": {
       "month": "Februari",
@@ -84,7 +82,9 @@
           "endTime": "23:00",
           "sessions": [
             {
-              "items": [101]
+              "items": [
+                101
+              ]
             }
           ],
           "startTime": "20:00"
@@ -94,7 +94,9 @@
           "endTime": "17:45",
           "sessions": [
             {
-              "items": [102]
+              "items": [
+                102
+              ]
             }
           ],
           "startTime": "15:45"
@@ -113,7 +115,6 @@
       ]
     }
   },
-
   "sessions": {
     "101": {
       "dateReadable": "20 Februari",
@@ -122,7 +123,9 @@
       "language": "Kamis",
       "presentation": "",
       "speakers": [],
-      "tags": ["Rapat"],
+      "tags": [
+        "Rapat"
+      ],
       "title": "Pelaksanaan RAK ke-VII",
       "city": "Sengkang"
     },
@@ -133,15 +136,18 @@
       "language": "Kamis",
       "presentation": "",
       "speakers": [],
-      "tags": ["Rapat", "Kajian", "Perkaderan"],
+      "tags": [
+        "Rapat",
+        "Kajian",
+        "Perkaderan"
+      ],
       "title": "Agenda Bedah Buku",
       "city": "Sengkang"
     }
   },
-
   "speakers": {
     "jusuf_kalla": {
-      "job": "Wakil Presiden RI",
+      "job": "Mantan Wakil Presiden RI",
       "featured": true,
       "name": "Jusuf Kalla",
       "photoUrl": "https://storage.googleapis.com/hmi-wajo.appspot.com/images/people/jusuf-kalla.jpg"
@@ -153,7 +159,7 @@
       "photoUrl": "https://storage.googleapis.com/hmi-wajo.appspot.com/images/people/nurcholish-madjid.jpg"
     },
     "mahfud_md": {
-      "job": "Anggota Dewan Pengarah Badan Pembinaan Ideologi Pancasila",
+      "job": "Menkumham RI",
       "featured": true,
       "name": "Mahfud MD",
       "photoUrl": "https://storage.googleapis.com/hmi-wajo.appspot.com/images/people/mahfud-md.jpg"
@@ -171,7 +177,6 @@
       "photoUrl": "https://storage.googleapis.com/hmi-wajo.appspot.com/images/people/akbar-tanjung.jpg"
     }
   },
-
   "triggers": {
     "images": false
   },
