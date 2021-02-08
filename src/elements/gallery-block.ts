@@ -127,14 +127,16 @@ class GalleryBlock extends ReduxMixin(PolymerElement) {
 
       <div class="photos-grid">
         <template is="dom-repeat" items="[[gallery]]" as="photo">
-          <plastic-image
-            class="grid-item"
-            srcset="[[photo.url]]"
-            sizing="cover"
-            lazy-load
-            preload
-            fade
-          ></plastic-image>
+            <plastic-image
+              class="grid-item"
+              srcset="[[photo.url]]"
+              sizing="cover"
+              lazy-load
+              preload
+              fade
+            >
+             <a href="[[photo.url]]"></a>
+            </plastic-image>
         </template>
         <div class="gallery-info" layout vertical justified>
           <div>

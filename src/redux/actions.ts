@@ -69,11 +69,12 @@ export const uiActions = {
       value,
     });
   },
-  toggleVideoDialog: (value = null) => {
+  toggleVideoDialog: (value) => {
     store.dispatch({
       type: TOGGLE_VIDEO_DIALOG,
       value,
     });
+
   },
   setHeroSettings: (value) => {
     store.dispatch({

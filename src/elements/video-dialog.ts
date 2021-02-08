@@ -81,7 +81,9 @@ class VideoDialog extends ReduxMixin(mixinBehaviors([PaperDialogBehavior], Polym
         type: Boolean,
         observer: 'videoDialogActionMade',
       },
-      youtubeId: String,
+      youtubeId: {
+        type: String
+      },
       disableControls: {
         type: Boolean,
         value: false,
@@ -95,6 +97,7 @@ class VideoDialog extends ReduxMixin(mixinBehaviors([PaperDialogBehavior], Polym
         this.backdropElement.open();
       }
       this.$.video.play();
+      console.log(VideoDialog.properties.youtubeId);
     } else {
       this.$.video.seekTo(0);
       this.$.video.pause();
@@ -111,6 +114,7 @@ class VideoDialog extends ReduxMixin(mixinBehaviors([PaperDialogBehavior], Polym
       title: '',
     });
   }
+
 }
 
 window.customElements.define(VideoDialog.is, VideoDialog);
