@@ -35,7 +35,7 @@ jobs:
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@v1.3.0
         with:
-          args: deploy --except functions
+          args: deploy
         env:
           # Update your project ID and Token in the secrets of your repo settings
           PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
