@@ -2,9 +2,6 @@ import '@polymer/iron-icon';
 import '@polymer/paper-button';
 import { html, PolymerElement } from '@polymer/polymer';
 import { ReduxMixin } from '../mixins/redux-mixin';
-import { dialogsActions, daftarActions } from '../redux/actions';
-import { DIALOGS } from '../redux/constants';
-import { store } from '../redux/store';
 import './hmi-icons';
 import './shared-styles';
 
@@ -63,7 +60,7 @@ class GabungBlock extends ReduxMixin(PolymerElement) {
             stroke
           >
             <span class="cta-label">{$ infoPengkaderan $}</span>
-            <iron-icon icon$="hmi:arrow-right-circle"></iron-icon>
+            <iron-icon icon="hmi:arrow-right-circle"></iron-icon>
           </paper-button>
         </div>
       </div>

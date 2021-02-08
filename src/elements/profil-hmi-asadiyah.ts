@@ -20,10 +20,6 @@ class ProfilHmiAsadiyah extends ReduxMixin(PolymerElement) {
           text-align: center;
         }
 
-        .container-title::after {
-          width: 145px;
-        }
-
         .statistic-block {
           width: 100%;
           margin-top: 10px;
@@ -65,6 +61,12 @@ class ProfilHmiAsadiyah extends ReduxMixin(PolymerElement) {
 
           .numbers {
             font-size: 56px;
+          }
+        }
+
+        @media (max-width: 760px) {
+          .container-title {
+            font-size: 25px;
           }
         }
       </style>
