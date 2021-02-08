@@ -148,7 +148,7 @@ class HomePage extends ReduxMixin(PolymerElement) {
           <a href="/pengkaderan" layout horizontal center-justified wrap>
             <paper-button class="action-buttons" primary invert>
               {$ infoPengkaderan $}
-              <iron-icon icon="hmi:open-in-new"></iron-icon>
+              <iron-icon icon="hmi:arrow-right-circle"></iron-icon>
             </paper-button>
           </a>
 

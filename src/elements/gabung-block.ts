@@ -27,7 +27,6 @@ class GabungBlock extends ReduxMixin(PolymerElement) {
 
         .description {
           font-size: 24px;
-          line-height: 1.5;
           margin: 0 0 16px;
           text-align: center;
         }
@@ -56,7 +55,6 @@ class GabungBlock extends ReduxMixin(PolymerElement) {
         <div>
           <paper-button
             class="animated icon-right"
-            disabled$="[[subscribed]]"
             on-click="_daftar"
             ga-on="click"
             ga-event-category="pendaftar"
@@ -64,8 +62,8 @@ class GabungBlock extends ReduxMixin(PolymerElement) {
             ga-event-label="daftar block"
             stroke
           >
-            <span class="cta-label">{$ gabungBlock.callToAction.label $}</span>
-            <iron-icon icon$="hmi:[[ctaIcon]]"></iron-icon>
+            <span class="cta-label">{$ infoPengkaderan $}</span>
+            <iron-icon icon$="hmi:arrow-right-circle"></iron-icon>
           </paper-button>
         </div>
       </div>
@@ -76,66 +74,6 @@ class GabungBlock extends ReduxMixin(PolymerElement) {
     return 'gabung-block';
   }
 
-  private user: { signedIn?: boolean; email?: string; displayName?: string } = {};
-  private viewport = {};
-  private subscribed = false;
-  private ctaIcon = 'arrow-right-circle';
-  private ctaLabel = '{$  subscribeBlock.callToAction.label $}';
-
-  static get properties() {
-    return {
-      user: {
-        type: Object,
-      },
-      viewport: {
-        type: Object,
-      },
-      subscribed: {
-        type: Boolean,
-        observer: '_handleSubscribed',
-      },
-      ctaIcon: {
-        type: String,
-        value: 'arrow-right-circle',
-      },
-      ctaLabel: {
-        type: String,
-        value: '{$  subscribeBlock.callToAction.label $}',
-      },
-    };
-  }
-
-  stateChanged(state: import('../redux/store').State) {
-    this.setProperties({
-      subscribed: state.subscribed,
-      user: state.user,
-      viewport: state.ui.viewport,
-    });
-  }
-
-  _handleSubscribed(subscribed) {
-    if (subscribed) {
-      this.ctaIcon = 'checked';
-      this.ctaLabel = '{$  subscribeBlock.terdaftar $}';
-    } else {
-      this.ctaIcon = 'arrow-right-circle';
-      this.ctaLabel = '{$  subscribeBlock.callToAction.label $}';
-    }
-  }
-
-  _daftar() {
-    dialogsActions.openDialog(DIALOGS.DAFTAR, {
-      title: '{$ subscribeBlock.formTitle $}',
-      submitLabel: ' {$ subscribeBlock.subscribe $}',
-      firstFieldLabel: '{$ subscribeBlock.firstName $}',
-      secondFieldLabel: '{$ subscribeBlock.lastName $}',
-      submit: (data) => this._daftarAction(data),
-    });
-  }
-
-  _daftarAction(data) {
-    store.dispatch(daftarActions.subscribe(data));
-  }
 }
 
 window.customElements.define(GabungBlock.is, GabungBlock);
