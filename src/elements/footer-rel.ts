@@ -20,7 +20,7 @@ class FooterRel extends PolymerElement {
 
         .col-heading {
           font-size: 14px;
-          font-weight: 500;
+          font-weight: 600;
           line-height: 21px;
           margin-top: 25px;
           margin-bottom: 10px;

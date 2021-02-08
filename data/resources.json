@@ -185,11 +185,6 @@
       "title": "Layanan",
       "links": [
         {
-          "name": "Info Pengkaderan",
-          "url": "/pengkaderan",
-          "newTab": true
-        },
-        {
           "name": "Kepustakaan",
           "url": "#",
           "newTab": true
