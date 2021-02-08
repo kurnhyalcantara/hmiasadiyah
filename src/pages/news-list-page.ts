@@ -154,10 +154,10 @@ class NewsListPage extends ReduxMixin(PolymerElement) {
             <div flex>
               <div class="details" layout vertical justified>
                 <div>
-                  <text-truncate lines="2">
-                    <h2 class="title">[[post.title]]</h2>
-                  </text-truncate>
                   <text-truncate lines="3">
+                    <h3 class="title">[[post.title]]</h3>
+                  </text-truncate>
+                  <text-truncate lines="4">
                     <marked-element class="description" markdown="[[post.brief]]">
                       <div slot="markdown-html"></div>
                     </marked-element>

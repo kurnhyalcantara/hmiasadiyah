@@ -36,6 +36,7 @@ class PostsList extends PolymerElement {
 
         .title {
           line-height: 1.2;
+          color: var(--default-primary-color);
         }
 
         .description {
@@ -73,7 +74,7 @@ class PostsList extends PolymerElement {
             <div class="details" layout vertical justified>
               <div>
                 <text-truncate lines="2">
-                  <h2 class="title">[[post.title]]</h2>
+                  <h3 class="title">[[post.title]]</h3>
                 </text-truncate>
                 <text-truncate lines="3">
                   <marked-element class="description" markdown="[[post.brief]]">

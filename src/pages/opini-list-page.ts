@@ -42,7 +42,7 @@ class OpiniListPage extends ReduxMixin(PolymerElement) {
         }
 
         .image-overlay {
-          background-color: rgba(0, 0, 0, 0.6);
+          background-color: rgba(0, 0, 0, 0.8);
         }
 
         .details {
@@ -54,7 +54,7 @@ class OpiniListPage extends ReduxMixin(PolymerElement) {
 
         .title {
           line-height: 1.2;
-          color: var(--default-primary-color);
+          color: #fff;
         }
 
         .hero-description {
@@ -62,7 +62,7 @@ class OpiniListPage extends ReduxMixin(PolymerElement) {
           border-left: 5px solid var(--default-primary-color);
         }
 
-        h2 {
+        h3 {
           margin: 0;
         }
 
@@ -150,7 +150,7 @@ class OpiniListPage extends ReduxMixin(PolymerElement) {
               <div class="details" layout vertical justified>
                 <div>
                   <text-truncate lines="2">
-                    <h2 class="title">[[post.title]]</h2>
+                    <h3 class="title">[[post.title]]</h3>
                   </text-truncate>
                   <text-truncate lines="[[_addIfNotPhone(2, 1)]]">
                     <marked-element class="description" markdown="[[post.brief]]">
