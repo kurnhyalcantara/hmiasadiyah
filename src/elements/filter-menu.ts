@@ -87,13 +87,7 @@ class FilterMenu extends PolymerElement {
       <iron-location query="{{queryParams}}"></iron-location>
 
       <div class="filters-toolbar container">
-        <div layout horizontal center>
-          <div layout horizontal center flex>
-            <div class="results" hidden$="[[_hideResultText(resultsCount, _selectedArray)]]">
-              [[resultsCount]] {$ filters.results $}
-            </div>
-          </div>
-
+        <div layout horizontal end-justified>
           <div class="actions" layout horizontal center>
             <span
               class="reset-filters"
@@ -164,7 +158,6 @@ class FilterMenu extends PolymerElement {
   }
 
   private filters = [];
-  private resultsCount = 1;
   private selected = {};
   private queryParams: string;
   private _selectedArray = [];
@@ -173,7 +166,6 @@ class FilterMenu extends PolymerElement {
   static get properties() {
     return {
       filters: Array,
-      resultsCount: Number,
       queryParams: String,
       selected: {
         type: Object,
@@ -232,13 +224,9 @@ class FilterMenu extends PolymerElement {
     return state ? 'close' : 'filter-list';
   }
 
-  _hideResultText(resultsCount, _selectedArray) {
-    return !_selectedArray || !_selectedArray.length || typeof resultsCount === 'undefined';
-  }
-
   _clickOutsideListen() {
     this._clickOutsideUnlisten();
-    window.addEventListener('click', this._clickOutsideListener, false);
+    window.addEventListener('click', this._clickOutsideListener, true);
   }
 
   _clickOutsideUnlisten() {

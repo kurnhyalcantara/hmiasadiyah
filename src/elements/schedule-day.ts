@@ -214,6 +214,7 @@ class ScheduleDay extends PolymerElement {
 
   _filterSessions(sessions, selectedFilters) {
     if (!selectedFilters) return sessions;
+    console.log(sessions.length);
     return sessions.filter((session) => {
       return (
         (!selectedFilters.tag ||

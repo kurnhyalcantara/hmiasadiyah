@@ -373,8 +373,8 @@
     "emailAddress": "Email",
     "emailRequired": "Email wajib dimasukkan"
   },
-  "mySchedule": {
-    "title": "Jadwalku",
+  "allSchedule": {
+    "title": "Semua",
     "browseSession": "Tambahkan"
   },
   "blog": {

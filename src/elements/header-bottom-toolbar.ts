@@ -75,7 +75,7 @@ class HeaderBottomToolbar extends ReduxMixin(PolymerElement) {
         >
           <paper-tab class="nav-item" day="my-schedule" link>
             <a href$="[[_addQueryParams('my-schedule', queryParams)]]" layout vertical center-center
-              >{$ mySchedule.title $}</a
+              >{$ allSchedule.title $}</a
             >
           </paper-tab>
           <template is="dom-repeat" items="[[schedule]]" as="day">
