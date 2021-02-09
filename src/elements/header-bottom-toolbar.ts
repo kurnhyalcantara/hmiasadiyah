@@ -67,21 +67,21 @@ class HeaderBottomToolbar extends ReduxMixin(PolymerElement) {
         <paper-tabs
           class="nav-items"
           selected="[[route.subRoute]]"
-          attr-for-selected="day"
+          attr-for-selected="sel"
           hidden$="[[!contentLoaderVisibility]]"
           scrollable
           hide-scroll-buttons
           noink
         >
-          <paper-tab class="nav-item" day="my-schedule" link>
+          <paper-tab class="nav-item" sel="my-schedule" link>
             <a href$="[[_addQueryParams('my-schedule', queryParams)]]" layout vertical center-center
               >{$ allSchedule.title $}</a
             >
           </paper-tab>
-          <template is="dom-repeat" items="[[schedule]]" as="day">
-            <paper-tab class="nav-item" day="[[day.date]]" link>
-              <a href$="[[_addQueryParams(day.date, queryParams)]]" layout vertical center-center
-                >[[day.month]]</a
+          <template is="dom-repeat" items="[[schedule]]" as="month">
+            <paper-tab class="nav-item" sel="[[month.month]]" link>
+              <a href$="[[_addQueryParams(month.month, queryParams)]]" layout vertical center-center
+                >[[month.month]]</a
               >
             </paper-tab>
           </template>

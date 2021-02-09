@@ -90,7 +90,7 @@ class SchedulePage extends SessionsHoC(SpeakersHoC(ReduxMixin(PolymerElement))) 
 
       <filter-menu filters="[[_filters]]" selected="[[_selectedFilters]]"></filter-menu>
 
-      <div class="container">
+      <!-- <div class="container">
         <content-loader
           card-padding="15px"
           card-margin="16px 0"
@@ -131,7 +131,7 @@ class SchedulePage extends SessionsHoC(SpeakersHoC(ReduxMixin(PolymerElement))) 
             query-params="[[queryParams]]"
           ></my-schedule>
         </iron-pages>
-      </div>
+      </div> -->
 
       <footer-block></footer-block>
     `;
@@ -265,8 +265,8 @@ class SchedulePage extends SessionsHoC(SpeakersHoC(ReduxMixin(PolymerElement))) 
       },
       {
         title: '{$ filters.complexity $}',
-        key: 'complexity',
-        items: filters.complexity,
+        key: 'partisipants',
+        items: filters.partisipants,
       },
     ]);
   }

@@ -97,6 +97,6 @@ export const initialState = {
   },
   filters: {
     tags: [],
-    complexity: [],
+    partisipants: [],
   },
 };

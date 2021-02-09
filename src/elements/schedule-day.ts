@@ -21,12 +21,12 @@ class ScheduleDay extends PolymerElement {
           border-bottom: 1px solid var(--border-light-color);
         }
 
-        .tanggal {
+        .mulai {
           font-size: 24px;
           font-weight: 300;
         }
 
-        .bulan {
+        .sampai {
           font-size: 16px;
           color: var(--error-color);
           text-transform: uppercase;
@@ -72,7 +72,7 @@ class ScheduleDay extends PolymerElement {
             border-bottom: 0;
           }
 
-          .tanggal {
+          .mulai {
             font-size: 32px;
           }
 
@@ -86,15 +86,15 @@ class ScheduleDay extends PolymerElement {
         }
       </style>
 
-      <div class="grid" style$="--tracks-number: [[day.tracks.length]];">
+      <div class="grid">
         <template is="dom-repeat" items="[[day.timeslots]]" as="timeslot" index-as="timeslotIndex">
           <div
             id$="[[timeslot.startTime]]"
             class="tanggal-bulan"
             style$="grid-area: [[_getTimePosition(timeslotIndex)]]"
           >
-            <span class="tanggal">[[_splitText(timeslot.dateMonth, ' ', 0)]]</span>
-            <span class="bulan">[[_splitText(timeslot.dateMonth, ' ', 1)]]</span>
+            <span class="mulai">[[_splitText(timeslot.dateMonth, ' ', 0)]]</span>
+            <span class="sampai" hidden$="[[_isDateUntil()]]">[[_splitText(timeslot.dateMonth, ' ', 1)]]</span>
           </div>
 
           <a

@@ -342,7 +342,7 @@ export const speakersActions = {
     const speakersPromise = new Promise((resolve, reject) => {
       window.firebase
         .firestore()
-        .collection('generatedSpeakers')
+        .collection('speakers')
         .orderBy('order', 'asc')
         .get()
         .then((snaps) => {
@@ -387,13 +387,13 @@ export const sessionsActions = {
           const obj = {};
           const objBySpeaker = {};
           const tagFilters = new Set();
-          const complexityFilters = new Set();
+          const partisipantsFilters = new Set();
 
           snaps.docs.forEach((doc) => {
             const session = Object.assign({}, doc.data());
             list.push(session);
             session.tags && session.tags.map((tag) => tagFilters.add(tag.trim()));
-            session.complexity && complexityFilters.add(session.complexity.trim());
+            session.partisipants && partisipantsFilters.add(session.partisipants.trim());
             obj[doc.id] = session;
           });
 
@@ -412,7 +412,7 @@ export const sessionsActions = {
             type: SET_FILTERS,
             payload: {
               tags: [...tagFilters].sort(),
-              complexity: [...complexityFilters],
+              partisipants: [...partisipantsFilters],
             },
           });
 
