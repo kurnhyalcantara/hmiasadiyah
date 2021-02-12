@@ -10,23 +10,30 @@ class ScheduleDay extends PolymerElement {
       <style include="shared-styles flex flex-alignment positioning">
         :host {
           display: block;
-          --tracks-number: 3;
+        }
+
+        .card {
+          box-shadow: 0 1px 5px rgb(0 0 0 / 15%);
+          border-radius: 0;
+        }
+
+        .card:hover {
+          box-shadow: 0 2px 6px rgb(0 0 0 / 15%);
         }
 
         .tanggal-bulan {
           margin-top: 16px;
-          padding: 8px 16px;
           color: var(--secondary-text-color);
           letter-spacing: -0.04em;
-          border-bottom: 1px solid var(--border-light-color);
+          margin-bottom: 8px;
         }
 
-        .mulai {
+        .tanggal {
           font-size: 24px;
           font-weight: 300;
         }
 
-        .sampai {
+        .bulan {
           font-size: 16px;
           color: var(--error-color);
           text-transform: uppercase;
@@ -39,6 +46,7 @@ class ScheduleDay extends PolymerElement {
           border-bottom: 1px solid var(--border-light-color);
           font-size: 14px;
           color: var(--secondary-text-color);
+          text-transform: uppercase;
         }
 
         .add-session:hover {
@@ -61,7 +69,7 @@ class ScheduleDay extends PolymerElement {
             display: grid;
             grid-column-gap: 16px;
             grid-row-gap: 32px;
-            grid-template-columns: repeat(var(--tracks-number), 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(300px, auto));
           }
 
           .tanggal-bulan {
@@ -72,7 +80,7 @@ class ScheduleDay extends PolymerElement {
             border-bottom: 0;
           }
 
-          .mulai {
+          .tanggal {
             font-size: 32px;
           }
 
@@ -87,28 +95,16 @@ class ScheduleDay extends PolymerElement {
       </style>
 
       <div class="grid">
-        <template is="dom-repeat" items="[[day.timeslots]]" as="timeslot" index-as="timeslotIndex">
+        <template is="dom-repeat" items="[[month.timeslots]]" as="timeslot" index-as="timeslotIndex">
           <div
-            id$="[[timeslot.startTime]]"
+            id$="[[timeslot.dateMonth]]"
             class="tanggal-bulan"
             style$="grid-area: [[_getTimePosition(timeslotIndex)]]"
+            hidden$=[[viewport.isTabletPlus]]
           >
-            <span class="mulai">[[_splitText(timeslot.dateMonth, ' ', 0)]]</span>
-            <span class="sampai" hidden$="[[_isDateUntil()]]">[[_splitText(timeslot.dateMonth, ' ', 1)]]</span>
+            <span class="tanggal">[[_sliceText(timeslot.dateMonth, 0)]]</span>
+            <span class="bulan">[[_sliceText(timeslot.dateMonth, -3)]]</span>
           </div>
-
-          <a
-            class="add-session"
-            href$="/schedule/[[day.date]]#[[timeslot.startTime]]"
-            hidden$="[[!_showAddSession(timeslot, onlyFeatured)]]"
-            style$="grid-area: [[timeslot.sessions.0.gridArea]]"
-            layout
-            horizontal
-            center-center
-          >
-            <iron-icon class="add-session-icon" icon="hmi:add-circle-outline"></iron-icon>
-            <span>{$ mySchedule.browseSession $}</span>
-          </a>
 
           <template
             is="dom-repeat"
@@ -117,7 +113,7 @@ class ScheduleDay extends PolymerElement {
             index-as="sessionIndex"
             filter="_isNotEmpty"
           >
-            <div class="session" style$="grid-area: [[session.gridArea]]" layout vertical>
+            <div class="session card" layout vertical>
               <template
                 is="dom-repeat"
                 items="[[_filterSessions(session.items, selectedFilters)]]"
@@ -131,6 +127,18 @@ class ScheduleDay extends PolymerElement {
                   featured-sessions="[[featuredSessions]]"
                   query-params="[[queryParams]]"
                 ></session-element>
+                
+                <a
+                  class="add-session"
+                  href$="/schedule/[[month.month]]#[[timeslot.sessions.0.items.id]]"
+                  style$="grid-area: [[timeslot.sessions.0.gridArea]]"
+                  layout
+                  horizontal
+                  center-center
+                >
+                  <iron-icon class="add-session-icon" icon="hmi:add-circle-outline"></iron-icon>
+                  <span>{$ schedule.registerSchedule $}</span>
+                </a>    
               </template>
             </div>
           </template>
@@ -144,7 +152,7 @@ class ScheduleDay extends PolymerElement {
   }
 
   private active = false;
-  private day = {};
+  private month = {};
   private name: string;
   private user = {};
   private featuredSessions = {};
@@ -159,7 +167,7 @@ class ScheduleDay extends PolymerElement {
         type: Boolean,
         observer: '_pageVisible',
       },
-      day: Object,
+      month: Object,
       name: String,
       user: Object,
       featuredSessions: Object,
@@ -194,8 +202,12 @@ class ScheduleDay extends PolymerElement {
     return `${timeslotIndex + 1} / 1`;
   }
 
-  _splitText(text, divider, index) {
-    return text.split(divider)[index];
+  _sliceText(text, index) {
+    if (index === 0) {
+      return text.slice(index, -3);
+    } else {
+      return text.slice(index);
+    }
   }
 
   _showAddSession(timeslot, onlyFeatured) {
@@ -214,7 +226,6 @@ class ScheduleDay extends PolymerElement {
 
   _filterSessions(sessions, selectedFilters) {
     if (!selectedFilters) return sessions;
-    console.log(sessions.length);
     return sessions.filter((session) => {
       return (
         (!selectedFilters.tag ||
@@ -229,6 +240,7 @@ class ScheduleDay extends PolymerElement {
       );
     });
   }
+
 }
 
 window.customElements.define(ScheduleDay.is, ScheduleDay);

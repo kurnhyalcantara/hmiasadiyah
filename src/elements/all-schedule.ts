@@ -3,7 +3,7 @@ import { ReduxMixin } from '../mixins/redux-mixin';
 import './schedule-day';
 import './shared-styles';
 
-class MySchedule extends ReduxMixin(PolymerElement) {
+class AllSchedule extends ReduxMixin(PolymerElement) {
   static get template() {
     return html`
       <style include="shared-styles flex flex-alignment">
@@ -28,25 +28,24 @@ class MySchedule extends ReduxMixin(PolymerElement) {
         }
       </style>
 
-      <template is="dom-repeat" items="[[featuredSchedule]]" as="day">
-        <div class="date">[[day.timeslots.dateReadable]]</div>
+      <template is="dom-repeat" items="[[schedule]]" as="month">
+        <div class="date">[[month.timeslots.dateReadable]]</div>
 
         <schedule-day
-          name$="[[day.date]]"
-          day="[[day]]"
+          name$="[[month.month]]"
+          month="[[month]]"
           user="[[user]]"
           featured-sessions="[[featuredSessions]]"
           selected-filters="[[selectedFilters]]"
           viewport="[[viewport]]"
           query-params="[[queryParams]]"
-          only-featured
         ></schedule-day>
       </template>
     `;
   }
 
   static get is() {
-    return 'my-schedule';
+    return 'all-schedule';
   }
 
   private schedule = [];
@@ -75,9 +74,9 @@ class MySchedule extends ReduxMixin(PolymerElement) {
 
   _filterSchedule(schedule, featuredSessions) {
     if (schedule.length) {
-      this.featuredSchedule = schedule.map((day) =>
-        Object.assign({}, day, {
-          timeslots: day.timeslots.map((timeslot) =>
+      this.featuredSchedule = schedule.map((month) =>
+        Object.assign({}, month, {
+          timeslots: month.timeslots.map((timeslot) =>
             Object.assign({}, timeslot, {
               sessions: timeslot.sessions.map((sessionBlock) =>
                 Object.assign({}, sessionBlock, {
@@ -92,4 +91,4 @@ class MySchedule extends ReduxMixin(PolymerElement) {
   }
 }
 
-customElements.define(MySchedule.is, MySchedule);
+customElements.define(AllSchedule.is, AllSchedule);

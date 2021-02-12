@@ -6,7 +6,7 @@ import { html, PolymerElement } from '@polymer/polymer';
 import '../elements/content-loader';
 import '../elements/filter-menu';
 import '../elements/header-bottom-toolbar';
-import '../elements/my-schedule';
+import '../elements/all-schedule';
 import '../elements/schedule-day';
 import '../elements/shared-styles';
 import '../elements/sticky-element';
@@ -44,7 +44,7 @@ class SchedulePage extends SessionsHoC(SpeakersHoC(ReduxMixin(PolymerElement))) 
 
         @media (max-width: 640px) {
           .container {
-            padding: 0 0 32px;
+            padding: 12px 12px;
           }
         }
 
@@ -71,7 +71,7 @@ class SchedulePage extends SessionsHoC(SpeakersHoC(ReduxMixin(PolymerElement))) 
         query-params="{{nQueryParams}}"
       ></app-route>
 
-      <app-route route="[[route]]" pattern="/:day" data="{{routeData}}"></app-route>
+      <app-route route="[[route]]" pattern="/:month" data="{{routeData}}"></app-route>
 
       <hero-block
         background-image="{$ heroSettings.schedule.background.image $}"
@@ -90,7 +90,7 @@ class SchedulePage extends SessionsHoC(SpeakersHoC(ReduxMixin(PolymerElement))) 
 
       <filter-menu filters="[[_filters]]" selected="[[_selectedFilters]]"></filter-menu>
 
-      <!-- <div class="container">
+      <div class="container">
         <content-loader
           card-padding="15px"
           card-margin="16px 0"
@@ -110,10 +110,10 @@ class SchedulePage extends SessionsHoC(SpeakersHoC(ReduxMixin(PolymerElement))) 
         </content-loader>
 
         <iron-pages attr-for-selected="name" selected="[[subRoute]]" selected-attribute="active">
-          <template is="dom-repeat" items="[[schedule]]" as="day">
+          <template is="dom-repeat" items="[[schedule]]" as="month">
             <schedule-day
-              name$="[[day.date]]"
-              day="[[day]]"
+              name$="[[month.month]]"
+              month="[[month]]"
               user="[[user]]"
               featured-sessions="[[featuredSessions]]"
               selected-filters="[[_selectedFilters]]"
@@ -121,17 +121,17 @@ class SchedulePage extends SessionsHoC(SpeakersHoC(ReduxMixin(PolymerElement))) 
               query-params="[[queryParams]]"
             ></schedule-day>
           </template>
-          <my-schedule
-            name="my-schedule"
+          <all-schedule
+            name="all-schedule"
             schedule="[[schedule]]"
             user="[[user]]"
             featured-sessions="[[featuredSessions]]"
             selected-filters="[[_selectedFilters]]"
             viewport="[[viewport]]"
             query-params="[[queryParams]]"
-          ></my-schedule>
+          ></all-schedule>
         </iron-pages>
-      </div> -->
+      </div> 
 
       <footer-block></footer-block>
     `;
@@ -200,7 +200,7 @@ class SchedulePage extends SessionsHoC(SpeakersHoC(ReduxMixin(PolymerElement))) 
 
   static get observers() {
     return [
-      '_setDay(active, routeData.day, schedule)',
+      '_setDay(active, routeData.month, schedule)',
       '_openSessionDetails(active, sessions, _selectedFilters.sessionId)',
       '_fetchFeaturedSessions(active, sessions, user.uid)',
       '_scheduleChanged(schedule, _selectedFilters)',
@@ -233,9 +233,9 @@ class SchedulePage extends SessionsHoC(SpeakersHoC(ReduxMixin(PolymerElement))) 
     }
   }
 
-  _setDay(active, day, schedule) {
+  _setDay(active, month, schedule) {
     if (active && schedule.length) {
-      const selectedDay = day || schedule[0].date;
+      const selectedDay = month || schedule[0].month;
       routingActions.setSubRoute(selectedDay);
     }
   }

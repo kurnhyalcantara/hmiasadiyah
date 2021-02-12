@@ -57,6 +57,10 @@ export const theme = css`
     --kajian: #c112fc;
     --rapat: #f09c1e;
     --perkaderan: var(--light-primary-color);
+
+    --tidak-ada: #c0c0c0;
+    --terbuka: #00c131;
+    --ditutup: #c0c0c0;
   }
 
   *,
@@ -220,7 +224,7 @@ export const theme = css`
 
   .card {
     max-width: 400px;
-    border-radius: 20px;
+    border-radius: var(--border-radius);
     background: transparent;
     box-shadow: 1px 1px 1px var(--default-primary-color), -1px -1px 2px var(--default-primary-color);
   }

@@ -374,8 +374,7 @@
     "emailRequired": "Email wajib dimasukkan"
   },
   "allSchedule": {
-    "title": "Semua",
-    "browseSession": "Tambahkan"
+    "title": "Semua"
   },
   "blog": {
     "published": "Dipublikasikan pada: ",
@@ -389,7 +388,12 @@
   },
   "schedule": {
     "commentSessionSignedOut": "Anda harus login terlebih dahulu sebelum menulis kesan-kesan",
-    "saveSessionsSignedOut": "Anda harus login terlebih dahulu jika ingin mendapatkan pemberitahuan up-to-date tentang agenda ini"
+    "saveSessionsSignedOut": "Anda harus login terlebih dahulu jika ingin mendapatkan pemberitahuan up-to-date tentang agenda ini",
+    "registerSchedule": "Saya Ingin Ikuti Kegiatan ini"
+  },
+  "session": {
+    "pendaftaran": "Registrasi",
+    "kategori": "Kategori"
   },
   "feedback": {
     "save": "Simpan",
