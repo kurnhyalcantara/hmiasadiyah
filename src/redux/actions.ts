@@ -381,6 +381,7 @@ export const sessionsActions = {
       window.firebase
         .firestore()
         .collection('generatedSessions')
+        .orderBy('dateReadable', 'desc')
         .get()
         .then((snaps) => {
           const list = [];

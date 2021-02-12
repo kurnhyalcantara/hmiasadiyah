@@ -123,7 +123,7 @@ class SchedulePage extends SessionsHoC(SpeakersHoC(ReduxMixin(PolymerElement))) 
           </template>
           <all-schedule
             name="all-schedule"
-            schedule="[[schedule]]"
+            sessions="[[sessions]]"
             user="[[user]]"
             featured-sessions="[[featuredSessions]]"
             selected-filters="[[_selectedFilters]]"
@@ -204,13 +204,13 @@ class SchedulePage extends SessionsHoC(SpeakersHoC(ReduxMixin(PolymerElement))) 
       '_openSessionDetails(active, sessions, _selectedFilters.sessionId)',
       '_fetchFeaturedSessions(active, sessions, user.uid)',
       '_scheduleChanged(schedule, _selectedFilters)',
-      '_sessionsAndSpeakersChanged(sessions, speakers)',
+      '_sessionsAndScheduleFetched(schedule, sessions)',
       '_paramsUpdated(queryParams)',
     ];
   }
 
-  _sessionsAndSpeakersChanged(sessions, speakers) {
-    if (!this.schedule.length && sessions && sessions.length && speakers && speakers.length) {
+  _sessionsAndScheduleFetched() {
+    if (!this.schedule.length) {
       store.dispatch(scheduleActions.fetchSchedule());
     }
   }

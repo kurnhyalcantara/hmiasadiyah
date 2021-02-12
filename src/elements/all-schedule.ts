@@ -1,46 +1,129 @@
 import { html, PolymerElement } from '@polymer/polymer';
 import { ReduxMixin } from '../mixins/redux-mixin';
-import './schedule-day';
+import { generateClassName } from '../utils/functions';
+import './session-element';
 import './shared-styles';
 
 class AllSchedule extends ReduxMixin(PolymerElement) {
   static get template() {
     return html`
-      <style include="shared-styles flex flex-alignment">
+      <style include="shared-styles flex flex-alignment positioning">
         :host {
           display: block;
         }
 
-        .date {
-          margin: 16px;
+        .card {
+          box-shadow: 0 1px 5px rgb(0 0 0 / 15%);
+          border-radius: 0;
+          margin-bottom: 16px;
+        }
+
+        .card:hover {
+          box-shadow: 0 2px 6px rgb(0 0 0 / 15%);
+        }
+
+        .tanggal-bulan {
+          margin-top: 16px;
+          color: var(--secondary-text-color);
+          letter-spacing: -0.04em;
+          margin-bottom: 8px;
+        }
+
+        .tanggal {
           font-size: 24px;
+          font-weight: 300;
         }
 
-        .date:not(:first-of-type) {
-          margin-top: 64px;
+        .bulan {
+          font-size: 16px;
+          color: var(--error-color);
+          text-transform: uppercase;
         }
 
-        @media (min-width: 640px) {
-          .date {
-            margin-left: 64px;
+        .add-session {
+          padding: 8px;
+          grid-column-end: -1 !important;
+          background-color: var(--primary-background-color);
+          border-bottom: 1px solid var(--border-light-color);
+          font-size: 14px;
+          color: var(--secondary-text-color);
+          text-transform: uppercase;
+        }
+
+        .add-session:hover {
+          background-color: var(--additional-background-color);
+        }
+
+        .add-session-icon {
+          --iron-icon-width: 14px;
+          margin-right: 8px;
+        }
+
+        @media (min-width: 812px) {
+          :host {
+            margin-left: auto;
+            display: block;
+            max-width: calc(100% - 64px);
+          }
+
+          .grid {
+            display: grid;
+            grid-column-gap: 16px;
+            grid-row-gap: 32px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+          }
+
+          .tanggal-bulan {
+            margin: 0;
+            padding: 0;
+            text-align: right;
+            transform: translateX(calc(-100% - 16px));
+            border-bottom: 0;
+          }
+
+          .tanggal {
             font-size: 32px;
+          }
+
+          .subsession:not(:last-of-type) {
+            margin-bottom: 16px;
+          }
+
+          .add-session {
+            border: 1px solid var(--border-light-color);
           }
         }
       </style>
 
-      <template is="dom-repeat" items="[[schedule]]" as="month">
-        <div class="date">[[month.timeslots.dateReadable]]</div>
-
-        <schedule-day
-          name$="[[month.month]]"
-          month="[[month]]"
-          user="[[user]]"
-          featured-sessions="[[featuredSessions]]"
-          selected-filters="[[selectedFilters]]"
-          viewport="[[viewport]]"
-          query-params="[[queryParams]]"
-        ></schedule-day>
-      </template>
+      <div class="grid">
+        <template
+          is="dom-repeat"
+          items="[[_filterSessions(sessions, selectedFilters)]]"
+          as="subSession"
+        >
+          <div class="session card" layout vertical>
+            <session-element
+              class="subsession"
+              day-name="[[name]]"
+              session="[[subSession]]"
+              user="[[user]]"
+              featured-sessions="[[featuredSessions]]"
+              query-params="[[queryParams]]"
+            ></session-element>
+            <a
+              class="add-session"
+              href$="/schedule/[[month.month]]#[[timeslot.sessions.0.items.id]]"
+              style$="grid-area: [[timeslot.sessions.0.gridArea]]"
+              layout
+              horizontal
+              center-center
+            >
+              <iron-icon class="add-session-icon" icon="hmi:add-circle-outline"></iron-icon>
+              <span>{$ schedule.registerSchedule $}</span>
+            </a>    
+          </div>
+        </template>
+      </div>
     `;
   }
 
@@ -48,46 +131,44 @@ class AllSchedule extends ReduxMixin(PolymerElement) {
     return 'all-schedule';
   }
 
-  private schedule = [];
-  private featuredSchedule = [];
+  private sessions = [];
+  private name: string;
+  private user = {};
   private featuredSessions = {};
+  private onlyFeatured = false;
+  private viewport: { isTabletPlus?: boolean } = {};
   private selectedFilters = {};
   private queryParams: string;
-  private viewport = {};
-  private user = {};
+
 
   static get properties() {
     return {
-      schedule: Array,
-      featuredSchedule: Array,
+      sessions: Array,
+      name: String,
+      user: Object,
       featuredSessions: Object,
+      onlyFeatured: Boolean,
+      viewport: Object,
       selectedFilters: Object,
       queryParams: String,
-      viewport: Object,
-      user: Object,
     };
   }
 
-  static get observers() {
-    return ['_filterSchedule(schedule, featuredSessions)'];
-  }
-
-  _filterSchedule(schedule, featuredSessions) {
-    if (schedule.length) {
-      this.featuredSchedule = schedule.map((month) =>
-        Object.assign({}, month, {
-          timeslots: month.timeslots.map((timeslot) =>
-            Object.assign({}, timeslot, {
-              sessions: timeslot.sessions.map((sessionBlock) =>
-                Object.assign({}, sessionBlock, {
-                  items: sessionBlock.items.filter((session) => featuredSessions[session.id]),
-                })
-              ),
-            })
-          ),
-        })
+  _filterSessions(sessions, selectedFilters) {
+    if (!selectedFilters) return console.log(sessions);
+    return sessions.filter((session) => {
+      return (
+        (!selectedFilters.tag ||
+          !selectedFilters.tag.length ||
+          (session.tags &&
+            !!session.tags.filter((tag) => selectedFilters.tag.includes(generateClassName(tag)))
+              .length)) &&
+        (!selectedFilters.complexity ||
+          !selectedFilters.complexity.length ||
+          (session.complexity &&
+            selectedFilters.complexity.includes(generateClassName(session.complexity))))
       );
-    }
+    });
   }
 }
 
