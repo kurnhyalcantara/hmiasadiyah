@@ -86,81 +86,6 @@
               ]
             }
           ]
-        },
-        {
-          "dateMonth": "27 Feb",
-          "sessions": [
-            {
-              "items": [
-                102
-              ]
-            }
-          ]
-        },
-        {
-          "dateMonth": "29 Feb",
-          "sessions": [
-            {
-              "items": [
-                103
-              ]
-            }
-          ]
-        },
-        {
-          "dateMonth": "31 Feb",
-          "sessions": [
-            {
-              "items": [
-                104
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    "2": {
-      "month": "Maret",
-      "timeslots": [
-        {
-          "dateMonth": "20 Feb",
-          "sessions": [
-            {
-              "items": [
-                101
-              ]
-            }
-          ]
-        },
-        {
-          "dateMonth": "27 Feb",
-          "sessions": [
-            {
-              "items": [
-                102
-              ]
-            }
-          ]
-        },
-        {
-          "dateMonth": "29 Feb",
-          "sessions": [
-            {
-              "items": [
-                103
-              ]
-            }
-          ]
-        },
-        {
-          "dateMonth": "31 Feb",
-          "sessions": [
-            {
-              "items": [
-                104
-              ]
-            }
-          ]
         }
       ]
     }
@@ -168,57 +93,16 @@
   "sessions": {
     "101": {
       "dateReadable": "20 Februari 2020",
-      "partisipants": "Umum",
+      "partisipants": "Kader",
       "description": "Pelaksanaan Rapat Anggota Komisariat ke VII dalam rangka agenda pembacaan LPJ kepengurusan dan pemilihan ketua umum baru",
       "status": "terbuka",
       "tags": [
-        "Rapat",
-        "Perkaderan"
+        "Internal"
       ],
       "title": "Pelaksanaan RAK ke-VII",
       "city": "Sengkang",
       "address": "Asrama HPMB",
       "poster": "https://storage.googleapis.com/hmi-asadiyah.appspot.com/gallery/photo1.jpg"
-    },
-    "102": {
-      "dateReadable": "27 Februari 2020",
-      "partisipants": "Kader",
-      "description": "Pelaksanaan Rapat Anggota Komisariat ke VII dalam rangka agenda pembacaan LPJ kepengurusan dan pemilihan ketua umum baru",
-      "status": "ditutup",
-      "tags": [
-        "Kajian"
-      ],
-      "title": "Pelaksanaan RAK ke-VII",
-      "city": "Sengkang",
-      "address": "Asrama HPMB",
-      "poster": "https://storage.googleapis.com/hmi-asadiyah.appspot.com/gallery/photo2.jpg"
-    },
-    "103": {
-      "dateReadable": "29 Februari 2021",
-      "partisipants": "Umum",
-      "description": "Pelaksanaan Rapat Anggota Komisariat ke VII dalam rangka agenda pembacaan LPJ kepengurusan dan pemilihan ketua umum baru",
-      "status": "ditutup",
-      "tags": [
-        "Perkaderan"
-      ],
-      "title": "Pelaksanaan RAK ke-VII",
-      "city": "Sengkang",
-      "address": "Asrama HPMB",
-      "poster": "https://storage.googleapis.com/hmi-asadiyah.appspot.com/gallery/photo2.jpg"
-    },
-    "104": {
-      "dateReadable": "31 Februari 2021",
-      "partisipants": "Kader",
-      "description": "Pelaksanaan Rapat Anggota Komisariat ke VII dalam rangka agenda pembacaan LPJ kepengurusan dan pemilihan ketua umum baru",
-      "status": "ditutup",
-      "tags": [
-        "Rapat",
-        "Kajian"
-      ],
-      "title": "Pelaksanaan RAK ke-VII",
-      "city": "Sengkang",
-      "address": "Asrama HPMB",
-      "poster": "https://storage.googleapis.com/hmi-asadiyah.appspot.com/gallery/photo2.jpg"
     }
   },
   "speakers": {
