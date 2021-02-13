@@ -1,6 +1,7 @@
 import { html, PolymerElement } from '@polymer/polymer';
 import '@fabricelements/skeleton-carousel';
-
+import '../elements/info-pengkaderan';
+import '../elements/shared-styles';
 class KaderisasiPage extends PolymerElement {
   static get template() {
     return html`
@@ -26,7 +27,7 @@ class KaderisasiPage extends PolymerElement {
           :host {
             margin-top: -64px;
           }
-          
+
           skeleton-carousel {
             height: calc(100vh + 65px);
           }
@@ -68,6 +69,7 @@ class KaderisasiPage extends PolymerElement {
           fit
         ></plastic-image>
       </skeleton-carousel>
+      <info-pengkaderan></info-pengkaderan>
       <gabung-block></gabung-block>
       <footer-block></footer-block>
     `;

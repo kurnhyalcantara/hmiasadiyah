@@ -53,8 +53,9 @@ class SessionElement extends ReduxMixin(PolymerElement) {
           margin-right: 2px;
         }
 
-        .session-pendaftaran,
-        .session-kategori {
+        .pendaftaran,
+        .kategori, 
+        .tempat {
           margin-right: 2px;
         }
 

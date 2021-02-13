@@ -203,6 +203,7 @@ export const theme = css`
   }
 
   .container-title {
+    padding: 10px;
     margin-bottom: 28px;
     font-size: 32px;
     font-weight: 900;
@@ -213,7 +214,7 @@ export const theme = css`
     content: '';
     display: block;
     height: 5px;
-    width: 80px;
+    width: 70px;
     background-image: var(--primary-gradient);
   }
 

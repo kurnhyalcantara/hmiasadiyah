@@ -355,6 +355,19 @@
       ]
     }
   },
+  "pengkaderanBlock": {
+    "title": "Info Pengkaderan Terbaru",
+    "nothing": "Tidak ada agenda pengkaderan untuk saat ini",
+    "info": {
+      "image": "https://storage.googleapis.com/hmi-asadiyah.appspot.com/gallery/photo2.jpg",
+      "title": "Basic Training (Latihan Kader I) HMI Komisariat As'adiyah Gelombang I 2020",
+      "status": "Terbuka",
+      "tag": "Perkaderan",
+      "city": "Sengkang",
+      "address": "Asrama HPMB Jl. Mawar",
+      "tanggal": "20 - 27 Oktober 2020"
+    }
+  },
   "formPendaftaran": {
     "formTitle": "Formulir Pendaftaran",
     "formDescription": "Dengan mengucapkan BISMILLAHIRRAHMANIRRAHIM, bahwa apa yang saya isi dalam formulir adalah BENAR adanya, dan siap mematuhi Anggaran Dasar dan Anggaran Rumah Tangga serta ketentuan-ketentuan yang berlaku di HMI",
