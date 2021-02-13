@@ -99,15 +99,15 @@
       "fontColor": "#FFF",
       "description": "Daftar Agenda Kegiatan Komisariat As'adiyah"
     },
-    "pengkaderan": {
-      "title": "Info Pengkaderan",
-      "metaDescription": "Penjelasan tentang jenjang pengkaderan yang ada di Himpunan Mahasiswa Islam",
+    "kaderisasi": {
+      "title": "Info Kaderisasi",
+      "metaDescription": "Penjelasan tentang jenjang kaderisasi yang ada di Himpunan Mahasiswa Islam",
       "background": {
         "image": "/images/backgrounds/hero-block.jpg",
-        "color": "#097347"
+        "color": "#fff"
       },
       "fontColor": "#FFF",
-      "description": "Penjelasan tentang struktur pengkaderan di Himpunan Mahasiswa Islam"
+      "description": "Penjelasan tentang struktur kaderisasi di Himpunan Mahasiswa Islam"
     }
   },
   "location": {

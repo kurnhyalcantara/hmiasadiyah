@@ -43,7 +43,7 @@ import './pages/profile-page';
 import './pages/news-page';
 import './pages/opini-page';
 import './pages/schedule-page';
-import './pages/pengkaderan-page';
+import './pages/kaderisasi-page';
 import {
   notificationsActions,
   routingActions,
@@ -215,10 +215,10 @@ class HMIApp extends ReduxMixin(PolymerElement) {
             <div class="design">{$ design $}<span class="by">{$ by $}</span></div>
           </app-toolbar>
           <div class="drawer-account" layout horizontal >
-            <a class="drawer-signup" href="/pengkaderan" on-click="closeDrawer">
+            <a class="drawer-signup" href="/kaderisasi" on-click="closeDrawer">
               {$ signUp $}
             </a>
-            <a class="drawer-login" href="/pengkaderan" on-click="closeDrawer">
+            <a class="drawer-login" href="/kaderisasi" on-click="closeDrawer">
               {$ logIn $}
             </a>
           </div>
@@ -265,7 +265,7 @@ class HMIApp extends ReduxMixin(PolymerElement) {
             <news-page name="news" route="[[subRoute]]"></news-page>
             <opini-page name="opini" route="[[subRoute]]"></opini-page>
             <schedule-page name="schedule" route="[[subRoute]]"></schedule-page>
-            <pengkaderan-page name="pengkaderan"></pengkaderan-page>
+            <kaderisasi-page name="kaderisasi" route="[[subRoute]]"></kaderisasi-page>
           </iron-pages>
         </app-header-layout>
       </app-drawer-layout>

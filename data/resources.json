@@ -26,7 +26,7 @@
   "country": "Country",
   "time": "Waktu",
   "brosurPengkaderan": "https://firebasestorage.googleapis.com/v0/b/hmi-asadiyah.appspot.com/o/mix%2Fbrosur.jpg?alt=media&token=3ab9be54-769f-4795-a993-bd97ac73b8fd",
-  "noPengkaderan": "Dalam waktu dekat ini, tidak ada agenda pengkaderan",
+  "noPengkaderan": "Dalam waktu dekat ini, tidak ada agenda kaderisasi",
   "timezoneOffset": "-180",
   "loginLabel": "Login",
   "aboutHmi": {
@@ -49,7 +49,7 @@
       {
         "icon": "achievement",
         "title": "Progresif",
-        "desc": "Butuh pemikiran terbuka dan maju untuk mengimbangi zaman yang terus berkembang. Menyatukan pemikiran para mahasiswa dari berbagai minat keilmuan merupakan bentuk ikhitiar dari prinsip pengkaderan di HMI"
+        "desc": "Butuh pemikiran terbuka dan maju untuk mengimbangi zaman yang terus berkembang. Menyatukan pemikiran para mahasiswa dari berbagai minat keilmuan merupakan bentuk ikhitiar dari prinsip kaderisasi di HMI"
       },
       {
         "icon": "people",

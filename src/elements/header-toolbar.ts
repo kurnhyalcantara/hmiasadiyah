@@ -22,10 +22,10 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
         }
 
         :host([transparent]) {
-          --iron-icon-fill-color: var(--hero-font-color, '#fff');
+          --iron-icon-fill-color: #fff;
           background-color: transparent;
           box-shadow: none;
-          color: var(--hero-font-color, '#fff');
+          color: #fff;
         }
 
         :host([transparent]) .toolbar-logo {

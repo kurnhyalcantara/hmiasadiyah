@@ -145,7 +145,7 @@ class HomePage extends ReduxMixin(PolymerElement) {
             <div class="info-item">{$ heroSettings.home.description2 $}</div>
           </div>
 
-          <a href="/pengkaderan" layout horizontal center-justified wrap>
+          <a href="/kaderisasi" layout horizontal center-justified wrap>
             <paper-button class="action-buttons" primary invert>
               {$ infoPengkaderan $}
               <iron-icon icon="hmi:arrow-right-circle"></iron-icon>
