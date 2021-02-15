@@ -13,7 +13,6 @@ module.exports = {
   nodeResolve: true,
   port: 5000,
   watch: true,
-  open: true,
   responseTransformers: [
     ({ url, status: _, contentType, body }) => {
       if (isTemplate({ url, contentType })) {

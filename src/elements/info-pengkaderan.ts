@@ -1,7 +1,8 @@
 import { html, PolymerElement } from '@polymer/polymer';
 import { ReduxMixin } from '../mixins/redux-mixin';
 import 'plastic-image';
-
+import { dialogsActions, toastActions } from '../redux/actions';
+import { DIALOGS } from '../redux/constants';
 class InfoPengkaderan extends ReduxMixin(PolymerElement) {
   static get template() {
     return html`
@@ -32,6 +33,10 @@ class InfoPengkaderan extends ReduxMixin(PolymerElement) {
         .session-title {
           font-size: 20px;
           line-height: 1.2;
+        }
+
+        .session-header {
+          font-size: 12px;
         }
 
         .session-details,
@@ -129,11 +134,10 @@ class InfoPengkaderan extends ReduxMixin(PolymerElement) {
               </div>
             </div>
           </div>
-          
+
           <a
             class="add-session"
-            href$="/schedule/[[month.month]]#[[timeslot.sessions.0.items.id]]"
-            style$="grid-area: [[timeslot.sessions.0.gridArea]]"
+            on-click="_onRegisterListener"
             layout
             horizontal
             center-center
@@ -150,14 +154,42 @@ class InfoPengkaderan extends ReduxMixin(PolymerElement) {
     return 'info-pengkaderan';
   }
 
+  private user: { signedIn?: boolean } = {};
+  private isPengkaderanExist = true;
+  private dialogs: { signin: { isOpened: false } };
   static get properties() {
     return {
+      user: Object,
       isPengkaderanExist: {
-        type: Boolean,
-        value: true
-      }
+        type: Boolean
+      },
+      dialogs: Object
     };
   }
+
+  stateChanged(state: import('../redux/store').State) {
+    this.setProperties({
+      user: state.user
+    });
+  }
+
+  _onRegisterListener(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    if (!this.user.signedIn) {
+      toastActions.showToast({
+        message: '{$ schedule.saveSessionsSignedOut $}',
+        action: {
+          title: 'Sign in',
+          callback: () => {
+            dialogsActions.openDialog(DIALOGS.SIGNIN);
+          },
+        },
+      });
+      return;
+    }
+  }
+
 }
 
 window.customElements.define(InfoPengkaderan.is, InfoPengkaderan);
