@@ -8,6 +8,7 @@ documentContainer.innerHTML = `<dom-module id="dialog-styles">
       :host {
         margin: 0;
         display: block;
+        padding: 16px 16px;
         height: 100%;
         width: 100%;
         background: #fff;
@@ -28,6 +29,7 @@ documentContainer.innerHTML = `<dom-module id="dialog-styles">
       .dialog-container {
         margin: 0 auto;
         width: 100%;
+        padding: 20px;
         max-width: 584px;
       }
 

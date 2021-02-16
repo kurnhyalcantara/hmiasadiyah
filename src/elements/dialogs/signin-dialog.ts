@@ -2,6 +2,9 @@ import { IronOverlayBehavior } from '@polymer/iron-overlay-behavior';
 import { html, PolymerElement } from '@polymer/polymer';
 import { mixinBehaviors } from '@polymer/polymer/lib/legacy/class';
 import { ReduxMixin } from '../../mixins/redux-mixin';
+import 'plastic-image';
+import '@polymer/paper-input/paper-input'
+import '@polymer/iron-icon';
 import { dialogsActions, helperActions, userActions } from '../../redux/actions';
 import { DIALOGS } from '../../redux/constants';
 import '../hmi-icons';
@@ -11,26 +14,47 @@ import './dialog-styles';
 class SigninDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], PolymerElement)) {
   static get template() {
     return html`
-      <style include="shared-styles flex flex-alignment">
+      <style include="shared-styles dialog-styles flex flex-alignment">
         :host {
           margin: 0 16px;
+          height: auto;
           display: block;
           background: var(--primary-background-color);
           box-shadow: var(--box-shadow);
-          max-width: 315px;
+          --paper-input-container-underline: { display: none; height: 0;};
+          --paper-input-container-underline-focus: { display: none; height: 0;};
+          --paper-input-container-focus-color: var(--default-primary-color);
+          --paper-input-container-color: var(--secondary-text-color);
         }
 
-        .dialog-description {
-          width: 100%;
-          padding: 32px 32px 16px;
-          background: var(--primary-gradient);
-          color: #fff;
-          font-size: 20px;
+        .dialog-header {
+          text-align: center;
+        }
+
+        .header-logo {
+          --iron-image-height: 62px;
+        }
+
+        .container-title {
+          font-size: 22px;
+          color: var(--primary-text-color);
+          text-align: center;
+        }
+
+        .container-title::after {
+          height: 3px;
+          width: 50px;
         }
 
         .dialog-content {
           margin: 0 auto;
           padding: 16px 16px;
+          box-shadow: 1px 1px 1px var(--default-primary-color), -1px -1px 2px var(--default-primary-color);
+          border-radius: 12px;
+        }
+        
+        paper-input:not(:last-of-type) {
+          margin-bottom: 18px;
         }
 
         .sign-in-button {
@@ -46,14 +70,31 @@ class SigninDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
         }
 
         iron-icon {
-          margin: 0 8px;
-          --iron-icon-width: 48px;
-          --iron-icon-height: 48px;
+          margin-right: 12px;
+          --iron-icon-width: 24px;
+          --iron-icon-height: 24px;
         }
       </style>
-
-      <div class="dialog-description">{$ signInProviders.description $}</div>
+      
+      <div class="dialog-header" layout vertical center>
+        <plastic-image
+          class="header-logo"
+          srcset="{$ signInProviders.logo $}"
+          lazy-load
+          preload
+          fade
+        ></plastic-image>
+        <div class="container-title" layout vertical center>{$ signInProviders.title $}</div>
+      </div>
       <div class="dialog-content">
+        <paper-input id="email" label="Email" no-label-float>
+          <iron-icon icon="icons:mail" slot="prefix"></iron-icon>
+        </paper-input>
+        <paper-input id="password" label="Password" type="password" no-label-float>
+          <iron-icon icon="icons:lock" slot="prefix"></iron-icon>
+        </paper-input>
+      </div>
+      <!-- <div class="dialog-content">
         <div class="initial-signin" hidden$="[[isMergeState]]">
           <paper-button
             class="sign-in-button"
@@ -98,7 +139,7 @@ class SigninDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
             </paper-button>
           </div>
         </div>
-      </div>
+      </div> -->
     `;
   }
 

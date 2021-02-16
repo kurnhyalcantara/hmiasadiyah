@@ -205,7 +205,7 @@ export const theme = css`
   .container-title {
     padding: 10px;
     margin-bottom: 28px;
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 900;
     color: var(--default-primary-color);
   }
@@ -248,12 +248,6 @@ export const theme = css`
     .container,
     .container-narrow {
       padding: 32px;
-    }
-  }
-
-  @media (max-width: 760px) {
-    .container-title {
-      font-size: 28px;
     }
   }
 `;
