@@ -5,6 +5,8 @@ import { ReduxMixin } from '../../mixins/redux-mixin';
 import 'plastic-image';
 import '@polymer/paper-input/paper-input'
 import '@polymer/iron-icon';
+import '@polymer/app-layout/app-header-layout/app-header-layout';
+import '@polymer/app-layout/app-toolbar/app-toolbar';
 import { dialogsActions, helperActions, userActions } from '../../redux/actions';
 import { DIALOGS } from '../../redux/constants';
 import '../hmi-icons';
@@ -16,8 +18,8 @@ class SigninDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
     return html`
       <style include="shared-styles dialog-styles flex flex-alignment">
         :host {
-          margin: 0 16px;
-          height: auto;
+          margin: 0;
+          padding: 0;
           display: block;
           background: var(--primary-background-color);
           box-shadow: var(--box-shadow);
@@ -29,6 +31,10 @@ class SigninDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
 
         .dialog-header {
           text-align: center;
+        }
+
+        app-toolbar, .dialog-content {
+          padding: 12px 0;
         }
 
         .header-logo {
@@ -47,14 +53,37 @@ class SigninDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
         }
 
         .dialog-content {
-          margin: 0 auto;
+          margin: 0 24px;
+        }
+
+        .action-input {
           padding: 16px 16px;
           box-shadow: 1px 1px 1px var(--default-primary-color), -1px -1px 2px var(--default-primary-color);
           border-radius: 12px;
         }
+
+        .action-button {
+          margin-top: 22px;
+        }
         
         paper-input:not(:last-of-type) {
           margin-bottom: 18px;
+        }
+
+        .action-login {
+          min-width: 75%;
+          margin-bottom: 48px;
+        }
+
+        .no-account {
+          font-size: 14px;
+          font-weight: 600;
+          text-align: center;
+          line-spacing: 1.0;
+        }
+
+        .action-info {
+          margin-top: 14px;
         }
 
         .sign-in-button {
@@ -76,70 +105,54 @@ class SigninDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
         }
       </style>
       
-      <div class="dialog-header" layout vertical center>
-        <plastic-image
-          class="header-logo"
-          srcset="{$ signInProviders.logo $}"
-          lazy-load
-          preload
-          fade
-        ></plastic-image>
-        <div class="container-title" layout vertical center>{$ signInProviders.title $}</div>
-      </div>
-      <div class="dialog-content">
-        <paper-input id="email" label="Email" no-label-float>
-          <iron-icon icon="icons:mail" slot="prefix"></iron-icon>
-        </paper-input>
-        <paper-input id="password" label="Password" type="password" no-label-float>
-          <iron-icon icon="icons:lock" slot="prefix"></iron-icon>
-        </paper-input>
-      </div>
-      <!-- <div class="dialog-content">
-        <div class="initial-signin" hidden$="[[isMergeState]]">
-          <paper-button
-            class="sign-in-button"
-            on-click="_signIn"
-            provider-url="{$ signInProviders.providersData.url $}"
-            ga-on="click"
-            ga-event-category="attendees"
-            ga-event-action="sign-in"
-            ga-event-label="signIn dialog - {$ signInProviders.providersData.name $}"
-            flex
-          >
-            <iron-icon
-              class="icon-{$ signInProviders.providersData.name $}"
-              icon="hmi:{$ signInProviders.providersData.name $}"
-            ></iron-icon>
-            <span provider-url="{$ signInProviders.providersData.url $}"
-              >{$ signInProviders.providersData.label $}</span
-            >
-          </paper-button>
-        </div>
-        <div class="merge-content" hidden$="[[!isMergeState]]">
-          <h3 class="subtitle">{$ signInDialog.alreadyHaveAccount $}</h3>
-          <div class="explanation">
-            <div class="row-1">{$ signInDialog.alreadyUsed $} <b>[[email]]</b>.</div>
-            <div class="row-2">
-              {$ signInDialog.signInToContinue.part1 $} [[providerCompanyName]] {$
-              signInDialog.signInToContinue.part2 $}
-            </div>
+      <app-header-layout has-scrolling-region>
+        <app-header slot="header" class="header" fixed="[[viewport.isTabletPlus]]">
+          <iron-icon class="close-icon" icon="hmi:close" on-tap="_close"></iron-icon>
+        </app-header>
+        <app-toolbar layout vertical center>
+          <div class="dialog-header" layout vertical center>
+            <plastic-image
+              class="header-logo"
+              srcset="{$ signInProviders.logo $}"
+              lazy-load
+              preload
+              fade
+            ></plastic-image>
+            <div class="container-title" layout vertical center>{$ signInProviders.title $}</div>
           </div>
-
-          <div class="action-button" layout horizontal end-justified>
+        </app-toolbar>
+        <div class="dialog-content" layout vertical>
+          <div class="action-input">
+            <paper-input id="email" label="Email" no-label-float>
+              <iron-icon icon="icons:mail" slot="prefix"></iron-icon>
+            </paper-input>
+            <paper-input id="password" label="Password" type="password" no-label-float>
+              <iron-icon icon="icons:lock" slot="prefix"></iron-icon>
+            </paper-input>
+          </div>
+          <div class="action-button" layout vertical center>
             <paper-button
-              class="merge-button"
-              on-click="_mergeAccounts"
+              class="action-login"
+              on-click="_lgon"
               ga-on="click"
-              ga-event-category="attendees"
-              ga-event-action="merge account"
-              ga-event-label$="signIn merge account dialog -[[providerCompanyName]]"
+              ga-event-category="portal"
+              ga-event-action="klik login"
+              ga-event-label="login block"
               primary
             >
-              <span>{$ signInDialog.signInToContinue.part1 $} [[providerCompanyName]]</span>
+              Login
             </paper-button>
+            <div>Belum punya akun?</div>
+            <div class="no-account">Silahkan ikuti pengkaderan Basic Training di HMI Komisariat As'adiyah</div>
+            <a href="/kaderisasi">
+              <paper-button class="action-info" stroke>
+                {$ infoPengkaderan $}
+                <iron-icon icon="hmi:arrow-right-circle"></iron-icon>
+              </paper-button>
+            </a>
           </div>
         </div>
-      </div> -->
+      </app-header-layout>
     `;
   }
 

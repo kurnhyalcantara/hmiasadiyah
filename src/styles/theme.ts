@@ -143,9 +143,9 @@ export const theme = css`
   }
 
   paper-button[stroke] {
-    color: var(--text-primary-color);
-    background: transparent;
-    border: 1px solid var(--text-primary-color);
+    color: var(--default-primary-color);
+    background: var(--primary-background-color);
+    border: 1px solid var(--default-primary-color);
   }
 
   paper-button[stroke]:hover {

@@ -218,7 +218,7 @@ class HMIApp extends ReduxMixin(PolymerElement) {
             <a class="drawer-signup" href="/kaderisasi" on-click="closeDrawer">
               {$ signUp $}
             </a>
-            <a class="drawer-login" href="/kaderisasi" on-click="closeDrawer">
+            <a class="drawer-login" on-click="openLoginDialog">
               {$ logIn $}
             </a>
           </div>
@@ -429,6 +429,11 @@ class HMIApp extends ReduxMixin(PolymerElement) {
 
   closeDrawer() {
     this.drawerOpened = false;
+  }
+
+  openLoginDialog() {
+    this.drawerOpened = false;
+    dialogsActions.openDialog(DIALOGS.SIGNIN);
   }
 
   _routeDataChanged(page, subroutePath) {
