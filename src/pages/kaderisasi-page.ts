@@ -32,7 +32,6 @@ class KaderisasiPage extends PolymerElement {
             height: calc(100vh + 65px);
           }
         }
-
       </style>
 
       <polymer-helmet
@@ -50,7 +49,7 @@ class KaderisasiPage extends PolymerElement {
           fade
           fit
         ></plastic-image>
-        <plastic-image 
+        <plastic-image
           class="carousel-image"
           srcset="https://storage.googleapis.com/hmi-asadiyah.appspot.com/gallery/photo1.jpg"
           sizing="cover"
@@ -60,7 +59,7 @@ class KaderisasiPage extends PolymerElement {
           fit
         ></plastic-image>
         <plastic-image
-          class="carousel-image" 
+          class="carousel-image"
           srcset="https://storage.googleapis.com/hmi-asadiyah.appspot.com/gallery/photo1.jpg"
           sizing="cover"
           lazy-load
@@ -81,7 +80,7 @@ class KaderisasiPage extends PolymerElement {
 
   static get properties() {
     return {
-      active: Boolean
+      active: Boolean,
     };
   }
 }

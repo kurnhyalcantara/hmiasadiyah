@@ -55,7 +55,7 @@ class InfoPengkaderan extends ReduxMixin(PolymerElement) {
 
         .status {
           display: inline;
-          padding: .2em .6em .3em;
+          padding: 0.2em 0.6em 0.3em;
           font-size: 75%;
           font-weight: 700;
           line-height: 1;
@@ -64,7 +64,7 @@ class InfoPengkaderan extends ReduxMixin(PolymerElement) {
           text-transform: uppercase;
           white-space: nowrap;
           vertical-align: baseline;
-          border-radius: .25em;
+          border-radius: 0.25em;
           background-color: var(--terbuka);
         }
 
@@ -78,6 +78,7 @@ class InfoPengkaderan extends ReduxMixin(PolymerElement) {
           color: var(--secondary-text-color);
           text-transform: uppercase;
           border: 1px solid var(--border-light-color);
+          cursor: pointer;
         }
 
         .add-session:hover {
@@ -93,21 +94,20 @@ class InfoPengkaderan extends ReduxMixin(PolymerElement) {
           font-weight: 600;
           color: var(--perkaderan);
         }
-
       </style>
       <div class="container">
         <div class="container-title">{$ pengkaderanBlock.title $}</div>
         <p hidden="[[isPengkaderanExist]]">{$ pengkaderanBlock.nothing $}</p>
         <div class="pengkaderan card" layout vertical>
-        <plastic-image
-          class="poster"
-          srcset="{$ pengkaderanBlock.info.image $}"
-          alt="{$ pengkaderanBlock.info.title $}"
-          sizing="cover"
-          lazy-load
-          preload
-          fade
-        ></plastic-image>
+          <plastic-image
+            class="poster"
+            srcset="{$ pengkaderanBlock.info.image $}"
+            alt="{$ pengkaderanBlock.info.title $}"
+            sizing="cover"
+            lazy-load
+            preload
+            fade
+          ></plastic-image>
           <div class="session-header" layout center>
             <div flex>
               <h3 class="session-title">{$ pengkaderanBlock.info.title $}</h3>
@@ -120,7 +120,7 @@ class InfoPengkaderan extends ReduxMixin(PolymerElement) {
                 <div class="kategori">
                   <iron-icon class="icon-details" icon="icons:label"></iron-icon>
                   {$ session.kategori $}
-                  <span class="tags">{$ pengkaderanBlock.info.tag $}</span> 
+                  <span class="tags">{$ pengkaderanBlock.info.tag $}</span>
                 </div>
                 <div class="tempat">
                   <iron-icon class="icon-details" icon="icons:store"></iron-icon>
@@ -128,26 +128,20 @@ class InfoPengkaderan extends ReduxMixin(PolymerElement) {
                   <span class="session-track"> - {$ pengkaderanBlock.info.address $}</span>
                 </div>
                 <div class="session-date">
-                <iron-icon class="icon-details" icon="icons:today"></iron-icon>
+                  <iron-icon class="icon-details" icon="icons:today"></iron-icon>
                   {$ pengkaderanBlock.info.tanggal $}
                 </div>
               </div>
             </div>
           </div>
 
-          <a
-            class="add-session"
-            on-click="_onRegisterListener"
-            layout
-            horizontal
-            center-center
-          >
+          <a class="add-session" on-click="_onRegisterListener" layout horizontal center-center>
             <iron-icon class="add-session-icon" icon="hmi:add-circle-outline"></iron-icon>
             <span>{$ schedule.registerSchedule $}</span>
-          </a>    
-        </div>  
+          </a>
+        </div>
       </div>
-      `;
+    `;
   }
 
   static get is() {
@@ -156,40 +150,32 @@ class InfoPengkaderan extends ReduxMixin(PolymerElement) {
 
   private user: { signedIn?: boolean } = {};
   private isPengkaderanExist = true;
-  private dialogs: { signin: { isOpened: false } };
   static get properties() {
     return {
       user: Object,
       isPengkaderanExist: {
-        type: Boolean
+        type: Boolean,
       },
-      dialogs: Object
+      dialogs: Object,
     };
   }
 
   stateChanged(state: import('../redux/store').State) {
     this.setProperties({
-      user: state.user
+      user: state.user,
     });
   }
 
   _onRegisterListener(event) {
     event.preventDefault();
     event.stopPropagation();
-    if (!this.user.signedIn) {
-      toastActions.showToast({
-        message: '{$ schedule.saveSessionsSignedOut $}',
-        action: {
-          title: 'Sign in',
-          callback: () => {
-            dialogsActions.openDialog(DIALOGS.SIGNIN);
-          },
-        },
+    if (!this.user.signedIn && this.isPengkaderanExist) {
+      dialogsActions.openDialog(DIALOGS.SIGNIN);
+      return toastActions.showToast({
+        message: '{$ pengkaderanBlock.checkIfNotRegister $}',
       });
-      return;
     }
   }
-
 }
 
 window.customElements.define(InfoPengkaderan.is, InfoPengkaderan);

@@ -120,7 +120,7 @@ class AllSchedule extends ReduxMixin(PolymerElement) {
             >
               <iron-icon class="add-session-icon" icon="hmi:add-circle-outline"></iron-icon>
               <span>{$ schedule.registerSchedule $}</span>
-            </a>    
+            </a>
           </div>
         </template>
       </div>
@@ -139,7 +139,6 @@ class AllSchedule extends ReduxMixin(PolymerElement) {
   private viewport: { isTabletPlus?: boolean } = {};
   private selectedFilters = {};
   private queryParams: string;
-
 
   static get properties() {
     return {

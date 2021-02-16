@@ -82,7 +82,7 @@ class VideoDialog extends ReduxMixin(mixinBehaviors([PaperDialogBehavior], Polym
         observer: 'videoDialogActionMade',
       },
       youtubeId: {
-        type: String
+        type: String,
       },
       disableControls: {
         type: Boolean,
@@ -114,7 +114,6 @@ class VideoDialog extends ReduxMixin(mixinBehaviors([PaperDialogBehavior], Polym
       title: '',
     });
   }
-
 }
 
 window.customElements.define(VideoDialog.is, VideoDialog);

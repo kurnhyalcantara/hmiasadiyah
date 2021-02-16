@@ -131,7 +131,7 @@ class SchedulePage extends SessionsHoC(SpeakersHoC(ReduxMixin(PolymerElement))) 
             query-params="[[queryParams]]"
           ></all-schedule>
         </iron-pages>
-      </div> 
+      </div>
 
       <footer-block></footer-block>
     `;

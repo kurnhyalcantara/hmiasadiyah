@@ -152,7 +152,7 @@ class HMIApp extends ReduxMixin(PolymerElement) {
         .drawer-signup, .drawer-login {
           text-align: center;
           color: #fff;
-          background-color: var(--default-primary-color); 
+          background-color: var(--default-primary-color);
         }
 
         .bottom-drawer {
@@ -214,7 +214,7 @@ class HMIApp extends ReduxMixin(PolymerElement) {
             <div class="version">{$ version $}</div>
             <div class="design">{$ design $}<span class="by">{$ by $}</span></div>
           </app-toolbar>
-          <div class="drawer-account" layout horizontal >
+          <div class="drawer-account" layout horizontal>
             <a class="drawer-signup" href="/kaderisasi" on-click="closeDrawer">
               {$ signUp $}
             </a>
@@ -232,17 +232,14 @@ class HMIApp extends ReduxMixin(PolymerElement) {
             >
               {% for nav in navigation %}
               <a href="{$ nav.permalink $}" path="{$ nav.route $}" on-click="closeDrawer">
-                <iron-icon icon="icons:{$ nav.icon $}"></iron-icon>  
+                <iron-icon icon="icons:{$ nav.icon $}"></iron-icon>
                 <span>{$ nav.label $}</span>
               </a>
               {% endfor %}
             </iron-selector>
             <div>
-              <a
-                class="bottom-drawer"
-                on-click="_onaddToHomeScreen"
-              >
-                <iron-icon icon="icons:add-box"></iron-icon>  
+              <a class="bottom-drawer" on-click="_onaddToHomeScreen">
+                <iron-icon icon="icons:add-box"></iron-icon>
                 <span>{$ addToHomeScreen.cta $}</span>
               </a>
             </div>

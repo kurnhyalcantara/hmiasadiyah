@@ -70,7 +70,6 @@ class GabungBlock extends ReduxMixin(PolymerElement) {
   static get is() {
     return 'gabung-block';
   }
-
 }
 
 window.customElements.define(GabungBlock.is, GabungBlock);

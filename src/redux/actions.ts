@@ -74,7 +74,6 @@ export const uiActions = {
       type: TOGGLE_VIDEO_DIALOG,
       value,
     });
-
   },
   setHeroSettings: (value) => {
     store.dispatch({

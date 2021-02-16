@@ -61,9 +61,9 @@ function sessionsSpeakersScheduleMap(sessionsRaw, scheduleRaw) {
           sessionsLen !== 1
             ? sessionIndex + 2
             : Object.keys(extensions).length
-              ? Object.keys(extensions)[0]
-              : 1
-          }`;
+            ? Object.keys(extensions)[0]
+            : 1
+        }`;
 
         if (timeslot.sessions[sessionIndex].extend) {
           extensions[sessionIndex + 1] = timeslot.sessions[sessionIndex].extend;
@@ -95,7 +95,7 @@ function sessionsSpeakersScheduleMap(sessionsRaw, scheduleRaw) {
 
     schedule = Object.assign({}, schedule, {
       [dayKey]: Object.assign({}, month, {
-        timeslots
+        timeslots,
       }),
     });
   }
@@ -105,7 +105,6 @@ function sessionsSpeakersScheduleMap(sessionsRaw, scheduleRaw) {
     schedule,
   };
 }
-
 
 function addTagTo(array, element) {
   if (array.indexOf(element) < 0) {

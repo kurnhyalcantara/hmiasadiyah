@@ -95,12 +95,17 @@ class ScheduleDay extends PolymerElement {
       </style>
 
       <div class="grid">
-        <template is="dom-repeat" items="[[month.timeslots]]" as="timeslot" index-as="timeslotIndex">
+        <template
+          is="dom-repeat"
+          items="[[month.timeslots]]"
+          as="timeslot"
+          index-as="timeslotIndex"
+        >
           <div
             id$="[[timeslot.dateMonth]]"
             class="tanggal-bulan"
             style$="grid-area: [[_getTimePosition(timeslotIndex)]]"
-            hidden$=[[viewport.isTabletPlus]]
+            hidden$="[[viewport.isTabletPlus]]"
           >
             <span class="tanggal">[[_sliceText(timeslot.dateMonth, 0)]]</span>
             <span class="bulan">[[_sliceText(timeslot.dateMonth, -3)]]</span>
@@ -127,7 +132,7 @@ class ScheduleDay extends PolymerElement {
                   featured-sessions="[[featuredSessions]]"
                   query-params="[[queryParams]]"
                 ></session-element>
-                
+
                 <a
                   class="add-session"
                   href$="/schedule/[[month.month]]#[[timeslot.sessions.0.items.id]]"
@@ -138,7 +143,7 @@ class ScheduleDay extends PolymerElement {
                 >
                   <iron-icon class="add-session-icon" icon="hmi:add-circle-outline"></iron-icon>
                   <span>{$ schedule.registerSchedule $}</span>
-                </a>    
+                </a>
               </template>
             </div>
           </template>
@@ -240,7 +245,6 @@ class ScheduleDay extends PolymerElement {
       );
     });
   }
-
 }
 
 window.customElements.define(ScheduleDay.is, ScheduleDay);

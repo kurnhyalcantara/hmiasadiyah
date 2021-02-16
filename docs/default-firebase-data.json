@@ -81,9 +81,7 @@
           "dateMonth": "20 Feb",
           "sessions": [
             {
-              "items": [
-                101
-              ]
+              "items": [101]
             }
           ]
         }
@@ -96,9 +94,7 @@
       "partisipants": "Kader",
       "description": "Pelaksanaan Rapat Anggota Komisariat ke VII dalam rangka agenda pembacaan LPJ kepengurusan dan pemilihan ketua umum baru",
       "status": "terbuka",
-      "tags": [
-        "Internal"
-      ],
+      "tags": ["Internal"],
       "title": "Pelaksanaan RAK ke-VII",
       "city": "Sengkang",
       "address": "Asrama HPMB",

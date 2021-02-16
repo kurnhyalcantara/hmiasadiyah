@@ -366,7 +366,8 @@
       "city": "Sengkang",
       "address": "Asrama HPMB Jl. Mawar",
       "tanggal": "20 - 27 Oktober 2020"
-    }
+    },
+    "checkIfNotRegister": "Oops.. Silahkan login terlebih dahulu"
   },
   "formPendaftaran": {
     "formTitle": "Formulir Pendaftaran",

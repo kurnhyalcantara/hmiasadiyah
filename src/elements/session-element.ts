@@ -29,7 +29,7 @@ class SessionElement extends ReduxMixin(PolymerElement) {
         .session:hover {
           background-color: var(--additional-background-color);
         }
-        
+
         .poster {
           width: 100%;
           height: 200px;
@@ -54,7 +54,7 @@ class SessionElement extends ReduxMixin(PolymerElement) {
         }
 
         .pendaftaran,
-        .kategori, 
+        .kategori,
         .tempat {
           margin-right: 2px;
         }
@@ -66,7 +66,7 @@ class SessionElement extends ReduxMixin(PolymerElement) {
 
         .status {
           display: inline;
-          padding: .2em .6em .3em;
+          padding: 0.2em 0.6em 0.3em;
           font-size: 75%;
           font-weight: 700;
           line-height: 1;
@@ -75,7 +75,7 @@ class SessionElement extends ReduxMixin(PolymerElement) {
           text-transform: uppercase;
           white-space: nowrap;
           vertical-align: baseline;
-          border-radius: .25em;
+          border-radius: 0.25em;
           background-color: currentColor;
         }
 
@@ -190,14 +190,14 @@ class SessionElement extends ReduxMixin(PolymerElement) {
         layout
         vertical
       >
-      <plastic-image
-        class="poster"
-        srcset="[[session.poster]]"
-        alt="[[session.title]]"
-        lazy-load
-        preload
-        fade
-      ></plastic-image>
+        <plastic-image
+          class="poster"
+          srcset="[[session.poster]]"
+          alt="[[session.title]]"
+          lazy-load
+          preload
+          fade
+        ></plastic-image>
         <div class="session-header" layout center>
           <div flex>
             <h3 class="session-title">[[session.title]]</h3>
@@ -207,13 +207,17 @@ class SessionElement extends ReduxMixin(PolymerElement) {
                 <div class="pendaftaran">
                   <iron-icon class="icon-details" icon="icons:assignment"></iron-icon>
                   {$ session.pendaftaran $}
-                  <span class="status" style$="background-color: [[_getStatusColor(session.status)]]">[[session.status]]</span>
+                  <span
+                    class="status"
+                    style$="background-color: [[_getStatusColor(session.status)]]"
+                    >[[session.status]]</span
+                  >
                 </div>
                 <div class="kategori">
                   <iron-icon class="icon-details" icon="icons:label"></iron-icon>
                   {$ session.kategori $}
                   <template is="dom-repeat" items="[[session.tags]]" as="tag">
-                    <span class="tags" style$="color: [[getVariableColor(tag)]]">[[tag]]</span> 
+                    <span class="tags" style$="color: [[getVariableColor(tag)]]">[[tag]]</span>
                   </template>
                 </div>
                 <div class="tempat">
@@ -222,7 +226,7 @@ class SessionElement extends ReduxMixin(PolymerElement) {
                   <span class="session-track"> - [[session.address]]</span>
                 </div>
                 <div class="session-date">
-                <iron-icon class="icon-details" icon="icons:today"></iron-icon>
+                  <iron-icon class="icon-details" icon="icons:today"></iron-icon>
                   [[session.dateReadable]], [[session.startTime]] - [[session.endTime]]
                 </div>
               </div>
@@ -362,7 +366,7 @@ class SessionElement extends ReduxMixin(PolymerElement) {
     const now = new Date();
     const convertedTimezoneDate = new Date(
       new Date(`${this.session.day} ${this.session.startTime}`).getTime() +
-      (parseInt('{$ timezoneOffset $}') - now.getTimezoneOffset()) * ONE_MINUTE_MS
+        (parseInt('{$ timezoneOffset $}') - now.getTimezoneOffset()) * ONE_MINUTE_MS
     );
 
     const diff = now.getTime() - convertedTimezoneDate.getTime();

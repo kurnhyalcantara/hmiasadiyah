@@ -27,9 +27,9 @@ export const randomOrder = (array) => {
 export const generateClassName = (value) => {
   return value
     ? value
-      .replace(/\W+/g, '-')
-      .replace(/([a-z\d])([A-Z])/g, '$1-$2')
-      .toLowerCase()
+        .replace(/\W+/g, '-')
+        .replace(/([a-z\d])([A-Z])/g, '$1-$2')
+        .toLowerCase()
     : '';
 };
 

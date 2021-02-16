@@ -218,12 +218,8 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
           ga-event-action="daftar_click"
           hidden$="[[!viewport.isLaptopPlus]]"
         >
-          <paper-button 
-            class="signup-button" 
-            on-tap="_daftarDialog" 
-            primary
-          > 
-              {$ signUp $}
+          <paper-button class="signup-button" on-tap="_daftarDialog" primary>
+            {$ signUp $}
           </paper-button>
         </a>
 
@@ -381,8 +377,8 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
     return status === NOTIFICATIONS_STATUS.DEFAULT
       ? 'bell-outline'
       : status === NOTIFICATIONS_STATUS.GRANTED
-        ? 'bell'
-        : 'bell-off';
+      ? 'bell'
+      : 'bell-off';
   }
 
   _hideNotificationBlock(status, blockStatus) {

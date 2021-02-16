@@ -57,7 +57,7 @@ async function generateAndSaveData() {
   const scheduleEnabled = scheduleConfig.enabled === 'true';
 
   if (scheduleEnabled) {
-    generatedData = mapSessionsSpeakersSchedule(sessions, schedule)
+    generatedData = mapSessionsSpeakersSchedule(sessions, schedule);
   }
 
   // If changed speaker does not have assigned session(s) yet
