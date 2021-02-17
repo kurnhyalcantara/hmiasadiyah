@@ -215,7 +215,7 @@ class HMIApp extends ReduxMixin(PolymerElement) {
             <div class="design">{$ design $}<span class="by">{$ by $}</span></div>
           </app-toolbar>
           <div class="drawer-account" layout horizontal>
-            <a class="drawer-signup" href="/kaderisasi" on-click="closeDrawer">
+            <a class="drawer-signup" on-click="openSignUpDialog">
               {$ signUp $}
             </a>
             <a class="drawer-login" on-click="openLoginDialog">
@@ -429,6 +429,11 @@ class HMIApp extends ReduxMixin(PolymerElement) {
 
   closeDrawer() {
     this.drawerOpened = false;
+  }
+
+  openSignUpDialog() {
+    this.drawerOpened = false;
+    dialogsActions.openDialog(DIALOGS.DAFTAR);
   }
 
   openLoginDialog() {

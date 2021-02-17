@@ -17,29 +17,47 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
     return html`
       <style include="shared-styles dialog-styles flex flex-alignment">
         :host {
-          --paper-input-container-focus-color: var(--default-primary-color);
-          --paper-input-container-color: var(--secondary-text-color);
+
         }
 
         .dialog-header {
-          width: 100%;
-          padding: 32px 32px 16px;
-          background: var(--primary-gradient);
-          color: #fff;
-          font-size: 20px;
-          line-height: 1.5;
+          text-align: center;
         }
 
-        .dialog-container {
-          background-color: var(--primary-background-color);
+        app-toolbar, .dialog-content {
+          padding: 12px 0;
         }
 
-        paper-input {
-          margin: 16px 32px 0;
+        .header-logo {
+          --iron-image-height: 62px;
         }
 
-        paper-input:first-of-type {
-          margin-top: 0;
+        .container-title {
+          font-size: 22px;
+          color: var(--primary-text-color);
+          text-align: center;
+        }
+
+        .container-title::after {
+          height: 3px;
+          width: 50px;
+        }
+
+        .info-register {
+          padding: 18px 24px;
+          background: var(--focused-color);
+          border-radius: 12px;
+          border: 1px solid var(--default-primary-color);
+          font-size: 14px;
+          font-color: var(--default-primary-color);
+        }
+
+        paper-input:not(:last-of-type) {
+          margin-bottom: 24px;
+        }
+
+        .dialog-content, .info-register {
+          margin: 0 24px;
         }
 
         .action-buttons {
@@ -59,79 +77,85 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
         <app-header slot="header" class="header" fixed="[[viewport.isTabletPlus]]">
           <iron-icon class="close-icon" icon="hmi:close" on-tap="_close"></iron-icon>
         </app-header>
-        <app-toolbar>
-          <div class="dialog-header" layout vertical>
-            <div class="header-content">[[description]]</div>
+        <app-toolbar layout vertical center>
+          <div class="dialog-header" layout vertical center>
+            <plastic-image
+              class="header-logo"
+              srcset="{$ daftarProviders.logo $}"
+              lazy-load
+              preload
+              fade
+            ></plastic-image>
+            <div class="container-title" layout vertical center>{$ daftarProviders.title $}</div>
+            <div class="info-register">Silahkan buat akun baru untuk bisa login dan melanjutkan proses pendaftaran</div>
           </div>
         </app-toolbar>
-        <div class="dialog-container">
+        <div class="dialog-content">
           <paper-input
             id="firstFieldInput"
-            on-touchend="_focus"
             label="[[firstFieldLabel]]"
             value="{{firstFieldValue}}"
             autocomplete="off"
+            always-float-label
           >
           </paper-input>
           <paper-input
             id="secondFieldInput"
-            on-touchend="_focus"
             label="[[secondFieldLabel]]"
             value="{{secondFieldValue}}"
             autocomplete="off"
+            type="date"
+            always-float-label
           >
           </paper-input>
           <paper-input
-            id="thirdFieldInput"
-            on-touchend="_focus"
+            id="thirdFieldInput"            
             label="[[thirdFieldLabel]]"
             value="{{thirdFieldValue}}"
             autocomplete="off"
+            always-float-label
           >
           </paper-input>
           <paper-input
-            id="fourthFieldInput"
-            on-touchend="_focus"
+            id="fourthFieldInput"            
             label="[[fourthFieldLabel]]"
             value="{{fourthFieldValue}}"
             autocomplete="off"
+            always-float-label
           >
           </paper-input>
           <paper-input
-            id="fifthFieldInput"
-            on-touchend="_focus"
+            id="fifthFieldInput"            
             label="[[fifthFieldLabel]]"
             value="{{fifthFieldValue}}"
             autocomplete="off"
+            always-float-label
           >
           </paper-input>
           <paper-input
-            id="sixthFieldInput"
-            on-touchend="_focus"
+            id="sixthFieldInput"            
             label="[[sixthFieldLabel]]"
             value="{{sixthFieldValue}}"
             autocomplete="off"
+            always-float-label
           >
           </paper-input>
           <paper-input
-            id="seventhFieldInput"
-            on-touchend="_focus"
+            id="seventhFieldInput"            
             label="[[seventhFieldLabel]]"
             value="{{seventhFieldValue}}"
             autocomplete="off"
           >
           </paper-input>
           <paper-input
-            id="eigthFieldInput"
-            on-touchend="_focus"
+            id="eigthFieldInput"           
             label="[[eigthFieldLabel]]"
             value="{{eigthFieldValue}}"
             autocomplete="off"
           >
           </paper-input>
           <paper-input
-            id="emailInput"
-            on-touchend="_focus"
+            id="emailInput"            
             label="{$ formPendaftaran.emailAddress $} *"
             value="{{email}}"
             required

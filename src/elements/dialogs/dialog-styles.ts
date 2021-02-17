@@ -7,13 +7,21 @@ documentContainer.innerHTML = `<dom-module id="dialog-styles">
     <style>
       :host {
         margin: 0;
+        padding: 0;
         display: block;
-        padding: 16px 16px;
         height: 100%;
         width: 100%;
-        background: #fff;
+        background: var(--primary-background-color);
         color: var(--primary-text-color);
         box-shadow: var(--box-shadow);
+        --paper-input-container-focus-color: var(--default-primary-color);
+        --paper-input-container-color: var(--disabled-text-color);
+        --paper-input-container-label: {
+          padding: 4px 0;
+          background: white;
+          font-weight: bold;
+        };
+        --paper-input-container-font-family: 'Fira Sans';
       }
 
       app-header {

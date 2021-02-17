@@ -11,7 +11,7 @@ export const theme = css`
     --primary-background-color: #ffffff;
     --primary-text-color: #2a2a2a;
     --secondary-text-color: #525252;
-    --disabled-text-color: #858585;
+    --disabled-text-color: #B8B8B8;
     --divider-color: #e0e0e0;
     --footer-background-color: #f5f5f5;
     --footer-text-color: #555555;

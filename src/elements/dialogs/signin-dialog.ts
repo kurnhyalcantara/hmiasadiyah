@@ -18,15 +18,8 @@ class SigninDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
     return html`
       <style include="shared-styles dialog-styles flex flex-alignment">
         :host {
-          margin: 0;
-          padding: 0;
-          display: block;
-          background: var(--primary-background-color);
-          box-shadow: var(--box-shadow);
           --paper-input-container-underline: { display: none; height: 0;};
           --paper-input-container-underline-focus: { display: none; height: 0;};
-          --paper-input-container-focus-color: var(--default-primary-color);
-          --paper-input-container-color: var(--secondary-text-color);
         }
 
         .dialog-header {
@@ -86,23 +79,16 @@ class SigninDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
           margin-top: 14px;
         }
 
-        .sign-in-button {
-          padding: 16px 0;
-          text-align: center;
-          display: block;
-          color: var(--primary-text-color);
-        }
-
-        .merge-content .subtitle,
-        .merge-content .explanation {
-          margin-bottom: 16px;
-        }
-
-        iron-icon {
+        .action-input iron-icon {
           margin-right: 12px;
           --iron-icon-width: 24px;
           --iron-icon-height: 24px;
         }
+
+        .action-button iron-icon {
+          margin-left: 8px;
+        }
+
       </style>
       
       <app-header-layout has-scrolling-region>
@@ -121,35 +107,32 @@ class SigninDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
             <div class="container-title" layout vertical center>{$ signInProviders.title $}</div>
           </div>
         </app-toolbar>
-        <div class="dialog-content" layout vertical>
+        <div class="dialog-content" layout vertical justified>
           <div class="action-input">
-            <paper-input id="email" label="Email" no-label-float>
+            <paper-input id="username" label="{$ signInProviders.input.username $}" no-label-float>
               <iron-icon icon="icons:mail" slot="prefix"></iron-icon>
             </paper-input>
-            <paper-input id="password" label="Password" type="password" no-label-float>
+            <paper-input id="password" label="{$ signInProviders.input.password $}" type="password" no-label-float>
               <iron-icon icon="icons:lock" slot="prefix"></iron-icon>
             </paper-input>
           </div>
           <div class="action-button" layout vertical center>
             <paper-button
               class="action-login"
-              on-click="_lgon"
+              on-click="_login"
               ga-on="click"
               ga-event-category="portal"
               ga-event-action="klik login"
               ga-event-label="login block"
               primary
             >
-              Login
+              {$ signInProviders.actions.login $}
             </paper-button>
-            <div>Belum punya akun?</div>
-            <div class="no-account">Silahkan ikuti pengkaderan Basic Training di HMI Komisariat As'adiyah</div>
-            <a href="/kaderisasi">
-              <paper-button class="action-info" stroke>
-                {$ infoPengkaderan $}
-                <iron-icon icon="hmi:arrow-right-circle"></iron-icon>
-              </paper-button>
-            </a>
+            <div>{$ signInProviders.info.p1 $}</div>
+            <paper-button class="action-info" on-click="_newRegister" stroke>
+              <span>{$ signInProviders.actions.newRegister $}</span>
+              <iron-icon icon="hmi:arrow-right-circle"></iron-icon>
+            </paper-button>
           </div>
         </div>
       </app-header-layout>
@@ -207,8 +190,11 @@ class SigninDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
     this.isMergeState = false;
   }
 
+  _newRegister() {
+    dialogsActions.openDialog(DIALOGS.DAFTAR);
+  }
+
   _close() {
-    this.isMergeState = false;
     dialogsActions.closeDialog(DIALOGS.SIGNIN);
   }
 
