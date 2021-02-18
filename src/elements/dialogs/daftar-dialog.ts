@@ -69,13 +69,15 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
         }
 
         .general-error {
-          margin: 0 32px;
+          margin: 18px 0;
+          text-align: center;
+          font-size: 14px;
           color: var(--error-color);
         }
       </style>
       <app-header-layout has-scrolling-region>
         <app-header slot="header" class="header" fixed="[[viewport.isTabletPlus]]">
-          <iron-icon class="close-icon" icon="hmi:close" on-tap="_close"></iron-icon>
+          <iron-icon class="close-icon" icon="hmi:close" on-tap="_closeDialog"></iron-icon>
         </app-header>
         <app-toolbar layout vertical center>
           <div class="dialog-header" layout vertical center>
@@ -87,14 +89,17 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
               fade
             ></plastic-image>
             <div class="container-title" layout vertical center>{$ daftarProviders.title $}</div>
-            <div class="info-register">Silahkan buat akun baru untuk bisa login dan melanjutkan proses pendaftaran</div>
+            <div class="info-register">{$ daftarProviders.info $}</div>
+            <div class="general-error">
+              {$ daftarProviders.generalError $}
+            </div>
           </div>
         </app-toolbar>
         <div class="dialog-content">
           <paper-input
             id="namaLengkap"
-            label="Nama Lengkap"
-            placeholder="Masukkan Nama Lengkap"
+            label="{$ daftarProviders.input.fullName.label $}"
+            placeholder="{$ daftarProviders.input.fullName.placeholder $}"
             required
             value="{{namaLengkapValue}}"
             autocomplete="on"
@@ -103,8 +108,8 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
           </paper-input>
           <paper-input
             id="usernameUser"            
-            label="Username"
-            placeholder="Contoh: lafranpane"
+            label="{$ daftarProviders.input.username.label $}"
+            placeholder="{$ daftarProviders.input.username.placeholder $}"
             required
             value="{{usernameValue}}"
             auto-validate$="[[validateUser]]"
@@ -115,8 +120,8 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
           </paper-input>
           <paper-input
             id="emailUser"
-            label="Email"
-            placeholder="Masukkan email yang aktif"
+            label="{$ daftarProviders.input.email.label $}"
+            placeholder="{$ daftarProviders.input.email.placeholder $}"
             value="{{emailValue}}"
             autocomplete="on"
             required
@@ -127,9 +132,9 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
           </paper-input>
           <paper-input
             id="passwordUser"            
-            label="Password"
+            label="{$ daftarProviders.input.password.label $}"
             required
-            placeholder="Minimal 6 karakter"
+            placeholder="{$ daftarProviders.input.password.placeholder $}"
             char-counter 
             minlength="6"
             auto-validate$="[[validatePass]]"
@@ -142,7 +147,7 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
           </paper-input>
           <div class="action-buttons" layout horizontal justified>
             <paper-button class="close-button" on-click="_closeDialog"
-              >{$ formPendaftaran.close $}
+              >{$ daftarProviders.cancel $}
             </paper-button>
 
             <paper-button
@@ -153,11 +158,8 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
               ga-event-label="daftar block"
               primary
             >
-              Daftar
+             {$ daftarProviders.submit $}
             </paper-button>
-          </div>
-          <div class="general-error" hidden="[[!errorOccurred]]">
-            {$ formPendaftaran.generalError $}
           </div>
         </div>
       </app-header-layout>
@@ -228,10 +230,6 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
   constructor() {
     super();
     this.addEventListener('iron-overlay-canceled', this._close);
-  }
-
-  _close() {
-    dialogsActions.closeDialog(DIALOGS.DAFTAR);
   }
 
   _handleTerdaftar(subscribed) {
