@@ -2,12 +2,13 @@ import { IronOverlayBehavior } from '@polymer/iron-overlay-behavior';
 import { html, PolymerElement } from '@polymer/polymer';
 import { mixinBehaviors } from '@polymer/polymer/lib/legacy/class';
 import { ReduxMixin } from '../../mixins/redux-mixin';
+import { store } from '../../redux/store';
 import 'plastic-image';
 import '@polymer/paper-input/paper-input'
 import '@polymer/iron-icon';
 import '@polymer/app-layout/app-header-layout/app-header-layout';
 import '@polymer/app-layout/app-toolbar/app-toolbar';
-import { dialogsActions, helperActions, userActions } from '../../redux/actions';
+import { dialogsActions, helperActions, userActions, daftarActions } from '../../redux/actions';
 import { DIALOGS } from '../../redux/constants';
 import '../hmi-icons';
 import '../shared-styles';
@@ -191,7 +192,9 @@ class SigninDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
   }
 
   _newRegister() {
-    dialogsActions.openDialog(DIALOGS.DAFTAR);
+    dialogsActions.openDialog(DIALOGS.DAFTAR, {
+      submit: (data) => this._daftarAction(data),
+    });
   }
 
   _close() {
@@ -201,6 +204,10 @@ class SigninDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
   _signIn(event) {
     const providerUrl = event.target.getAttribute('provider-url');
     userActions.signIn(providerUrl);
+  }
+
+  _daftarAction(data) {
+    store.dispatch(daftarActions.subscribe(data));
   }
 }
 

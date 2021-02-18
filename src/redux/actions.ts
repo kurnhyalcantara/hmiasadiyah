@@ -599,22 +599,17 @@ export const userActions = {
 
 export const daftarActions = {
   subscribe: (data) => (dispatch) => {
-    const id = data.firstFieldValue;
+    const id = data.usernameValue;
 
     window.firebase
       .firestore()
       .collection('pendaftar')
       .doc(id)
       .set({
-        email: data.email,
-        namaLengkap: data.firstFieldValue || '',
-        tanggalLahir: data.secondFieldValue || '',
-        alamatTinggal: data.thirdFieldValue || '',
-        noWa: data.fourthFieldValue || '',
-        fakultas: data.fifthFieldValue || '',
-        prodi: data.sixthFieldValue || '',
-        semester: data.seventhFieldValue || '',
-        alasan: data.eigthFieldValue || '',
+        namaLengkap: data.namaLengkapValue,
+        email: data.emailValue,
+        username: data.usernameValue,
+        pass: data.passwordValue
       })
       .then(() => {
         dispatch({

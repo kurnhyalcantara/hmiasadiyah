@@ -433,7 +433,9 @@ class HMIApp extends ReduxMixin(PolymerElement) {
 
   openSignUpDialog() {
     this.drawerOpened = false;
-    dialogsActions.openDialog(DIALOGS.DAFTAR);
+    dialogsActions.openDialog(DIALOGS.DAFTAR, {
+      submit: (data) => this._daftarAction(data),
+    });
   }
 
   openLoginDialog() {
@@ -499,24 +501,6 @@ class HMIApp extends ReduxMixin(PolymerElement) {
       }
       this.addToHomeScreen = null;
       this.closeDrawer();
-    });
-  }
-
-  _daftarDialog() {
-    this.closeDrawer();
-    dialogsActions.openDialog(DIALOGS.DAFTAR, {
-      title: '{$ formPendaftaran.formTitle $}',
-      description: '{$ formPendaftaran.formDescription $}',
-      firstField: '{$ formPendaftaran.namaLengkap $}',
-      secondField: '{$ formPendaftaran.tanggalLahir $}',
-      thirdField: '{$ formPendaftaran.alamatTInggal $}',
-      fourthField: '{$ formPendaftaran.noWa $}',
-      fifthField: '{$ formPendaftaran.fakultas $}',
-      sixthField: '{$ formPendaftaran.prodi $}',
-      seventhField: '{$ formPendaftaran.semester $}',
-      eigthField: '{$ formPendaftaran.alasan $}',
-      submitLabel: ' {$ formPendaftaran.daftar $}',
-      submit: (data) => this._daftarAction(data),
     });
   }
 

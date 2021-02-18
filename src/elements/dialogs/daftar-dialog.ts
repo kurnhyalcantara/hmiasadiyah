@@ -92,76 +92,52 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
         </app-toolbar>
         <div class="dialog-content">
           <paper-input
-            id="firstFieldInput"
-            label="[[firstFieldLabel]]"
-            value="{{firstFieldValue}}"
-            autocomplete="off"
-            always-float-label
-          >
-          </paper-input>
-          <paper-input
-            id="secondFieldInput"
-            label="[[secondFieldLabel]]"
-            value="{{secondFieldValue}}"
-            autocomplete="off"
-            type="date"
-            always-float-label
-          >
-          </paper-input>
-          <paper-input
-            id="thirdFieldInput"            
-            label="[[thirdFieldLabel]]"
-            value="{{thirdFieldValue}}"
-            autocomplete="off"
-            always-float-label
-          >
-          </paper-input>
-          <paper-input
-            id="fourthFieldInput"            
-            label="[[fourthFieldLabel]]"
-            value="{{fourthFieldValue}}"
-            autocomplete="off"
-            always-float-label
-          >
-          </paper-input>
-          <paper-input
-            id="fifthFieldInput"            
-            label="[[fifthFieldLabel]]"
-            value="{{fifthFieldValue}}"
-            autocomplete="off"
-            always-float-label
-          >
-          </paper-input>
-          <paper-input
-            id="sixthFieldInput"            
-            label="[[sixthFieldLabel]]"
-            value="{{sixthFieldValue}}"
-            autocomplete="off"
-            always-float-label
-          >
-          </paper-input>
-          <paper-input
-            id="seventhFieldInput"            
-            label="[[seventhFieldLabel]]"
-            value="{{seventhFieldValue}}"
-            autocomplete="off"
-          >
-          </paper-input>
-          <paper-input
-            id="eigthFieldInput"           
-            label="[[eigthFieldLabel]]"
-            value="{{eigthFieldValue}}"
-            autocomplete="off"
-          >
-          </paper-input>
-          <paper-input
-            id="emailInput"            
-            label="{$ formPendaftaran.emailAddress $} *"
-            value="{{email}}"
+            id="namaLengkap"
+            label="Nama Lengkap"
+            placeholder="Masukkan Nama Lengkap"
             required
-            auto-validate$="[[validate]]"
-            error-message="{$ formPendaftaran.emailRequired $}"
+            value="{{namaLengkapValue}}"
             autocomplete="on"
+            always-float-label
+          >
+          </paper-input>
+          <paper-input
+            id="usernameUser"            
+            label="Username"
+            placeholder="Contoh: lafranpane"
+            required
+            value="{{usernameValue}}"
+            auto-validate$="[[validateUser]]"
+            error-message="{$ formPendaftaran.usernameError $}"
+            autocomplete="on"
+            always-float-label
+          >
+          </paper-input>
+          <paper-input
+            id="emailUser"
+            label="Email"
+            placeholder="Masukkan email yang aktif"
+            value="{{emailValue}}"
+            autocomplete="on"
+            required
+            auto-validate$="[[validateEmail]]"
+            error-message="{$ formPendaftaran.emailRequired $}"
+            always-float-label
+          >
+          </paper-input>
+          <paper-input
+            id="passwordUser"            
+            label="Password"
+            required
+            placeholder="Minimal 6 karakter"
+            char-counter 
+            minlength="6"
+            auto-validate$="[[validatePass]]"
+            error-message="{$ formPendaftaran.passwordError $}"
+            value="{{passwordValue}}"
+            autocomplete="off"
+            type="password"
+            always-float-label
           >
           </paper-input>
           <div class="action-buttons" layout horizontal justified>
@@ -177,7 +153,7 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
               ga-event-label="daftar block"
               primary
             >
-              [[submitLabel]]
+              Daftar
             </paper-button>
           </div>
           <div class="general-error" hidden="[[!errorOccurred]]">
@@ -191,6 +167,11 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
   static get is() {
     return 'daftar-dialog';
   }
+
+  private namaLengkapValue: string;
+  private emailValue: string;
+  private usernameValue: string;
+  private passwordValue: string;
 
   static get properties() {
     return {
@@ -215,27 +196,14 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
         type: Boolean,
         value: false,
       },
+      data: {
+        type: Object
+      },
       initialHeight: Number,
-      title: String,
-      description: String,
-      firstFieldLabel: String,
-      secondFieldLabel: String,
-      thirdFieldLabel: String,
-      fourthFieldLabel: String,
-      fifthFieldLabel: String,
-      sixthFieldLabel: String,
-      seventhFieldLabel: String,
-      eigthFieldLabel: String,
-      submitLabel: String,
-      firstFieldValue: String,
-      secondFieldValue: String,
-      thirdFieldValue: String,
-      fourthFieldValue: String,
-      fifthFieldValue: String,
-      sixthFieldValue: String,
-      seventhFieldValue: String,
-      eigthFieldValue: String,
-      email: String,
+      namaLengkapValue: String,
+      emailValue: String,
+      usernameValue: String,
+      passwordValue: String,
     };
   }
 
@@ -254,13 +222,12 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
   ready() {
     super.ready();
     this.initialHeight = window.innerHeight;
+    this.addEventListener('iron-resize', this._resize);
   }
 
   constructor() {
     super();
     this.addEventListener('iron-overlay-canceled', this._close);
-    // this.addEventListener('iron-resize', this._resize);
-    // window.addEventListener('resize', this._windowResize.bind(this));
   }
 
   _close() {
@@ -279,39 +246,14 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
     } else {
       data = {};
     }
-
-    this.title = data.title || '{$ formPendaftaran.formTitle $}';
-    this.description = data.description || '{$ formPendaftaran.formDescription $}';
-    this.firstFieldLabel = data.firstField || '{$ formPendaftaran.namaLengkap $}';
-    this.secondFieldLabel = data.secondField || '{$ formPendaftaran.tanggalLahir $}';
-    this.thirdFieldLabel = data.thirdField || '{$ formPendaftaran.alamatTinggal $}';
-    this.fourthFieldLabel = data.fourthField || '{$ formPendaftaran.noWa $}';
-    this.fifthFieldLabel = data.fifthField || '{$ formPendaftaran.fakultas $}';
-    this.sixthFieldLabel = data.sixthField || '{$ formPendaftaran.prodi $}';
-    this.seventhFieldLabel = data.seventhField || '{$ formPendaftaran.semester $}';
-    this.eigthFieldLabel = data.eigthField || '{$ formPendaftaran.alasan $}';
-    this.submitLabel = data.submitLabel || ' {$ formPendaftaran.daftar $}';
-    this._prefillFields(data);
   }
 
   _daftar() {
-    const emailInput = this.shadowRoot.querySelector('#emailInput');
-
-    if (!emailInput.validate() || !this._validateEmail(emailInput.value)) {
-      emailInput.invalid = true;
-      return;
-    }
-
     this.data.submit({
-      email: this.email,
-      firstFieldValue: this.firstFieldValue,
-      secondFieldValue: this.secondFieldValue,
-      thirdFieldValue: this.thirdFieldValue,
-      fourthFieldValue: this.fourthFieldValue,
-      fifthFieldValue: this.fifthFieldValue,
-      sixthFieldValue: this.sixthFieldValue,
-      seventhFieldValue: this.seventhFieldValue,
-      eigthFieldValue: this.eigthFieldValue,
+      namaLengkapValue: this.namaLengkapValue,
+      emailValue: this.emailValue,
+      usernameValue: this.usernameValue,
+      passwordValue: this.passwordValue
     });
   }
 
@@ -325,68 +267,19 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
     dialogsActions.closeDialog(DIALOGS.DAFTAR);
   }
 
-  _prefillFields(userData) {
-    this.validate = false;
-    const firstField = this.shadowRoot.querySelector('#firstFieldInput');
-    const secondField = this.shadowRoot.querySelector('#secondFieldInput');
-    const thirdField = this.shadowRoot.querySelector('#thirdFieldInput');
-    const fourthField = this.shadowRoot.querySelector('#fourthFieldInput');
-    const fifthField = this.shadowRoot.querySelector('#fifthFieldInput');
-    const sixthField = this.shadowRoot.querySelector('#sixthFieldInput');
-    const seventhField = this.shadowRoot.querySelector('#seventhFieldInput');
-    const eigthField = this.shadowRoot.querySelector('#eigthFieldInput');
-    const emailInput = this.shadowRoot.querySelector('#emailInput');
-    firstField.value = userData ? userData.displayName : '';
-    secondField.value = '';
-    thirdField.value = '';
-    fourthField.value = '';
-    fifthField.value = '';
-    sixthField.value = '';
-    seventhField.value = '';
-    eigthField.value = '';
-    firstField.focus();
-    firstField.blur();
-    secondField.focus();
-    secondField.blur();
-    thirdField.focus();
-    thirdField.blur();
-    fourthField.focus();
-    fourthField.blur();
-    fifthField.focus();
-    fifthField.blur();
-    sixthField.focus();
-    sixthField.blur();
-    seventhField.focus();
-    seventhField.blur();
-    eigthField.focus();
-    eigthField.blur();
-    emailInput.blur();
-    emailInput.value = userData ? userData.email : '';
-    emailInput.invalid = false;
-    this.validate = true;
+  _resize(e) {
+    if (this.keyboardOpened) {
+      const header = this.shadowRoot.querySelector('.dialog-header');
+      const headerHeight = header.offsetHeight;
+
+      setTimeout(() => {
+        requestAnimationFrame(() => {
+          this.style.maxHeight = `${this.initialHeight}px`;
+          this.style.top = `-${headerHeight}px`;
+        });
+      }, 10);
+    }
   }
-
-  _focus(e) {
-    e.target.focus();
-  }
-
-  // _windowResize() {
-  //   this.keyboardOpened = this.ui.viewport.isPhone && window.innerHeight < this.initialHeight - 100;
-  // }
-
-  // _resize(e) {
-  //   if (this.keyboardOpened) {
-  //     const header = this.shadowRoot.querySelector('.dialog-header');
-  //     const headerHeight = header.offsetHeight;
-
-  //     setTimeout(() => {
-  //       requestAnimationFrame(() => {
-  //         this.style.maxHeight = `${this.initialHeight}px`;
-  //         this.style.top = `-${headerHeight}px`;
-  //       });
-  //     }, 10);
-  //   }
-  // }
 }
 
 window.customElements.define(DaftarDialog.is, DaftarDialog);
