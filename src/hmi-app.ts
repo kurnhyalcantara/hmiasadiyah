@@ -275,7 +275,6 @@ class HMIApp extends ReduxMixin(PolymerElement) {
         exit-animation="fade-out-animation"
         disable-controls="[[!ui.videoDialog.disableControls]]"
         fit
-        fixed-top
       ></video-dialog>
 
       <session-details
