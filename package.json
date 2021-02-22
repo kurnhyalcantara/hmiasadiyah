@@ -77,7 +77,7 @@
     "@open-wc/building-rollup": "^0.22.12",
     "@testing-library/dom": "^7.19.0",
     "@testing-library/jest-dom": "^5.10.1",
-    "@types/google.analytics": "0.0.40",
+    "@types/google.analytics": "0.0.41",
     "@types/jest": "^26.0.3",
     "@types/jest-dev-server": "^4.2.0",
     "@types/polymer": "^1.2.9",
