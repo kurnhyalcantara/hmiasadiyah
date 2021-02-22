@@ -21,7 +21,8 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
     return html`
       <style include="shared-styles dialog-styles flex flex-alignment">
         :host {
-
+          height: 100%;
+          width: 100%;
         }
 
         .dialog-header {
@@ -290,8 +291,6 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
   private semesterValue: string;
   private emailValue: string;
   private passwordValue: string;
-  private errorOccurred: boolean;
-  private errorMessage: string;
 
   static get properties() {
     return {
@@ -321,14 +320,6 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
       },
       data: {
         type: Object
-      },
-      emailError: {
-        type: Boolean,
-        value: false
-      },
-      passError: {
-        type: Boolean,
-        value: false
       },
       initialHeight: Number,
       namaLengkapValue: String,
@@ -371,7 +362,9 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
 
   _handleTerdaftar(pendaftaran) {
     if (pendaftaran) {
+      this._reset();
       this._closeDialog();
+
     }
   }
 
@@ -425,6 +418,17 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
 
   _submit(data) {
     store.dispatch(helperActions.storeData(data));
+  }
+
+  _reset() {
+    this.namaLengkapValue = '';
+    this.tempatLahirValue = '';
+    this.alamatSekarangValue = '';
+    this.noWaValue = '';
+    this.instagramValue = '';
+    this.semesterValue = '';
+    this.emailValue = '';
+    this.passwordValue = '';
   }
 
 }

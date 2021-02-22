@@ -9,8 +9,6 @@ documentContainer.innerHTML = `<dom-module id="dialog-styles">
         margin: 0;
         padding: 0;
         display: block;
-        height: 100%;
-        width: 100%;
         background: var(--primary-background-color);
         color: var(--primary-text-color);
         box-shadow: var(--box-shadow);
@@ -19,7 +17,7 @@ documentContainer.innerHTML = `<dom-module id="dialog-styles">
         --paper-input-container-label: {
           padding: 4px 0;
           background: white;
-          font-weight: bold;
+          font-weight: 600;
         };
         --paper-input-container-font-family: 'Fira Sans';
       }

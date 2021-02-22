@@ -21,6 +21,8 @@ class SigninDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
         :host {
           --paper-input-container-underline: { display: none; height: 0;};
           --paper-input-container-underline-focus: { display: none; height: 0;};
+          height: 100%;
+          width: 100%;
         }
 
         .dialog-header {
@@ -192,9 +194,8 @@ class SigninDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
   }
 
   _newRegister() {
-    dialogsActions.openDialog(DIALOGS.DAFTAR, {
-      tanggalLahirValue: "{$ daftarProviders.input.tanggalLahir.initial $}"
-    });
+    dialogsActions.openDialog(DIALOGS.DAFTAR);
+    this._close()
   }
 
   _close() {

@@ -608,7 +608,8 @@ export const daftarActions = {
           pendaftaran: true,
         })
         toastActions.showToast({
-          message: '{$ daftarProviders.success $}'
+          message: '{$ daftarProviders.success $}',
+          duration: 7500
         });
       })
       .catch((error) => {
