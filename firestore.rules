@@ -121,7 +121,7 @@ service cloud.firestore {
       allow write: if false;
     }
 
-    match /pendaftar/{subscriberId} {
+    match /userData/{emailId} {
       allow delete: if false;
 
       allow get;
@@ -135,7 +135,8 @@ service cloud.firestore {
     match /users/{userId} {
       allow list: if false;
 
-      allow get: if request.auth.uid == userId;
+      allow get;
+      allow write;
 
       allow create, delete: if false;
       allow update: if request.auth.uid == userId;

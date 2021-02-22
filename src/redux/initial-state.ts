@@ -90,7 +90,7 @@ export const initialState = {
   user: {
     signedIn: false,
   },
-  subscribed: false,
+  pendaftaran: false,
   toast: {},
   notifications: {
     status: NOTIFICATIONS_STATUS.DEFAULT,

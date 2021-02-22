@@ -197,29 +197,91 @@
   },
   "daftarProviders": {
     "logo": "https://firebasestorage.googleapis.com/v0/b/hmi-asadiyah.appspot.com/o/mix%2Fabout-logo.png?alt=media&token=fda04f76-bbcb-4350-aac5-cb347901f181",
-    "title": "Buat Akun Baru",
+    "header": "Buat Akun Baru",
     "info": "Silahkan buat akun baru untuk bisa login dan melanjutkan proses pendaftaran",
+    "title": {
+      "informasidiri": {
+        "icon": "account-circle",
+        "label": "Informasi Diri"
+      },
+      "jenjangStudi": {
+        "icon": "work",
+        "label": "Jenjang Studi Terakhir"
+      },
+      "infoAkun": {
+        "icon": "extension",
+        "label": "Pengaturan Akun"
+      }
+    },
     "input": {
       "fullName": {
         "label": "Nama Lengkap",
         "placeholder": "Masukkan nama lengkap"
       },
-      "username": {
-        "label": "Username",
-        "placeholder": "Contoh: ahmadirwan (huruf kecil dan tanpa spasi)"
+      "jenisKelamin": {
+        "placeholder": "Jenis Kelamin",
+        "value": {
+          "pria": "Pria",
+          "wanita": "Wanita"
+        }
+      },
+      "tanggalLahir": {
+        "label": "Tanggal Lahir",
+        "initial": "2003-12-31"
+      },
+      "tempatLahir": {
+        "label": "Tempat Lahir",
+        "placeholder": "Masukkan tempat lahir"
+      },
+      "alamatSekarang": {
+        "label": "Alamat Sekarang",
+        "placeholder": "Masukkan alamat saat ini"
+      },
+      "noWa": {
+        "label": "Nomor Whatsapp",
+        "placeholder": "cth: 08123456790"
+      },
+      "instagram": {
+        "label": "ID Instagram",
+        "placeholder": "cth: @hmiasasdiyah"
+      },
+      "fakultas": {
+        "placeholder": "Fakultas",
+        "value": {
+          "ftk": "Fakultas Tarbiyah dan Keguruan",
+          "fudk": "Fakultas Ushuluddin Dakwah dan Komunikasi",
+          "fsh": "Fakultas Syariah dan Hukum"
+        }
+      },
+      "jurusan": {
+        "placeholder": "Program Studi",
+        "value": {
+          "pai": "Pendidikan Agama Islam",
+          "tbi": "Tadris Bahasa Inggris",
+          "afi": "Aqidah dan Filsafat Islam",
+          "as": "Ahwalusy Syakhsiyyah",
+          "hes": "Hukum Ekonomi Syariah"
+        }
+      },
+      "semester": {
+        "placeholder": "Semester saat ini",
+        "label": "Semester"
       },
       "email": {
-        "label": "Email",
-        "placeholder": "Masukkan email yang aktif"
+        "label": "Email*",
+        "placeholder": "Masukkan email yang aktif",
+        "errorOccured": "Email sudah digunakan pengguna lain"
       },
       "password": {
-        "label": "Password",
-        "placeholder": "Minimal 6 karakter"
+        "label": "Password*",
+        "placeholder": "Minimal 6 karakter",
+        "errorOccured": "Password anda kurang dari 6 karakter"
       }
     },
     "cancel": "Batal",
     "submit": "Daftar",
-    "generalError": "Terjadi kesalahan, harap coba lagi nanti :("
+    "generalError": "Terjadi masalah, harap coba lagi nanti :(",
+    "success": "Pembuatan akun berhasil dan telah login otomatis, silahkan lanjutkan pendaftaran kegiatan"
   },
   "contentLoaders": {
     "schedule": {

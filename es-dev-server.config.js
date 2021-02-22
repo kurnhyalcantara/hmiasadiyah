@@ -9,6 +9,7 @@ if (!development) {
 module.exports = {
   appIndex: 'index.html',
   fileExtensions: ['.ts'],
+  babel: true,
   nodeResolve: true,
   port: 5000,
   watch: true,

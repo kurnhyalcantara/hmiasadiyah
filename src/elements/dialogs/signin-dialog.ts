@@ -193,7 +193,7 @@ class SigninDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
 
   _newRegister() {
     dialogsActions.openDialog(DIALOGS.DAFTAR, {
-      submit: (data) => this._daftarAction(data),
+      tanggalLahirValue: "{$ daftarProviders.input.tanggalLahir.initial $}"
     });
   }
 
@@ -204,10 +204,6 @@ class SigninDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
   _signIn(event) {
     const providerUrl = event.target.getAttribute('provider-url');
     userActions.signIn(providerUrl);
-  }
-
-  _daftarAction(data) {
-    store.dispatch(daftarActions.subscribe(data));
   }
 }
 

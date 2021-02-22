@@ -1,9 +1,12 @@
 /* eslint-env node */
 
-import { createSpaConfig } from '@open-wc/building-rollup';
-import merge from 'deepmerge';
+import { createDefaultConfig } from '@open-wc/building-rollup';
+import deepmerge from 'deepmerge';
+import * as fs from 'fs';
 import copy from 'rollup-plugin-copy';
+import indexHTMLPlugin from 'rollup-plugin-index-html';
 import replace from 'rollup-plugin-re';
+import { generateSW } from 'rollup-plugin-workbox';
 import { workboxConfig } from './workbox-config';
 
 const { production, compileTemplate, compileBufferTemplate } = require('./build-utils.js');
@@ -12,16 +15,21 @@ if (!production) {
   throw new Error('build only supports NODE_ENV=production');
 }
 
-const baseConfig = createSpaConfig({
-  html: {
-    transform: (html) => compileTemplate(html),
+const config = createDefaultConfig({
+  input: './src/hmi-app.ts',
+  extensions: ['.js', '.mjs', '.ts'],
+  plugins: {
+    workbox: false,
   },
-  workbox: workboxConfig,
 });
 
-export default merge(baseConfig, {
-  input: './index.html',
+export default deepmerge(config, {
   plugins: [
+    ...config.plugins,
+    indexHTMLPlugin({
+      template: () => compileTemplate(fs.readFileSync('index.html', 'utf-8')),
+      indexHTML: 'HACK: https://github.com/open-wc/open-wc/issues/1282',
+    }),
     replace({
       exclude: 'node_modules/**',
       patterns: [
@@ -50,7 +58,7 @@ export default merge(baseConfig, {
           dest: 'dist/node_assets/firebase/',
         },
         {
-          src: 'out-tsc/src/service-worker-registration.js',
+          src: 'src/service-worker-registration.js',
           dest: 'dist/src',
           transform: compileBufferTemplate,
         },
@@ -71,5 +79,6 @@ export default merge(baseConfig, {
         },
       ],
     }),
+    generateSW(workboxConfig),
   ],
 });

@@ -13,4 +13,4 @@ export function initializeFirebase() {
   });
 }
 
-export { firestore };
+export { firestore }

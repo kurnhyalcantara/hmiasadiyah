@@ -88,7 +88,8 @@ export const SIGN_IN = 'app/Auth/SIGN_IN';
 export const SIGN_OUT = 'app/Auth/SIGN_OUT';
 
 // subscribe
-export const DAFTAR = 'app/Daftar/DAFTAR';
+export const DAFTAR_SUCCESS = 'app/Daftar/DAFTAR_SUCCESS';
+export const DAFTAR_FAILURE = 'app/Daftar/DAFTAR_FAILURE';
 
 // notifications
 export const UPDATE_NOTIFICATIONS_STATUS = 'app/Notifications/UPDATE_NOTIFICATIONS_STATUS';

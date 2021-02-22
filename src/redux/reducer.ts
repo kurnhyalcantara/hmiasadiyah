@@ -46,7 +46,8 @@ import {
   SHOW_TOAST,
   SIGN_IN,
   SIGN_OUT,
-  DAFTAR,
+  DAFTAR_SUCCESS,
+  DAFTAR_FAILURE,
   TOGGLE_VIDEO_DIALOG,
   UPDATE_NOTIFICATIONS_STATUS,
   UPDATE_SESSIONS,
@@ -402,10 +403,12 @@ export const userReducer = (state = initialState.user, action) => {
   }
 };
 
-export const daftarReducer = (state = initialState.subscribed, action) => {
+export const daftarReducer = (state = initialState.pendaftaran, action) => {
   switch (action.type) {
-    case DAFTAR:
-      return action.subscribed;
+    case DAFTAR_SUCCESS:
+      return action.pendaftaran;
+    case DAFTAR_FAILURE:
+      return action.pendaftaran;
     default:
       return state;
   }
@@ -457,7 +460,7 @@ export const appReducer = (state = initialState, action) => {
     schedule: scheduleReducer(state.schedule, action),
     gallery: galleryReducer(state.gallery, action),
     user: userReducer(state.user, action),
-    subscribed: daftarReducer(state.subscribed, action),
+    pendaftaran: daftarReducer(state.pendaftaran, action),
     toast: toastReducer(state.toast, action),
     notifications: notificationsReducer(state.notifications, action),
     filters: filtersReducer(state.filters, action),

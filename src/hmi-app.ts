@@ -433,7 +433,7 @@ class HMIApp extends ReduxMixin(PolymerElement) {
   openSignUpDialog() {
     this.drawerOpened = false;
     dialogsActions.openDialog(DIALOGS.DAFTAR, {
-      submit: (data) => this._daftarAction(data),
+      tanggalLahirValue: "{$ daftarProviders.input.tanggalLahir.initial $}"
     });
   }
 
@@ -501,10 +501,6 @@ class HMIApp extends ReduxMixin(PolymerElement) {
       this.addToHomeScreen = null;
       this.closeDrawer();
     });
-  }
-
-  _daftarAction(data) {
-    store.dispatch(daftarActions.subscribe(data));
   }
 }
 

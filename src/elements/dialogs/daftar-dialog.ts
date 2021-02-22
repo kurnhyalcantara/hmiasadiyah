@@ -1,12 +1,16 @@
 import { IronOverlayBehavior } from '@polymer/iron-overlay-behavior';
 import '@polymer/paper-button';
 import '@polymer/paper-input/paper-input';
+import '@polymer/paper-dropdown-menu/paper-dropdown-menu';
+import '@polymer/paper-listbox/paper-listbox';
+import '@polymer/paper-item/paper-item';
 import '@polymer/app-layout/app-header-layout/app-header-layout';
 import '@polymer/app-layout/app-toolbar/app-toolbar';
 import { html, PolymerElement } from '@polymer/polymer';
+import { store } from '../../redux/store';
 import { mixinBehaviors } from '@polymer/polymer/lib/legacy/class';
 import { ReduxMixin } from '../../mixins/redux-mixin';
-import { dialogsActions } from '../../redux/actions';
+import { dialogsActions, daftarActions, userActions, helperActions } from '../../redux/actions';
 import { DIALOGS } from '../../redux/constants';
 import '../hmi-icons';
 import '../shared-styles';
@@ -52,12 +56,28 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
           font-color: var(--default-primary-color);
         }
 
-        paper-input:not(:last-of-type) {
+        paper-input:not(:last-of-type), paper-dropdown-menu {
           margin-bottom: 24px;
         }
 
         .dialog-content, .info-register {
           margin: 0 24px;
+        }
+
+        .section-title {
+          margin: 18px 0;
+        }
+
+        .section-title-icon {
+          --iron-icon-width: 24px;
+          margin-right: 24px;
+        }
+
+        .section-title-label {
+
+        }
+        .section-input {
+          padding: 0 0 0 52px;
         }
 
         .action-buttons {
@@ -88,68 +108,159 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
               preload
               fade
             ></plastic-image>
-            <div class="container-title" layout vertical center>{$ daftarProviders.title $}</div>
+            <div class="container-title" layout vertical center>{$ daftarProviders.header $}</div>
             <div class="info-register">{$ daftarProviders.info $}</div>
-            <div class="general-error">
-              {$ daftarProviders.generalError $}
-            </div>
           </div>
         </app-toolbar>
         <div class="dialog-content">
-          <paper-input
-            id="namaLengkap"
-            label="{$ daftarProviders.input.fullName.label $}"
-            placeholder="{$ daftarProviders.input.fullName.placeholder $}"
-            required
-            value="{{namaLengkapValue}}"
-            autocomplete="on"
-            always-float-label
-          >
-          </paper-input>
-          <paper-input
-            id="usernameUser"            
-            label="{$ daftarProviders.input.username.label $}"
-            placeholder="{$ daftarProviders.input.username.placeholder $}"
-            required
-            value="{{usernameValue}}"
-            auto-validate$="[[validateUser]]"
-            error-message="{$ formPendaftaran.usernameError $}"
-            autocomplete="on"
-            always-float-label
-          >
-          </paper-input>
-          <paper-input
-            id="emailUser"
-            label="{$ daftarProviders.input.email.label $}"
-            placeholder="{$ daftarProviders.input.email.placeholder $}"
-            value="{{emailValue}}"
-            autocomplete="on"
-            required
-            auto-validate$="[[validateEmail]]"
-            error-message="{$ formPendaftaran.emailRequired $}"
-            always-float-label
-          >
-          </paper-input>
-          <paper-input
-            id="passwordUser"            
-            label="{$ daftarProviders.input.password.label $}"
-            required
-            placeholder="{$ daftarProviders.input.password.placeholder $}"
-            char-counter 
-            minlength="6"
-            auto-validate$="[[validatePass]]"
-            error-message="{$ formPendaftaran.passwordError $}"
-            value="{{passwordValue}}"
-            autocomplete="off"
-            type="password"
-            always-float-label
-          >
-          </paper-input>
+          <div class="section-title">
+            <iron-icon class="section-title-icon" icon="icons:{$ daftarProviders.title.informasidiri.icon $}"></iron-icon>
+            <span class="section-title-label">{$ daftarProviders.title.informasidiri.label $}</span>
+          </div>
+          <div class="section-input">
+            <paper-input
+              id="namaLengkap"
+              label="{$ daftarProviders.input.fullName.label $}"
+              placeholder="{$ daftarProviders.input.fullName.placeholder $}"
+              value="{{namaLengkapValue}}"
+              autocomplete="on"
+              always-float-label
+              required
+              auto-validate$="[[validate]]"
+            >
+            </paper-input>
+            <paper-dropdown-menu id="jenisKelaminDrop" label="{$ daftarProviders.input.jenisKelamin.placeholder $}" required>
+              <paper-listbox slot="dropdown-content" selected="0">
+                <paper-item>{$ daftarProviders.input.jenisKelamin.value.pria $}</paper-item>
+                <paper-item>{$ daftarProviders.input.jenisKelamin.value.wanita $}</paper-item>
+              </paper-listbox>
+            </paper-dropdown-menu>
+            <paper-input
+              id="tanggalLahir"
+              type="date"
+              label="{$ daftarProviders.input.tanggalLahir.label $}"
+              placeholder="{$ daftarProviders.input.tanggalLahir.placeholder $}"
+              value="{{tanggalLahirValue}}"
+              autocomplete="on"
+              always-float-label
+              required
+              auto-validate$="[[validate]]"
+            >
+            </paper-input>
+            <paper-input
+              id="tempatLahir"
+              label="{$ daftarProviders.input.tempatLahir.label $}"
+              placeholder="{$ daftarProviders.input.tempatLahir.placeholder $}"
+              value="{{tempatLahirValue}}"
+              autocomplete="on"
+              always-float-label
+              required
+              auto-validate$="[[validate]]"
+            >
+            </paper-input>
+            <paper-input
+              id="alamatSekarang"
+              label="{$ daftarProviders.input.alamatSekarang.label $}"
+              placeholder="{$ daftarProviders.input.alamatSekarang.placeholder $}"
+              value="{{alamatSekarangValue}}"
+              autocomplete="on"
+              always-float-label
+              required
+              auto-validate$="[[validate]]"
+            >
+            </paper-input>
+            <paper-input
+              id="noWa"
+              label="{$ daftarProviders.input.noWa.label $}"
+              placeholder="{$ daftarProviders.input.noWa.placeholder $}"
+              value="{{noWaValue}}"
+              autocomplete="on"
+              always-float-label
+              required
+              pattern="[0-9]*"
+              auto-validate$="[[validate]]"
+            >
+            </paper-input>
+            <paper-input
+              id="instagram"
+              label="{$ daftarProviders.input.instagram.label $}"
+              placeholder="{$ daftarProviders.input.instagram.placeholder $}"
+              value="{{instagramValue}}"
+              autocomplete="on"
+              always-float-label
+            >
+            </paper-input>
+          </div>
+          <div class="section-title">
+            <iron-icon class="section-title-icon" icon="icons:{$ daftarProviders.title.jenjangStudi.icon $}"></iron-icon>
+            <span class="section-title-label">{$ daftarProviders.title.jenjangStudi.label $}</span>
+          </div>
+          <div class="section-input">
+            <paper-dropdown-menu id="fakultasDrop" label="{$ daftarProviders.input.fakultas.placeholder $}" required>
+              <paper-listbox slot="dropdown-content" selected="0">
+                <paper-item>{$ daftarProviders.input.fakultas.value.ftk $}</paper-item>
+                <paper-item>{$ daftarProviders.input.fakultas.value.fudk $}</paper-item>
+                <paper-item>{$ daftarProviders.input.fakultas.value.fsh $}</paper-item>
+              </paper-listbox>
+            </paper-dropdown-menu>
+            <paper-dropdown-menu id="jurusanDrop" label="{$ daftarProviders.input.jurusan.placeholder $}" required>
+              <paper-listbox slot="dropdown-content" selected="0">
+                <paper-item>{$ daftarProviders.input.jurusan.value.pai $}</paper-item>
+                <paper-item>{$ daftarProviders.input.jurusan.value.tbi $}</paper-item>
+                <paper-item>{$ daftarProviders.input.jurusan.value.afi $}</paper-item>
+                <paper-item>{$ daftarProviders.input.jurusan.value.as $}</paper-item>
+                <paper-item>{$ daftarProviders.input.jurusan.value.hes $}</paper-item>
+              </paper-listbox>
+            </paper-dropdown-menu>
+            <paper-input
+              id="semester"
+              label="{$ daftarProviders.input.semester.label $}"
+              placeholder="{$ daftarProviders.input.semester.placeholder $}"
+              value="{{semesterValue}}"
+              autocomplete="on"
+              always-float-label
+            >
+            </paper-input>
+          </div>
+          <div class="section-title">
+            <iron-icon class="section-title-icon" icon="icons:{$ daftarProviders.title.infoAkun.icon $}"></iron-icon>
+            <span class="section-title-label">{$ daftarProviders.title.infoAkun.label $}</span>
+          </div>
+          <div class="section-input">
+            <paper-input
+              id="emailUser"
+              label="{$ daftarProviders.input.email.label $}"
+              placeholder="{$ daftarProviders.input.email.placeholder $}"
+              value="{{emailValue}}"
+              autocomplete="on"
+              required
+              auto-validate$="[[validate]]"
+              error-message="{$ daftarProviders.input.email.errorOccured $}"
+              always-float-label
+            >
+            </paper-input>
+            <paper-input
+              id="passwordUser"            
+              label="{$ daftarProviders.input.password.label $}"
+              required
+              placeholder="{$ daftarProviders.input.password.placeholder $}" 
+              minlength="6"
+              auto-validate$="[[validate]]"
+              error-message="{$ daftarProviders.input.password.errorOccured $}"
+              value="{{passwordValue}}"
+              autocomplete="off"
+              type="password"
+              always-float-label
+            >
+            </paper-input>
+          </div>
+          <div class="general-error" hidden$="[[!errorOccurred]]">
+            [[errorMessage]]
+          </div>
           <div class="action-buttons" layout horizontal justified>
             <paper-button class="close-button" on-click="_closeDialog"
               >{$ daftarProviders.cancel $}
             </paper-button>
-
             <paper-button
               on-click="_daftar"
               ga-on="click"
@@ -171,9 +282,16 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
   }
 
   private namaLengkapValue: string;
+  private tanggalLahirValue: string;
+  private tempatLahirValue: string;
+  private alamatSekarangValue: string;
+  private noWaValue: string;
+  private instagramValue: string;
+  private semesterValue: string;
   private emailValue: string;
-  private usernameValue: string;
   private passwordValue: string;
+  private errorOccurred: boolean;
+  private errorMessage: string;
 
   static get properties() {
     return {
@@ -183,8 +301,8 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
       viewport: {
         type: Object,
       },
-      subscribed: {
-        type: Boolean,
+      pendaftaran: {
+        type: Boolean
       },
       validate: {
         type: Boolean,
@@ -194,6 +312,9 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
         type: Boolean,
         value: false,
       },
+      errorMessage: {
+        type: String
+      },
       keyboardOpened: {
         type: Boolean,
         value: false,
@@ -201,24 +322,40 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
       data: {
         type: Object
       },
+      emailError: {
+        type: Boolean,
+        value: false
+      },
+      passError: {
+        type: Boolean,
+        value: false
+      },
       initialHeight: Number,
       namaLengkapValue: String,
+      jenisKelaminValue: String,
+      tanggalLahirValue: String,
+      tempatLahirValue: String,
+      alamatSekarangValue: String,
+      noWaValue: String,
+      instagramValue: String,
+      fakultasValue: String,
+      jurusanValue: String,
+      semesterValue: String,
       emailValue: String,
-      usernameValue: String,
       passwordValue: String,
     };
   }
 
   stateChanged(state: import('../../redux/store').State) {
     this.setProperties({
-      subscribed: state.subscribed,
+      pendaftaran: state.pendaftaran,
       ui: state.ui,
       viewport: state.ui.viewport,
     });
   }
 
   static get observers() {
-    return ['_handleDialogToggled(opened, data)', '_handleTerdaftar(subscribed)'];
+    return ['_handleDialogToggled(opened, data)', '_handleTerdaftar(pendaftaran)'];
   }
 
   ready() {
@@ -232,8 +369,8 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
     this.addEventListener('iron-overlay-canceled', this._close);
   }
 
-  _handleTerdaftar(subscribed) {
-    if (subscribed) {
+  _handleTerdaftar(pendaftaran) {
+    if (pendaftaran) {
       this._closeDialog();
     }
   }
@@ -241,24 +378,10 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
   _handleDialogToggled(opened, data) {
     if (data) {
       this.errorOccurred = data.errorOccurred;
+      this.errorMessage = data.errorMessage;
     } else {
       data = {};
     }
-  }
-
-  _daftar() {
-    this.data.submit({
-      namaLengkapValue: this.namaLengkapValue,
-      emailValue: this.emailValue,
-      usernameValue: this.usernameValue,
-      passwordValue: this.passwordValue
-    });
-  }
-
-  _validateEmail(email) {
-    // https://stackoverflow.com/a/742588/26406
-    const emailRegularExpression = /^[^@\s]+@[^@\s.]+\.[^@.\s]+$/;
-    return emailRegularExpression.test(email);
   }
 
   _closeDialog() {
@@ -278,6 +401,33 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
       }, 10);
     }
   }
+
+  _daftar() {
+    const jenisKelaminInput = this.shadowRoot.querySelector('#jenisKelaminDrop');
+    const fakultasInput = this.shadowRoot.querySelector('#fakultasDrop');
+    const jurusanInput = this.shadowRoot.querySelector('#jurusanDrop');
+
+    daftarActions.signUp(this.emailValue, this.passwordValue);
+    this._submit({
+      namaLengkapValue: this.namaLengkapValue,
+      jenisKelaminValue: jenisKelaminInput.value,
+      tanggalLahirValue: this.tanggalLahirValue,
+      tempatLahirValue: this.tempatLahirValue,
+      alamatSekarangValue: this.alamatSekarangValue,
+      noWaValue: this.noWaValue,
+      instagramValue: this.instagramValue,
+      fakultasValue: fakultasInput.value,
+      jurusanValue: jurusanInput.value,
+      semesterValue: this.semesterValue,
+      emailValue: this.emailValue
+    });
+  }
+
+  _submit(data) {
+    store.dispatch(helperActions.storeData(data));
+  }
+
 }
+
 
 window.customElements.define(DaftarDialog.is, DaftarDialog);

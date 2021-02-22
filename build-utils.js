@@ -31,7 +31,7 @@ const getData = () => {
         ...require(path),
       };
     },
-    {}
+    { loadDevelopmentScripts: development }
   );
 };
 

@@ -48,7 +48,8 @@ import {
   SET_VIEWPORT_SIZE,
   SHOW_TOAST,
   SIGN_IN,
-  DAFTAR,
+  DAFTAR_SUCCESS,
+  DAFTAR_FAILURE,
   TOGGLE_VIDEO_DIALOG,
   UPDATE_NOTIFICATIONS_STATUS,
   WIPE_PREVIOUS_FEEDBACK,
@@ -592,57 +593,39 @@ export const userActions = {
       .signOut()
       .then(() => {
         helperActions.storeUser();
-        daftarActions.resetSubscribed();
       });
   },
 };
 
 export const daftarActions = {
-  subscribe: (data) => (dispatch) => {
-    const id = data.usernameValue;
-
-    window.firebase
-      .firestore()
-      .collection('pendaftar')
-      .doc(id)
-      .set({
-        namaLengkap: data.namaLengkapValue,
-        email: data.emailValue,
-        username: data.usernameValue,
-        pass: data.passwordValue
-      })
+  signUp: (email, pass) => {
+    return window.firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, pass)
       .then(() => {
-        dispatch({
-          type: DAFTAR,
-          subscribed: true,
+        store.dispatch({
+          type: DAFTAR_SUCCESS,
+          pendaftaran: true,
+        })
+        toastActions.showToast({
+          message: '{$ daftarProviders.success $}'
         });
-        toastActions.showToast({ message: '{$ formPendaftaran.toast $}' });
       })
       .catch((error) => {
-        dispatch({
-          type: SET_DIALOG_DATA,
-          dialog: {
-            ['daftar']: {
-              isOpened: true,
-              data: Object.assign(data, { errorOccurred: true }),
-            },
-          },
-        });
-
-        dispatch({
-          type: DAFTAR,
-          subscribed: false,
-        });
-
-        helperActions.trackError('daftarActions', 'daftar', error);
-      });
-  },
-  resetSubscribed: () => {
-    store.dispatch({
-      type: DAFTAR,
-      subscribed: false,
-    });
-  },
+        if (error.code === 'auth/email-already-in-use') {
+          store.dispatch({
+            type: SET_DIALOG_DATA,
+            dialog: {
+              ['daftar']: {
+                isOpened: true,
+                data: Object.assign({}, { errorOccurred: true, errorMessage: 'Email telah digunakan pengguna lain' })
+              }
+            }
+          })
+        }
+        helperActions.trackError('daftarActions', 'signUp', error);
+      })
+  }
 };
 
 let messaging;
@@ -860,6 +843,37 @@ export const helperActions = {
       case 'twitter.com':
         return 'Twitter';
     }
+  },
+
+  storeData: (data) => (dispatch) => {
+    const id = data.emailValue;
+    window.firebase
+      .firestore()
+      .collection('userData')
+      .doc(id)
+      .set({
+        timestamp: window.firebase.firestore.FieldValue.serverTimestamp(),
+        nama_lengkap: data.namaLengkapValue,
+        jenis_kelamin: data.jenisKelaminValue,
+        tempat_lahir: data.tempatLahirValue,
+        tanggal_lahir: data.tanggalLahirValue,
+        alamat_sekarang: data.alamatSekarangValue,
+        no_whatsapp: data.noWaValue,
+        instagram_id: data.instagramValue,
+        fakultas: data.fakultasValue,
+        jurusan: data.jurusanValue,
+        semester: data.semesterValue,
+        email: data.emailValue,
+      })
+      .then(() => {
+      })
+      .catch((error) => {
+        dispatch({
+          type: DAFTAR_FAILURE,
+          pendaftaran: false
+        })
+        helperActions.trackError('helperActions', 'storeData', error);
+      })
   },
 
   trackError: (action, method, message) => {
