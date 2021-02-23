@@ -377,8 +377,8 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
     return status === NOTIFICATIONS_STATUS.DEFAULT
       ? 'bell-outline'
       : status === NOTIFICATIONS_STATUS.GRANTED
-      ? 'bell'
-      : 'bell-off';
+        ? 'bell'
+        : 'bell-off';
   }
 
   _hideNotificationBlock(status, blockStatus) {
@@ -404,24 +404,7 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
   }
 
   _daftarDialog() {
-    dialogsActions.openDialog(DIALOGS.DAFTAR, {
-      title: '{$ formPendaftaran.formTitle $}',
-      description: '{$ formPendaftaran.formDescription $}',
-      firstField: '{$ formPendaftaran.namaLengkap $}',
-      secondField: '{$ formPendaftaran.tanggalLahir $}',
-      thirdField: '{$ formPendaftaran.alamatTInggal $}',
-      fourthField: '{$ formPendaftaran.noWa $}',
-      fifthField: '{$ formPendaftaran.fakultas $}',
-      sixthField: '{$ formPendaftaran.prodi $}',
-      seventhField: '{$ formPendaftaran.semester $}',
-      eigthField: '{$ formPendaftaran.alasan $}',
-      submitLabel: ' {$ formPendaftaran.daftar $}',
-      submit: (data) => this._daftarAction(data),
-    });
-  }
-
-  _daftarAction(data) {
-    store.dispatch(daftarActions.subscribe(data));
+    dialogsActions.openDialog(DIALOGS.DAFTAR);
   }
 }
 
