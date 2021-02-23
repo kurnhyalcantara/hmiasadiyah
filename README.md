@@ -9,19 +9,10 @@
 
 ## Overview
 
-Proyek HMI As'adiyah Web App ini merupakan proyek pengembangan website HMI Komisariat As'adiyah dan Alhamdulillah telah merilis versi ke 2 nya dengan menggunakan kode sumber ini.
+Proyek HMI As'adiyah Web App ini merupakan proyek pengembangan website HMI Komisariat As'adiyah dan Alhamdulillah telah merilis versi ke 3.0.0 nya dengan menggunakan kode sumber ini.
 
 Untuk anda yang ingin memakai kode sumber ini, anda harus memiliki pengetahuan tentang pengembengan web terkini.
 
-Catatan:
-
-- Untuk melakukan init dependency harap gunakan perintah
-
-```
-npm install --force
-```
-
-- Untuk init firestore harap melakukannya di direktori v1
 
 ## Features
 
@@ -103,17 +94,11 @@ Read the full version [Code of Conduct](/CODE_OF_CONDUCT.md).
 
 ## Contributors
 
-**Maintainer:** [Abraham Williams](https://github.com/abraham)
-**Authors:** [Oleh Zasadnyy](https://github.com/ozasadnyy) and [Sophie Huts](https://github.com/sophieH29).
-
-This project exists thanks to all the [people who contribute](https://github.com/gdg-x/hoverboard/graphs/contributors). [[Contribute](CONTRIBUTING.md)].
-
-<a href="https://github.com/gdg-x/hoverboard/graphs/contributors"><img src="https://opencollective.com/hoverboard/contributors.svg?width=890" /></a>
+**Authors:** [Kurniawan](https://github.com/kurnhyalcantara) 
 
 ## Sponsoring
 
 Most of the core team members, hoverboard contributors and contributors in the ecosystem do this open-source work in their free time. If you like this project and it makes your life easier, please donate.
-<a href="https://opencollective.com/hoverboard#backers" target="_blank"><img src="https://opencollective.com/hoverboard/backers.svg?width=890"></a>
 
 ## License
 
