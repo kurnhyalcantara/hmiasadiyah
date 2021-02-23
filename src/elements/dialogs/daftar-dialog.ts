@@ -20,10 +20,6 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
   static get template() {
     return html`
       <style include="shared-styles dialog-styles flex flex-alignment">
-        :host {
-          height: 100%;
-          width: 100%;
-        }
 
         .dialog-header {
           text-align: center;
@@ -362,7 +358,6 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
 
   _handleTerdaftar(pendaftaran) {
     if (pendaftaran) {
-      this._reset();
       this._closeDialog();
 
     }
@@ -418,17 +413,6 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
 
   _submit(data) {
     store.dispatch(helperActions.storeData(data));
-  }
-
-  _reset() {
-    this.namaLengkapValue = '';
-    this.tempatLahirValue = '';
-    this.alamatSekarangValue = '';
-    this.noWaValue = '';
-    this.instagramValue = '';
-    this.semesterValue = '';
-    this.emailValue = '';
-    this.passwordValue = '';
   }
 
 }

@@ -9,6 +9,8 @@ documentContainer.innerHTML = `<dom-module id="dialog-styles">
         margin: 0;
         padding: 0;
         display: block;
+        height: 100%;
+        width: 100%;
         background: var(--primary-background-color);
         color: var(--primary-text-color);
         box-shadow: var(--box-shadow);
@@ -25,6 +27,7 @@ documentContainer.innerHTML = `<dom-module id="dialog-styles">
       app-header {
         max-height: 56px;
         background-color: var(--primary-background-color);
+        border-bottom: 1px solid var(--divider-color);
       }
 
       app-toolbar {

@@ -176,7 +176,7 @@
     "logo": "https://firebasestorage.googleapis.com/v0/b/hmi-asadiyah.appspot.com/o/mix%2Fabout-logo.png?alt=media&token=fda04f76-bbcb-4350-aac5-cb347901f181",
     "title": "Login Portal Aktivis",
     "input": {
-      "username": "Username",
+      "email": "Email",
       "password": "Kata Sandi"
     },
     "actions": {

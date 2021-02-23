@@ -432,9 +432,7 @@ class HMIApp extends ReduxMixin(PolymerElement) {
 
   openSignUpDialog() {
     this.drawerOpened = false;
-    dialogsActions.openDialog(DIALOGS.DAFTAR, {
-      tanggalLahirValue: "{$ daftarProviders.input.tanggalLahir.initial $}"
-    });
+    dialogsActions.openDialog(DIALOGS.DAFTAR);
   }
 
   openLoginDialog() {

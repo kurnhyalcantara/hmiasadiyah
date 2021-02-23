@@ -2,7 +2,7 @@ import { IronOverlayBehavior } from '@polymer/iron-overlay-behavior';
 import { html, PolymerElement } from '@polymer/polymer';
 import { mixinBehaviors } from '@polymer/polymer/lib/legacy/class';
 import { ReduxMixin } from '../../mixins/redux-mixin';
-import { store } from '../../redux/store';
+import { store } from '../../redux/store'
 import 'plastic-image';
 import '@polymer/paper-input/paper-input'
 import '@polymer/iron-icon';
@@ -21,8 +21,6 @@ class SigninDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
         :host {
           --paper-input-container-underline: { display: none; height: 0;};
           --paper-input-container-underline-focus: { display: none; height: 0;};
-          height: 100%;
-          width: 100%;
         }
 
         .dialog-header {
@@ -71,14 +69,7 @@ class SigninDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
           margin-bottom: 48px;
         }
 
-        .no-account {
-          font-size: 14px;
-          font-weight: 600;
-          text-align: center;
-          line-spacing: 1.0;
-        }
-
-        .action-info {
+        .action-register {
           margin-top: 14px;
         }
 
@@ -90,6 +81,13 @@ class SigninDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
 
         .action-button iron-icon {
           margin-left: 8px;
+        }
+
+        .general-error {
+          margin: 18px 0;
+          text-align: center;
+          font-size: 14px;
+          color: var(--error-color);
         }
 
       </style>
@@ -112,17 +110,18 @@ class SigninDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
         </app-toolbar>
         <div class="dialog-content" layout vertical justified>
           <div class="action-input">
-            <paper-input id="username" label="{$ signInProviders.input.username $}" no-label-float>
+            <paper-input id="email" label="{$ signInProviders.input.email $}" value="{{emailValue}}" no-label-float>
               <iron-icon icon="icons:mail" slot="prefix"></iron-icon>
             </paper-input>
-            <paper-input id="password" label="{$ signInProviders.input.password $}" type="password" no-label-float>
+            <paper-input id="password" label="{$ signInProviders.input.password $}" value="{{passValue}}" type="password" no-label-float>
               <iron-icon icon="icons:lock" slot="prefix"></iron-icon>
+              <iron-icon icon="icons:visibility" slot="suffix" on-tap="_showPassword"></iron-icon>
             </paper-input>
           </div>
           <div class="action-button" layout vertical center>
             <paper-button
               class="action-login"
-              on-click="_login"
+              on-click="_logIn"
               ga-on="click"
               ga-event-category="portal"
               ga-event-action="klik login"
@@ -131,8 +130,11 @@ class SigninDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
             >
               {$ signInProviders.actions.login $}
             </paper-button>
+            <div class="general-error" hidden$="[[!errorOccurred]]">
+              [[errorMessage]]
+            </div>
             <div>{$ signInProviders.info.p1 $}</div>
-            <paper-button class="action-info" on-click="_newRegister" stroke>
+            <paper-button class="action-register" on-click="_newRegister" stroke>
               <span>{$ signInProviders.actions.newRegister $}</span>
               <iron-icon icon="hmi:arrow-right-circle"></iron-icon>
             </paper-button>
@@ -148,22 +150,43 @@ class SigninDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
 
   static get properties() {
     return {
+      ui: {
+        type: Object,
+      },
+      viewport: {
+        type: Object,
+      },
       user: {
         type: Object,
       },
-      isMergeState: {
+      errorOccurred: {
         type: Boolean,
         value: false,
       },
-      email: String,
-      providerCompanyName: String,
+      errorMessage: {
+        type: String,
+      },
+      data: {
+        type: Object
+      },
+      innerHeight: Number,
+      emailValue: String,
+      passValue: String
     };
   }
 
   stateChanged(state: import('../../redux/store').State) {
     this.setProperties({
       user: state.user,
+      ui: state.ui,
+      viewport: state.ui.viewport,
     });
+  }
+
+  ready() {
+    super.ready();
+    this.initialHeight = window.innerHeight;
+    this.addEventListener('iron-resize', this._resize);
   }
 
   constructor() {
@@ -172,25 +195,28 @@ class SigninDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
   }
 
   static get observers() {
-    return ['_userChanged(user)'];
+    return ['_handleDialogToggled(opened, data)', '_userChanged(user)'];
   }
 
   _userChanged(user) {
-    dialogsActions.closeDialog(DIALOGS.SIGNIN);
-    if (!user.signedIn) {
-      if (user.initialProviderId && user.pendingCredential) {
-        this.isMergeState = true;
-        this.email = user.email;
-        this.providerCompanyName = helperActions.getProviderCompanyName(user.initialProviderId);
-        dialogsActions.openDialog(DIALOGS.SIGNIN);
-      }
+    if (user.signedIn) {
+      dialogsActions.closeDialog(DIALOGS.SIGNIN);
     }
   }
 
-  _mergeAccounts() {
-    userActions.mergeAccounts(this.user.initialProviderId, this.user.pendingCredential);
-    dialogsActions.closeDialog(DIALOGS.SIGNIN);
-    this.isMergeState = false;
+  _handleDialogToggled(opened, data) {
+    if (data) {
+      this.errorOccurred = data.errorOccurred;
+      this.errorMessage = data.errorMessage;
+    } else {
+      data = {};
+    }
+  }
+
+
+  _showPassword() {
+    const passField = this.shadowRoot.querySelector('#password');
+    passField.setAttribute('type', 'text');
   }
 
   _newRegister() {
@@ -202,9 +228,22 @@ class SigninDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
     dialogsActions.closeDialog(DIALOGS.SIGNIN);
   }
 
-  _signIn(event) {
-    const providerUrl = event.target.getAttribute('provider-url');
-    userActions.signIn(providerUrl);
+  _logIn() {
+    userActions.signIn(this.emailValue, this.passValue);
+  }
+
+  _resize(e) {
+    if (this.keyboardOpened) {
+      const header = this.shadowRoot.querySelector('.dialog-header');
+      const headerHeight = header.offsetHeight;
+
+      setTimeout(() => {
+        requestAnimationFrame(() => {
+          this.style.maxHeight = `${this.initialHeight}px`;
+          this.style.top = `-${headerHeight}px`;
+        });
+      }, 10);
+    }
   }
 }
 

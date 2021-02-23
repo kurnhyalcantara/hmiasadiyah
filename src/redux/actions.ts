@@ -536,32 +536,19 @@ export const galleryActions = {
 };
 
 export const userActions = {
-  signIn: (providerName) => {
-    const firebaseProvider = helperActions.getFederatedProvider(providerName);
-
+  signIn: (email, pass) => {
     return window.firebase
       .auth()
-      .signInWithPopup(firebaseProvider)
+      .signInWithEmailAndPassword(email, pass)
       .then((signInObject) => {
         helperActions.storeUser(signInObject.user);
         notificationsActions.getToken(true);
       })
       .catch((error) => {
-        if (
-          error.code === 'auth/account-exists-with-different-credential' ||
-          error.code === 'auth/email-already-in-use'
-        ) {
-          window.firebase
-            .auth()
-            .fetchSignInMethodsForEmail(error.email)
-            .then((providers) => {
-              helperActions.storeUser({
-                signedIn: false,
-                initialProviderId: providers[0],
-                email: error.email,
-                pendingCredential: error.credential,
-              });
-            });
+        if (error.code === 'auth/wrong-password' || error.code === 'auth/invalid-email') {
+          toastActions.showToast({ message: 'Email/Password salah' })
+        } else if (error.code === 'auth/user-not-found') {
+          toastActions.showToast({ message: 'Email belum terdaftar' })
         }
         helperActions.trackError('userActions', 'signIn', error);
       });
@@ -599,10 +586,12 @@ export const userActions = {
 
 export const daftarActions = {
   signUp: (email, pass) => {
+    toastActions.showToast({ message: 'Memproses data...', duration: 99999 })
     return window.firebase
       .auth()
       .createUserWithEmailAndPassword(email, pass)
       .then(() => {
+        toastActions.hideToast()
         store.dispatch({
           type: DAFTAR_SUCCESS,
           pendaftaran: true,
@@ -613,6 +602,7 @@ export const daftarActions = {
         });
       })
       .catch((error) => {
+        toastActions.hideToast()
         if (error.code === 'auth/email-already-in-use') {
           store.dispatch({
             type: SET_DIALOG_DATA,
