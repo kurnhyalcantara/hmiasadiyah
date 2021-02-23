@@ -377,8 +377,8 @@ class HeaderToolbar extends ReduxMixin(PolymerElement) {
     return status === NOTIFICATIONS_STATUS.DEFAULT
       ? 'bell-outline'
       : status === NOTIFICATIONS_STATUS.GRANTED
-        ? 'bell'
-        : 'bell-off';
+      ? 'bell'
+      : 'bell-off';
   }
 
   _hideNotificationBlock(status, blockStatus) {

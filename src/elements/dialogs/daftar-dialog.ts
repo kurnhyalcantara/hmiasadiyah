@@ -20,12 +20,12 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
   static get template() {
     return html`
       <style include="shared-styles dialog-styles flex flex-alignment">
-
         .dialog-header {
           text-align: center;
         }
 
-        app-toolbar, .dialog-content {
+        app-toolbar,
+        .dialog-content {
           padding: 12px 0;
         }
 
@@ -53,11 +53,13 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
           font-color: var(--default-primary-color);
         }
 
-        paper-input:not(:last-of-type), paper-dropdown-menu {
+        paper-input:not(:last-of-type),
+        paper-dropdown-menu {
           margin-bottom: 24px;
         }
 
-        .dialog-content, .info-register {
+        .dialog-content,
+        .info-register {
           margin: 0 24px;
         }
 
@@ -71,7 +73,6 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
         }
 
         .section-title-label {
-
         }
         .section-input {
           padding: 0 0 0 52px;
@@ -111,7 +112,10 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
         </app-toolbar>
         <div class="dialog-content">
           <div class="section-title">
-            <iron-icon class="section-title-icon" icon="icons:{$ daftarProviders.title.informasidiri.icon $}"></iron-icon>
+            <iron-icon
+              class="section-title-icon"
+              icon="icons:{$ daftarProviders.title.informasidiri.icon $}"
+            ></iron-icon>
             <span class="section-title-label">{$ daftarProviders.title.informasidiri.label $}</span>
           </div>
           <div class="section-input">
@@ -126,7 +130,11 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
               auto-validate$="[[validate]]"
             >
             </paper-input>
-            <paper-dropdown-menu id="jenisKelaminDrop" label="{$ daftarProviders.input.jenisKelamin.placeholder $}" required>
+            <paper-dropdown-menu
+              id="jenisKelaminDrop"
+              label="{$ daftarProviders.input.jenisKelamin.placeholder $}"
+              required
+            >
               <paper-listbox slot="dropdown-content" selected="0">
                 <paper-item>{$ daftarProviders.input.jenisKelamin.value.pria $}</paper-item>
                 <paper-item>{$ daftarProviders.input.jenisKelamin.value.wanita $}</paper-item>
@@ -189,18 +197,29 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
             </paper-input>
           </div>
           <div class="section-title">
-            <iron-icon class="section-title-icon" icon="icons:{$ daftarProviders.title.jenjangStudi.icon $}"></iron-icon>
+            <iron-icon
+              class="section-title-icon"
+              icon="icons:{$ daftarProviders.title.jenjangStudi.icon $}"
+            ></iron-icon>
             <span class="section-title-label">{$ daftarProviders.title.jenjangStudi.label $}</span>
           </div>
           <div class="section-input">
-            <paper-dropdown-menu id="fakultasDrop" label="{$ daftarProviders.input.fakultas.placeholder $}" required>
+            <paper-dropdown-menu
+              id="fakultasDrop"
+              label="{$ daftarProviders.input.fakultas.placeholder $}"
+              required
+            >
               <paper-listbox slot="dropdown-content" selected="0">
                 <paper-item>{$ daftarProviders.input.fakultas.value.ftk $}</paper-item>
                 <paper-item>{$ daftarProviders.input.fakultas.value.fudk $}</paper-item>
                 <paper-item>{$ daftarProviders.input.fakultas.value.fsh $}</paper-item>
               </paper-listbox>
             </paper-dropdown-menu>
-            <paper-dropdown-menu id="jurusanDrop" label="{$ daftarProviders.input.jurusan.placeholder $}" required>
+            <paper-dropdown-menu
+              id="jurusanDrop"
+              label="{$ daftarProviders.input.jurusan.placeholder $}"
+              required
+            >
               <paper-listbox slot="dropdown-content" selected="0">
                 <paper-item>{$ daftarProviders.input.jurusan.value.pai $}</paper-item>
                 <paper-item>{$ daftarProviders.input.jurusan.value.tbi $}</paper-item>
@@ -220,7 +239,10 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
             </paper-input>
           </div>
           <div class="section-title">
-            <iron-icon class="section-title-icon" icon="icons:{$ daftarProviders.title.infoAkun.icon $}"></iron-icon>
+            <iron-icon
+              class="section-title-icon"
+              icon="icons:{$ daftarProviders.title.infoAkun.icon $}"
+            ></iron-icon>
             <span class="section-title-label">{$ daftarProviders.title.infoAkun.label $}</span>
           </div>
           <div class="section-input">
@@ -237,10 +259,10 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
             >
             </paper-input>
             <paper-input
-              id="passwordUser"            
+              id="passwordUser"
               label="{$ daftarProviders.input.password.label $}"
               required
-              placeholder="{$ daftarProviders.input.password.placeholder $}" 
+              placeholder="{$ daftarProviders.input.password.placeholder $}"
               minlength="6"
               auto-validate$="[[validate]]"
               error-message="{$ daftarProviders.input.password.errorOccured $}"
@@ -266,7 +288,7 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
               ga-event-label="daftar block"
               primary
             >
-             {$ daftarProviders.submit $}
+              {$ daftarProviders.submit $}
             </paper-button>
           </div>
         </div>
@@ -297,7 +319,7 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
         type: Object,
       },
       pendaftaran: {
-        type: Boolean
+        type: Boolean,
       },
       validate: {
         type: Boolean,
@@ -308,14 +330,14 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
         value: false,
       },
       errorMessage: {
-        type: String
+        type: String,
       },
       keyboardOpened: {
         type: Boolean,
         value: false,
       },
       data: {
-        type: Object
+        type: Object,
       },
       initialHeight: Number,
       namaLengkapValue: String,
@@ -359,7 +381,6 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
   _handleTerdaftar(pendaftaran) {
     if (pendaftaran) {
       this._closeDialog();
-
     }
   }
 
@@ -407,15 +428,13 @@ class DaftarDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
       fakultasValue: fakultasInput.value,
       jurusanValue: jurusanInput.value,
       semesterValue: this.semesterValue,
-      emailValue: this.emailValue
+      emailValue: this.emailValue,
     });
   }
 
   _submit(data) {
     store.dispatch(helperActions.storeData(data));
   }
-
 }
-
 
 window.customElements.define(DaftarDialog.is, DaftarDialog);

@@ -2,9 +2,9 @@ import { IronOverlayBehavior } from '@polymer/iron-overlay-behavior';
 import { html, PolymerElement } from '@polymer/polymer';
 import { mixinBehaviors } from '@polymer/polymer/lib/legacy/class';
 import { ReduxMixin } from '../../mixins/redux-mixin';
-import { store } from '../../redux/store'
+import { store } from '../../redux/store';
 import 'plastic-image';
-import '@polymer/paper-input/paper-input'
+import '@polymer/paper-input/paper-input';
 import '@polymer/iron-icon';
 import '@polymer/app-layout/app-header-layout/app-header-layout';
 import '@polymer/app-layout/app-toolbar/app-toolbar';
@@ -19,15 +19,22 @@ class SigninDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
     return html`
       <style include="shared-styles dialog-styles flex flex-alignment">
         :host {
-          --paper-input-container-underline: { display: none; height: 0;};
-          --paper-input-container-underline-focus: { display: none; height: 0;};
+          --paper-input-container-underline: {
+            display: none;
+            height: 0;
+          }
+          --paper-input-container-underline-focus: {
+            display: none;
+            height: 0;
+          }
         }
 
         .dialog-header {
           text-align: center;
         }
 
-        app-toolbar, .dialog-content {
+        app-toolbar,
+        .dialog-content {
           padding: 12px 0;
         }
 
@@ -52,14 +59,15 @@ class SigninDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
 
         .action-input {
           padding: 16px 16px;
-          box-shadow: 1px 1px 1px var(--default-primary-color), -1px -1px 2px var(--default-primary-color);
+          box-shadow: 1px 1px 1px var(--default-primary-color),
+            -1px -1px 2px var(--default-primary-color);
           border-radius: 12px;
         }
 
         .action-button {
           margin-top: 22px;
         }
-        
+
         paper-input:not(:last-of-type) {
           margin-bottom: 18px;
         }
@@ -89,9 +97,8 @@ class SigninDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
           font-size: 14px;
           color: var(--error-color);
         }
-
       </style>
-      
+
       <app-header-layout has-scrolling-region>
         <app-header slot="header" class="header" fixed="[[viewport.isTabletPlus]]">
           <iron-icon class="close-icon" icon="hmi:close" on-tap="_close"></iron-icon>
@@ -110,10 +117,21 @@ class SigninDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
         </app-toolbar>
         <div class="dialog-content" layout vertical justified>
           <div class="action-input">
-            <paper-input id="email" label="{$ signInProviders.input.email $}" value="{{emailValue}}" no-label-float>
+            <paper-input
+              id="email"
+              label="{$ signInProviders.input.email $}"
+              value="{{emailValue}}"
+              no-label-float
+            >
               <iron-icon icon="icons:mail" slot="prefix"></iron-icon>
             </paper-input>
-            <paper-input id="password" label="{$ signInProviders.input.password $}" value="{{passValue}}" type="password" no-label-float>
+            <paper-input
+              id="password"
+              label="{$ signInProviders.input.password $}"
+              value="{{passValue}}"
+              type="password"
+              no-label-float
+            >
               <iron-icon icon="icons:lock" slot="prefix"></iron-icon>
               <iron-icon icon="icons:visibility" slot="suffix" on-tap="_showPassword"></iron-icon>
             </paper-input>
@@ -167,11 +185,11 @@ class SigninDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
         type: String,
       },
       data: {
-        type: Object
+        type: Object,
       },
       innerHeight: Number,
       emailValue: String,
-      passValue: String
+      passValue: String,
     };
   }
 
@@ -213,7 +231,6 @@ class SigninDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
     }
   }
 
-
   _showPassword() {
     const passField = this.shadowRoot.querySelector('#password');
     passField.setAttribute('type', 'text');
@@ -221,7 +238,7 @@ class SigninDialog extends ReduxMixin(mixinBehaviors([IronOverlayBehavior], Poly
 
   _newRegister() {
     dialogsActions.openDialog(DIALOGS.DAFTAR);
-    this._close()
+    this._close();
   }
 
   _close() {

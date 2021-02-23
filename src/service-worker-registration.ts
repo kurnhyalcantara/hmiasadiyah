@@ -44,7 +44,7 @@ if (navigator.serviceWorker && navigator.serviceWorker.controller) {
 
       if (toastActions) {
         toastActions.showToast({
-          message: '{$ newVersionAvailable $}'
+          message: '{$ newVersionAvailable $}',
         });
         tapHandler(); // Force reload if user never was shown the toast.
       }

@@ -546,9 +546,9 @@ export const userActions = {
       })
       .catch((error) => {
         if (error.code === 'auth/wrong-password' || error.code === 'auth/invalid-email') {
-          toastActions.showToast({ message: 'Email/Password salah' })
+          toastActions.showToast({ message: 'Email/Password salah' });
         } else if (error.code === 'auth/user-not-found') {
-          toastActions.showToast({ message: 'Email belum terdaftar' })
+          toastActions.showToast({ message: 'Email belum terdaftar' });
         }
         helperActions.trackError('userActions', 'signIn', error);
       });
@@ -586,37 +586,40 @@ export const userActions = {
 
 export const daftarActions = {
   signUp: (email, pass) => {
-    toastActions.showToast({ message: 'Memproses data...', duration: 99999 })
+    toastActions.showToast({ message: 'Memproses data...', duration: 99999 });
     return window.firebase
       .auth()
       .createUserWithEmailAndPassword(email, pass)
       .then(() => {
-        toastActions.hideToast()
+        toastActions.hideToast();
         store.dispatch({
           type: DAFTAR_SUCCESS,
           pendaftaran: true,
-        })
+        });
         toastActions.showToast({
           message: '{$ daftarProviders.success $}',
-          duration: 7500
+          duration: 7500,
         });
       })
       .catch((error) => {
-        toastActions.hideToast()
+        toastActions.hideToast();
         if (error.code === 'auth/email-already-in-use') {
           store.dispatch({
             type: SET_DIALOG_DATA,
             dialog: {
               ['daftar']: {
                 isOpened: true,
-                data: Object.assign({}, { errorOccurred: true, errorMessage: 'Email telah digunakan pengguna lain' })
-              }
-            }
-          })
+                data: Object.assign(
+                  {},
+                  { errorOccurred: true, errorMessage: 'Email telah digunakan pengguna lain' }
+                ),
+              },
+            },
+          });
         }
         helperActions.trackError('daftarActions', 'signUp', error);
-      })
-  }
+      });
+  },
 };
 
 let messaging;
@@ -856,15 +859,14 @@ export const helperActions = {
         semester: data.semesterValue,
         email: data.emailValue,
       })
-      .then(() => {
-      })
+      .then(() => {})
       .catch((error) => {
         dispatch({
           type: DAFTAR_FAILURE,
-          pendaftaran: false
-        })
+          pendaftaran: false,
+        });
         helperActions.trackError('helperActions', 'storeData', error);
-      })
+      });
   },
 
   trackError: (action, method, message) => {

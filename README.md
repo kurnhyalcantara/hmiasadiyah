@@ -13,7 +13,6 @@ Proyek HMI As'adiyah Web App ini merupakan proyek pengembangan website HMI Komis
 
 Untuk anda yang ingin memakai kode sumber ini, anda harus memiliki pengetahuan tentang pengembengan web terkini.
 
-
 ## Features
 
 | Feature                              | Description                                                                                                                  |
@@ -94,7 +93,7 @@ Read the full version [Code of Conduct](/CODE_OF_CONDUCT.md).
 
 ## Contributors
 
-**Authors:** [Kurniawan](https://github.com/kurnhyalcantara) 
+**Authors:** [Kurniawan](https://github.com/kurnhyalcantara)
 
 ## Sponsoring
 
@@ -106,4 +105,3 @@ Most of the core team members, hoverboard contributors and contributors in the e
 
 The project is published under the [MIT license](/LICENSE.md).
 Feel free to clone and modify repo as you want, but don't forget to add a reference to authors :)
-
