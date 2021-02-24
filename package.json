@@ -106,7 +106,7 @@
     "rimraf": "^3.0.2",
     "rollup": "^2.18.1",
     "rollup-plugin-copy": "^3.3.0",
-    "rollup-plugin-index-html": "^1.12.4",
+    "rollup-plugin-index-html": "^1.12.8",
     "rollup-plugin-re": "^1.0.7",
     "rollup-plugin-workbox": "^5.0.1",
     "stylelint": "^13.6.1",
