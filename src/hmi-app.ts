@@ -215,12 +215,8 @@ class HMIApp extends ReduxMixin(PolymerElement) {
             <div class="design">{$ design $}<span class="by">{$ by $}</span></div>
           </app-toolbar>
           <div class="drawer-account" layout horizontal>
-            <a class="drawer-signup" on-click="openSignUpDialog">
-              {$ signUp $}
-            </a>
-            <a class="drawer-login" on-click="openLoginDialog">
-              {$ logIn $}
-            </a>
+            <a class="drawer-signup" on-click="openSignUpDialog">{$ signUp $}</a>
+            <a class="drawer-login" on-click="openLoginDialog">{$ logIn $}</a>
           </div>
           <div class="drawer-content" layout vertical justified flex>
             <iron-selector
@@ -294,11 +290,10 @@ class HMIApp extends ReduxMixin(PolymerElement) {
         opened="[[dialogs.daftar.isOpened]]"
         data="[[dialogs.daftar.data]]"
         with-backdrop
-        no-cancel-on-outside-click="[[viewport.isPhone]]"
       >
       </daftar-dialog>
 
-      <signin-dialog opened="[[dialogs.signin.isOpened]]" with-backdrop></signin-dialog>
+      <signin-dialog opened="[[dialogs.signin.isOpened]]" data="[[dialogs.signin.data]]" with-backdrop></signin-dialog>
 
       <hmi-analytics></hmi-analytics>
       <toast-element></toast-element>
@@ -431,12 +426,12 @@ class HMIApp extends ReduxMixin(PolymerElement) {
   }
 
   openSignUpDialog() {
-    this.drawerOpened = false;
+    this.closeDrawer()
     dialogsActions.openDialog(DIALOGS.DAFTAR);
   }
 
   openLoginDialog() {
-    this.drawerOpened = false;
+    this.closeDrawer()
     dialogsActions.openDialog(DIALOGS.SIGNIN);
   }
 
