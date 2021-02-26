@@ -13,7 +13,7 @@
     "fix:stylelint": "stylelint \"**/*.ts\" --fix",
     "fix": "concurrently npm:fix:*",
     "install:emulator": "firebase setup:emulators:firestore",
-    "install:functions": "npm --prefix ./functions ci",
+    "install:functions": "npm --prefix ./functions install",
     "lint:eslint": "eslint . --ext .ts --ext .js",
     "lint:prettier": "prettier . --check",
     "lint:stylelint": "stylelint \"**/*.ts\"",
