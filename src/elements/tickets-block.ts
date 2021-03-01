@@ -216,7 +216,7 @@ export class TicketsBlock extends ReduxMixin(PolymerElement) {
 
   connectedCallback() {
     super.connectedCallback();
-    (window as TempAny).HOVERBOARD.Elements.Tickets = this;
+    (window as TempAny).HMIAPP.Elements.Tickets = this;
   }
 
   @computed('tickets')

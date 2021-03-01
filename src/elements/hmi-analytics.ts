@@ -1,6 +1,6 @@
 import { TempAny } from '../temp-any';
 
-class HoverboardAnalytics extends HTMLElement {
+class HmiAnalytics extends HTMLElement {
   connectedCallback() {
     // GOOGLE ANALYTICS TRACKING
 
@@ -77,4 +77,4 @@ class HoverboardAnalytics extends HTMLElement {
   }
 }
 
-window.customElements.define('hoverboard-analytics', HoverboardAnalytics);
+window.customElements.define('hmi-analytics', HmiAnalytics);

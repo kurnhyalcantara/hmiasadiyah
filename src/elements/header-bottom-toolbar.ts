@@ -113,7 +113,7 @@ export class HeaderBottomToolbar extends ReduxMixin(PolymerElement) {
 
   connectedCallback() {
     super.connectedCallback();
-    (window as TempAny).HOVERBOARD.Elements.StickyHeaderToolbar = this;
+    (window as TempAny).HMIAPP.Elements.StickyHeaderToolbar = this;
   }
 
   @computed('schedule')

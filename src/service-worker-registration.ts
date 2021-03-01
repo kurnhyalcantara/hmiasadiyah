@@ -38,7 +38,7 @@ export const registerServiceWorker = () => {
 if (navigator.serviceWorker && navigator.serviceWorker.controller) {
   navigator.serviceWorker.controller.onstatechange = (event) => {
     if ((event.target as ServiceWorker).state === 'redundant') {
-      const tapHandler = () => {
+      const refreshHandler = () => {
         window.location.reload();
       };
 
@@ -47,13 +47,11 @@ if (navigator.serviceWorker && navigator.serviceWorker.controller) {
           message: '{$ newVersionAvailable $}',
           action: {
             title: '{$ refresh $}',
-            callback: tapHandler,
+            callback: refreshHandler,
           },
-          duration: 0,
         });
-      } else {
-        tapHandler(); // Force reload if user never was shown the toast.
       }
+      refreshHandler(); // Force reload if user not tap the callback.
     }
   };
 }

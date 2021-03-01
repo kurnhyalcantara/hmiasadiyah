@@ -36,8 +36,8 @@ import './elements/dialogs/subscribe-dialog';
 import './elements/dialogs/video-dialog';
 import './elements/footer-block';
 import './elements/header-toolbar';
-import './elements/hoverboard-analytics';
-import './elements/hoverboard-icons';
+import './elements/hmi-analytics';
+import './elements/hmi-icons';
 import './elements/polymer-helmet';
 import './elements/shared-styles';
 import './elements/toast-element';
@@ -74,8 +74,8 @@ if (location.hostname === 'localhost') {
   setLegacyWarnings(true);
 }
 
-@customElement('hoverboard-app')
-export class HoverboardApp extends ReduxMixin(PolymerElement) {
+@customElement('hmi-app')
+export class HmiApp extends ReduxMixin(PolymerElement) {
   static get template() {
     return html`
       <style include="shared-styles flex flex-reverse flex-alignment positioning">
@@ -96,16 +96,19 @@ export class HoverboardApp extends ReduxMixin(PolymerElement) {
           border-bottom: 1px solid var(--divider-color);
         }
 
-        app-drawer .dates {
+        app-drawer .version {
           margin-top: 42px;
-          font-size: 22px;
-          line-height: 0.95;
+          font-size: 18px;
         }
 
-        app-drawer .location {
+        app-drawer .design {
           margin-top: 4px;
-          font-size: 15px;
+          font-size: 12px;
           color: var(--secondary-text-color);
+        }
+
+        .design .by {
+          color: var(--default-primary-color);
         }
 
         .drawer-list {
@@ -123,8 +126,20 @@ export class HoverboardApp extends ReduxMixin(PolymerElement) {
           padding: 8px 24px;
         }
 
+        .drawer-list a {
+          display: block;
+          color: var(--primary-text-color);
+          outline: 0;
+        }
+
         .drawer-list a.selected {
-          font-weight: 500;
+          font-weight: 600;
+          color: var(--default-primary-color);
+          background-color: var(--light-primary-color);
+          --iron-icon-fill-color: var(--default-primary-color);
+          border-top-right-radius: 50px;
+          border-bottom-right-radius: 50px;
+          margin-right: 8px;
         }
 
         app-toolbar {
@@ -132,7 +147,7 @@ export class HoverboardApp extends ReduxMixin(PolymerElement) {
         }
 
         .toolbar-logo {
-          --iron-image-height: 32px;
+          --iron-image-height: 45px;
         }
 
         app-header-layout {
@@ -150,11 +165,12 @@ export class HoverboardApp extends ReduxMixin(PolymerElement) {
         }
 
         .drawer-content iron-icon {
-          --iron-icon-width: 14px;
-          margin-left: 6px;
+          --iron-icon-width: 24px;
+          margin-right: 24px;
         }
 
         .bottom-drawer-link {
+          display: block;
           padding: 16px 24px;
           cursor: pointer;
         }
@@ -196,8 +212,8 @@ export class HoverboardApp extends ReduxMixin(PolymerElement) {
               srcset="/images/logo-monochrome.svg"
               alt="{$ title $}"
             ></plastic-image>
-            <h2 class="dates">{$ dates $}</h2>
-            <h3 class="location">{$ location.short $}</h3>
+            <h2 class="version">{$ version $}</h2>
+            <h3 class="design">{$ design $} <span class="by">{$ by $}</span></h3>
           </app-toolbar>
 
           <div class="drawer-content" layout vertical justified flex>
@@ -209,36 +225,17 @@ export class HoverboardApp extends ReduxMixin(PolymerElement) {
               role="navigation"
             >
               {% for nav in navigation %}
-              <a href="{$ nav.permalink $}" path="{$ nav.route $}" on-click="closeDrawer"
-                >{$ nav.label $}</a
-              >
+              <a href="{$ nav.permalink $}" path="{$ nav.route $}" on-click="closeDrawer">
+                <iron-icon icon="icons:{$ nav.icon $}"></iron-icon>
+                <span>{$ nav.label $}</span>
+              </a>
               {% endfor %}
             </iron-selector>
 
             <div>
-              <a
-                class="bottom-drawer-link"
-                on-click="_onaddToHomeScreen"
-                hidden$="[[_isaddToHomeScreenHidden(addToHomeScreen, viewport.isLaptopPlus)]]"
-              >
-                {$ addToHomeScreen.cta $}
-              </a>
-
-              <a
-                class="bottom-drawer-link"
-                href$="[[ticketUrl]]"
-                target="_blank"
-                rel="noopener noreferrer"
-                on-click="closeDrawer"
-                ga-on="click"
-                ga-event-category="ticket button"
-                ga-event-action="buy_click"
-                layout
-                horizontal
-                center
-              >
-                <span>{$ buyTicket $}</span>
-                <iron-icon icon="hoverboard:open-in-new"></iron-icon>
+              <a class="bottom-drawer-link" on-click="_onaddToHomeScreen">
+                <iron-icon icon="icons:add-box"></iron-icon>
+                <span>{$ addToHomeScreen.cta $}</span>
               </a>
             </div>
           </div>
@@ -318,7 +315,7 @@ export class HoverboardApp extends ReduxMixin(PolymerElement) {
 
       <signin-dialog opened="[[isSigninDialogOpen]]" with-backdrop></signin-dialog>
 
-      <hoverboard-analytics></hoverboard-analytics>
+      <hmi-analytics></hmi-analytics>
       <toast-element></toast-element>
     `;
   }
@@ -387,7 +384,7 @@ export class HoverboardApp extends ReduxMixin(PolymerElement) {
 
   constructor() {
     super();
-    window.performance && performance.mark && performance.mark('hoverboard-app.created');
+    window.performance && performance.mark && performance.mark('hmi-app.created');
     this._toggleHeaderShadow = this._toggleHeaderShadow.bind(this);
     this._toggleDrawer = this._toggleDrawer.bind(this);
 
@@ -419,7 +416,7 @@ export class HoverboardApp extends ReduxMixin(PolymerElement) {
 
   ready() {
     super.ready();
-    log('Hoverboard is ready!');
+    log('HMI App is ready!');
     this.removeAttribute('unresolved');
     updateUser();
     initializeMessaging().then(() => store.dispatch(getToken()));

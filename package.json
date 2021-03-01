@@ -1,8 +1,8 @@
 {
-  "name": "hoverboard",
+  "name": "hmi-asadiyah",
   "version": "3.0.0",
   "private": true,
-  "description": "Conference website template",
+  "description": "Project Web App HMI Asadiyah",
   "engines": {
     "node": "12"
   },
@@ -20,7 +20,7 @@
     "install:functions": "npm --prefix ./functions ci",
     "postinstall": "npm run install:functions && npm run install:emulator",
     "serve": "npm run build && firebase serve",
-    "start": "NODE_ENV=development npm run watch",
+    "start": "npm run watch",
     "start:emulators": "firebase emulators:start",
     "test": "jest",
     "watch": "concurrently --kill-others npm:watch:*",

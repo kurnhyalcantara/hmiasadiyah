@@ -1,9 +1,19 @@
 {
-  "title": "GDG DevFest Season 2018",
-  "description": "Join the community, learn new things!",
+  "title": "HMI Komisariat Asadiyah",
+  "description": "Official Website HMI Komisariat Asadiyah Cabang Wajo yang menyajikan profil organisasi, berita faktual, dan artikel karya kader komisariat Asadiyah",
   "image": "images/social-share.jpg",
-  "keywords": "event, gdg, gde, devfest, google, programming, android, chrome, polymer, developers, web, cloud, androiddev",
-  "dates": "October 12-13, 2018",
+  "keywords": "hmi, asadiyah, iai, komisariat, cabang, wajo, sengkang, mahasiswa, islam, himpunan, perjuangan, pergerakan, kader, umat, bangsa, indonesia",
+  "loading": "Sedang memuat HMI Asadiyah Web App",
+  "cachingComplete": "Loading selesai! anda bisa menginstall web app ini di bagian menu ",
+  "newVersionAvailable": "Versi terbaru web app ini telah tersedia!",
+  "refresh": "Refresh",
+  "version": "Versi 2021.3",
+  "design": "Design by",
+  "by": "Kurniawan Alcantara",
+  "offlineMessage": "Koneksi terputus!, tapi anda masih bisa mengeksplor web app ini",
+  "logIn": "Login",
+  "logOut": "Keluar",
+  "signUp": "Daftar",
   "partnershipProposition": "https://bit.ly/dfua17-partners",
   "share": "Share",
   "followOur": "Follow our",
@@ -11,20 +21,27 @@
   "emailUs": "Email us",
   "partnershipResources": "Partnership Resources",
   "eventResources": "Event Resources",
-  "buyTicket": "Buy ticket",
-  "signIn": "Sign in",
-  "signOut": "Sign out",
   "viewHighlights": "View Highlights",
-  "offlineMessage": "You can still work offline.",
-  "cachingComplete": "Caching complete! Future visits will work offline.",
-  "newVersionAvailable": "A new version of this app is available.",
-  "refresh": "Refresh",
   "position": "Position",
   "country": "Country",
   "time": "Time",
   "faq": "/data/faq.md",
   "coc": "/data/coc.md",
   "timezoneOffset": "-180",
+  "notifications": {
+    "default": "Dapatkan berita dan update kegiatan terbaru dari kami",
+    "enabled": "Terima kasih telah subscribe Web App kami",
+    "blocked": "Kami tidak bisa mengirimkan pemberitahuan, Aktifkan pemberitahuan di browser anda",
+    "subscribe": "Subscribe",
+    "unsubscribe": "Unsubscribe",
+    "enable": {
+      "label": "Aktifkan",
+      "link": "https://support.google.com/chrome/answer/3220216"
+    },
+    "toast": {
+      "title": "Buka"
+    }
+  },
   "footer": {
     "blog": "Blog"
   },
@@ -268,20 +285,6 @@
   },
   "speakerDetails": {
     "sessions": "Sessions"
-  },
-  "notifications": {
-    "default": "Enable notifications",
-    "enabled": "We will miss you but you can unsubscribe anytime",
-    "blocked": "We can't send you notifications right now. Please enable notifications in your browser",
-    "subscribe": "Subscribe",
-    "unsubscribe": "Unsubscribe",
-    "enable": {
-      "label": "Enable",
-      "link": "https://support.google.com/chrome/answer/3220216"
-    },
-    "toast": {
-      "title": "Open"
-    }
   },
   "aboutOrganizerBlock": {
     "image": "/images/team.jpg",

@@ -25,7 +25,7 @@ export class HeaderToolbar extends ReduxMixin(PolymerElement) {
           --iron-icon-fill-color: currentColor;
           display: block;
           z-index: 1;
-          border-bottom: 1px solid var(--divider-color);
+          box-shadow: var(--box-shadow-header);
           background-color: var(--primary-background-color);
           transition: background-color var(--animation), border-bottom-color var(--animation),
             color var(--animation);
@@ -35,13 +35,12 @@ export class HeaderToolbar extends ReduxMixin(PolymerElement) {
         :host([transparent]) {
           --iron-icon-fill-color: var(--hero-font-color, '#fff');
           background-color: transparent;
-          border-bottom-color: transparent;
+          box-shadow: none;
           color: var(--hero-font-color, '#fff');
         }
 
         :host([transparent]) .toolbar-logo {
           background-color: var(--hero-logo-color);
-          opacity: var(--hero-logo-opacity, 1);
         }
 
         app-toolbar {
@@ -53,8 +52,8 @@ export class HeaderToolbar extends ReduxMixin(PolymerElement) {
 
         .toolbar-logo {
           display: block;
-          width: 150px;
-          height: 32px;
+          width: 200px;
+          height: 35px;
           background-color: var(--default-primary-color);
           transition: background-color var(--animation);
           -webkit-mask: url('/images/logo-monochrome.svg') no-repeat;
@@ -67,23 +66,16 @@ export class HeaderToolbar extends ReduxMixin(PolymerElement) {
           }
         }
 
-        .nav-item a,
-        .signin-tab {
+        .nav-item a {
           padding: 0 14px;
           color: inherit;
+          font-size: 16px;
           text-transform: uppercase;
-        }
-
-        .profile-image {
-          width: 32px;
-          height: 32px;
-          border-radius: 50%;
-          background-position: center;
-          background-size: cover;
         }
 
         .dropdown-panel {
           padding: 24px;
+          border-radius: var(--border-radius);
           max-width: 300px;
           background: #fff;
           font-size: 16px;
@@ -96,6 +88,14 @@ export class HeaderToolbar extends ReduxMixin(PolymerElement) {
 
         .dropdown-panel .panel-actions {
           margin: 0 -16px -16px 0;
+        }
+
+        .profile-image {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          background-position: center;
+          background-size: cover;
         }
 
         .profile-details .profile-image {
@@ -140,7 +140,7 @@ export class HeaderToolbar extends ReduxMixin(PolymerElement) {
       <app-toolbar class="header">
         <div>
           <paper-icon-button
-            icon="hoverboard:menu"
+            icon="hmi:menu"
             hidden$="[[viewport.isLaptopPlus]]"
             aria-label="menu"
             on-click="openDrawer"
@@ -170,21 +170,6 @@ export class HeaderToolbar extends ReduxMixin(PolymerElement) {
             <a href="{$ nav.permalink $}" layout vertical center-center>{$ nav.label $}</a>
           </paper-tab>
           {% endfor %}
-
-          <paper-tab class="signin-tab" on-click="signIn" link hidden$="[[user.signedIn]]"
-            >{$ signIn $}</paper-tab
-          >
-
-          <a
-            href$="[[ticketUrl]]"
-            target="_blank"
-            rel="noopener noreferrer"
-            ga-on="click"
-            ga-event-category="ticket button"
-            ga-event-action="buy_click"
-          >
-            <paper-button class="buy-button" primary>{$ buyTicket $}</paper-button>
-          </a>
         </paper-tabs>
 
         <paper-menu-button
@@ -195,7 +180,7 @@ export class HeaderToolbar extends ReduxMixin(PolymerElement) {
           no-animations
         >
           <paper-icon-button
-            icon="hoverboard:[[_getNotificationsIcon(notifications.status)]]"
+            icon="hmi:[[_getNotificationsIcon(notifications.status)]]"
             slot="dropdown-trigger"
           ></paper-icon-button>
           <div class="dropdown-panel" slot="dropdown-content">
@@ -259,10 +244,42 @@ export class HeaderToolbar extends ReduxMixin(PolymerElement) {
         </paper-menu-button>
 
         <paper-icon-button
-          icon="hoverboard:account"
+          icon="hmi:account"
           on-click="signIn"
           hidden$="[[_isAccountIconHidden(user.signedIn, viewport.isLaptopPlus)]]"
         ></paper-icon-button>
+
+        <a
+          rel="noopener noreferrer"
+          ga-on="click"
+          ga-event-category="daftar button"
+          ga-event-action="daftar_click"
+          hidden$="[[!viewport.isLaptopPlus]]"
+        >
+          <paper-button 
+            class="signup-button" 
+            on-tap="_daftarDialog" 
+            primary
+          >
+            {$ signUp $}
+          </paper-button>
+        </a>
+
+        <a
+          rel="noopener noreferrer"
+          ga-on="click"
+          ga-event-category="login button"
+          ga-event-action="login_click"
+          hidden$="[[!viewport.isLaptopPlus]]"
+        >
+          <paper-button
+            class="login-button"
+            on-click="signIn"
+            primary
+          >
+            {$ logIn $}
+          </paper-button>
+        </a>
       </app-toolbar>
     `;
   }
@@ -299,7 +316,7 @@ export class HeaderToolbar extends ReduxMixin(PolymerElement) {
 
   connectedCallback() {
     super.connectedCallback();
-    (window as TempAny).HOVERBOARD.Elements.HeaderToolbar = this;
+    (window as TempAny).HMIAPP.Elements.HeaderToolbar = this;
     this._onScroll = this._onScroll.bind(this);
     window.addEventListener('scroll', this._onScroll);
     this._onScroll();
@@ -361,16 +378,6 @@ export class HeaderToolbar extends ReduxMixin(PolymerElement) {
 
   _isAccountIconHidden(userSignedIn, isTabletPlus) {
     return userSignedIn || isTabletPlus;
-  }
-
-  @computed('tickets')
-  get ticketUrl() {
-    if (this.tickets instanceof Success && this.tickets.data.length > 0) {
-      const availableTicket = this.tickets.data.find((ticket) => ticket.available);
-      return (availableTicket || this.tickets.data[0]).url;
-    } else {
-      return '';
-    }
   }
 
   @observe('heroSettings')

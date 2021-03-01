@@ -71,7 +71,7 @@ Answer `no` as this has already been done.
 
 Update [`firebase-hosting-pull-request.yaml`](.github/workflows/firebase-hosting-pull-request.yaml) and [`firebase-hosting-push.yaml`](.github/workflows/firebase-hosting-push.yaml).
 
-1. Replace `FIREBASE_SERVICE_ACCOUNT_HOVERBOARD_MASTER` with the constant that was output to your terminal.
+1. Replace `FIREBASE_SERVICE_ACCOUNT_HMIAPP_MASTER` with the constant that was output to your terminal.
 1. Set `projectId` to the Firebase Project ID you'll be deploying to. This should match the value used in `npx firebase use`.
 
 You can now push to your `main` branch and it'll deploy to the production (`live`) Firebase Hosting channel and pull requests will deploy a temporary preview.

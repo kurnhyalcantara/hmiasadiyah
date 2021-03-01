@@ -49,7 +49,7 @@
     "clients": true,
     "firebase": true,
     "ga": true,
-    "HOVERBOARD": true,
+    "HMIAPP": true,
     "importScripts": true,
     "ShadyCSS": true
   }

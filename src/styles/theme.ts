@@ -2,14 +2,14 @@ import { css } from 'lit-element';
 
 export const theme = css`
   :host {
-    --dark-primary-color: #512da8;
-    --default-primary-color: #673ab7;
-    --focused-color: #311b92;
-    --light-primary-color: #d1c4e9;
+    --dark-primary-color: #05782e;
+    --default-primary-color: #069539;
+    --focused-color: #045e23;
+    --light-primary-color: #87faaf;
     --text-primary-color: #ffffff;
-    --accent-color: #ff5252;
+    --accent-color: #c8f205;
     --primary-background-color: #ffffff;
-    --primary-text-color: #424242;
+    --primary-text-color: #2a2a2a;
     --secondary-text-color: #757575;
     --disabled-text-color: #bdbdbd;
     --divider-color: #ededed;
@@ -31,16 +31,17 @@ export const theme = css`
     --border-radius: 4px;
     --box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
       0px 1px 3px 0px rgba(0, 0, 0, 0.12);
-    --box-shadow-primary-color: 0 3px 3px -2px rgba(103, 58, 183, 0.3),
-      0 3px 4px 0 rgba(103, 58, 183, 0.3), 0 1px 8px 0 rgba(103, 58, 183, 0.3);
-    --box-shadow-primary-color-hover: 0 1px 3px -2px rgba(103, 58, 183, 0.4),
-      0 4px 5px 0 rgba(103, 58, 183, 0.4), 0 2px 9px 0 rgba(103, 58, 183, 0.4);
-    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    --box-shadow-header: rgb(0 0 0 / 12%) 0px 2px 6px 0px, rgb(218 220 224) 0px -1px 0px 0px inset;
+    --box-shadow-primary-color: 0 3px 3px -2px rgba(6, 149, 57, 0.3),
+      0 3px 4px 0 rgba(6, 149, 57, 0.3), 0 1px 8px 0 rgba(6, 149, 57, 0.3);
+    --box-shadow-primary-color-hover: 0 1px 3px -2px rgba(6, 149, 57, 0.4),
+      0 4px 5px 0 rgba(6, 149, 57, 0.4), 0 2px 9px 0 rgba(6, 149, 57, 0.4);
+    --font-family: -apple-system, BlinkMacSystemFont, 'Fira Sans', Roboto, Helvetica, Arial,
       sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
     --max-container-width: 1280px;
 
-    --primary-color-transparent: rgba(103, 58, 183, 0.1);
-    --primary-color-light: rgba(103, 58, 183, 0.8);
+    --primary-color-transparent: rgba(6, 149, 57, 0.1);
+    --primary-color-light: rgba(6, 149, 57, 0.8);
     --primary-color-white: #ede7f6;
 
     /* Labels */
@@ -78,14 +79,13 @@ export const theme = css`
   h5,
   h6 {
     margin: 0;
-    font-weight: normal;
+    font-weight: 500;
   }
 
   h1 {
     padding: 8px 8px 24px 14px;
     font-size: 24px;
     line-height: 30px;
-    font-weight: 500;
   }
 
   a {
@@ -101,10 +101,12 @@ export const theme = css`
 
   paper-button {
     padding: 0.7em;
-    border-radius: 2px;
+    border-radius: 4px;
     font-size: 14px;
+    font-family: 'Fira Sans';
+    font-weight: 600;
     color: var(--default-primary-color);
-    transition: background-color var(--animation);
+    transition: background-color var(--slideAnimation);
   }
 
   paper-button:hover {
@@ -162,6 +164,11 @@ export const theme = css`
 
   paper-button.animated.icon-left:hover iron-icon {
     transform: translateX(-4px);
+  }
+
+  paper-tab {
+    font-family: 'Fira Sans';
+    font-weight: 600;
   }
 
   .container,

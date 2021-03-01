@@ -169,7 +169,7 @@ export class ScheduleDay extends PolymerElement {
       const selectedTime = window.location.hash.slice(1);
       if (selectedTime) {
         requestAnimationFrame(() => {
-          const Elements = (window as TempAny).HOVERBOARD.Elements;
+          const Elements = (window as TempAny).HMIAPP.Elements;
           const targetElement = this.shadowRoot.querySelector(`[id="${selectedTime}"]`);
           const offset = offsetTop(targetElement);
           const toolbarHeight = Elements.HeaderToolbar.getBoundingClientRect().height - 1;

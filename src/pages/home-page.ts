@@ -42,6 +42,7 @@ export class HomePage extends ReduxMixin(PolymerElement) {
         .info-items {
           margin: 24px auto;
           font-size: 22px;
+          font-weight: 600;
         }
 
         .info-items > *:not(:first-of-type) {
@@ -282,7 +283,7 @@ export class HomePage extends ReduxMixin(PolymerElement) {
   }
 
   _scrollToTickets() {
-    const Elements = (window as TempAny).HOVERBOARD.Elements;
+    const Elements = (window as TempAny).HMIAPP.Elements;
     const toolbarHeight = Elements.HeaderToolbar.getBoundingClientRect().height - 1;
     const ticketsBlockPositionY = Elements.Tickets.getBoundingClientRect().top - toolbarHeight;
     scrollToY(ticketsBlockPositionY, 600, 'easeInOutSine');

@@ -3,7 +3,7 @@
 const { development, compileTemplate, isTemplate } = require('./build-utils.js');
 
 if (!development) {
-  throw new Error('start only supports NODE_ENV=development');
+  throw new Error('npm start hanya bisa dipanggil dengan NODE_ENV=development');
 }
 
 module.exports = {
