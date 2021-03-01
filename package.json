@@ -101,7 +101,7 @@
     "firebase-tools": "^8.4.3",
     "jest": "^26.1.0",
     "jest-dev-server": "^4.4.0",
-    "nunjucks": "^3.2.1",
+    "nunjucks": "^3.2.3",
     "prettier": "2.0.5",
     "rimraf": "^3.0.2",
     "rollup": "^2.18.1",
