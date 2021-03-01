@@ -1,16 +1,16 @@
 {
   "organizer": {
-    "name": "GDG Lviv",
+    "name": "HMI Komisariat Asadiyah",
     "twitter": "gdglviv",
     "blog": "https://medium.com/gdg-lviv",
-    "url": "http://lviv.gdg.org.ua/"
+    "url": "http://hmi-asadiyah.web.app/"
   },
   "startDate": "2017-10-013T09:00:00+03:00",
   "endDate": "2017-10-14T19:00:00+03:00",
   "webapp": {
-    "shortName": "DevFest",
-    "themeColor": "#673AB7",
-    "backgroundColor": "#673AB7"
+    "shortName": "HMI Asadiyah",
+    "themeColor": "#069539",
+    "backgroundColor": "#069539"
   },
   "dateFormat": {
     "locale": "en-US"
@@ -21,34 +21,39 @@
     {
       "route": "home",
       "permalink": "/",
-      "label": "Home"
+      "label": "Home",
+      "icon": "home"
     },
     {
-      "route": "speakers",
-      "permalink": "/speakers/",
-      "label": "Speakers"
+      "route": "profile",
+      "permalink": "/profile/",
+      "label": "Profil",
+      "icon": "work"
+    },
+    {
+      "route": "berita",
+      "permalink": "/news/",
+      "label": "Berita",
+      "icon": "chrome-reader-mode"
+    },
+    {
+      "route": "opini",
+      "permalink": "/opini/",
+      "label": "Opini",
+      "icon": "book"
     },
     {
       "route": "schedule",
       "permalink": "/schedule/",
-      "label": "Schedule"
-    },
-    {
-      "route": "team",
-      "permalink": "/team/",
-      "label": "Team"
-    },
-    {
-      "route": "blog",
-      "permalink": "/blog/",
-      "label": "Blog"
+      "label": "Agenda",
+      "icon": "date-range"
     }
   ],
   "heroSettings": {
     "home": {
-      "description": "Join the commuity, learn new things!",
+      "metaDescription": "Join the commuity, learn new things!",
       "background": {
-        "color": "#673ab7",
+        "color": "#069539",
         "image": "/images/backgrounds/home.jpg"
       },
       "fontColor": "#FFF"
