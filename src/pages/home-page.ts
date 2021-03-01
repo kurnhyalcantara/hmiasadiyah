@@ -46,7 +46,7 @@ export class HomePage extends ReduxMixin(PolymerElement) {
         }
 
         .info-items > *:not(:first-of-type) {
-          margin-top: 4px;
+          color: var(--default-primary-color);
         }
 
         .action-buttons {
@@ -58,13 +58,10 @@ export class HomePage extends ReduxMixin(PolymerElement) {
           margin: 8px;
         }
 
-        .action-buttons .watch-video {
-          color: #fff;
-        }
 
         .action-buttons iron-icon {
           --iron-icon-fill-color: currentColor;
-          margin-right: 8px;
+          margin-left: 8px;
         }
 
         .scroll-down {
@@ -103,7 +100,7 @@ export class HomePage extends ReduxMixin(PolymerElement) {
         @media (min-height: 500px) {
           hero-block {
             height: calc(100vh + 57px);
-            max-height: calc(100vh + 1px);
+            max-height: calc(100vh + 5px);
           }
 
           .home-content {
@@ -131,7 +128,6 @@ export class HomePage extends ReduxMixin(PolymerElement) {
           .info-items {
             margin: 48px auto;
             font-size: 28px;
-            line-height: 1.1;
           }
         }
       </style>
@@ -149,39 +145,20 @@ export class HomePage extends ReduxMixin(PolymerElement) {
         <div class="home-content" layout vertical center>
           <plastic-image
             class="hero-logo"
-            srcset="/images/logo.svg"
+            srcset="/images/logo.png"
             alt="{$ title $}"
           ></plastic-image>
           <div class="info-items">
-            <div class="info-item">{$ location.city $}. {$ dates $}</div>
-            <div class="info-item">{$ heroSettings.home.description $}</div>
+            <div class="info-item">{$ heroSettings.home.infoItem1 $}</div>
+            <div class="info-item">{$ heroSettings.home.infoItem2 $}</div>
           </div>
 
-          <div class="action-buttons" layout horizontal center-justified wrap>
-            <paper-button
-              class="watch-video"
-              on-click="_playVideo"
-              ga-on="click"
-              ga-event-category="video"
-              ga-event-action="watch"
-              ga-event-label="hero block - view highlights"
-            >
-              <iron-icon icon="hoverboard:movie"></iron-icon>
-              {$ viewHighlights $}
+          <a href="/kaderisasi" layout horizontal center-justified wrap>
+            <paper-button class="action-buttons" primary invert icon-left>
+              {$ infoKaderisasi $}
+              <iron-icon icon="hmi:arrow-right-circle"></iron-icon>
             </paper-button>
-            <paper-button
-              on-click="_scrollToTickets"
-              ga-on="click"
-              ga-event-category="tickets"
-              ga-event-action="scroll"
-              ga-event-label="hero block - scroll to tickets"
-              primary
-              invert
-            >
-              <iron-icon icon="hoverboard:ticket"></iron-icon>
-              {$ buyTicket $}
-            </paper-button>
-          </div>
+          </a>
 
           <div class="scroll-down" on-click="_scrollNextBlock">
             <svg
@@ -247,9 +224,6 @@ export class HomePage extends ReduxMixin(PolymerElement) {
           </div>
         </div>
       </hero-block>
-      {% if showForkMeBlockForProjectIds.includes(firebase.projectId) %}
-      <fork-me-block></fork-me-block>
-      {% endif %}
       <about-block></about-block>
       <speakers-block></speakers-block>
       <subscribe-block></subscribe-block>
@@ -290,7 +264,7 @@ export class HomePage extends ReduxMixin(PolymerElement) {
   }
 
   _scrollNextBlock() {
-    const heroHeight = this.$.hero.getBoundingClientRect().height - 64;
+    const heroHeight = this.$.hero.getBoundingClientRect().height - 55;
     scrollToY(heroHeight, 600, 'easeInOutSine');
   }
 }

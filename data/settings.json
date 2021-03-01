@@ -54,8 +54,10 @@
       "metaDescription": "Join the commuity, learn new things!",
       "background": {
         "color": "#069539",
-        "image": "/images/backgrounds/home.jpg"
+        "image": "/images/backgrounds/hmi-background.jpg"
       },
+      "infoItem1": "Selamat datang di Web App",
+      "infoItem2": "HMI Komisariat As'adiyah",
       "fontColor": "#FFF"
     },
     "blog": {
