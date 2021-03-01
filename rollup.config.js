@@ -9,7 +9,7 @@ import { workboxConfig } from './workbox-config';
 const { production, compileTemplate, compileBufferTemplate } = require('./build-utils.js');
 
 if (!production) {
-  throw new Error('build only supports NODE_ENV=production');
+  throw new Error('npm run build hanya dapat digunakan dengan tambahan NODE_ENV=production');
 }
 
 const baseConfig = createSpaConfig({
