@@ -1,5 +1,5 @@
 <p align="center">
-<img width="800px" src="https://user-images.githubusercontent.com/2954281/42683571-55ba6be6-8696-11e8-8ff7-e9acd0db63e8.png">
+<img width="800px" src="https://raw.githubusercontent.com/kurnhyalcantara/hmiasadiyah/develop-v3/.github/preview/preview-hmi-asadiyah.png">
 </p>
 <p align="center">
 <a href="https://hmi-asadiyah.web.app" align="center">:zap: Live demo</a>&nbsp;&nbsp;|&nbsp;&nbsp;
@@ -10,11 +10,9 @@
 
 ## Overview
 
-Project Hoverboard is the conference website template that helps you to set up a mobile-first conference website with blog, speaker and schedule management in a few minutes.
+Project HMI As'adiyah Web App is the organization website for portofolio and user managements. The template is created based on 7 years of [Hoverboard](https://github.com/gdg-x/hoverboard) team experience 
 
-The template is created based on 7 years of [GDG Lviv](https://www.meetup.com/GDG-Lviv/) team experience of running conferences and feedback from more than 500 event organizers from all around the world who were using previous Hoverboard versions.
-
-Our goal is to allow event organizers to set up a professional conference website with minimum resources. To get started you need only basic knowledge of web technologies and a free Firebase account.
+Our goal is to allow organizers to set up a professional website with minimum resources. To get started you need only basic knowledge of web technologies and a free Firebase account.
 
 ## Features
 
@@ -96,17 +94,11 @@ Read the full version [Code of Conduct](/.github/CODE_OF_CONDUCT.md).
 
 ## Contributors
 
-**Maintainer:** [Abraham Williams](https://github.com/abraham)
-**Authors:** [Oleh Zasadnyy](https://github.com/ozasadnyy) and [Sophie Huts](https://github.com/sophieH29).
-
-This project exists thanks to all the [people who contribute](https://github.com/gdg-x/hoverboard/graphs/contributors). [[Contribute](/.github/CONTRIBUTING.md)].
-
-<a href="https://github.com/gdg-x/hoverboard/graphs/contributors"><img src="https://opencollective.com/hoverboard/contributors.svg?width=890" /></a>
+**Authors:** [Kurniawan](https://instagram.com/kurnhyalcantara24) (Kader HMI Komisariat As'adiyah)
 
 ## Sponsoring
 
 Most of the core team members, hoverboard contributors and contributors in the ecosystem do this open-source work in their free time. If you like this project and it makes your life easier, please donate.
-<a href="https://opencollective.com/hoverboard#backers" target="_blank"><img src="https://opencollective.com/hoverboard/backers.svg?width=890"></a>
 
 ## License
 
@@ -115,4 +107,3 @@ Most of the core team members, hoverboard contributors and contributors in the e
 The project is published under the [MIT license](/LICENSE.md).
 Feel free to clone and modify repo as you want, but don't forget to add a reference to authors :)
 
-_GDG[x] is not endorsed and/or supported by Google, the corporation._
