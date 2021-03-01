@@ -1,7 +1,7 @@
 import { customElement, property } from '@polymer/decorators';
 import '@polymer/iron-icon';
 import { html, PolymerElement } from '@polymer/polymer';
-import '../components/about-block';
+import '../elements/about-block';
 import '../elements/about-organizer-block';
 import '../elements/featured-videos';
 import '../elements/fork-me-block';
@@ -154,7 +154,7 @@ export class HomePage extends ReduxMixin(PolymerElement) {
           </div>
 
           <a href="/kaderisasi" layout horizontal center-justified wrap>
-            <paper-button class="action-buttons" primary invert icon-left>
+            <paper-button class="action-buttons icon-right" primary invert>
               {$ infoKaderisasi $}
               <iron-icon icon="hmi:arrow-right-circle"></iron-icon>
             </paper-button>

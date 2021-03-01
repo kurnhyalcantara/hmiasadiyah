@@ -185,8 +185,17 @@ export const theme = css`
   .container-title {
     margin-bottom: 24px;
     padding: 0;
-    font-size: 32px;
-    line-height: 30px;
+    font-size: 28px;
+    font-weight: 600;
+  }
+
+  .container-title::after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 60px;
+    background-color: var(--default-primary-color);
+    margin: 12px 0;
   }
 
   .big-icon {
@@ -238,6 +247,10 @@ export const theme = css`
     .container,
     .container-narrow {
       padding: 32px;
+    }
+
+    .container-title {
+      font-size: 32px;
     }
 
     .card:hover {
