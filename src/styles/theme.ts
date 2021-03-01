@@ -22,15 +22,14 @@ export const theme = css`
 
     /* Custom */
     --default-background-color: #ffffff;
-    --secondary-background-color: #f5f5f5;
-    --additional-background-color: #f7f7f7;
+    --secondary-background-color: #f8f8f8;
+    --additional-background-color: #e2e2e2;
     --contrast-additional-background-color: #e8e8e8;
     --animation: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --slideAnimation: 0.4s cubic-bezier(0, 0, 0.2, 1);
-    --border-radius: 4px;
-    --box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
-      0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    --border-radius: 8px;
+    --box-shadow: 20px 20px 60px var(--additional-background-color), -20px -20px 60px var(--secondary-background-color);
     --box-shadow-header: rgb(0 0 0 / 12%) 0px 2px 6px 0px, rgb(218 220 224) 0px -1px 0px 0px inset;
     --box-shadow-primary-color: 0 3px 3px -2px rgba(6, 149, 57, 0.3),
       0 3px 4px 0 rgba(6, 149, 57, 0.3), 0 1px 8px 0 rgba(6, 149, 57, 0.3);

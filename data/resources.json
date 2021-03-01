@@ -56,6 +56,26 @@
       "desc": "Pendiri HMI"
     }
   },
+  "unggulBlock": {
+    "title": "Nilai Kader HMI",
+    "content": [
+      {
+        "icon": "achievement",
+        "title": "Progresif",
+        "desc": "Butuh pemikiran terbuka dan maju untuk mengimbangi zaman yang terus berkembang. Menyatukan pemikiran para mahasiswa dari berbagai minat keilmuan merupakan bentuk ikhitiar dari prinsip kaderisasi di HMI"
+      },
+      {
+        "icon": "people",
+        "title": "Pluralitas",
+        "desc": "Dalam konteks sosial, pemahaman keagamaan tidak bisa berdiri sendiri. Faktor kultural, lingkungan, dan pendidikan ikut andil dalam pemahaman keagaamaan seseorang. Maka HMI berusaha menghimpun mahasiswa islam dari berbagai latar keagamaan berbeda, sehingga aspek diferensiasi melebur menjadi kooperasi."
+      },
+      {
+        "icon": "work",
+        "title": "Independensi",
+        "desc": "Kader HMI harus mampu mencapai kemandiriannya dalam berbagai hal, dengan segudang potensi yang dimilikinya agar terciptanya kultur berpikir mandiri dan mampu bergerak secara independen"
+      }
+    ]
+  },
   "footer": {
     "blog": "Blog"
   },
