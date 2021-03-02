@@ -3,6 +3,7 @@ import '@polymer/iron-icon';
 import { html, PolymerElement } from '@polymer/polymer';
 import '../elements/about-block';
 import '../elements/unggul-block';
+import '../elements/tokoh-block';
 import '../elements/about-organizer-block';
 import '../elements/featured-videos';
 import '../elements/fork-me-block';
@@ -110,7 +111,7 @@ export class HomePage extends ReduxMixin(PolymerElement) {
 
           .scroll-down {
             position: absolute;
-            bottom: 24px;
+            bottom: 5px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 2;
@@ -227,6 +228,7 @@ export class HomePage extends ReduxMixin(PolymerElement) {
       </hero-block>
       <about-block></about-block>
       <unggul-block></unggul-block>
+      <tokoh-block></tokoh-block>
       <speakers-block></speakers-block>
       <subscribe-block></subscribe-block>
       <tickets-block></tickets-block>

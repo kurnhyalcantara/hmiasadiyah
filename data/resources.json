@@ -76,6 +76,31 @@
       }
     ]
   },
+  "tokohBlock": {
+    "title": "Alumni HMI",
+    "content": [
+      {
+        "job": "Mantan Wakil Presiden RI",
+        "name": "Jusuf Kalla",
+        "photoUrl": "https://storage.googleapis.com/hmi-wajo.appspot.com/images/people/jusuf-kalla.jpg"
+      },
+      {
+        "job": "Tokoh Pemikir Islam",
+        "name": "Nurcholish Madjid",
+        "photoUrl": "https://storage.googleapis.com/hmi-wajo.appspot.com/images/people/nurcholish-madjid.jpg"
+      },
+      {
+        "job": "Menkumham RI",
+        "name": "Mahfud MD",
+        "photoUrl": "https://storage.googleapis.com/hmi-wajo.appspot.com/images/people/mahfud-md.jpg" 
+      },
+      {
+        "job": "Mantan Ketua KPK",
+        "name": "Abraham Samad",
+        "photoUrl": "https://storage.googleapis.com/hmi-wajo.appspot.com/images/people/abraham-samad.jpg"
+      }
+    ]
+  },
   "footer": {
     "blog": "Blog"
   },
