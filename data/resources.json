@@ -101,6 +101,30 @@
       }
     ]
   },
+  "testiBlock": {
+    "title": "Testimoni",
+    "description": "HMI Komisariat As'adiyah telah melahirkan kader yang berkualitas. Berikut testimoni dari beberapa alumni HMI Komisariat As'adiyah",
+    "content": [
+      {
+        "name": "Muh. Takbir Wata",
+        "job": "Staf Ahli DPR RI / Ketua Umum HMI Cabang Wajo 2007-2009",
+        "testi": "Pengalaman aktif berorganisasi di HMI menjadi bekal yang baik bagi saya dalam menempuh karir dan jenjang kehidupan. Di dalam kehidupan sehari-hari baik di kantor maupun di luar kantor, kemampuan berorganisasi, bergaul dan berkomunikasi sangat esensia bagi kita.",
+        "image": "https://firebasestorage.googleapis.com/v0/b/hmi-asadiyah.appspot.com/o/testi%2Ftakbir-wata.jpg?alt=media&token=08d07c9f-4440-4201-8b68-10c484176a8e"
+      },
+      {
+        "name": "Syamsuddin Sapa",
+        "job": "Pengajar / Ketua Umum HMI Cabang Wajo 2009-2011",
+        "testi": "Bagi saya masuk HMI saat mahasiswa membuat saya lebih percaya diri, senang berorganisasi, luas pergaulan, belajar memimpin, kreatif dan mampu meraih prestasi. HMI adalah wadah mencipitakan individu-individu yang berprestasi di bidangnya masing-masing",
+        "image": "https://firebasestorage.googleapis.com/v0/b/hmi-asadiyah.appspot.com/o/testi%2Fsyam-sapa.png?alt=media&token=8e3edaa9-0ffa-4db4-98d3-d2f5d0828657"
+      },
+      {
+        "name": "Syamsuddin",
+        "job": "Dosen IAI As'adiyah",
+        "testi": "HMI punya andil besar membentuk karakter saya. Termasuk membentuk karakter berakhlak mulia serta membangun wawasan luas tentang keilmuan dan keislaman",
+        "image": "https://firebasestorage.googleapis.com/v0/b/hmi-asadiyah.appspot.com/o/testi%2Fsyam-bugisy.png?alt=media&token=19c4f775-251e-4170-8379-1904b875d0b6"
+      }
+    ]
+  },
   "footer": {
     "blog": "Blog"
   },

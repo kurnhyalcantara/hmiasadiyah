@@ -13,8 +13,9 @@ export class TestiBlock extends ReduxMixin(PolymerElement) {
       }
 
       .content {
+        margin: 32px 24px;
         display: grid;
-        grid-gap: 26px;
+        grid-gap: 32px;
         grid-template-columns: repeat(auto-fit, minmax(300px, auto));
       }
 
@@ -43,7 +44,7 @@ export class TestiBlock extends ReduxMixin(PolymerElement) {
         width: 81px;
         height: 81px;
         border: 3px solid #fff;
-        box-shadow: 0px 0px 0px 1px var(--default-primary-color);
+        box-shadow: var(--box-shadow-primary-color);
         background-color: #fff;
       }
 
@@ -72,28 +73,23 @@ export class TestiBlock extends ReduxMixin(PolymerElement) {
         text-align: center;
       }
 
-      @media (max-width: 760px) {
-        .content {
-          grid-template-columns: repeat(auto-fit, minmax(300px, auto));
-        }
-      }
     </style>
-    
+
     <div class="container">
       <div class="container-title" layout vertical center>{$ testiBlock.title $}</div>
       <p>{$ testiBlock.description $}</p>
       <div class="content">
-        {% for test in testiBlock.content %}
+        {% for testi in testiBlock.content %}
         <div class="card">
           <div class="pic-container">
             <div class="pic-inner">
-              <plastic-image srcset="{$ test.image $}"></plastic-image>
+              <plastic-image srcset="{$ testi.image $}"></plastic-image>
             </div>
           </div>
           <div class="row">
-            <h3 class="colored-text">{$ test.name $}</h3>
-            <h5>{$ test.job $}</h5>
-            <p class="card-content">"{$ test.testi $}"</p>
+            <h3 class="colored-text">{$ testi.name $}</h3>
+            <h5>{$ testi.job $}</h5>
+            <p class="card-content">"{$ testi.testi $}"</p>
           </div>
         </div>
         {% endfor %}

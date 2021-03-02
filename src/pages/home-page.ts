@@ -4,6 +4,7 @@ import { html, PolymerElement } from '@polymer/polymer';
 import '../elements/about-block';
 import '../elements/unggul-block';
 import '../elements/tokoh-block';
+import '../elements/testi-block';
 import '../elements/about-organizer-block';
 import '../elements/featured-videos';
 import '../elements/fork-me-block';
@@ -229,6 +230,7 @@ export class HomePage extends ReduxMixin(PolymerElement) {
       <about-block></about-block>
       <unggul-block></unggul-block>
       <tokoh-block></tokoh-block>
+      <testi-block></testi-block>
       <speakers-block></speakers-block>
       <subscribe-block></subscribe-block>
       <tickets-block></tickets-block>
