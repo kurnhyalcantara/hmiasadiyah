@@ -1,0 +1,303 @@
+{
+  "organizer": {
+    "name": "HMI Komisariat Asadiyah",
+    "twitter": "hmiasadiyah",
+    "partner": "https://yakusa.id/",
+    "url": "https://hmi-asadiyah.web.app/"
+  },
+  "webapp": {
+    "shortName": "HMI Asadiyah",
+    "themeColor": "#069539",
+    "backgroundColor": "#069539"
+  },
+  "dateFormat": {
+    "locale": "id-ID"
+  },
+  "hashtag": "HMIAsadiyah",
+  "disabledSchedule": false,
+  "navigation": [
+    {
+      "route": "home",
+      "permalink": "/",
+      "label": "Home",
+      "icon": "home"
+    },
+    {
+      "route": "profile",
+      "permalink": "/profile/",
+      "label": "Profil",
+      "icon": "work"
+    },
+    {
+      "route": "news",
+      "permalink": "/news/",
+      "label": "Berita",
+      "icon": "chrome-reader-mode"
+    },
+    {
+      "route": "opini",
+      "permalink": "/opini/",
+      "label": "Opini",
+      "icon": "book"
+    },
+    {
+      "route": "schedule",
+      "permalink": "/schedule/",
+      "label": "Agenda",
+      "icon": "date-range"
+    }
+  ],
+  "heroSettings": {
+    "home": {
+      "description1": "Selamat Datang di Web App",
+      "description2": "HMI Komisariat As'adiyah",
+      "background": {
+        "color": "#069539",
+        "image": "/images/backgrounds/hero-block.jpg"
+      },
+      "fontColor": "#FFF"
+    },
+    "profile": {
+      "title": "Profile",
+      "subTitle": "Profil Organisasi",
+      "metaDescription": "Himpunan Mahasiswa Islam atau biasa disingkat dengan HMI adalah Organisasi mahasiswa Islam tertua dan terbesar di Indonesia.",
+      "background": {
+        "image": "/images/backgrounds/hero-block.jpg",
+        "color": "#069539"
+      },
+      "fontColor": "#FFF"
+    },
+    "news": {
+      "title": "Berita",
+      "metaDescription": "Berita terbaru HMI Komisariat Asadiyah",
+      "description": "Berita terbaru tentang HMI dan kegiatan agenda komisariat As'adiyah",
+      "background": {
+        "image": "/images/backgrounds/hero-block.jpg",
+        "color": "#069539"
+      },
+      "fontColor": "#FFF",
+      "path": "Home / Berita"
+    },
+    "opini": {
+      "title": "Opini & Artikel",
+      "metaDescription": "Baca artikel dan opini kader HMI Komisariat Asadiyah",
+      "description": "Baca artikel karya kader komisariat As'adiyah",
+      "background": {
+        "image": "/images/backgrounds/hero-block.jpg",
+        "color": "#097347"
+      },
+      "fontColor": "#FFF",
+      "path": "Home / Opini & Artikel"
+    },
+    "schedule": {
+      "title": "Agenda",
+      "metaDescription": "Daftar agenda kepengurusan HMI Komisariat Asadiyah",
+      "background": {
+        "image": "/images/backgrounds/hero-block.jpg",
+        "color": "#097347"
+      },
+      "fontColor": "#FFF",
+      "description": "Daftar Agenda Kegiatan Komisariat As'adiyah"
+    },
+    "kaderisasi": {
+      "title": "Info Kaderisasi",
+      "metaDescription": "Penjelasan tentang jenjang kaderisasi yang ada di Himpunan Mahasiswa Islam",
+      "background": {
+        "image": "/images/backgrounds/hero-block.jpg",
+        "color": "#fff"
+      },
+      "fontColor": "#FFF",
+      "description": "Penjelasan tentang struktur kaderisasi di Himpunan Mahasiswa Islam"
+    }
+  },
+  "location": {
+    "label": "Sekretariat HMI Komisariat As'adiyah",
+    "name": "Sekret HMI Komisariat As'adiyah",
+    "address": "Temukan",
+    "pointer": {
+      "latitude": -4.138602,
+      "longitude": 120.030443,
+      "zoom": 5
+    },
+    "mapCenter": {
+      "latitude": -4,
+      "longitude": 120
+    },
+    "description": "Sekretariat HMI Komisariat As'adiyah berada di BTN Grandhill, Blog G No. 87 Kelurahan Atakkae Sengkang"
+  },
+  "mediaQueries": {
+    "xs": {
+      "max": "639px"
+    },
+    "sm": {
+      "min": "640px",
+      "max": "811px"
+    },
+    "md": {
+      "min": "812px",
+      "max": "1023px"
+    },
+    "lg": {
+      "min": "1024px"
+    }
+  },
+  "socialNetwork": {
+    "follow": [
+      {
+        "name": "facebook",
+        "url": "https://www.facebook.com/hmiasadiyah/"
+      },
+      {
+        "name": "twitter",
+        "url": "https://twitter.com/hmiasadiyah/"
+      },
+      {
+        "name": "instagram",
+        "url": "https://www.instagram.com/hmiasadiyah"
+      },
+      {
+        "name": "youtube",
+        "url": "https://www.youtube.com/channel/UCBVVngt3so2RQbZ1hawtUNA?view_as=subscriber"
+      }
+    ],
+    "share": [
+      {
+        "name": "facebook",
+        "url": "https://www.facebook.com/sharer.php?u="
+      },
+      {
+        "name": "twitter",
+        "url": "https://twitter.com/intent/tweet?text="
+      }
+    ]
+  },
+  "mailto": "hmiasadiyah@gmail.com",
+  "signInProviders": {
+    "logo": "https://firebasestorage.googleapis.com/v0/b/hmi-asadiyah.appspot.com/o/mix%2Fabout-logo.png?alt=media&token=fda04f76-bbcb-4350-aac5-cb347901f181",
+    "title": "Login Portal Aktivis",
+    "input": {
+      "email": "Email",
+      "password": "Kata Sandi"
+    },
+    "actions": {
+      "login": "Login",
+      "newRegister": "Buat akun baru"
+    },
+    "info": {
+      "p1": "Belum punya akun?"
+    },
+    "description": "Login dan anda dapat mengatur jadwal dan agenda yang anda ingin ikuti dan dapatkan pemberitahuannya",
+    "providersData": {
+      "name": "google",
+      "label": "Login dengan akun google",
+      "url": "https://accounts.google.com"
+    },
+    "allowedProvidersUrl": "https://accounts.google.com",
+    "successSignedIn": "Login Sukses :)"
+  },
+  "daftarProviders": {
+    "logo": "https://firebasestorage.googleapis.com/v0/b/hmi-asadiyah.appspot.com/o/mix%2Fabout-logo.png?alt=media&token=fda04f76-bbcb-4350-aac5-cb347901f181",
+    "header": "Buat Akun Baru",
+    "info": "Silahkan buat akun baru untuk bisa login dan melanjutkan proses pendaftaran",
+    "title": {
+      "informasidiri": {
+        "icon": "account-circle",
+        "label": "Informasi Diri"
+      },
+      "jenjangStudi": {
+        "icon": "work",
+        "label": "Jenjang Studi Terakhir"
+      },
+      "infoAkun": {
+        "icon": "extension",
+        "label": "Pengaturan Akun"
+      }
+    },
+    "input": {
+      "fullName": {
+        "label": "Nama Lengkap",
+        "placeholder": "Masukkan nama lengkap"
+      },
+      "jenisKelamin": {
+        "placeholder": "Jenis Kelamin",
+        "value": {
+          "pria": "Pria",
+          "wanita": "Wanita"
+        }
+      },
+      "tanggalLahir": {
+        "label": "Tanggal Lahir",
+        "initial": "2003-12-31"
+      },
+      "tempatLahir": {
+        "label": "Tempat Lahir",
+        "placeholder": "Masukkan tempat lahir"
+      },
+      "alamatSekarang": {
+        "label": "Alamat Sekarang",
+        "placeholder": "Masukkan alamat saat ini"
+      },
+      "noWa": {
+        "label": "Nomor Whatsapp",
+        "placeholder": "cth: 08123456790"
+      },
+      "instagram": {
+        "label": "ID Instagram",
+        "placeholder": "cth: @hmiasasdiyah"
+      },
+      "fakultas": {
+        "placeholder": "Fakultas",
+        "value": {
+          "ftk": "Fakultas Tarbiyah dan Keguruan",
+          "fudk": "Fakultas Ushuluddin Dakwah dan Komunikasi",
+          "fsh": "Fakultas Syariah dan Hukum"
+        }
+      },
+      "jurusan": {
+        "placeholder": "Program Studi",
+        "value": {
+          "pai": "Pendidikan Agama Islam",
+          "tbi": "Tadris Bahasa Inggris",
+          "afi": "Aqidah dan Filsafat Islam",
+          "as": "Ahwalusy Syakhsiyyah",
+          "hes": "Hukum Ekonomi Syariah"
+        }
+      },
+      "semester": {
+        "placeholder": "Semester saat ini",
+        "label": "Semester"
+      },
+      "email": {
+        "label": "Email*",
+        "placeholder": "Masukkan email yang aktif",
+        "errorOccured": "Email sudah digunakan pengguna lain"
+      },
+      "password": {
+        "label": "Password*",
+        "placeholder": "Minimal 6 karakter",
+        "errorOccured": "Password anda kurang dari 6 karakter"
+      }
+    },
+    "cancel": "Batal",
+    "submit": "Daftar",
+    "generalError": "Terjadi masalah, harap coba lagi nanti :(",
+    "success": "Pembuatan akun berhasil dan telah login otomatis, silahkan lanjutkan pendaftaran kegiatan"
+  },
+  "contentLoaders": {
+    "schedule": {
+      "itemsCount": 2
+    },
+    "news": {
+      "itemsCount": 3
+    },
+    "speakers": {
+      "itemsCount": 4
+    },
+    "previousSpeakers": {
+      "itemsCount": 6
+    },
+    "tickets": {
+      "itemsCount": 5
+    }
+  }
+}

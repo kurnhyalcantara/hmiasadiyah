@@ -1,0 +1,451 @@
+{
+  "title": "HMI Komisariat Asadiyah",
+  "description": "Situs resmi Himpunan Mahasiswa Islam Komisariat As'adiyah Sengkang Cabang Wajo yang menyajikan profil Organisasi, berita faktual, serta opini dan artikel karya kader komisariat As'adiyah",
+  "image": "images/social-share.jpg",
+  "keywords": "hmi, asadiyah, iai, komisariat, cabang, wajo, sengkang, mahasiswa, islam, himpunan, perjuangan, pergerakan, kader, umat, bangsa, indonesia",
+  "loading": "Sedang memuat HMI As'adiyah Web App",
+  "version": "Versi 2021.1",
+  "design": "Design by ",
+  "by": "Kurnhy Technologies",
+  "signUp": "Daftar",
+  "infoPengkaderan": "Info Pengkaderan",
+  "share": "Bagikan",
+  "followOur": "Follow Our",
+  "followUs": "Follow Us",
+  "emailUs": "Contact Us",
+  "subscribeNote": "Dapatkan update terbaru dari kami melalui email",
+  "logIn": "Login",
+  "logOut": "Logout",
+  "offlineMessage": "Koneksi terputus :(, tapi anda masih bisa mengeksplor web app ini ",
+  "cachingComplete": "Caching selesai, anda bisa menginstall web app ini di bagian menu",
+  "newVersionAvailable": "Versi terbaru Web App ini telah tersedia",
+  "refresh": "Refresh",
+  "position": "Position",
+  "country": "Country",
+  "time": "Waktu",
+  "brosurPengkaderan": "https://firebasestorage.googleapis.com/v0/b/hmi-asadiyah.appspot.com/o/mix%2Fbrosur.jpg?alt=media&token=3ab9be54-769f-4795-a993-bd97ac73b8fd",
+  "noPengkaderan": "Dalam waktu dekat ini, tidak ada agenda kaderisasi",
+  "timezoneOffset": "-180",
+  "loginLabel": "Login",
+  "aboutHmi": {
+    "title": "Apa itu HMI?",
+    "content": "Himpunan Mahasiswa Islam atau HMI adalah organisasi mahasiswa islam tertua dan terbesar di Indonesia yang lahir pada tanggal 5 Februari 1947 membawa gagasan kemahasiswaan yang bernafaskan Islam serta menghimpun segenap mahasiswa islam dari berbagai golongan dengan tujuan terwujudnya masyarakat adil makmur yang diridhoi Allah Swt.",
+    "logo": "https://firebasestorage.googleapis.com/v0/b/hmi-asadiyah.appspot.com/o/mix%2Fabout-logo.png?alt=media&token=fda04f76-bbcb-4350-aac5-cb347901f181",
+    "selengkapnya": {
+      "label": "Selengkapnya",
+      "link": "/profile/"
+    },
+    "pendiri": {
+      "image": "https://firebasestorage.googleapis.com/v0/b/hmi-asadiyah.appspot.com/o/mix%2Flafran-pane.png?alt=media&token=e571b0d9-3530-4a5a-97f1-000a4f7a611d",
+      "name": "Prof. Drs. H. Lafran Pane",
+      "desc": "Pendiri HMI"
+    }
+  },
+  "unggulBlock": {
+    "title": "Nilai Kader HMI",
+    "content": [
+      {
+        "icon": "achievement",
+        "title": "Progresif",
+        "desc": "Butuh pemikiran terbuka dan maju untuk mengimbangi zaman yang terus berkembang. Menyatukan pemikiran para mahasiswa dari berbagai minat keilmuan merupakan bentuk ikhitiar dari prinsip kaderisasi di HMI"
+      },
+      {
+        "icon": "people",
+        "title": "Pluralitas",
+        "desc": "Dalam konteks sosial, pemahaman keagamaan tidak bisa berdiri sendiri. Faktor kultural, lingkungan, dan pendidikan ikut andil dalam pemahaman keagaamaan seseorang. Maka HMI berusaha menghimpun mahasiswa islam dari berbagai latar keagamaan berbeda, sehingga aspek diferensiasi melebur menjadi kooperasi."
+      },
+      {
+        "icon": "work",
+        "title": "Independensi",
+        "desc": "Kader HMI harus mampu mencapai kemandiriannya dalam berbagai hal, dengan segudang potensi yang dimilikinya agar terciptanya kultur berpikir mandiri dan mampu bergerak secara independen"
+      }
+    ]
+  },
+  "tokohBlock": {
+    "title": "Alumni-alumni HMI"
+  },
+  "testiBlock": {
+    "title": "Testimoni",
+    "description": "HMI Komisariat As'adiyah telah melahirkan kader yang berkualitas. Berikut testimoni dari beberapa alumni HMI Komisariat As'adiyah",
+    "content": [
+      {
+        "name": "Muh. Takbir Wata",
+        "job": "Staf Ahli DPR RI / Ketua Umum HMI Cabang Wajo 2007-2009",
+        "testi": "Pengalaman aktif berorganisasi di HMI menjadi bekal yang baik bagi saya dalam menempuh karir dan jenjang kehidupan. Di dalam kehidupan sehari-hari baik di kantor maupun di luar kantor, kemampuan berorganisasi, bergaul dan berkomunikasi sangat esensia bagi kita.",
+        "image": "https://firebasestorage.googleapis.com/v0/b/hmi-asadiyah.appspot.com/o/testi%2Ftakbir-wata.jpg?alt=media&token=08d07c9f-4440-4201-8b68-10c484176a8e"
+      },
+      {
+        "name": "Syamsuddin Sapa",
+        "job": "Pengajar / Ketua Umum HMI Cabang Wajo 2009-2011",
+        "testi": "Bagi saya masuk HMI saat mahasiswa membuat saya lebih percaya diri, senang berorganisasi, luas pergaulan, belajar memimpin, kreatif dan mampu meraih prestasi. HMI adalah wadah mencipitakan individu-individu yang berprestasi di bidangnya masing-masing",
+        "image": "https://firebasestorage.googleapis.com/v0/b/hmi-asadiyah.appspot.com/o/testi%2Fsyam-sapa.png?alt=media&token=8e3edaa9-0ffa-4db4-98d3-d2f5d0828657"
+      },
+      {
+        "name": "Syamsuddin",
+        "job": "Dosen IAI As'adiyah",
+        "testi": "HMI punya andil besar membentuk karakter saya. Termasuk membentuk karakter berakhlak mulia serta membangun wawasan luas tentang keilmuan dan keislaman",
+        "image": "https://firebasestorage.googleapis.com/v0/b/hmi-asadiyah.appspot.com/o/testi%2Fsyam-bugisy.png?alt=media&token=19c4f775-251e-4170-8379-1904b875d0b6"
+      }
+    ]
+  },
+  "gabungBlock": {
+    "image": "https://firebasestorage.googleapis.com/v0/b/hmi-asadiyah.appspot.com/o/mix%2Faction-hmi.png?alt=media&token=4869bc49-ee54-40d4-acaf-7fa8fd4f8c39",
+    "callToAction": {
+      "description": "Mari bergabung di HMI menjadi pejuang agama dan bangsa",
+      "label": "Form Pendaftaran"
+    }
+  },
+  "profilHmiAsadiyahBlock": {
+    "title": "Sekilas Profil HMI As'adiyah",
+    "ketuaUmum": {
+      "name": "Risal Firdaus",
+      "image": "https://firebasestorage.googleapis.com/v0/b/hmi-asadiyah.appspot.com/o/mix%2Fketua-umum.png?alt=media&token=115367fd-0025-40b0-9395-ecb3fd025dd1",
+      "desc": "Ketua Umum"
+    },
+    "description": [
+      {
+        "desc": "Himpunan Mahasiswa Islam atau HMI Komisariat As'adiyah Sengkang adalah salah satu komisariat binaan HMI Cabang Wajo. HMI Komisariat As'adiyah anggotanya terdiri dari mahasiswa Institut Agama Islam As'adiyah (IAIA) Sengkang yang memiliki 3 Fakultas serta 5 Program Studi. Alamat Sekretariat berada di BTN Grandhill, Blog G No. 87 Kelurahan Atakkae Sengkang. Saat ini HMI Komisariat As'adiyah dinahkodahi oleh kakanda Risal dalam masa periode 2020-2021."
+      },
+      {
+        "desc": "Mari bergabung bersama kami dan bertransformasi diri menjadi lebih baik serta turut andil dalam perjuangan bangsa dan agama."
+      }
+    ],
+    "statisticBlock": [
+      {
+        "number": "50+",
+        "label": "Kader Aktif"
+      },
+      {
+        "number": "200+",
+        "label": "Alumni"
+      }
+    ]
+  },
+  "galleryBlock": {
+    "title": "Galeri HMI As'adiyah",
+    "description": "Eksplor galeri kegiatan dan agenda HMI Komisariat As'adiyah",
+    "callToAction": {
+      "label": "Lihat semua foto",
+      "link": "https://photos.app.goo.gl/2cAzLM9mWDpeCiKU8"
+    }
+  },
+  "featuredVideos": {
+    "title": "Video",
+    "callToAction": {
+      "label": "Jelajahi Channel Kami",
+      "link": "https://www.youtube.com/channel/UCBVVngt3so2RQbZ1hawtUNA?view_as=subscriber"
+    }
+  },
+  "latestPostsBlock": {
+    "title": "Berita Terbaru",
+    "callToAction": {
+      "label": "Lihat semua berita",
+      "link": "/news/"
+    }
+  },
+  "opiniBlock": {
+    "title": "Artikel Terbaru",
+    "callToAction": {
+      "label": "Lihat semua artikel",
+      "link": "/opini/"
+    }
+  },
+  "footer": {
+    "partner": "Partner"
+  },
+  "footerRelBlock": [
+    {
+      "title": "Link Terkait",
+      "links": [
+        {
+          "name": "Profil HMI",
+          "url": "https://id.wikipedia.org/wiki/Himpunan_Mahasiswa_Islam",
+          "newTab": true
+        },
+        {
+          "name": "Pengurus Besar HMI",
+          "url": "pbhmi.org",
+          "newTab": true
+        },
+        {
+          "name": "Badko HMI Sulselbar",
+          "url": "hmisulselbar.org",
+          "newTab": true
+        },
+        {
+          "name": "HMI Cabang Wajo",
+          "url": "https://hmiwajo.web.app/",
+          "newTab": true
+        }
+      ]
+    },
+    {
+      "title": "Layanan",
+      "links": [
+        {
+          "name": "Kepustakaan",
+          "url": "#",
+          "newTab": true
+        },
+        {
+          "name": "Surat Edaran",
+          "url": "#",
+          "newTab": true
+        },
+        {
+          "name": "Resources",
+          "url": "#",
+          "newTab": true
+        }
+      ]
+    }
+  ],
+  "profileHero": {
+    "link": [
+      {
+        "title": "Sejarah Berdirinya HMI"
+      },
+      {
+        "title": "Profil HMI Komisariat As'adiyah"
+      },
+      {
+        "title": "Struktur Pengurus"
+      }
+    ]
+  },
+  "sejarahHMIProfileBlock": {
+    "title": "Sejarah Berdirinya HMI",
+    "image": "https://firebasestorage.googleapis.com/v0/b/hmi-asadiyah.appspot.com/o/mix%2Fabout-logo.png?alt=media&token=fda04f76-bbcb-4350-aac5-cb347901f181",
+    "content": [
+      {
+        "title": "Prakarsa",
+        "description": "Lafran Pane dan 14 mahasiswa Sekolah Tinggi Islam (sekarang Universitas Islam Indonesia)",
+        "icon": "people"
+      },
+      {
+        "title": "Tanggal Pembentukan",
+        "description": "14 Rabiul Awal 1366 H / 5 Februari 1947 M",
+        "icon": "calendar"
+      },
+      {
+        "title": "Asas",
+        "description": "Islam",
+        "icon": "ticket"
+      },
+      {
+        "title": "Tujuan Organisasi",
+        "description": "Terbinanya insan akademis pencipta pengabdi yang bernafaskan Islam dan bertanggung jawab atas terwujudnya masyarakat adil makmur yang diridhoi Allah SWT",
+        "icon": "achievement"
+      },
+      {
+        "title": "Sifat",
+        "description": "Independen",
+        "icon": "bookmark-check"
+      },
+      {
+        "title": "Jenis",
+        "description": "Organisasi Kemahasiswaan, Keislaman, Pengkaderan, dan Perjuangan",
+        "icon": "presentation"
+      }
+    ],
+    "profileDescription": [
+      {
+        "alinea": "HMI didirikan di Yogyakarta, Jawa Tengah, Indonesia, pada 5 Februari 1947 ketika itu keadaan politik di Indonesia masih di tandai oleh daya upaya bersemangat rakyat, melalui revolusi, untuk mempertahankan kemerdekaan nasional mereka dari upaya Belanda yang ingin kembali bercokol di bumi pertiwi."
+      },
+      {
+        "alinea": "Berdirinya HMI banyak di ilhami oleh gagasan-gagasan yang dirumuskan oleh Jong Islamieten Bond dengan Islam Studies Club-nya. Itulah sebabnya HMI banyak memusatkan perhatiannya pada tujuan-tujuan jangka panjang Jong Islamieten Bond. Tujuan semu ingin meyakinkan para cendekiawan Muslim muda agar sambil mengejar pendidikan akademisnya juga menjunjung agama Islam. Dengan menempuh ikhtiar demikian itulah mereka dapat ditempa menjadi intelektual ulama sekaligus Ulama-Intelektual. "
+      },
+      {
+        "alinea": "Prakarsa untuk mendirikan HMI terebut dilakukan oleh beberapa orang mahsiswa Di Universitas Islam di Yogyakarta, Jawa Tengah, atau di Sekolah Tinggi Islam. Mereka kemudian menjadi pimpinan-pimpinannya yang pertama. Lafran Pane, Kartono, Dahlan Husein dan Maisaroh Hilal, semuanya mahasiswa Sekolah tinggi Islam, menyelenggarakan sebuah pertemuan untuk membicarakan bagaiman seharusnya menghadapi tantangan zaman dan menyusun pedoman sebagai penyalur cita-cita para cendekiwan Muslim muda pada ketika itu. Pertemuan yang dipimpin oleh Lafran Pane itu di selenggrakan di sebuah gedung yang sekarang dimiliki oleh Pastoran Katolik Roma di Jalan Senopati 30, Yogyakarta. Pertemuan diadakan pada 5 Pebruari 1947, dalam hari kuliah seperti biasa. Kuliah hari itu mengenai Tafsir Qur'an yang di berikan oleh Profesor Hussin yahya, dahulu dekan Jurusan Sastra arab pada IAIN Sunan Kalijaga Yogyakarta. Setelah mendapat persetujuan professor, Lafran Pane memberikan pernyataan resmi bahwa sebuah organisasi untuk semua mahasiswa Muslim telah didirikan dan diberi nama Himpunan Mahasiswa Islam (disingkat HMI). Ketika diwawancarai, Lafran Pane menegaskan bahwa keputusan yang tergesa-gesa untuk mendiriakn organisasi tersebut disebabkan oleh kebutuhan mendesak bagi para Cendekiawan Muslim muda untuk ikut serta didalam perjuangan kemerdekaan nasional dan terutama untuk melestarikan dan mengamankan ajaran-ajaran Islam. Hasil pertemuan tersebut mensahkan keputusan, Lafran pane sebagi ketua pertama, HMI. Kemudian beberapa orang lain dari kelompok pemula ini menjadi pimpinan-pimpinan terkemuka tersebut. Diantaranya ialah Sanusi, seoarang insinyur dan belakangan menjadi menteri dalam kabinet RI dari partai masyumi, Anton Timoer Jaelani, mantan Inspektur Jenderal Dep. Agama dan berijazah M.A. dari McGill University di kanada, dan Akhmad Tirtosudiro, seorang Jenderal Angkatan Darat. "
+      }
+    ]
+  },
+  "strukturPengurusBlock": {
+    "title": "Struktur Pengurus Himpunan Mahasiswa Islam Komisariat As'adiyah Sengkang Cabang Wajo Periode 2020-2021",
+    "jabatan": {
+      "ketua": [
+        {
+          "title": "Ketua Umum",
+          "name": ": Risal"
+        },
+        {
+          "title": "Kabid PPPA",
+          "name": ": Nur Syamsu Alam"
+        },
+        {
+          "title": "Kabid PTKP",
+          "name": ": Wiranto"
+        },
+        {
+          "title": "Kabid KPP",
+          "name": ": Akbar Ishak"
+        },
+        {
+          "title": "Kabid PP",
+          "name": ": Dewi Ariani"
+        }
+      ],
+      "sekum": [
+        {
+          "title": "Sekretaris Umum",
+          "name": ": Kurniawan"
+        },
+        {
+          "title": "Wasekumbid PPPA",
+          "name": ": Farhan Farmulia"
+        },
+        {
+          "title": "Wasekumbid PTKP",
+          "name": ": Rahmat Hidayat"
+        },
+        {
+          "title": "Wasekumbid KPP",
+          "name": ": Sofyan Ibrahim"
+        },
+        {
+          "title": "Wasekumbid PP",
+          "name": ": Mega Sriwahyuni"
+        }
+      ],
+      "bendum": [
+        {
+          "title": "Bendahara Umum",
+          "name": ": Risnawati S"
+        },
+        {
+          "title": "Wakil Bendahara Umum",
+          "name": ": Magfirah Rahmadani S."
+        }
+      ],
+      "departemen": [
+        {
+          "title": "Dep. Diklat Anggota",
+          "name": ": Abu Dzar Al-Ghifari"
+        },
+        {
+          "title": "Dep. Litbang Anggota",
+          "name": ": Ashar As’ad"
+        },
+        {
+          "title": "Dep. Data Anggota",
+          "name": ": Ridwan"
+        },
+        {
+          "title": "Dep. Kepemudaan",
+          "name": ": Zaenal Abidin"
+        },
+        {
+          "title": "Dep. PSDP",
+          "name": ": Sukmawati"
+        },
+        {
+          "title": "Dep. Pustaka Organisasi",
+          "name": ": Faisal"
+        },
+        {
+          "title": "Dep. Humas dan Komunikasi",
+          "name": ": Nur Amar"
+        },
+        {
+          "title": "Dep. Kesekretariatan",
+          "name": ": Muh. Sabri"
+        }
+      ]
+    }
+  },
+  "pengkaderanBlock": {
+    "title": "Info Pengkaderan Terbaru",
+    "nothing": "Tidak ada agenda pengkaderan untuk saat ini",
+    "info": {
+      "image": "https://storage.googleapis.com/hmi-asadiyah.appspot.com/gallery/photo2.jpg",
+      "title": "Basic Training (Latihan Kader I) HMI Komisariat As'adiyah Gelombang I 2020",
+      "status": "Terbuka",
+      "tag": "Perkaderan",
+      "city": "Sengkang",
+      "address": "Asrama HPMB Jl. Mawar",
+      "tanggal": "20 - 27 Oktober 2020"
+    },
+    "checkIfNotRegister": "Oops.. Silahkan login terlebih dahulu"
+  },
+  "formPendaftaran": {
+    "formTitle": "Formulir Pendaftaran",
+    "formDescription": "Dengan mengucapkan BISMILLAHIRRAHMANIRRAHIM, bahwa apa yang saya isi dalam formulir adalah BENAR adanya, dan siap mematuhi Anggaran Dasar dan Anggaran Rumah Tangga serta ketentuan-ketentuan yang berlaku di HMI",
+    "namaLengkap": "Nama Lengkap",
+    "tanggalLahir": "Tempat Tanggal Lahir",
+    "alamatTinggal": "Alamat Tinggal Sekarang",
+    "noWa": "Nomor WA Aktif",
+    "fakultas": "Fakultas",
+    "prodi": "Program Studi",
+    "semester": "Semester",
+    "alasan": "Alasan saya masuk HMI",
+    "daftar": "Daftar",
+    "close": "Batal",
+    "toast": "Pendaftaran Sukses :)",
+    "generalError": "Terjadi Error, silahkan coba lain kali :(",
+    "emailAddress": "Email",
+    "emailRequired": "Email wajib dimasukkan"
+  },
+  "allSchedule": {
+    "title": "Terbaru"
+  },
+  "blog": {
+    "published": "Dipublikasikan pada: ",
+    "suggested": "Berita Lainnya"
+  },
+  "opini": {
+    "suggested": "Artikel Lainnya"
+  },
+  "mapBlock": {
+    "title": "Alamat Sekretariat"
+  },
+  "schedule": {
+    "commentSessionSignedOut": "Anda harus login terlebih dahulu sebelum menulis kesan-kesan",
+    "saveSessionsSignedOut": "Anda harus login terlebih dahulu jika ingin mendapatkan pemberitahuan up-to-date tentang agenda ini",
+    "registerSchedule": "Saya Ingin Ikuti Kegiatan ini"
+  },
+  "session": {
+    "pendaftaran": "Registrasi",
+    "kategori": "Kategori"
+  },
+  "feedback": {
+    "save": "Simpan",
+    "headline": "Apakah agenda ini berkesan buatmu? :)",
+    "leaveFeedback": "untuk Mengirim Komentar",
+    "feedbackRecorded": "Komentar disimpan",
+    "feedbackDeleted": "Komentar dihapus",
+    "helperText": "Komentar anda akan dijadikan evaluasi terhadap kegiatan kami kedepannya",
+    "somethingWentWrong": "Ada sedikit masalah :(",
+    "deleteFeedback": "Hapus"
+  },
+  "sessionDetails": {
+    "contentLevel": "Partisipan",
+    "place": "Tempat",
+    "viewPresentation": "View presentation",
+    "viewVideo": "View video",
+    "speakers": "Speakers"
+  },
+  "notifications": {
+    "default": "Dapatkan berita dan update terbaru dari kami",
+    "enabled": "Terima kasih telah subscribe Web App kami",
+    "blocked": "Kami tidak bisa mengirimkan pemberitahuan, Aktifkan pemberitahuan di browser anda",
+    "subscribe": "Subscribe",
+    "unsubscribe": "Unsubscribe",
+    "enable": {
+      "label": "Aktifkan",
+      "link": "https://support.google.com/chrome/answer/3220216"
+    },
+    "toast": {
+      "title": "Buka"
+    }
+  },
+  "filters": {
+    "title": "Filter",
+    "results": "Hasil",
+    "tags": "Jenis",
+    "complexity": "Peserta",
+    "clear": "Reset filter"
+  },
+  "addToHomeScreen": {
+    "cta": "Install HMI As'adiyah"
+  }
+}

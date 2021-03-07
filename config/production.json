@@ -1,0 +1,17 @@
+{
+  "basepath": "/",
+  "url": "https://hmi-asadiyah.web.app/",
+  "analytics": "UA-147127396-2",
+  "prefix": "/",
+  "firebase": {
+    "apiKey": "AIzaSyDC2AvL3KQMjzUwcbywQE3EkkwqWAK3ik8",
+    "appId": "1:725131777928:web:9457b3f994098f2c1bcc3d",
+    "authDomain": "hmi-asadiyah.firebaseapp.com",
+    "databaseURL": "https://hmi-asadiyah.firebaseio.com",
+    "messagingSenderId": "725131777928",
+    "projectId": "hmi-asadiyah",
+    "storageBucket": "hmi-asadiyah.appspot.com",
+    "measurementId": "G-911E5XMM4N"
+  },
+  "googleMapApiKey": "AIzaSyALt_5pxM8-MBtD0ualymlD3HSMKNIS4U0"
+}

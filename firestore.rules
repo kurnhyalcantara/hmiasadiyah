@@ -1,0 +1,156 @@
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /news/{post} {
+      // Applies to single document read requests
+      allow get;
+
+      // Applies to queries and collection read requests
+      allow list;
+
+      // Disallow writes
+      allow write: if false;
+    }
+
+    match /opini/{post} {
+      // Applies to single document read requests
+      allow get;
+
+      // Applies to queries and collection read requests
+      allow list;
+
+      // Disallow writes
+      allow write: if false;
+    }
+
+
+    match /config/{config} {
+      allow read, write: if false; // allow each section separately
+    }
+
+    match /featuredSessions/{userId} {
+      allow read, write: if request.auth.uid == userId;
+    }
+
+    match /gallery/{photo} {
+      // Applies to single document read requests
+      allow get;
+
+      // Applies to queries and collection read requests
+      allow list;
+
+      // Disallow writes
+      allow write: if false;
+    }
+
+    match /notificationsSubscribers/{token} {
+      allow list, delete: if false;
+
+      // Applies to document create requests
+      allow create;
+      allow update;
+      allow get;
+    }
+
+    match /notificationsUsers/{userId} {
+      allow read, write: if request.auth.uid == userId;
+    }
+
+    match /schedule/{day} {
+      // Applies to single document read requests
+      allow get;
+
+      // Applies to queries and collection read requests
+      allow list;
+
+      // Disallow writes
+      allow write: if false;
+    }
+    
+    match /generatedSchedule/{day} {
+      // Applies to single document read requests
+      allow get;
+
+      // Applies to queries and collection read requests
+      allow list;
+
+      // Disallow writes
+      allow write: if false;
+    }
+
+    match /sessions/{session} {
+      // Applies to single document read requests
+      allow get;
+
+      // Applies to queries and collection read requests
+      allow list;
+
+      // Disallow writes
+      allow write: if false;
+    }
+
+    match /generatedSessions/{session} {
+      // Applies to single document read requests
+      allow get;
+
+      // Applies to queries and collection read requests
+      allow list;
+
+      // Disallow writes
+      allow write: if false;
+    }
+
+    match /speakers/{speaker} {
+      // Applies to single document read requests
+      allow get;
+
+      // Applies to queries and collection read requests
+      allow list;
+
+      // Disallow writes
+      allow write: if false;
+    }
+
+    match /generatedSpeakers/{speaker} {
+      // Applies to single document read requests
+      allow get;
+
+      // Applies to queries and collection read requests
+      allow list;
+
+      // Disallow writes
+      allow write: if false;
+    }
+
+    match /userData/{emailId} {
+      allow delete: if false;
+
+      allow get;
+      allow list: if false;
+
+      // Applies to document create requests
+      //allow create;
+      allow write;
+    }
+
+    match /users/{userId} {
+      allow list: if false;
+
+      allow get;
+      allow write;
+
+      allow create, delete: if false;
+      allow update: if request.auth.uid == userId;
+    }
+
+    match /videos/{video} {
+      // Applies to single document read requests
+      allow get;
+
+      // Applies to queries and collection read requests
+      allow list;
+
+      // Disallow writes
+      allow write: if false;
+    }
+  }
+}
