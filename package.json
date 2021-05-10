@@ -59,7 +59,7 @@
     "clamp-js-main": "github:abraham/clamp-js-main#export",
     "firebase": "^7.15.5",
     "lit-element": "^2.3.1",
-    "lit-html": "^1.2.1",
+    "lit-html": "^1.4.1",
     "plastic-image": "^3.0.2",
     "pwa-helpers": "^0.9.1",
     "redux": "^4.0.5",
